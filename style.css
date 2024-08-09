@@ -1,50 +1,53 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
-body{
+body {
     background: #f7f7f2;
     color: #1e1e24;
 }
 
-#header{
+#header {
     width: 100%;
     height: 100vh;
 }
 
-.container{
+.container {
     padding: 10px 10%;
 }
 
-nav{
+nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
-.logo{
-    width:140px;
+.logo {
+    color: #1e1e24;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
 }
 
-nav ul li{
+nav ul li {
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
-
 }
 
-nav ul li a{
+nav ul li a {
     color: #1e1e24;
     text-decoration: none;
     font-size: 18px;
     position: relative;
 }
 
-nav ul li a::after{
+nav ul li a::after {
     content: '';
     width: 0%;
     height: 3px;
@@ -55,44 +58,62 @@ nav ul li a::after{
     transition: 0.5s;
 }
 
-
-nav ul li a:hover::after{
+nav ul li a:hover::after {
     width: 100%;
 }
 
-.header-text{
-    margin-top: 20%;
-    font-size: 30px;
-
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80%;
+    gap: 2rem; /* Added gap between text and image */
 }
 
-.header-text h1{
+.header-text {
+    font-size: 30px;
+    flex-basis: 55%; /* Reduced width to bring them closer */
+}
+
+.header-text h1 {
     font-size: 60px;
     margin-top: 20px;
 }
 
+.header-image {
+    flex-basis: 35%; /* Adjusted width */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
 
 /*------about--------*/
 
-#about{
+#about {
     padding: 80px 0;
     color: #1e1e24;
 }
 
-.row{
-    display: flex; /*----so content can be side by side-----*/
+.row {
+    display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.about-col-1{
+.about-col-1 {
     flex-basis: 30%;
 }
 
-.about-col-1 img{
+.about-col-1 img {
     width: 100%;
 }
 
-.about-col-2{
+.about-col-2 {
     flex-basis: 60%;
 }
