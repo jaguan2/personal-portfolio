@@ -72,7 +72,7 @@ nav ul li a:hover::after {
 
 .header-text {
     font-size: 30px;
-    flex-basis: 55%; /* Reduced width to bring them closer */
+    flex-basis: 50%; /* Reduced width to bring them closer */
 }
 
 .header-text h1 {
@@ -123,6 +123,7 @@ nav ul li a:hover::after {
 #experience {
     padding: 80px 0 120px; /* Add more padding to the bottom */
     color: #1e1e24;
+    text-align: center;
 }
 
 .slider-wrapper {
@@ -144,6 +145,12 @@ nav ul li a:hover::after {
     flex: 1 0 100%;
     scroll-snap-align: start;
     object-fit: cover;
+}
+
+#experience h1 {
+    text-align: center;
+    margin-bottom: 40px; /* Increased spacing below the heading */
+    color: #1e1e24;
 }
 
 .slider-nav {
@@ -168,3 +175,4 @@ nav ul li a:hover::after {
 .slider-nav a:hover {
     opacity: 1;
 }
+
