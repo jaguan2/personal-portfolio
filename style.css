@@ -93,6 +93,42 @@ nav ul li a:hover::after {
     object-fit: cover;
 }
 
+.home-button {
+    display: flex;
+    gap: 1rem; /* Space between the buttons */
+    margin-top: 20px; /* Adds spacing above the buttons */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem; /* Space between text and image */
+}
+
+/* Button styles */
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: #f7f7f2;
+    border: 1px solid #1e1e24;
+    font-weight: 500;
+    font-size: 12px;
+    text-align: center;
+    background: #1e1e24;
+    transition: all 0.5s;
+}
+
+.button:hover {
+    background: #f7f7f2;
+    color: #1e1e24;
+    transform: translateY(5px);
+}
 /*------about--------*/
 
 #about {
