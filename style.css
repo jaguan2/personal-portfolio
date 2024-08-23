@@ -109,6 +109,7 @@ nav ul li a:hover::after {
 /* Button styles */
 .button {
     display: flex;
+    text-decoration: none;
     justify-content: center;
     align-items: center;
     width: fit-content;
