@@ -155,9 +155,7 @@ nav ul li a:hover::after {
     flex-basis: 60%;
 }
 
-
 /*------projects--------*/
-
 #projects {
     padding: 80px 0 120px; /* Add more padding to the bottom */
     color: #1e1e24;
@@ -177,12 +175,22 @@ nav ul li a:hover::after {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+    animation: slideAnimation 20s infinite; /* Auto-Scroll Animation */
 }
 
-.slider img {
+.slide {
     flex: 1 0 100%;
     scroll-snap-align: start;
+    padding: 20px;
+    text-align: center;
+}
+
+.slide img, .slide video {
+    width: 100%;
+    max-height: 400px;
     object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
 #projects h1 {
@@ -213,7 +221,6 @@ nav ul li a:hover::after {
 .slider-nav a:hover {
     opacity: 1;
 }
-
 
 
 /*------experience--------*/

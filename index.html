@@ -88,17 +88,40 @@
 <div id="projects">
     <h1>My Projects</h1>
     <div class="slider-wrapper">
-        
         <div class="slider">
-            <video id="project-1" autoplay loop muted playsinline>
-                <source src="images/eduPortal.mp4" type="video/mp4">
-            </video>
-            > <!-- Add more as needed -->
+            
+            <!-- Project 1: Perfect Path -->
+            <div class="slide">
+                <h2>Perfect Path</h2>
+                <p><strong>Technologies:</strong> Python, Flask, HTML/CSS, JavaScript, PostgreSQL, AWS</p>
+                <ul>
+                    <p>Developed a class scheduling web application for course planning and sharing schedules.</p>
+                    <p>Implemented authentication features, password validation, and admin privileges.</p>
+                    <p>Hosted PostgreSQL database on AWS for seamless access.</p>
+                </ul>
+                <video autoplay loop muted playsinline>
+                    <source src="Images/eduPortal.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <!-- Project 2: TwitterFeel -->
+            <div class="slide">
+                <h2>TwitterFeel</h2>
+                <p><strong>Technologies:</strong> Python, TensorFlow, Pandas, NumPy, Hugging Face</p>
+                <ul>
+                    <p>Cleaned and filtered a Kaggle dataset of 20,000 tweets using lemmatization.</p>
+                    <p>Trained LSTM models with TensorFlow to predict tweet emotions.</p>
+                    <p>Improved performance using SMOTE and optimized dataset filtering (F1 Score: 0.82).</p>
+                </ul>
+                <img src="Images/TwitterFeel.JPG" alt="TwitterFeel">
+            </div>
+
         </div>
-        
+
+        <!-- Navigation Buttons -->
         <div class="slider-nav">
-            <a href="#project-1"></a>
+            <a href="#slide-1"></a>
+            <a href="#slide-2"></a>
         </div>
-        
     </div>
 </div>
