@@ -5,7 +5,7 @@ import './Header.css'
 function Header() {
   return (
     <header id="header">
-      <div className="container">
+      <div className="navbar">
         <nav>
           <a href="#" className="logo">rkive.</a>
           <ul>
@@ -15,6 +15,8 @@ function Header() {
             <li><a href="mailto:tpaguan@gmail.com">Email</a></li>
           </ul>
         </nav>
+      </div>
+      <div className="container">
         <div className="header-content">
           <div className="header-text">
             <h1>Hi, I'm Jason</h1>

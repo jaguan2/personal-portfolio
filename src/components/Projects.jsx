@@ -7,23 +7,15 @@ const projects = [
   {
     id: 1,
     title: 'Perfect Path',
-    technologies: 'Python, Flask, HTML/CSS, JavaScript, PostgreSQL, AWS',
-    description: [
-      'Developed a class scheduling web application for course planning and sharing schedules, utilizing 28 unique core and elective classes in the Computer Science program at USF.',
-      'Implemented user authentication and authorization features, including password validation and admin privileges for secure access control.',
-      'Hosted the PostgreSQL database on AWS cloud infrastructure for seamless access and real-time modifications.'
-    ],
+    technologies: 'Python • Flask • JavaScript • PostgreSQL • AWS',
+    description: 'A class scheduling platform that helps USF Computer Science students plan their academic journey. Students can create, compare, and share course schedules with friends, choosing from 28 core and elective classes. Features secure user authentication with role-based admin privileges, all backed by a PostgreSQL database hosted on AWS for reliable, real-time access.',
     media: { type: 'video', src: eduPortalVideo }
   },
   {
     id: 2,
     title: 'TwitterFeel',
-    technologies: 'Python, TensorFlow, Pandas, NumPy, Hugging Face',
-    description: [
-      'Cleaned and filtered a Kaggle dataset of 20,000 tweets by performing lemmatization using Python and Pandas to create a structured dataset for emotion analysis.',
-      'Implemented and trained Long Short-Term Memory (LSTM) models with TensorFlow to predict future tweet emotions by leveraging users\' tweet history.',
-      'Improved model performance by applying SMOTE and filtering dataset users with extreme tweet counts, achieving accuracy, precision, recall, and F1 score of 0.82.'
-    ],
+    technologies: 'Python • TensorFlow • Pandas • NumPy • Hugging Face',
+    description: 'A machine learning project that predicts emotional sentiment from tweets. Built and trained LSTM neural networks on a cleaned dataset of 20,000 tweets, using lemmatization and SMOTE to handle class imbalance. The model analyzes tweet history to predict future emotional patterns, achieving an F1 score of 0.82 across accuracy, precision, and recall metrics.',
     media: { type: 'image', src: twitterFeelImage, alt: 'TwitterFeel' }
   }
 ]
@@ -58,15 +50,13 @@ function Projects() {
         </button>
 
         <div className="slide">
-          <h2>{currentProject.title}</h2>
-          <p className="technologies">
-            <strong>Technologies:</strong> {currentProject.technologies}
-          </p>
-          <ul className="description">
-            {currentProject.description.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
+          <div className="slide-content">
+            <h2>{currentProject.title}</h2>
+            <p className="technologies">{currentProject.technologies}</p>
+            <div className="description">
+              <p>{currentProject.description}</p>
+            </div>
+          </div>
           <div className="media-container">
             {currentProject.media.type === 'video' ? (
               <video autoPlay loop muted playsInline>

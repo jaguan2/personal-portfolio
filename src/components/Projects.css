@@ -1,11 +1,13 @@
 #projects {
-  padding: 80px 10% 120px;
-  color: #1e1e24;
+  padding: 80px 5% 120px;
+  color: #4a3728;
   text-align: center;
 }
 
 #projects h1 {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  color: #4a3728;
+  font-size: 2.5rem;
 }
 
 .slider-container {
@@ -13,14 +15,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
-  gap: 20px;
+  gap: 30px;
 }
 
 .slider-btn {
-  background: #1e1e24;
-  color: #f7f7f2;
+  background: #6f4e37;
+  color: #fff;
   border: none;
   width: 50px;
   height: 50px;
@@ -35,74 +37,105 @@
 }
 
 .slider-btn:hover {
-  background: #ff004f;
+  background: #c8a27a;
   transform: scale(1.1);
 }
 
 .slide {
   flex: 1;
-  padding: 30px;
+  padding: 40px;
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 25px rgba(111, 78, 55, 0.1);
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+  text-align: left;
+}
+
+.slide-content {
+  flex: 1;
 }
 
 .slide h2 {
-  margin-bottom: 15px;
-  color: #1e1e24;
+  margin-bottom: 12px;
+  color: #4a3728;
+  font-size: 1.75rem;
 }
 
 .slide .technologies {
   margin-bottom: 20px;
-  color: #666;
+  color: #6f4e37;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .slide .description {
-  text-align: left;
-  padding-left: 20px;
-  margin-bottom: 20px;
+  padding-left: 0;
+  margin-bottom: 0;
+  color: #6f4e37;
+  list-style: none;
 }
 
-.slide .description li {
-  margin-bottom: 8px;
-  line-height: 1.5;
+.slide .description p {
+  margin-bottom: 16px;
+  line-height: 1.7;
+  font-size: 0.95rem;
 }
 
 .media-container {
-  width: 100%;
-  margin-top: 20px;
+  flex: 1;
+  max-width: 500px;
 }
 
 .media-container img,
 .media-container video {
   width: 100%;
-  max-height: 400px;
+  height: auto;
+  max-height: 350px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(111, 78, 55, 0.15);
 }
 
 .slider-dots {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #ccc;
+  background: #d4c4b5;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .dot:hover {
-  background: #999;
+  background: #c8a27a;
 }
 
 .dot.active {
-  background: #ff004f;
+  background: #6f4e37;
   transform: scale(1.2);
+}
+
+@media (max-width: 900px) {
+  .slide {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .slide .description {
+    text-align: left;
+  }
+
+  .media-container {
+    max-width: 100%;
+  }
 }
