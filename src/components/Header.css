@@ -25,6 +25,11 @@ nav {
   font-size: 1.4rem;
   font-weight: 600;
   text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+  opacity: 0.7;
 }
 
 nav ul {
@@ -45,6 +50,7 @@ nav ul li a {
   font-weight: 500;
   position: relative;
   padding: 8px 0;
+  transition: opacity 0.3s ease;
 }
 
 nav ul li a::after {
@@ -55,7 +61,11 @@ nav ul li a::after {
   position: absolute;
   left: 0;
   bottom: 0;
-  transition: 0.3s;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  opacity: 0.8;
 }
 
 nav ul li a:hover::after {
@@ -70,7 +80,7 @@ nav ul li a:hover::after {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 70vh;
+  min-height: 60vh;
   gap: 2rem;
 }
 
@@ -78,17 +88,43 @@ nav ul li a:hover::after {
   font-size: 30px;
   flex-basis: 50%;
   color: #6f4e37;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .header-text h1 {
   font-size: 60px;
   margin-top: 20px;
   color: #4a3728;
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .header-text p {
   color: #8b7355;
   font-style: italic;
+  margin-top: 10px;
 }
 
 .header-image {
@@ -96,6 +132,7 @@ nav ul li a:hover::after {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  animation: slideInRight 0.8s ease-out 0.2s both;
 }
 
 .header-image img {
@@ -104,12 +141,19 @@ nav ul li a:hover::after {
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(111, 78, 55, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-image img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(111, 78, 55, 0.2);
 }
 
 .home-button {
   display: flex;
   gap: 1rem;
-  margin-top: 20px;
+  margin-top: 25px;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
 .button {
@@ -118,22 +162,51 @@ nav ul li a:hover::after {
   justify-content: center;
   align-items: center;
   width: fit-content;
-  padding: 1rem;
-  border-radius: 0.5rem;
+  padding: 12px 24px;
+  border-radius: 8px;
   cursor: pointer;
   color: #fff;
-  border: 1px solid #6f4e37;
-  font-weight: 500;
-  font-size: 12px;
+  border: 2px solid #6f4e37;
+  font-weight: 600;
+  font-size: 14px;
   text-align: center;
   background: #6f4e37;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 .button:hover {
-  background: #c8a27a;
-  border-color: #c8a27a;
-  color: #4a3728;
+  background: transparent;
+  color: #6f4e37;
   transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(200, 162, 122, 0.4);
+  box-shadow: 0 4px 15px rgba(111, 78, 55, 0.2);
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-text {
+    flex-basis: 100%;
+  }
+
+  .header-text h1 {
+    font-size: 40px;
+  }
+
+  .header-image {
+    flex-basis: 100%;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .home-button {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav ul li {
+    margin: 0 10px;
+  }
 }

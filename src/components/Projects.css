@@ -1,13 +1,14 @@
 #projects {
-  padding: 80px 5% 120px;
+  padding: 60px 5% 80px;
   color: #4a3728;
   text-align: center;
 }
 
 #projects h1 {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   color: #4a3728;
   font-size: 2.5rem;
+  font-weight: 700;
 }
 
 .slider-container {
@@ -97,6 +98,13 @@
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(111, 78, 55, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.media-container img:hover,
+.media-container video:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(111, 78, 55, 0.2);
 }
 
 .slider-dots {

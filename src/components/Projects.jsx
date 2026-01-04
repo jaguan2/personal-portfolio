@@ -6,17 +6,17 @@ import './Projects.css'
 const projects = [
   {
     id: 1,
-    title: 'Perfect Path',
-    technologies: 'Python • Flask • JavaScript • PostgreSQL • AWS',
-    description: 'A class scheduling platform that helps USF Computer Science students plan their academic journey. Students can create, compare, and share course schedules with friends, choosing from 28 core and elective classes. Features secure user authentication with role-based admin privileges, all backed by a PostgreSQL database hosted on AWS for reliable, real-time access.',
-    media: { type: 'video', src: eduPortalVideo }
-  },
-  {
-    id: 2,
     title: 'TwitterFeel',
     technologies: 'Python • TensorFlow • Pandas • NumPy • Hugging Face',
     description: 'A machine learning project that predicts emotional sentiment from tweets. Built and trained LSTM neural networks on a cleaned dataset of 20,000 tweets, using lemmatization and SMOTE to handle class imbalance. The model analyzes tweet history to predict future emotional patterns, achieving an F1 score of 0.82 across accuracy, precision, and recall metrics.',
     media: { type: 'image', src: twitterFeelImage, alt: 'TwitterFeel' }
+  },
+  {
+    id: 2,
+    title: 'Perfect Path',
+    technologies: 'Python • Flask • JavaScript • PostgreSQL • AWS',
+    description: 'A class scheduling platform that helps USF Computer Science students plan their academic journey. Students can create, compare, and share course schedules with friends, choosing from 28 core and elective classes. Features secure user authentication with role-based admin privileges, all backed by a PostgreSQL database hosted on AWS for reliable, real-time access.',
+    media: { type: 'video', src: eduPortalVideo }
   }
 ]
 

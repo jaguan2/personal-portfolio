@@ -1,0 +1,30 @@
+#footer {
+  background: #e6d5c3;
+  padding: 20px 10%;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #6f4e37;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 0.7;
+}
+
+.divider {
+  color: #c8a27a;
+  font-size: 0.8rem;
+}

@@ -11,19 +11,22 @@ function Header() {
           <ul>
             <li><a href="#header">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="mailto:tpaguan@gmail.com">Email</a></li>
           </ul>
         </nav>
       </div>
       <div className="container">
         <div className="header-content">
           <div className="header-text">
-            <h1>Hi, I'm Jason</h1>
+            <h1>Hi, I'm Jason 👋</h1>
             <p>"Passion makes the impossible happen"</p>
             <div className="home-button">
               <a href="https://www.linkedin.com/in/jaguan/" className="button" target="_blank" rel="noopener noreferrer">
                 LinkedIn
+              </a>
+              <a href="mailto:tpaguan@gmail.com" className="button">
+                Email
               </a>
               <a href={resumePdf} className="button" download="Jason_Guan_Resume.pdf">
                 Download CV

@@ -13,18 +13,18 @@ function About() {
             <div className="about-col-2">
               <h1>About Me</h1>
               <p>
-                I'm a recent Computer Science graduate from the University of South Florida (GPA: 3.6)
-                and currently a Full Stack Developer Lead at DefTechLink, where I architect data pipelines
-                with AWS Lambda and design PostgreSQL database schemas.
+                I'm a Computer Science graduate from the University of South Florida, currently
+                serving as a Full Stack Developer Lead at DefTechLink—a startup platform connecting
+                defense innovation opportunities with industry, academia, and government partners.
               </p>
               <p>
-                Previously, I interned as a Software Engineer at the U.S. Department of the Air Force,
-                leading backend development for a full-stack management application used by 300+ engineers.
-                I hold a Secret Level security clearance from the Department of Defense.
+                My technical background includes full-stack development, cloud technologies (AWS),
+                and applied machine learning, shaped by a research project analyzing social media
+                data and emotional patterns.
               </p>
               <p>
-                My expertise spans full-stack development, cloud technologies (AWS), and machine learning.
-                I'm passionate about building scalable applications and solving complex problems through code.
+                As a software engineer, I want to affect people's lives in an innovative and
+                meaningful way. Let's connect and explore exciting possibilities together.
               </p>
             </div>
           </div>
