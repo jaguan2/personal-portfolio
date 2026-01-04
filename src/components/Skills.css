@@ -12,7 +12,7 @@
 }
 
 #skills .container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -43,6 +43,11 @@
   margin-bottom: 15px;
   padding-bottom: 10px;
   border-bottom: 2px solid #e6d5c3;
+  transition: color 0.3s ease;
+}
+
+.skill-card:hover h3 {
+  color: #4a3728;
 }
 
 .skill-card ul {
@@ -58,6 +63,11 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: transform 0.2s ease;
+}
+
+.skill-card li:hover {
+  transform: translateX(5px);
 }
 
 .skill-card li::before {
@@ -67,6 +77,12 @@
   background: #c8a27a;
   border-radius: 50%;
   flex-shrink: 0;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.skill-card li:hover::before {
+  background: #6f4e37;
+  transform: scale(1.3);
 }
 
 @media (max-width: 900px) {

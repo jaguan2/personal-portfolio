@@ -23,7 +23,7 @@ function Skills() {
   return (
     <section id="skills">
       <div className="container">
-        <h1>My Skills</h1>
+        <h1>Skills</h1>
         <div className="skills-grid">
           {skillsData.map((item) => (
             <div key={item.category} className="skill-card">

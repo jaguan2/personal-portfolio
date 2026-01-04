@@ -43,7 +43,7 @@ function Projects() {
 
   return (
     <section id="projects">
-      <h1>My Projects</h1>
+      <h1>Projects</h1>
       <div className="slider-container">
         <button className="slider-btn prev-btn" onClick={goToPrevious} aria-label="Previous project">
           &#10094;

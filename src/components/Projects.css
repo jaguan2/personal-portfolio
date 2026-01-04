@@ -39,7 +39,12 @@
 
 .slider-btn:hover {
   background: #c8a27a;
-  transform: scale(1.1);
+  transform: scale(1.15);
+  box-shadow: 0 4px 15px rgba(200, 162, 122, 0.4);
+}
+
+.slider-btn:active {
+  transform: scale(0.95);
 }
 
 .slide {
@@ -53,6 +58,11 @@
   gap: 40px;
   align-items: center;
   text-align: left;
+  transition: box-shadow 0.3s ease;
+}
+
+.slide:hover {
+  box-shadow: 0 8px 35px rgba(111, 78, 55, 0.15);
 }
 
 .slide-content {
@@ -63,6 +73,11 @@
   margin-bottom: 12px;
   color: #4a3728;
   font-size: 1.75rem;
+  transition: color 0.3s ease;
+}
+
+.slide:hover h2 {
+  color: #6f4e37;
 }
 
 .slide .technologies {
@@ -70,6 +85,11 @@
   color: #6f4e37;
   font-size: 0.9rem;
   font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.slide:hover .technologies {
+  color: #c8a27a;
 }
 
 .slide .description {
@@ -103,8 +123,8 @@
 
 .media-container img:hover,
 .media-container video:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 25px rgba(111, 78, 55, 0.2);
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(111, 78, 55, 0.25);
 }
 
 .slider-dots {
@@ -126,11 +146,12 @@
 
 .dot:hover {
   background: #c8a27a;
+  transform: scale(1.2);
 }
 
 .dot.active {
   background: #6f4e37;
-  transform: scale(1.2);
+  transform: scale(1.3);
 }
 
 @media (max-width: 900px) {
