@@ -1,0 +1,32 @@
+{
+  "name": "personal-portfolio",
+  "version": "1.0.0",
+  "description": "Jason's Personal Portfolio",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaguan2/personal-portfolio.git"
+  },
+  "keywords": [],
+  "author": "Jason",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaguan2/personal-portfolio/issues"
+  },
+  "homepage": "https://jaguan2.github.io/personal-portfolio/",
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.2",
+    "gh-pages": "^6.3.0",
+    "vite": "^7.3.0"
+  }
+}

@@ -1,0 +1,40 @@
+import heroImage from '../assets/hero.jpg'
+import resumePdf from '../assets/Jason_Resume.pdf'
+import './Header.css'
+
+function Header() {
+  return (
+    <header id="header">
+      <div className="container">
+        <nav>
+          <a href="#" className="logo">rkive.</a>
+          <ul>
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="mailto:tpaguan@gmail.com">Email</a></li>
+          </ul>
+        </nav>
+        <div className="header-content">
+          <div className="header-text">
+            <h1>Hi, I'm Jason</h1>
+            <p>"Passion makes the impossible happen"</p>
+            <div className="home-button">
+              <a href="https://www.linkedin.com/in/jaguan/" className="button" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+              <a href={resumePdf} className="button" download="Jason_Guan_Resume.pdf">
+                Download CV
+              </a>
+            </div>
+          </div>
+          <div className="header-image">
+            <img src={heroImage} alt="Jason Guan" />
+          </div>
+        </div>
+      </div>
+    </header>
+  )
+}
+
+export default Header

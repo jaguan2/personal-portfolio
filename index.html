@@ -1,127 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio Website</title>
-    <link rel="stylesheet" href="style.css"> <!-- connects html and css file -->
-</head>
-<body>
-
-<div id="header">
-    <div class="container">
-        <nav>
-            <a href="#" class="logo"> rkive.</a>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Highlights</a></li>
-                <li><a href="mailto:tpaguan@gmail.com">Email</a></li>
-            </ul>
-        </nav>
-        <div class="header-content">
-            <div class="header-text">
-                <h1>Hi, I'm Jason 👋</h1>
-                <p>"Passion makes the impossible happen"</p>
-                <div class = "home-button">
-                    <a href="https://www.linkedin.com/in/jaguan/" class="button" target="_blank">LinkedIn</a>
-                    <a href="https://drive.google.com/uc?export=download&id=1tO3yFHz6mgfjB2Nq5MOe_NC1aHEQVRk_" class="button" target="_blank">Download CV <i class="ph ph-read-cv-logo"></i></a>
-                </div>
-
-            </div>
-            <div class="header-image">
-                <img src="images/me.png">
-            </div>
-        </div>
-    </div>
-</div>
-
-
-    <!------about------>
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/bulls.jpg">
-                </div>
-                <div class="about-col-2">
-                    <h1>About Me</h1> </br>
-                    <p> I'm a senior at the University of South Florida studying Computer Science. </p>
-                    <p> and a former Software Engineer Intern at the U.S. Department of Air Force</p>
-                    <p>My background is primarily in full-stack development and data analysis, </p>
-                    <p>which I focused on during my internship at Robins Air Force Base.</p>
-                    <p>I have explored machine learning through a research project analyzing  </p>
-                    <p>social media data and emotions.</p>
-                </br>
-            </br>
-            </p> I am actively seeking full-time roles in software engineering and development. </br>
-                    I am eager to leverage my technical skills and leadership experience in </br>
-                    new and challenging opportunities <p>
-                    <!-- Additional content can go here -->
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/src/assets/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Jason | Portfolio</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
-
-<!------experience------>
-
-<div id="experience">
-    <h1>Highlights!</h1>
-    <div class="slider-wrapper">
-        
-        <div class="slider">
-            <img id="slide-1" src="Images/InternshipPhoto1.png" alt="Internship Photo 1">
-            <img id="slide-2" src="Images/InternshipPhoto2.png" alt="Internship Photo 2">
-            <img id="slide-3" src="Images/braindump.jpg" alt="Internship Photo 3">
-        </div>
-        <div class="slider-nav">
-            <a href="#slide-1"></a>
-            <a href="#slide-2"></a>
-        </div>
-    </div>
-</div>
-
-<!------ Projects Section ------>
-<div id="projects">
-    <h1>My Projects</h1>
-    <div class="slider-wrapper">
-        <div class="slider">
-            
-            <!-- Project 1: Perfect Path -->
-            <div class="slide">
-                <h2>Perfect Path</h2>
-                <p><strong>Technologies:</strong> Python, Flask, HTML/CSS, JavaScript, PostgreSQL, AWS</p>
-                <ul>
-                    <p>Developed a class scheduling web application for course planning and sharing schedules.</p>
-                    <p>Implemented authentication features, password validation, and admin privileges.</p>
-                    <p>Hosted PostgreSQL database on AWS for seamless access.</p>
-                </ul>
-                <video autoplay loop muted playsinline>
-                    <source src="Images/eduPortal.mp4" type="video/mp4">
-                </video>
-            </div>
-
-            <!-- Project 2: TwitterFeel -->
-            <div class="slide">
-                <h2>TwitterFeel</h2>
-                <p><strong>Technologies:</strong> Python, TensorFlow, Pandas, NumPy, Hugging Face</p>
-                <ul>
-                    <p>Cleaned and filtered a Kaggle dataset of 20,000 tweets using lemmatization.</p>
-                    <p>Trained LSTM models with TensorFlow to predict tweet emotions.</p>
-                    <p>Improved performance using SMOTE and optimized dataset filtering (F1 Score: 0.82).</p>
-                </ul>
-                <img src="Images/TwitterFeel.JPG" alt="TwitterFeel">
-            </div>
-
-        </div>
-
-        <!-- Navigation Buttons -->
-        <div class="slider-nav">
-            <a href="#slide-1"></a>
-            <a href="#slide-2"></a>
-        </div>
-    </div>
-</div>

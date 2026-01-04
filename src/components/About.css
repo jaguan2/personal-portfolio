@@ -1,0 +1,35 @@
+#about {
+  padding: 80px 0;
+  color: #1e1e24;
+}
+
+#about .container {
+  padding: 10px 10%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.about-col-1 {
+  flex-basis: 30%;
+}
+
+.about-col-1 img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.about-col-2 {
+  flex-basis: 60%;
+}
+
+.about-col-2 h1 {
+  margin-bottom: 10px;
+}
+
+.about-col-2 p {
+  line-height: 1.6;
+}
