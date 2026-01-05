@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import twitterFeelImage from '../assets/TwitterFeel.JPG'
 import eduPortalVideo from '../assets/eduPortal.mp4'
 import './Projects.css'
@@ -22,6 +22,33 @@ const projects = [
 
 function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+  const [touchStart, setTouchStart] = useState(null)
+  const [touchEnd, setTouchEnd] = useState(null)
+  const autoPlayRef = useRef(null)
+
+  // Check if mobile
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  // Auto-advance on mobile
+  useEffect(() => {
+    if (isMobile) {
+      autoPlayRef.current = setInterval(() => {
+        setCurrentIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1))
+      }, 30000) // 30 seconds per slide
+    }
+
+    return () => {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current)
+      }
+    }
+  }, [isMobile])
 
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) =>
@@ -37,6 +64,39 @@ function Projects() {
 
   const goToSlide = (index) => {
     setCurrentIndex(index)
+    // Reset auto-play timer when manually selecting
+    if (autoPlayRef.current) {
+      clearInterval(autoPlayRef.current)
+      autoPlayRef.current = setInterval(() => {
+        setCurrentIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1))
+      }, 30000)
+    }
+  }
+
+  // Swipe handlers for mobile
+  const minSwipeDistance = 50
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null)
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > minSwipeDistance
+    const isRightSwipe = distance < -minSwipeDistance
+
+    if (isLeftSwipe) {
+      goToNext()
+    } else if (isRightSwipe) {
+      goToPrevious()
+    }
   }
 
   const currentProject = projects[currentIndex]
@@ -49,7 +109,13 @@ function Projects() {
         <span className="float-icon">⭐</span>
       </div>
       <h1>Projects</h1>
-      <div className="slider-container">
+      <div
+        className="slider-container"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
+        {/* Hide buttons on mobile */}
         <button className="slider-btn prev-btn" onClick={goToPrevious} aria-label="Previous project">
           &#10094;
         </button>
