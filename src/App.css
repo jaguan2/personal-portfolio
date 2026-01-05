@@ -161,7 +161,7 @@ html, body {
 
 /* Better touch targets for mobile */
 @media (max-width: 768px) {
-  a, button {
+  a, button:not(.dot) {
     min-height: 44px;
   }
 }
