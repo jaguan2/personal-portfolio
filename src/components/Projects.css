@@ -1,5 +1,5 @@
 #projects {
-  padding: 60px 5% 80px;
+  padding: 100px 5% 120px;
   color: #f5ebe0;
   text-align: center;
   position: relative;
@@ -27,10 +27,11 @@
 }
 
 #projects h1 {
-  margin-bottom: 40px;
-  color: #c8a27a;
-  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #f5ebe0;
+  font-size: 2.8rem;
   font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .slider-container {
@@ -72,19 +73,21 @@
 .slide {
   flex: 1;
   padding: 40px;
-  background: #fff;
+  background: rgba(60, 50, 40, 0.5);
+  border: 1px solid rgba(200, 162, 122, 0.25);
   border-radius: 16px;
-  box-shadow: 0 4px 25px rgba(111, 78, 55, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: row;
   gap: 40px;
   align-items: center;
   text-align: left;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .slide:hover {
-  box-shadow: 0 8px 35px rgba(111, 78, 55, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
 }
 
 .slide-content {
@@ -93,18 +96,18 @@
 
 .slide h2 {
   margin-bottom: 12px;
-  color: #4a3728;
+  color: #f5ebe0;
   font-size: 1.75rem;
   transition: color 0.3s ease;
 }
 
 .slide:hover h2 {
-  color: #6f4e37;
+  color: #c8a27a;
 }
 
 .slide .technologies {
   margin-bottom: 20px;
-  color: #6f4e37;
+  color: #c8a27a;
   font-size: 0.9rem;
   font-weight: 600;
   transition: color 0.3s ease;
@@ -117,7 +120,7 @@
 .slide .description {
   padding-left: 0;
   margin-bottom: 0;
-  color: #6f4e37;
+  color: rgba(245, 235, 224, 0.9);
   list-style: none;
 }
 
@@ -160,7 +163,7 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #d4c4b5;
+  background: rgba(200, 162, 122, 0.4);
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -172,7 +175,7 @@
 }
 
 .dot.active {
-  background: #6f4e37;
+  background: #c8a27a;
   transform: scale(1.3);
 }
 

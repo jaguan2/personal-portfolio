@@ -12,18 +12,6 @@ function Header() {
         <span className="float-icon">☕</span>
         <span className="float-icon">⭐</span>
       </div>
-      <div className="navbar">
-        <nav>
-          <a href="#" className="logo">rkive.</a>
-          <ul>
-            <li><a href="#header">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-          </ul>
-        </nav>
-      </div>
       <div className="container">
         <div className="header-content">
           <div className="header-text">

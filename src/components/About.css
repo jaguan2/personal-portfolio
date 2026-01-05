@@ -1,5 +1,5 @@
 #about {
-  padding: 50px 0;
+  padding: 100px 0 120px;
   color: #f5ebe0;
   position: relative;
   overflow: hidden;
@@ -23,10 +23,11 @@
 }
 
 .about-box {
-  background: #e6d5c3;
-  border-radius: 20px;
-  padding: 50px;
-  box-shadow: 0 4px 20px rgba(111, 78, 55, 0.1);
+  background: rgba(60, 50, 40, 0.5);
+  border: 1px solid rgba(200, 162, 122, 0.25);
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 .row {
@@ -60,17 +61,19 @@
 }
 
 .about-col-2 h1 {
-  margin-bottom: 20px;
-  color: #4a3728;
+  margin-bottom: 24px;
+  color: #f5ebe0;
   font-size: 2.5rem;
   font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .about-col-2 p {
-  line-height: 1.8;
-  color: #6f4e37;
+  line-height: 1.7;
+  color: rgba(245, 235, 224, 0.9);
   margin-bottom: 15px;
   font-size: 1rem;
+  max-width: 65ch;
 }
 
 .about-col-2 p:last-child {

@@ -3,6 +3,19 @@
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+  padding-bottom: 60px;
+}
+
+/* Subtle gradient transition to next section */
+#header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, rgba(46, 39, 31, 0.5));
+  pointer-events: none;
 }
 
 /* Header-specific floating element positions */
@@ -59,81 +72,6 @@
   animation-name: twinkle;
 }
 
-.navbar {
-  position: fixed;
-  top: 15px;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  padding: 0 5%;
-}
-
-nav {
-  background: rgba(230, 213, 195, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 14px 40px;
-  border-radius: 50px;
-  box-shadow: 0 4px 20px rgba(74, 55, 40, 0.12);
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  color: #6f4e37;
-  font-size: 1.4rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: opacity 0.3s ease;
-}
-
-.logo:hover {
-  opacity: 0.7;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  margin: 0 20px;
-}
-
-nav ul li a {
-  color: #6f4e37;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  position: relative;
-  padding: 8px 0;
-  transition: opacity 0.3s ease;
-}
-
-nav ul li a::after {
-  content: '';
-  width: 0%;
-  height: 2px;
-  background: #c8a27a;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  transition: width 0.3s ease;
-}
-
-nav ul li a:hover {
-  opacity: 0.8;
-}
-
-nav ul li a:hover::after {
-  width: 100%;
-}
-
 .container {
   padding: 150px 10% 40px;
 }
@@ -149,7 +87,7 @@ nav ul li a:hover::after {
 .header-text {
   font-size: 30px;
   flex-basis: 50%;
-  color: #6f4e37;
+  color: #f5ebe0;
   animation: fadeInUp 0.8s ease-out;
 }
 
@@ -178,13 +116,13 @@ nav ul li a:hover::after {
 .header-text h1 {
   font-size: 60px;
   margin-top: 20px;
-  color: #4a3728;
+  color: #f5ebe0;
   font-weight: 700;
   line-height: 1.1;
 }
 
 .header-text p {
-  color: #8b7355;
+  color: #c8a27a;
   font-style: italic;
   margin-top: 10px;
 }
@@ -238,7 +176,7 @@ nav ul li a:hover::after {
 
 .button:hover {
   background: transparent;
-  color: #6f4e37;
+  color: #f5ebe0;
   transform: translateY(-3px);
   box-shadow: 0 4px 15px rgba(111, 78, 55, 0.2);
 }
@@ -266,9 +204,5 @@ nav ul li a:hover::after {
   .home-button {
     justify-content: center;
     flex-wrap: wrap;
-  }
-
-  nav ul li {
-    margin: 0 10px;
   }
 }
