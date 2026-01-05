@@ -84,26 +84,67 @@ nav ul li a.active::after {
   background: #C8A27A;
 }
 
-@media (max-width: 768px) {
+/* Tablet */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 4%;
+  }
+
+  nav {
+    padding: 12px 30px;
+  }
+
   nav ul li {
-    margin: 0 10px;
+    margin: 0 12px;
   }
 
   nav ul li a {
     font-size: 14px;
   }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    top: 10px;
+    padding: 0 3%;
+  }
 
   nav {
-    padding: 12px 20px;
+    padding: 10px 20px;
+  }
+
+  nav ul li {
+    margin: 0 8px;
+  }
+
+  nav ul li a {
+    font-size: 13px;
+    padding: 6px 0;
+  }
+
+  .logo {
+    font-size: 1.2rem;
   }
 }
 
+/* Small mobile - hide nav links, show only logo */
 @media (max-width: 600px) {
+  .navbar {
+    top: 8px;
+    padding: 0 3%;
+  }
+
+  nav {
+    padding: 12px 24px;
+    justify-content: center;
+  }
+
   nav ul {
     display: none;
   }
 
-  nav {
-    justify-content: center;
+  .logo {
+    font-size: 1.3rem;
   }
 }

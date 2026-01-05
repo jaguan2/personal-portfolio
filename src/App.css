@@ -128,3 +128,41 @@ button:focus-visible {
   background: rgba(200, 162, 122, 0.3);
   color: #f5ebe0;
 }
+
+/* Global responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    line-height: 1.5;
+  }
+
+  .float-icon {
+    font-size: 1.2rem;
+    opacity: 0.08;
+  }
+
+  .float-icon:hover {
+    transform: translateX(10px) translateY(-10px) rotate(15deg);
+    opacity: 0.15;
+  }
+}
+
+@media (max-width: 480px) {
+  .float-icon {
+    font-size: 1rem;
+    opacity: 0.06;
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}

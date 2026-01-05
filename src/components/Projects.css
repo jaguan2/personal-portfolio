@@ -193,10 +193,26 @@
   transform: scale(1.3);
 }
 
+/* Tablet */
 @media (max-width: 900px) {
+  #projects {
+    padding: 80px 4% 100px;
+  }
+
+  #projects h1 {
+    font-size: 2.4rem;
+    margin-bottom: 40px;
+  }
+
+  .slider-container {
+    gap: 20px;
+  }
+
   .slide {
     flex-direction: column;
     text-align: center;
+    padding: 30px;
+    gap: 30px;
   }
 
   .slide .description {
@@ -205,5 +221,134 @@
 
   .media-container {
     max-width: 100%;
+  }
+
+  .slider-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #projects {
+    padding: 60px 3% 80px;
+  }
+
+  #projects h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .slider-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .slide {
+    padding: 24px 20px;
+    gap: 24px;
+  }
+
+  .slide h2 {
+    font-size: 1.4rem;
+  }
+
+  .slide .technologies {
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+  }
+
+  .slide .description p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .media-container img,
+  .media-container video {
+    max-height: 250px;
+  }
+
+  .slider-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .slider-navigation {
+    margin-top: 30px;
+    gap: 12px;
+  }
+
+  .project-count {
+    font-size: 0.85rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  #projects .float-icon {
+    font-size: 1.2rem;
+    opacity: 0.4;
+  }
+}
+
+/* Small mobile - stack buttons below slide */
+@media (max-width: 480px) {
+  #projects {
+    padding: 50px 3% 60px;
+  }
+
+  #projects h1 {
+    font-size: 1.75rem;
+  }
+
+  .slider-container {
+    flex-direction: column;
+  }
+
+  .slide {
+    padding: 20px 16px;
+    order: 1;
+  }
+
+  .slider-btn {
+    order: 2;
+  }
+
+  .prev-btn {
+    order: 2;
+  }
+
+  .next-btn {
+    order: 3;
+  }
+
+  /* Place buttons in a row below the slide */
+  .slider-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .slide {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .slide h2 {
+    font-size: 1.25rem;
+  }
+
+  .slide .technologies {
+    font-size: 0.75rem;
+  }
+
+  .media-container img,
+  .media-container video {
+    max-height: 200px;
   }
 }

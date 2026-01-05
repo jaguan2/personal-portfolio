@@ -38,3 +38,63 @@
   color: rgba(200, 162, 122, 0.4);
   font-size: 0.8rem;
 }
+
+/* Tablet */
+@media (max-width: 768px) {
+  #footer {
+    padding: 50px 6% 35px;
+  }
+
+  .closing-message {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    gap: 16px;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #footer {
+    padding: 40px 5% 30px;
+  }
+
+  .closing-message {
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+    padding: 0 10px;
+  }
+
+  .footer-links {
+    gap: 14px;
+  }
+
+  .footer-links a {
+    font-size: 0.85rem;
+  }
+
+  .divider {
+    font-size: 0.7rem;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 400px) {
+  #footer {
+    padding: 35px 4% 25px;
+  }
+
+  .closing-message {
+    font-size: 0.9rem;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+  }
+}

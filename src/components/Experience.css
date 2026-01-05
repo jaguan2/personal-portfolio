@@ -154,10 +154,44 @@
   transform: scale(1.3);
 }
 
+/* Tablet */
+@media (max-width: 900px) {
+  #experience {
+    padding: 80px 4% 100px;
+  }
+
+  #experience h1 {
+    font-size: 2.4rem;
+    margin-bottom: 40px;
+  }
+
+  .experience-card {
+    padding: 24px 28px;
+  }
+
+  .experience-header h3 {
+    font-size: 1.15rem;
+  }
+}
+
+/* Mobile */
 @media (max-width: 600px) {
+  #experience {
+    padding: 60px 4% 80px;
+  }
+
+  #experience h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  #experience .container {
+    padding: 0 10px;
+  }
+
   .experience-header {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
   }
 
   .experience-meta {
@@ -165,6 +199,55 @@
   }
 
   .experience-card {
-    padding: 24px;
+    padding: 20px;
+    border-left-width: 3px;
+  }
+
+  .experience-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .company {
+    font-size: 0.95rem;
+  }
+
+  .period, .location {
+    font-size: 0.8rem;
+  }
+
+  .experience-details li {
+    font-size: 0.9rem;
+    padding-left: 16px;
+    line-height: 1.6;
+  }
+
+  .experience-details li::before {
+    width: 5px;
+    height: 5px;
+    top: 14px;
+  }
+
+  #experience .float-icon {
+    font-size: 1.2rem;
+    opacity: 0.4;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 400px) {
+  #experience {
+    padding: 50px 3% 60px;
+  }
+
+  #experience h1 {
+    font-size: 1.75rem;
+  }
+
+  .experience-card {
+    padding: 16px;
+  }
+
+  .experience-details li {
+    font-size: 0.85rem;
   }
 }
