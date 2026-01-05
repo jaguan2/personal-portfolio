@@ -18,14 +18,14 @@ function Header() {
             <h1>Hi, I'm Jason 👋</h1>
             <p>"Passion makes the impossible happen"</p>
             <div className="home-button">
-              <a href="https://www.linkedin.com/in/jaguan/" className="button" target="_blank" rel="noopener noreferrer">
+              <a href={resumePdf} className="button button-primary" download="Jason_Guan_Resume.pdf">
+                Download CV
+              </a>
+              <a href="https://www.linkedin.com/in/jaguan/" className="button button-secondary" target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
-              <a href="mailto:tpaguan@gmail.com" className="button">
+              <a href="mailto:tpaguan@gmail.com" className="button button-secondary">
                 Email
-              </a>
-              <a href={resumePdf} className="button" download="Jason_Guan_Resume.pdf">
-                Download CV
               </a>
             </div>
           </div>

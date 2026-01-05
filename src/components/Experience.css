@@ -119,13 +119,18 @@
 }
 
 .experience-details li {
-  color: rgba(245, 235, 224, 0.9);
+  color: rgba(245, 235, 224, 0.85);
   font-size: 0.95rem;
   line-height: 1.7;
   padding: 8px 0;
   padding-left: 20px;
   position: relative;
   transition: transform 0.2s ease;
+}
+
+.experience-details li strong {
+  color: #f5ebe0;
+  font-weight: 600;
 }
 
 .experience-details li:hover {

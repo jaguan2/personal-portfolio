@@ -7,9 +7,9 @@ const experiences = [
     location: 'Tampa, FL',
     period: 'March 2025 – Present',
     description: [
-      'Architected data-ingestion pipelines with AWS Lambda and EventBridge, processing 1,000+ daily contract notices from government sources.',
-      'Developed backend services for contract opportunity extraction using RESTful APIs.',
-      'Designed and optimized PostgreSQL database schemas with efficient indexing and relational integrity.'
+      { bold: 'Architected AWS Lambda pipelines', rest: ' with EventBridge, processing 1,000+ daily contract notices from government sources.' },
+      { bold: 'Developed backend services', rest: ' for contract opportunity extraction using RESTful APIs.' },
+      { bold: 'Designed PostgreSQL schemas', rest: ' with efficient indexing and relational integrity.' }
     ]
   },
   {
@@ -18,9 +18,9 @@ const experiences = [
     location: 'Warner Robins, GA',
     period: 'June 2024 – July 2024',
     description: [
-      'Led backend development for a full-stack management application centralizing metrics and sprint tracking for 10+ projects.',
-      'Containerized PostgreSQL database with Docker for scalable data handling used by 300+ engineers.',
-      'Developed 10+ CRUD REST APIs using Flask and SQLAlchemy.'
+      { bold: 'Led backend development', rest: ' for a full-stack management application centralizing metrics and sprint tracking for 10+ projects.' },
+      { bold: 'Containerized PostgreSQL with Docker', rest: ' for scalable data handling used by 300+ engineers.' },
+      { bold: 'Developed 10+ REST APIs', rest: ' using Flask and SQLAlchemy.' }
     ]
   }
 ]
@@ -50,7 +50,7 @@ function Experience() {
               </div>
               <ul className="experience-details">
                 {exp.description.map((item, index) => (
-                  <li key={index}>{item}</li>
+                  <li key={index}><strong>{item.bold}</strong>{item.rest}</li>
                 ))}
               </ul>
             </div>

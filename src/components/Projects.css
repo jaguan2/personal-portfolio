@@ -152,11 +152,25 @@
   box-shadow: 0 10px 30px rgba(111, 78, 55, 0.25);
 }
 
+.slider-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.project-count {
+  color: rgba(245, 235, 224, 0.6);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
 .slider-dots {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: 40px;
 }
 
 .dot {

@@ -78,15 +78,18 @@ function Projects() {
         </button>
       </div>
 
-      <div className="slider-dots">
-        {projects.map((_, index) => (
-          <button
-            key={index}
-            className={`dot ${index === currentIndex ? 'active' : ''}`}
-            onClick={() => goToSlide(index)}
-            aria-label={`Go to project ${index + 1}`}
-          />
-        ))}
+      <div className="slider-navigation">
+        <span className="project-count">{currentIndex + 1} / {projects.length}</span>
+        <div className="slider-dots">
+          {projects.map((_, index) => (
+            <button
+              key={index}
+              className={`dot ${index === currentIndex ? 'active' : ''}`}
+              onClick={() => goToSlide(index)}
+              aria-label={`Go to project ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   )
