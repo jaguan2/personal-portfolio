@@ -286,8 +286,12 @@
   }
 
   .dot {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .slider-dots {
+    gap: 14px;
   }
 
   #projects .float-icon {

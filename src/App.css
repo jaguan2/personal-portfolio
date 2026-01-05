@@ -163,6 +163,43 @@ html, body {
 @media (max-width: 768px) {
   a, button {
     min-height: 44px;
-    min-width: 44px;
+  }
+}
+
+/* Fix anchor scroll offset for fixed navbar */
+#header, #about, #experience, #skills, #projects {
+  scroll-margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+  #header, #about, #experience, #skills, #projects {
+    scroll-margin-top: 80px;
+  }
+}
+
+/* Reduce floating icons on small screens */
+@media (max-width: 600px) {
+  .float-icon {
+    opacity: 0.05;
+  }
+
+  .float-icon:hover {
+    opacity: 0.1;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .float-icon {
+    animation: none;
   }
 }
