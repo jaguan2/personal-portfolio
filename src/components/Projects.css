@@ -2,6 +2,28 @@
   padding: 60px 5% 80px;
   color: #4a3728;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#projects .float-icon:nth-child(1) {
+  left: 6%;
+  top: 15%;
+  animation-delay: 0s;
+  animation-name: twinkle;
+}
+
+#projects .float-icon:nth-child(2) {
+  left: 90%;
+  top: 60%;
+  animation-delay: 6s;
+}
+
+#projects .float-icon:nth-child(3) {
+  left: 12%;
+  top: 70%;
+  animation-delay: 11s;
+  animation-name: twinkle;
 }
 
 #projects h1 {

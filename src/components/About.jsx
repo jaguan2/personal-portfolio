@@ -4,6 +4,10 @@ import './About.css'
 function About() {
   return (
     <section id="about">
+      <div className="floating-elements">
+        <span className="float-icon">☕</span>
+        <span className="float-icon">⭐</span>
+      </div>
       <div className="container">
         <div className="about-box">
           <div className="row">

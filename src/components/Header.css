@@ -2,6 +2,61 @@
   width: 100%;
   min-height: 100vh;
   position: relative;
+  overflow: hidden;
+}
+
+/* Header-specific floating element positions */
+#header .float-icon:nth-child(1) {
+  left: 5%;
+  top: 25%;
+  animation-delay: 0s;
+}
+
+#header .float-icon:nth-child(2) {
+  left: 70%;
+  top: 12%;
+  animation-delay: 3s;
+  animation-name: twinkle;
+}
+
+#header .float-icon:nth-child(3) {
+  left: 45%;
+  top: 70%;
+  animation-delay: 6s;
+  animation-name: twinkle;
+}
+
+#header .float-icon:nth-child(4) {
+  left: 15%;
+  top: 65%;
+  animation-delay: 9s;
+}
+
+#header .float-icon:nth-child(5) {
+  left: 88%;
+  top: 55%;
+  animation-delay: 12s;
+  animation-name: twinkle;
+}
+
+#header .float-icon:nth-child(6) {
+  left: 55%;
+  top: 20%;
+  animation-delay: 4s;
+}
+
+#header .float-icon:nth-child(7) {
+  left: 92%;
+  top: 30%;
+  animation-delay: 8s;
+  animation-name: twinkle;
+}
+
+#header .float-icon:nth-child(8) {
+  left: 30%;
+  top: 85%;
+  animation-delay: 11s;
+  animation-name: twinkle;
 }
 
 .navbar {
@@ -73,15 +128,15 @@ nav ul li a:hover::after {
 }
 
 .container {
-  padding: 40px 10%;
+  padding: 80px 10% 40px;
 }
 
 .header-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 60vh;
-  gap: 2rem;
+  min-height: 70vh;
+  gap: 4rem;
 }
 
 .header-text {

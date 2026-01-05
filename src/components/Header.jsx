@@ -5,6 +5,13 @@ import './Header.css'
 function Header() {
   return (
     <header id="header">
+      <div className="floating-elements">
+        <span className="float-icon">☕</span>
+        <span className="float-icon">🌙</span>
+        <span className="float-icon">⭐</span>
+        <span className="float-icon">☕</span>
+        <span className="float-icon">⭐</span>
+      </div>
       <div className="navbar">
         <nav>
           <a href="#" className="logo">rkive.</a>

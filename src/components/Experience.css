@@ -1,6 +1,28 @@
 #experience {
   padding: 60px 5% 80px;
   color: #4a3728;
+  position: relative;
+  overflow: hidden;
+}
+
+#experience .float-icon:nth-child(1) {
+  left: 5%;
+  top: 20%;
+  animation-delay: 1s;
+  animation-name: twinkle;
+}
+
+#experience .float-icon:nth-child(2) {
+  left: 92%;
+  top: 40%;
+  animation-delay: 5s;
+}
+
+#experience .float-icon:nth-child(3) {
+  left: 85%;
+  top: 75%;
+  animation-delay: 10s;
+  animation-name: twinkle;
 }
 
 #experience h1 {

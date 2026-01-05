@@ -22,6 +22,10 @@ const skillsData = [
 function Skills() {
   return (
     <section id="skills">
+      <div className="floating-elements">
+        <span className="float-icon">☕</span>
+        <span className="float-icon">⭐</span>
+      </div>
       <div className="container">
         <h1>Skills</h1>
         <div className="skills-grid">

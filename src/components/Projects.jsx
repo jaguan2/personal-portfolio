@@ -43,6 +43,11 @@ function Projects() {
 
   return (
     <section id="projects">
+      <div className="floating-elements">
+        <span className="float-icon">🌙</span>
+        <span className="float-icon">☕</span>
+        <span className="float-icon">⭐</span>
+      </div>
       <h1>Projects</h1>
       <div className="slider-container">
         <button className="slider-btn prev-btn" onClick={goToPrevious} aria-label="Previous project">

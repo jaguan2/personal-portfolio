@@ -1,6 +1,21 @@
 #skills {
   padding: 60px 5% 80px;
   color: #4a3728;
+  position: relative;
+  overflow: hidden;
+}
+
+#skills .float-icon:nth-child(1) {
+  left: 7%;
+  top: 50%;
+  animation-delay: 4s;
+}
+
+#skills .float-icon:nth-child(2) {
+  left: 88%;
+  top: 25%;
+  animation-delay: 8s;
+  animation-name: twinkle;
 }
 
 #skills h1 {

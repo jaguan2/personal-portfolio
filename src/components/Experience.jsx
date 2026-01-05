@@ -28,6 +28,11 @@ const experiences = [
 function Experience() {
   return (
     <section id="experience">
+      <div className="floating-elements">
+        <span className="float-icon">🌙</span>
+        <span className="float-icon">☕</span>
+        <span className="float-icon">⭐</span>
+      </div>
       <div className="container">
         <h1>Experience</h1>
         <div className="experience-timeline">
