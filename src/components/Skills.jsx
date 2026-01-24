@@ -8,15 +8,19 @@ const skillsData = [
   },
   {
     category: 'Frameworks',
-    skills: ['Flask', 'SQLAlchemy', 'Node.js', 'Docker', 'React', 'Bootstrap']
+    skills: ['Flask', 'SQLAlchemy', 'Node.js', 'React', 'Bootstrap']
   },
   {
-    category: 'Technologies',
-    skills: ['AWS (Lambda, RDS)', 'PostgreSQL', 'SQLite', 'MySQL', 'Linux', 'Hadoop']
+    category: 'Backend & Cloud',
+    skills: ['REST APIs', 'AWS (Lambda, EventBridge, RDS, S3, EC2)', 'Auth0 (JWT/OAuth)', 'Stripe', 'Docker']
   },
   {
-    category: 'Development',
-    skills: ['Agile Methodologies', 'Scrum', 'Jira', 'Figma', 'Miro', 'UML']
+    category: 'Databases',
+    skills: ['PostgreSQL', 'MySQL', 'SQLite']
+  },
+  {
+    category: 'Tools',
+    skills: ['Git/GitHub', 'Linux', 'Jira', 'Figma', 'Notion']
   }
 ]
 

@@ -16,6 +16,11 @@
   --accent-hover: #ad837a;            /* hover state for soft */
   --accent-strong-hover: #68443c;     /* hover state for strong */
 
+  /* Leafy green accents */
+  --leaf: #4f6f52;                    /* muted sage */
+  --leaf-soft: rgba(79, 111, 82, 0.18);
+  --leaf-border: rgba(79, 111, 82, 0.28);
+
   /* Borders & shadows */
   --border: rgba(168, 124, 111, 0.25);
   --border-subtle: rgba(206, 170, 150, 0.4);
@@ -151,7 +156,7 @@ body {
 /* Focus states for accessibility */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--accent-soft);
+  outline: 2px solid var(--leaf);
   outline-offset: 2px;
 }
 

@@ -35,7 +35,12 @@ function Navbar() {
   return (
     <div className="navbar">
       <nav>
-        <a href="#header" className="logo" onClick={handleNavClick}>rkive.</a>
+        <a
+          href="#header"
+          className="logo"
+          onClick={handleNavClick}
+          data-tooltip="A place where I document and share my journey, cheers!"
+        >rkive.</a>
 
         <button
           className="menu-btn"

@@ -75,36 +75,13 @@
 .header-text {
   font-size: 30px;
   flex-basis: 50%;
-  color: #3d2c24;
-  animation: fadeInUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  color: #4a3830;
 }
 
 .header-text h1 {
   font-size: 60px;
   margin-top: 20px;
-  color: #3d2c24;
+  color: #4a3830;
   font-weight: 700;
   line-height: 1.1;
 }
@@ -120,7 +97,6 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  animation: slideInRight 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s both;
 }
 
 .header-image img {
@@ -141,7 +117,6 @@
   display: flex;
   gap: 1rem;
   margin-top: 25px;
-  animation: fadeInUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s both;
 }
 
 .button {
@@ -180,11 +155,10 @@
 }
 
 .button-secondary:hover {
-  background: var(--accent-soft);
-  border-color: var(--accent-hover);
+  border-color: var(--leaf);
   color: var(--text);
   transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(168, 124, 111, 0.25);
+  box-shadow: 0 0 0 4px var(--leaf-soft);
 }
 
 /* Tablet */

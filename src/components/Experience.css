@@ -61,7 +61,7 @@
 .experience-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
-  border-left-color: var(--accent);
+  border-left-color: var(--leaf);
 }
 
 .experience-header {
@@ -146,13 +146,13 @@
   top: 16px;
   width: 6px;
   height: 6px;
-  background: #a87c6f;
+  background: var(--accent);
   border-radius: 50%;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .experience-details li:hover::before {
-  background: #3d2c24;
+  background: var(--leaf);
   transform: scale(1.3);
 }
 

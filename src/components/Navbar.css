@@ -23,15 +23,54 @@ nav {
 }
 
 .logo {
+  position: relative;
+  font-family: 'Fredoka', sans-serif;
   color: var(--text);
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
   text-decoration: none;
-  transition: color 0.3s ease;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.logo:active {
+  transform: scale(0.97);
 }
 
 .logo:hover {
-  color: var(--accent);
+  color: var(--leaf);
+}
+
+/* Logo tooltip */
+.logo::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  padding: 10px 14px;
+  background: var(--surface-solid);
+  color: var(--text);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  white-space: nowrap;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px rgba(61, 44, 36, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  pointer-events: none;
+  z-index: 200;
+}
+
+.logo:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 /* Hamburger button - hidden by default on desktop */
@@ -78,7 +117,7 @@ nav {
   content: '';
   width: 0%;
   height: 2px;
-  background: var(--accent);
+  background: var(--leaf);
   position: absolute;
   left: 0;
   bottom: 0;
@@ -100,7 +139,7 @@ nav {
 
 .nav-links li a.active::after {
   width: 100%;
-  background: var(--accent);
+  background: var(--leaf);
 }
 
 /* Tablet */
@@ -125,7 +164,12 @@ nav {
   }
 
   .logo {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+  }
+
+  /* Hide tooltip on mobile */
+  .logo::after {
+    display: none;
   }
 
   /* Show hamburger button */
@@ -173,7 +217,7 @@ nav {
   }
 
   .nav-links li a.active {
-    background: rgba(168, 124, 111, 0.2);
+    background: var(--leaf-soft);
   }
 
   /* Remove underline effect on mobile dropdown */
@@ -189,7 +233,7 @@ nav {
   }
 
   .logo {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
 
   .menu-btn {
