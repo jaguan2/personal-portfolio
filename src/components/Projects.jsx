@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import twitterFeelImage from '../assets/TwitterFeel.JPG'
 import eduPortalVideo from '../assets/eduPortal.mp4'
+import iceCube from '../assets/ice-576352_1280.webp'
 import './Projects.css'
 
 const projects = [
@@ -104,9 +105,8 @@ function Projects() {
   return (
     <section id="projects">
       <div className="floating-elements">
-        <span className="float-icon">🌙</span>
-        <span className="float-icon">☕</span>
-        <span className="float-icon">⭐</span>
+        <img className="float-icon" src={iceCube} alt="" aria-hidden="true" />
+        <img className="float-icon" src={iceCube} alt="" aria-hidden="true" />
       </div>
       <h1>Projects</h1>
       <div

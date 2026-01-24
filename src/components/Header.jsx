@@ -1,16 +1,16 @@
 import heroImage from '../assets/hero.jpg'
 import resumePdf from '../assets/Jason_Resume.pdf'
+import iceCube from '../assets/ice-576352_1280.webp'
 import './Header.css'
 
 function Header() {
   return (
     <header id="header">
       <div className="floating-elements">
-        <span className="float-icon">☕</span>
-        <span className="float-icon">🌙</span>
-        <span className="float-icon">⭐</span>
-        <span className="float-icon">☕</span>
-        <span className="float-icon">⭐</span>
+        <img className="float-icon" src={iceCube} alt="" aria-hidden="true" />
+        <img className="float-icon" src={iceCube} alt="" aria-hidden="true" />
+        <img className="float-icon" src={iceCube} alt="" aria-hidden="true" />
+        <img className="float-icon" src={iceCube} alt="" aria-hidden="true" />
       </div>
       <div className="container">
         <div className="header-content">

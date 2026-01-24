@@ -1,6 +1,6 @@
 #experience {
   padding: 100px 5% 120px;
-  color: #f5ebe0;
+  color: #3d2c24;
   position: relative;
   overflow: hidden;
 }
@@ -28,7 +28,7 @@
 #experience h1 {
   text-align: center;
   margin-bottom: 50px;
-  color: #f5ebe0;
+  color: #3d2c24;
   font-size: 2.8rem;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -47,19 +47,21 @@
 }
 
 .experience-card {
-  background: rgba(60, 50, 40, 0.5);
-  border: 1px solid rgba(200, 162, 122, 0.25);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 28px 32px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-left: 4px solid rgba(200, 162, 122, 0.3);
+  border-left: 4px solid var(--accent-soft);
 }
 
 .experience-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
-  border-left-color: #c8a27a;
+  box-shadow: var(--shadow-hover);
+  border-left-color: var(--accent);
 }
 
 .experience-header {
@@ -71,7 +73,7 @@
 }
 
 .experience-header h3 {
-  color: #f5ebe0;
+  color: #3d2c24;
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 4px;
@@ -79,18 +81,18 @@
 }
 
 .experience-card:hover .experience-header h3 {
-  color: #c8a27a;
+  color: #a87c6f;
 }
 
 .company {
-  color: #c8a27a;
+  color: #a87c6f;
   font-size: 1.05rem;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .experience-card:hover .company {
-  color: #c8a27a;
+  color: #3d2c24;
 }
 
 .experience-meta {
@@ -100,14 +102,14 @@
 
 .period {
   display: block;
-  color: rgba(245, 235, 224, 0.7);
+  color: rgba(61, 44, 36, 0.75);
   font-size: 0.9rem;
   font-weight: 600;
 }
 
 .location {
   display: block;
-  color: rgba(245, 235, 224, 0.6);
+  color: rgba(61, 44, 36, 0.65);
   font-size: 0.85rem;
   margin-top: 2px;
 }
@@ -119,7 +121,7 @@
 }
 
 .experience-details li {
-  color: rgba(245, 235, 224, 0.85);
+  color: rgba(61, 44, 36, 0.9);
   font-size: 0.95rem;
   line-height: 1.7;
   padding: 8px 0;
@@ -129,7 +131,7 @@
 }
 
 .experience-details li strong {
-  color: #f5ebe0;
+  color: #3d2c24;
   font-weight: 600;
 }
 
@@ -144,13 +146,13 @@
   top: 16px;
   width: 6px;
   height: 6px;
-  background: #c8a27a;
+  background: #a87c6f;
   border-radius: 50%;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .experience-details li:hover::before {
-  background: #6f4e37;
+  background: #3d2c24;
   transform: scale(1.3);
 }
 
@@ -228,8 +230,8 @@
   }
 
   #experience .float-icon {
-    font-size: 1.2rem;
-    opacity: 0.4;
+    width: 30px;
+    opacity: 0.15;
   }
 }
 

@@ -1,3 +1,4 @@
+import iceCube from '../assets/ice-576352_1280.webp'
 import './Experience.css'
 
 const experiences = [
@@ -29,9 +30,8 @@ function Experience() {
   return (
     <section id="experience">
       <div className="floating-elements">
-        <span className="float-icon">🌙</span>
-        <span className="float-icon">☕</span>
-        <span className="float-icon">⭐</span>
+        <img className="float-icon" src={iceCube} alt="" aria-hidden="true" />
+        <img className="float-icon" src={iceCube} alt="" aria-hidden="true" />
       </div>
       <div className="container">
         <h1>Experience</h1>

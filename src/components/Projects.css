@@ -1,6 +1,6 @@
 #projects {
   padding: 100px 5% 120px;
-  color: #f5ebe0;
+  color: #3d2c24;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -28,7 +28,7 @@
 
 #projects h1 {
   margin-bottom: 50px;
-  color: #f5ebe0;
+  color: #3d2c24;
   font-size: 2.8rem;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -45,8 +45,8 @@
 }
 
 .slider-btn {
-  background: #6f4e37;
-  color: #fff;
+  background: var(--accent-strong);
+  color: var(--surface-solid);
   border: none;
   width: 50px;
   height: 50px;
@@ -61,9 +61,9 @@
 }
 
 .slider-btn:hover {
-  background: #c8a27a;
+  background: var(--accent-strong-hover);
   transform: scale(1.15);
-  box-shadow: 0 4px 15px rgba(200, 162, 122, 0.4);
+  box-shadow: 0 4px 15px rgba(61, 44, 36, 0.3);
 }
 
 .slider-btn:active {
@@ -73,10 +73,12 @@
 .slide {
   flex: 1;
   padding: 40px;
-  background: rgba(60, 50, 40, 0.5);
-  border: 1px solid rgba(200, 162, 122, 0.25);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow);
   display: flex;
   flex-direction: row;
   gap: 40px;
@@ -87,7 +89,7 @@
 
 .slide:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-hover);
 }
 
 .slide-content {
@@ -96,31 +98,31 @@
 
 .slide h2 {
   margin-bottom: 12px;
-  color: #f5ebe0;
+  color: #3d2c24;
   font-size: 1.75rem;
   transition: color 0.3s ease;
 }
 
 .slide:hover h2 {
-  color: #c8a27a;
+  color: #a87c6f;
 }
 
 .slide .technologies {
   margin-bottom: 20px;
-  color: #c8a27a;
+  color: #a87c6f;
   font-size: 0.9rem;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .slide:hover .technologies {
-  color: #c8a27a;
+  color: #3d2c24;
 }
 
 .slide .description {
   padding-left: 0;
   margin-bottom: 0;
-  color: rgba(245, 235, 224, 0.9);
+  color: rgba(61, 44, 36, 0.9);
   list-style: none;
 }
 
@@ -142,14 +144,14 @@
   max-height: 350px;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(111, 78, 55, 0.15);
+  box-shadow: 0 4px 15px rgba(61, 44, 36, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .media-container img:hover,
 .media-container video:hover {
   transform: scale(1.03);
-  box-shadow: 0 10px 30px rgba(111, 78, 55, 0.25);
+  box-shadow: 0 10px 30px rgba(61, 44, 36, 0.25);
 }
 
 .slider-navigation {
@@ -161,7 +163,7 @@
 }
 
 .project-count {
-  color: rgba(245, 235, 224, 0.6);
+  color: rgba(61, 44, 36, 0.7);
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -182,7 +184,7 @@
   min-height: 12px !important;
   max-height: 12px !important;
   border-radius: 999px;
-  background: rgba(200, 162, 122, 0.4);
+  background: #ceaa96;
   border: none;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
@@ -200,12 +202,12 @@
 }
 
 .dot:hover {
-  background: #c8a27a;
+  background: #a87c6f;
   transform: scale(1.2);
 }
 
 .dot.active {
-  background: #c8a27a;
+  background: #3d2c24;
   transform: scale(1.3);
 }
 
@@ -338,7 +340,8 @@
   }
 
   #projects .float-icon {
-    opacity: 0.05;
+    width: 30px;
+    opacity: 0.12;
   }
 }
 

@@ -1,3 +1,4 @@
+import iceCube from '../assets/ice-576352_1280.webp'
 import './Skills.css'
 
 const skillsData = [
@@ -23,8 +24,8 @@ function Skills() {
   return (
     <section id="skills">
       <div className="floating-elements">
-        <span className="float-icon">☕</span>
-        <span className="float-icon">⭐</span>
+        <img className="float-icon" src={iceCube} alt="" aria-hidden="true" />
+        <img className="float-icon" src={iceCube} alt="" aria-hidden="true" />
       </div>
       <div className="container">
         <h1>Skills</h1>
