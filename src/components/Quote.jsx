@@ -11,7 +11,7 @@ const quotes = [
     author: null
   },
   {
-    text: 'Only when it is dark enough can you see the stars. Let us fill the sky with the light of a billion brilliant stars.',
+    text: 'Only when it is dark enough can you see the stars.',
     author: 'Kamala Harris'
   },
   {
