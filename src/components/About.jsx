@@ -22,8 +22,8 @@ function About() {
               <h1>About Me</h1>
               <p>
                 I'm a Computer Science graduate from the University of South Florida, currently
-                serving as a Full Stack Developer Lead at DefTechLink—a startup platform connecting
-                defense innovation opportunities with industry, academia, and government partners.
+                serving as a Full Stack Developer Lead at DefTechLink, a startup connecting industry,
+                academia, and government partners to defense innovation opportunities.
               </p>
               <p>
                 My technical background includes full-stack development, cloud technologies (AWS),

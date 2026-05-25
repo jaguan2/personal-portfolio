@@ -112,11 +112,13 @@
   transition: box-shadow 0.3s ease, transform 0.3s ease, border-left-color 0.3s ease;
 }
 
-.slide:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-  border-left-color: var(--leaf-strong);
-  border-left-width: 6px;
+@media (hover: hover) {
+  .slide:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-left-color: var(--leaf-strong);
+    border-left-width: 6px;
+  }
 }
 
 .slide-content {
@@ -179,11 +181,13 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.media-container img:hover,
-.media-container video:hover {
-  transform: scale(1.03);
-  border-color: var(--leaf);
-  box-shadow: 0 12px 32px rgba(46, 31, 22, 0.34);
+@media (hover: hover) {
+  .media-container img:hover,
+  .media-container video:hover {
+    transform: scale(1.03);
+    border-color: var(--leaf);
+    box-shadow: 0 12px 32px rgba(46, 31, 22, 0.34);
+  }
 }
 
 .slider-navigation {
@@ -243,10 +247,10 @@
   transform: scale(1.3);
 }
 
-/* Tablet */
-@media (max-width: 900px) {
+/* Tablet — iPad landscape and below */
+@media (max-width: 1024px) {
   #projects {
-    padding: 80px 4% 100px;
+    padding: 80px 0 100px;
   }
 
   #projects h1 {
@@ -280,10 +284,14 @@
   }
 }
 
-/* Mobile - hide buttons, enable swipe/auto-play */
+/* Phone — iPad portrait and below: hide buttons, enable swipe/auto-play */
 @media (max-width: 768px) {
   #projects {
-    padding: 60px 4% 80px;
+    padding: 60px 0 80px;
+  }
+
+  #projects .container {
+    padding: 0 6%;
   }
 
   #projects h1 {
@@ -377,10 +385,10 @@
   }
 }
 
-/* Small mobile */
+/* Small phone */
 @media (max-width: 480px) {
   #projects {
-    padding: 50px 3% 60px;
+    padding: 50px 0 60px;
   }
 
   #projects h1 {

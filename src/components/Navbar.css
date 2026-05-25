@@ -67,7 +67,8 @@ nav {
   z-index: 200;
 }
 
-.logo:hover::after {
+.logo:hover::after,
+.logo:focus-visible::after {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -142,14 +143,14 @@ nav {
   background: var(--leaf);
 }
 
-/* Tablet */
-@media (max-width: 900px) {
+/* Tablet — iPad landscape and below */
+@media (max-width: 1024px) {
   nav {
-    padding: 14px 4%;
+    padding: 10px 4%;
   }
 
   .nav-links li {
-    margin: 0 12px;
+    margin: 0 14px;
   }
 
   .nav-links li a {
@@ -157,7 +158,7 @@ nav {
   }
 }
 
-/* Mobile - show hamburger, convert nav to dropdown */
+/* Phone — iPad portrait and below: show hamburger, convert nav to dropdown */
 @media (max-width: 768px) {
   nav {
     padding: 12px 4%;

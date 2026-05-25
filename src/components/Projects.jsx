@@ -102,6 +102,16 @@ function Projects() {
     }
   }
 
+  const onKeyDown = (e) => {
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault()
+      goToPrevious()
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault()
+      goToNext()
+    }
+  }
+
   const currentProject = projects[currentIndex]
 
   return (
@@ -115,9 +125,14 @@ function Projects() {
       <h1>Projects</h1>
       <div
         className="slider-container"
+        role="region"
+        aria-label="Projects carousel"
+        aria-roledescription="carousel"
+        tabIndex={0}
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
+        onKeyDown={onKeyDown}
       >
         {/* Hide buttons on mobile */}
         <button className="slider-btn prev-btn" onClick={goToPrevious} aria-label="Previous project">

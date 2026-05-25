@@ -10,12 +10,15 @@ import './App.css'
 function App() {
   return (
     <>
+      <a href="#main" className="skip-link">Skip to main content</a>
       <Navbar />
-      <Header />
-      <About />
-      <Experience />
-      <Skills />
-      <Projects />
+      <main id="main">
+        <Header />
+        <About />
+        <Experience />
+        <Skills />
+        <Projects />
+      </main>
       <Footer />
     </>
   )

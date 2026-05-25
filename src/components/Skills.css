@@ -90,14 +90,16 @@
   transition: transform 0.3s ease;
 }
 
-.skill-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-hover);
-  border-color: var(--leaf-border);
-}
+@media (hover: hover) {
+  .skill-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--leaf-border);
+  }
 
-.skill-card:hover::before {
-  transform: translateY(0);
+  .skill-card:hover::before {
+    transform: translateY(0);
+  }
 }
 
 .skill-card h3 {
@@ -150,17 +152,10 @@
   transform: scale(1.4);
 }
 
-/* Tablet */
-@media (max-width: 1100px) {
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-  }
-}
-
-@media (max-width: 900px) {
+/* Tablet — iPad landscape and below: 5 → 3 cols */
+@media (max-width: 1024px) {
   #skills {
-    padding: 80px 4% 100px;
+    padding: 80px 0 100px;
   }
 
   #skills h1 {
@@ -169,32 +164,28 @@
   }
 
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
   }
 
   .skill-card {
-    padding: 20px;
-  }
-
-  .skill-card h3 {
-    font-size: 1rem;
+    padding: 22px;
   }
 }
 
-/* Mobile */
-@media (max-width: 600px) {
+/* Phone — iPad portrait and below: 3 → 2 cols */
+@media (max-width: 768px) {
   #skills {
-    padding: 60px 4% 80px;
+    padding: 60px 0 80px;
+  }
+
+  #skills .container {
+    padding: 0 6%;
   }
 
   #skills h1 {
     font-size: 2rem;
     margin-bottom: 30px;
-  }
-
-  #skills .container {
-    padding: 0 10px;
   }
 
   .skills-grid {
@@ -203,36 +194,31 @@
   }
 
   .skill-card {
-    padding: 16px;
+    padding: 18px;
   }
 
   .skill-card h3 {
-    font-size: 0.9rem;
-    margin-bottom: 12px;
+    font-size: 1rem;
+    margin-bottom: 14px;
     padding-bottom: 10px;
   }
 
   .skill-card li {
-    font-size: 0.8rem;
+    font-size: 0.88rem;
     padding: 5px 0;
-    gap: 6px;
+    gap: 8px;
   }
 
   .skill-card li::before {
-    width: 5px;
-    height: 5px;
-  }
-
-  #skills .float-icon {
-    width: 30px;
-    opacity: 0.15;
+    width: 6px;
+    height: 6px;
   }
 }
 
-/* Small mobile */
-@media (max-width: 400px) {
+/* Small phone — 2 → 1 col */
+@media (max-width: 480px) {
   #skills {
-    padding: 50px 3% 60px;
+    padding: 50px 0 60px;
   }
 
   #skills h1 {
@@ -245,7 +231,7 @@
   }
 
   .skill-card {
-    padding: 16px 14px;
+    padding: 18px 16px;
   }
 
   .skill-card h3 {

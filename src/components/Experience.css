@@ -79,11 +79,13 @@
   border-left: 4px solid var(--leaf);
 }
 
-.experience-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-  border-left-color: var(--leaf-strong);
-  border-left-width: 6px;
+@media (hover: hover) {
+  .experience-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-left-color: var(--leaf-strong);
+    border-left-width: 6px;
+  }
 }
 
 .experience-header {
@@ -181,10 +183,10 @@
   transform: scale(1.4);
 }
 
-/* Tablet */
-@media (max-width: 900px) {
+/* Tablet — iPad landscape and below */
+@media (max-width: 1024px) {
   #experience {
-    padding: 80px 4% 100px;
+    padding: 80px 0 100px;
   }
 
   #experience h1 {
@@ -197,23 +199,23 @@
   }
 
   .experience-header h3 {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
 }
 
-/* Mobile */
-@media (max-width: 600px) {
+/* Phone — iPad portrait and below */
+@media (max-width: 768px) {
   #experience {
-    padding: 60px 4% 80px;
+    padding: 60px 0 80px;
+  }
+
+  #experience .container {
+    padding: 0 6%;
   }
 
   #experience h1 {
     font-size: 2rem;
     margin-bottom: 30px;
-  }
-
-  #experience .container {
-    padding: 0 10px;
   }
 
   .experience-header {
@@ -226,7 +228,7 @@
   }
 
   .experience-card {
-    padding: 20px;
+    padding: 22px;
     border-left-width: 3px;
   }
 
@@ -243,27 +245,22 @@
   }
 
   .experience-details li {
-    font-size: 0.9rem;
-    padding-left: 16px;
+    font-size: 0.92rem;
+    padding-left: 18px;
     line-height: 1.6;
   }
 
   .experience-details li::before {
-    width: 5px;
-    height: 5px;
-    top: 14px;
-  }
-
-  #experience .float-icon {
-    width: 30px;
-    opacity: 0.15;
+    width: 6px;
+    height: 6px;
+    top: 15px;
   }
 }
 
-/* Small mobile */
-@media (max-width: 400px) {
+/* Small phone */
+@media (max-width: 480px) {
   #experience {
-    padding: 50px 3% 60px;
+    padding: 50px 0 60px;
   }
 
   #experience h1 {
@@ -271,10 +268,11 @@
   }
 
   .experience-card {
-    padding: 16px;
+    padding: 18px 16px;
   }
 
   .experience-details li {
     font-size: 0.85rem;
+    padding-left: 16px;
   }
 }

@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './Navbar.css'
 
 function Navbar() {
   const [activeSection, setActiveSection] = useState('header')
   const [menuOpen, setMenuOpen] = useState(false)
+  const menuBtnRef = useRef(null)
 
   useEffect(() => {
     const sections = ['header', 'about', 'experience', 'skills', 'projects']
@@ -30,6 +31,18 @@ function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    if (!menuOpen) return
+    const handleKey = (e) => {
+      if (e.key === 'Escape') {
+        setMenuOpen(false)
+        menuBtnRef.current?.focus()
+      }
+    }
+    window.addEventListener('keydown', handleKey)
+    return () => window.removeEventListener('keydown', handleKey)
+  }, [menuOpen])
+
   const handleNavClick = () => setMenuOpen(false)
 
   return (
@@ -39,19 +52,21 @@ function Navbar() {
           href="#header"
           className="logo"
           onClick={handleNavClick}
-          data-tooltip="A place where I document and share my journey, cheers!"
+          data-tooltip="A space where I archive and share my journey, wherever it takes me."
         >rkive.</a>
 
         <button
+          ref={menuBtnRef}
           className="menu-btn"
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
+          aria-controls="nav-menu"
           onClick={() => setMenuOpen(v => !v)}
         >
           {menuOpen ? '✕' : '☰'}
         </button>
 
-        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+        <ul id="nav-menu" className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <li><a href="#header" className={activeSection === 'header' ? 'active' : ''} onClick={handleNavClick}>Home</a></li>
           <li><a href="#about" className={activeSection === 'about' ? 'active' : ''} onClick={handleNavClick}>About</a></li>
           <li><a href="#experience" className={activeSection === 'experience' ? 'active' : ''} onClick={handleNavClick}>Experience</a></li>

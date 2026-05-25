@@ -157,10 +157,12 @@
   transition: transform 0.5s ease, box-shadow 0.5s ease, border-radius 0.6s ease;
 }
 
-.header-image img:hover {
-  transform: scale(1.03) rotate(-1deg);
-  border-radius: 50% 50% 52% 48% / 56% 44% 56% 44%;
-  box-shadow: 0 22px 52px rgba(59, 42, 30, 0.32);
+@media (hover: hover) {
+  .header-image img:hover {
+    transform: scale(1.03) rotate(-1deg);
+    border-radius: 50% 50% 52% 48% / 56% 44% 56% 44%;
+    box-shadow: 0 22px 52px rgba(59, 42, 30, 0.32);
+  }
 }
 
 .home-button {
@@ -213,8 +215,8 @@
   box-shadow: 0 0 0 4px var(--leaf-soft);
 }
 
-/* Tablet */
-@media (max-width: 900px) {
+/* Tablet — iPad landscape and below */
+@media (max-width: 1024px) {
   #header {
     padding: 96px 18px 18px;
   }
