@@ -64,7 +64,7 @@ function Quote() {
         <span className="quote-label">today's pour</span>
         <span className="quote-divider" aria-hidden="true" />
       </div>
-      <blockquote className="quote-text">
+      <blockquote className="quote-text reveal">
         <p>&ldquo;{todaysQuote.text}&rdquo;</p>
         {todaysQuote.author && (
           <cite className="quote-author">— {todaysQuote.author}</cite>

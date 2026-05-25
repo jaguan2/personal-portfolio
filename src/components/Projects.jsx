@@ -124,7 +124,7 @@ function Projects() {
       <div className="container">
       <h1>Projects</h1>
       <div
-        className="slider-container"
+        className="slider-container reveal"
         role="region"
         aria-label="Projects carousel"
         aria-roledescription="carousel"

@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Header from './components/Header'
 import About from './components/About'
@@ -9,6 +10,61 @@ import Footer from './components/Footer'
 import './App.css'
 
 function App() {
+  useEffect(() => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduced) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+            const cleanup = () => {
+              entry.target.classList.remove('reveal', 'visible')
+              entry.target.removeEventListener('transitionend', cleanup)
+            }
+            entry.target.addEventListener('transitionend', cleanup)
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -8% 0px' }
+    )
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el))
+
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduced) return
+
+    const branches = Array.from(document.querySelectorAll('.float-icon[class*="branch-"]'))
+    if (branches.length === 0) return
+
+    let rafId = null
+    const handleScroll = () => {
+      if (rafId) return
+      rafId = requestAnimationFrame(() => {
+        const scrollY = window.scrollY
+        branches.forEach((el, i) => {
+          const sway = Math.sin((scrollY + i * 90) / 240) * 4
+          el.style.setProperty('--sway', `${sway.toFixed(2)}deg`)
+        })
+        rafId = null
+      })
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (rafId) cancelAnimationFrame(rafId)
+    }
+  }, [])
+
   return (
     <>
       <a href="#main" className="skip-link">Skip to main content</a>

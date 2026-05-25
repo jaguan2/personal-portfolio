@@ -37,8 +37,12 @@ function Skills() {
       <div className="container">
         <h1>Skills</h1>
         <div className="skills-grid">
-          {skillsData.map((item) => (
-            <div key={item.category} className="skill-card">
+          {skillsData.map((item, index) => (
+            <div
+              key={item.category}
+              className="skill-card reveal"
+              style={{ '--reveal-delay': `${index * 80}ms` }}
+            >
               <h3>{item.category}</h3>
               <ul>
                 {item.skills.map((skill) => (

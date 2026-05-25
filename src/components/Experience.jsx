@@ -39,8 +39,12 @@ function Experience() {
       <div className="container">
         <h1>Experience</h1>
         <div className="experience-timeline">
-          {experiences.map((exp) => (
-            <div key={exp.company} className="experience-card">
+          {experiences.map((exp, index) => (
+            <div
+              key={exp.company}
+              className="experience-card reveal"
+              style={{ '--reveal-delay': `${index * 100}ms` }}
+            >
               <div className="experience-header">
                 <div>
                   <h3>{exp.title}</h3>

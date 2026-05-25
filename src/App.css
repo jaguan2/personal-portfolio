@@ -144,11 +144,13 @@ body {
   }
 }
 
-/* Scroll reveal animations */
+/* Scroll reveal animations — IntersectionObserver-driven */
 .reveal {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(20px);
+  transition: opacity 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94) var(--reveal-delay, 0s),
+              transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94) var(--reveal-delay, 0s);
+  will-change: opacity, transform;
 }
 
 .reveal.visible {

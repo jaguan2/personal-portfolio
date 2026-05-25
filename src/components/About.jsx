@@ -13,7 +13,7 @@ function About() {
         <img className="float-icon leaf-1" src={leafLine} alt="" aria-hidden="true" />
       </div>
       <div className="container">
-        <div className="about-box">
+        <div className="about-box reveal">
           <div className="row">
             <div className="about-col-1">
               <img src={aboutImage} alt="Jason at USF" />

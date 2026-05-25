@@ -12,7 +12,8 @@
   top: auto;
   opacity: 0.18;
   animation: none;
-  transform: rotate(168deg);
+  transform: rotate(calc(168deg + var(--sway, 0deg)));
+  transition: transform 0.4s ease-out;
 }
 
 #skills .sprig-tr {
