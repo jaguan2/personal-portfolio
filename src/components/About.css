@@ -1,21 +1,38 @@
 #about {
   padding: 100px 0 120px;
-  color: #3d2c24;
+  color: var(--text);
   position: relative;
   overflow: hidden;
 }
 
-#about .float-icon:nth-child(1) {
-  left: 8%;
-  top: 30%;
-  animation-delay: 2s;
+#about .branch-tl {
+  width: 110px;
+  left: 2%;
+  top: 4%;
+  opacity: 0.18;
+  animation: none;
+  transform: rotate(-14deg);
 }
 
-#about .float-icon:nth-child(2) {
-  left: 90%;
-  top: 60%;
+#about .sprig-br {
+  width: 80px;
+  right: 3%;
+  bottom: 8%;
+  left: auto;
+  top: auto;
+  opacity: 0.18;
+  animation: floatUp 18s ease-in-out infinite;
+  animation-delay: 4s;
+  transform: scaleX(-1);
+}
+
+#about .leaf-1 {
+  width: 32px;
+  left: 8%;
+  top: 70%;
+  opacity: 0.16;
+  animation: twinkle 14s ease-in-out infinite;
   animation-delay: 7s;
-  animation-name: twinkle;
 }
 
 #about .container {
@@ -24,12 +41,24 @@
 
 .about-box {
   background: var(--surface);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 20px;
   padding: 48px;
   box-shadow: var(--shadow);
+  position: relative;
+}
+
+.about-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 4px;
+  background: var(--leaf);
+  border-radius: 20px 0 12px 0;
 }
 
 .row {
@@ -47,14 +76,16 @@
 
 .about-col-1 img {
   width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(61, 44, 36, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 14px;
+  border: 3px solid var(--surface-solid);
+  box-shadow: 0 10px 30px rgba(46, 31, 22, 0.28);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .about-col-1 img:hover {
   transform: scale(1.03);
-  box-shadow: 0 12px 40px rgba(61, 44, 36, 0.25);
+  border-color: var(--leaf);
+  box-shadow: 0 14px 40px rgba(46, 31, 22, 0.34);
 }
 
 .about-col-2 {
@@ -64,15 +95,28 @@
 
 .about-col-2 h1 {
   margin-bottom: 24px;
-  color: #3d2c24;
+  color: var(--text);
+  font-family: 'Fredoka', sans-serif;
   font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  position: relative;
+  display: inline-block;
+}
+
+.about-col-2 h1::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--leaf);
+  border-radius: 2px;
+  margin-top: 8px;
 }
 
 .about-col-2 p {
   line-height: 1.7;
-  color: rgba(61, 44, 36, 0.9);
+  color: rgba(46, 31, 22, 0.88);
   margin-bottom: 15px;
   font-size: 1rem;
   max-width: 65ch;

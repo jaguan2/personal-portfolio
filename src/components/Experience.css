@@ -1,37 +1,60 @@
 #experience {
   padding: 100px 5% 120px;
-  color: #3d2c24;
+  color: var(--text);
   position: relative;
   overflow: hidden;
 }
 
-#experience .float-icon:nth-child(1) {
-  left: 5%;
-  top: 20%;
-  animation-delay: 1s;
-  animation-name: twinkle;
+#experience .branch-tr {
+  width: 110px;
+  right: 2%;
+  top: 4%;
+  left: auto;
+  opacity: 0.18;
+  animation: none;
+  transform: scaleX(-1) rotate(-14deg);
 }
 
-#experience .float-icon:nth-child(2) {
-  left: 92%;
-  top: 40%;
-  animation-delay: 5s;
+#experience .sprig-bl {
+  width: 80px;
+  left: 3%;
+  bottom: 6%;
+  top: auto;
+  opacity: 0.18;
+  animation: floatUp 18s ease-in-out infinite;
+  animation-delay: 6s;
 }
 
-#experience .float-icon:nth-child(3) {
-  left: 85%;
-  top: 75%;
-  animation-delay: 10s;
-  animation-name: twinkle;
+#experience .leaf-1 {
+  width: 30px;
+  right: 8%;
+  bottom: 18%;
+  left: auto;
+  top: auto;
+  opacity: 0.16;
+  animation: twinkle 13s ease-in-out infinite;
+  animation-delay: 3s;
 }
 
 #experience h1 {
   text-align: center;
   margin-bottom: 50px;
-  color: #3d2c24;
+  color: var(--text);
+  font-family: 'Fredoka', sans-serif;
   font-size: 2.8rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  position: relative;
+}
+
+#experience h1::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: var(--leaf);
+  border-radius: 2px;
+  margin: 12px auto 0;
 }
 
 #experience .container {
@@ -48,20 +71,21 @@
 
 .experience-card {
   background: var(--surface);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 28px 32px;
   box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-left: 4px solid var(--accent-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
+  border-left: 4px solid var(--leaf);
 }
 
 .experience-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
-  border-left-color: var(--leaf);
+  border-left-color: var(--leaf-strong);
+  border-left-width: 6px;
 }
 
 .experience-header {
@@ -73,26 +97,26 @@
 }
 
 .experience-header h3 {
-  color: #3d2c24;
-  font-size: 1.25rem;
+  color: var(--text);
+  font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 4px;
   transition: color 0.3s ease;
 }
 
 .experience-card:hover .experience-header h3 {
-  color: #a87c6f;
+  color: var(--leaf-strong);
 }
 
 .company {
-  color: #a87c6f;
+  color: var(--accent-strong);
   font-size: 1.05rem;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .experience-card:hover .company {
-  color: #3d2c24;
+  color: var(--text);
 }
 
 .experience-meta {
@@ -101,17 +125,20 @@
 }
 
 .period {
-  display: block;
-  color: rgba(61, 44, 36, 0.75);
-  font-size: 0.9rem;
+  display: inline-block;
+  color: var(--leaf-strong);
+  background: var(--leaf-soft);
+  font-size: 0.85rem;
   font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
 }
 
 .location {
   display: block;
-  color: rgba(61, 44, 36, 0.65);
+  color: var(--text-subtle);
   font-size: 0.85rem;
-  margin-top: 2px;
+  margin-top: 6px;
 }
 
 .experience-details {
@@ -121,17 +148,17 @@
 }
 
 .experience-details li {
-  color: rgba(61, 44, 36, 0.9);
+  color: rgba(46, 31, 22, 0.88);
   font-size: 0.95rem;
   line-height: 1.7;
   padding: 8px 0;
-  padding-left: 20px;
+  padding-left: 22px;
   position: relative;
   transition: transform 0.2s ease;
 }
 
 .experience-details li strong {
-  color: #3d2c24;
+  color: var(--text);
   font-weight: 600;
 }
 
@@ -143,17 +170,17 @@
   content: '';
   position: absolute;
   left: 0;
-  top: 16px;
-  width: 6px;
-  height: 6px;
-  background: var(--accent);
+  top: 15px;
+  width: 8px;
+  height: 8px;
+  background: var(--leaf);
   border-radius: 50%;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .experience-details li:hover::before {
-  background: var(--leaf);
-  transform: scale(1.3);
+  background: var(--leaf-strong);
+  transform: scale(1.4);
 }
 
 /* Tablet */

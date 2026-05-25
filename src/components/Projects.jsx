@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
 import twitterFeelImage from '../assets/TwitterFeel.JPG'
 import eduPortalVideo from '../assets/eduPortal.mp4'
-import iceCube from '../assets/ice-576352_1280.webp'
+import coffeeBranch from '../assets/coffee-branch.svg'
+import coffeeSprig from '../assets/coffee-sprig.svg'
+import leafLine from '../assets/leaf-line.svg'
 import './Projects.css'
 
 const projects = [
@@ -105,8 +107,9 @@ function Projects() {
   return (
     <section id="projects">
       <div className="floating-elements">
-        <img className="float-icon" src={iceCube} alt="" aria-hidden="true" />
-        <img className="float-icon" src={iceCube} alt="" aria-hidden="true" />
+        <img className="float-icon branch-br" src={coffeeBranch} alt="" aria-hidden="true" />
+        <img className="float-icon sprig-tl" src={coffeeSprig} alt="" aria-hidden="true" />
+        <img className="float-icon leaf-1" src={leafLine} alt="" aria-hidden="true" />
       </div>
       <h1>Projects</h1>
       <div

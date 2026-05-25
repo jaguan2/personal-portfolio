@@ -1,31 +1,34 @@
-/* Design tokens - color ramp system */
+/* Design tokens - airy cream cafe palette (white-forward, dark brown accents) */
 :root {
   /* Base colors */
-  --bg: #B18F6A;                      /* caramel */
-  --surface: rgba(239, 209, 179, 0.88); /* cream, slightly see-through */
-  --surface-solid: #efd1b3;           /* cream solid */
-  --footer: #ceaa96;                  /* medium warm tone */
-  --text: #3d2c24;                    /* espresso */
-  --text-muted: rgba(61, 44, 36, 0.78);
-  --text-subtle: rgba(61, 44, 36, 0.65);
+  --bg: #F4EADA;                      /* warm cream page background */
+  --bg-warm: #EFE2CC;                 /* slightly deeper cream for section variation */
+  --surface: rgba(255, 253, 248, 0.95); /* near-white card, faint warm tint */
+  --surface-solid: #FFFDF8;           /* near-white solid */
+  --footer: #2E1F16;                  /* deep espresso for the grounding cap */
+  --text: #3B2A1E;                    /* warm dark brown (body & headings) */
+  --text-muted: rgba(59, 42, 30, 0.78);
+  --text-subtle: rgba(59, 42, 30, 0.60);
 
-  /* Accent ramp */
-  --accent: #a87c6f;                  /* dusty rose (base) */
-  --accent-soft: #b89288;             /* lighter accent for big fills */
-  --accent-strong: #7a5248;           /* darker accent for buttons */
-  --accent-hover: #ad837a;            /* hover state for soft */
-  --accent-strong-hover: #68443c;     /* hover state for strong */
+  /* Warm brown ramp — primary action / CTA color */
+  --accent: #A07956;                  /* caramel mid */
+  --accent-soft: #C9A98C;             /* light caramel */
+  --accent-strong: #5C3D24;           /* dark brown CTA fill */
+  --accent-hover: #8B6648;            /* caramel hover */
+  --accent-strong-hover: #3F2A19;     /* deepest brown */
 
-  /* Leafy green accents */
-  --leaf: #4f6f52;                    /* muted sage */
-  --leaf-soft: rgba(79, 111, 82, 0.18);
-  --leaf-border: rgba(79, 111, 82, 0.28);
+  /* Sage leaf ramp — secondary accent (underlines, borders, motifs) */
+  --leaf: #6F8A6C;                    /* warmer sage that sits on cream */
+  --leaf-strong: #4F6F52;             /* deeper sage for hover */
+  --leaf-hover: #5C7E60;
+  --leaf-soft: rgba(79, 111, 82, 0.14);
+  --leaf-border: rgba(79, 111, 82, 0.30);
 
   /* Borders & shadows */
-  --border: rgba(168, 124, 111, 0.25);
-  --border-subtle: rgba(206, 170, 150, 0.4);
-  --shadow: 0 8px 32px rgba(61, 44, 36, 0.08);
-  --shadow-hover: 0 12px 40px rgba(61, 44, 36, 0.15);
+  --border: rgba(92, 61, 36, 0.14);
+  --border-subtle: rgba(168, 130, 109, 0.22);
+  --shadow: 0 10px 28px rgba(59, 42, 30, 0.08);
+  --shadow-hover: 0 16px 40px rgba(59, 42, 30, 0.14);
 }
 
 * {
@@ -106,38 +109,38 @@ body {
 
 .float-icon {
   position: absolute;
-  width: 40px;
+  width: 44px;
   height: auto;
-  opacity: 0.15;
-  animation: floatUp 15s ease-in-out infinite;
+  opacity: 0.18;
+  animation: floatUp 16s ease-in-out infinite;
   pointer-events: auto;
   cursor: default;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  filter: drop-shadow(0 2px 4px rgba(61, 44, 36, 0.1));
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  filter: drop-shadow(0 3px 6px rgba(59, 42, 30, 0.10));
 }
 
 .float-icon:hover {
-  transform: translateX(15px) translateY(-15px) rotate(25deg);
-  opacity: 0.25;
+  transform: translateX(8px) translateY(-10px) rotate(-16deg);
+  opacity: 0.35;
 }
 
 @keyframes floatUp {
   0%, 100% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0) rotate(-6deg);
   }
   50% {
-    transform: translateY(-20px) rotate(10deg);
+    transform: translateY(-24px) rotate(8deg);
   }
 }
 
 @keyframes twinkle {
   0%, 100% {
-    transform: scale(1) rotate(0deg);
-    opacity: 0.25;
+    transform: scale(1) rotate(-8deg);
+    opacity: 0.22;
   }
   50% {
-    transform: scale(1.2) rotate(15deg);
-    opacity: 0.4;
+    transform: scale(1.15) rotate(12deg);
+    opacity: 0.38;
   }
 }
 

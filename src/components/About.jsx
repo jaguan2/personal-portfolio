@@ -1,13 +1,16 @@
 import aboutImage from '../assets/about.jpg'
-import iceCube from '../assets/ice-576352_1280.webp'
+import coffeeBranch from '../assets/coffee-branch.svg'
+import coffeeSprig from '../assets/coffee-sprig.svg'
+import leafLine from '../assets/leaf-line.svg'
 import './About.css'
 
 function About() {
   return (
     <section id="about">
       <div className="floating-elements">
-        <img className="float-icon" src={iceCube} alt="" aria-hidden="true" />
-        <img className="float-icon" src={iceCube} alt="" aria-hidden="true" />
+        <img className="float-icon branch-tl" src={coffeeBranch} alt="" aria-hidden="true" />
+        <img className="float-icon sprig-br" src={coffeeSprig} alt="" aria-hidden="true" />
+        <img className="float-icon leaf-1" src={leafLine} alt="" aria-hidden="true" />
       </div>
       <div className="container">
         <div className="about-box">
