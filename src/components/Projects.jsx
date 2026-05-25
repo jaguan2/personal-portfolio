@@ -111,6 +111,7 @@ function Projects() {
         <img className="float-icon sprig-tl" src={coffeeSprig} alt="" aria-hidden="true" />
         <img className="float-icon leaf-1" src={leafLine} alt="" aria-hidden="true" />
       </div>
+      <div className="container">
       <h1>Projects</h1>
       <div
         className="slider-container"
@@ -159,6 +160,7 @@ function Projects() {
             />
           ))}
         </div>
+      </div>
       </div>
     </section>
   )

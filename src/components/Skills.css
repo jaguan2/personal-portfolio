@@ -1,5 +1,5 @@
 #skills {
-  padding: 100px 5% 120px;
+  padding: 100px 0 120px;
   color: var(--text);
   position: relative;
   overflow: hidden;
@@ -56,9 +56,7 @@
 }
 
 #skills .container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10%;
 }
 
 .skills-grid {

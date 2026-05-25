@@ -1,9 +1,13 @@
 #projects {
-  padding: 100px 5% 120px;
+  padding: 100px 0 120px;
   color: var(--text);
   text-align: center;
   position: relative;
   overflow: hidden;
+}
+
+#projects .container {
+  padding: 0 10%;
 }
 
 #projects .branch-br {
@@ -60,8 +64,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
   gap: 30px;
 }
 
