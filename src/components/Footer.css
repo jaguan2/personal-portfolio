@@ -7,7 +7,7 @@
 }
 
 .closing-message {
-  color: rgba(232, 212, 181, 0.85);
+  color: rgba(255, 253, 248, 0.85);
   font-size: 1rem;
   font-style: italic;
   margin-bottom: 18px;
@@ -36,7 +36,7 @@
 }
 
 .divider {
-  color: rgba(232, 212, 181, 0.35);
+  color: rgba(255, 253, 248, 0.35);
   font-size: 0.8rem;
 }
 

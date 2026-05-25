@@ -1,20 +1,20 @@
 /* Design tokens - airy cream cafe palette (white-forward, dark brown accents) */
 :root {
   /* Base colors */
-  --bg: #F4EADA;                      /* warm cream page background */
-  --bg-warm: #EFE2CC;                 /* slightly deeper cream for section variation */
+  --bg: #FEECC1;                      /* buttery cream page background */
+  --bg-warm: #F5DDA8;                 /* slightly deeper cream for section variation */
   --surface: rgba(255, 253, 248, 0.95); /* near-white card, faint warm tint */
   --surface-solid: #FFFDF8;           /* near-white solid */
-  --footer: #2E1F16;                  /* deep espresso for the grounding cap */
-  --text: #3B2A1E;                    /* warm dark brown (body & headings) */
-  --text-muted: rgba(59, 42, 30, 0.78);
-  --text-subtle: rgba(59, 42, 30, 0.60);
+  --footer: #2E2721;                  /* deep espresso for the grounding cap */
+  --text: #2E2721;                    /* warm dark brown (body & headings) */
+  --text-muted: rgba(46, 39, 33, 0.78);
+  --text-subtle: rgba(46, 39, 33, 0.60);
 
   /* Warm brown ramp — primary action / CTA color */
-  --accent: #A07956;                  /* caramel mid */
-  --accent-soft: #C9A98C;             /* light caramel */
-  --accent-strong: #5C3D24;           /* dark brown CTA fill */
-  --accent-hover: #8B6648;            /* caramel hover */
+  --accent: #BA8F68;                  /* caramel mid */
+  --accent-soft: #D1AB7F;             /* light caramel */
+  --accent-strong: #5C3D24;           /* dark brown CTA fill (kept for punch) */
+  --accent-hover: #7C634A;            /* mid-brown hover */
   --accent-strong-hover: #3F2A19;     /* deepest brown */
 
   /* Sage leaf ramp — secondary accent (underlines, borders, motifs) */
@@ -26,9 +26,9 @@
 
   /* Borders & shadows */
   --border: rgba(92, 61, 36, 0.14);
-  --border-subtle: rgba(168, 130, 109, 0.22);
-  --shadow: 0 10px 28px rgba(59, 42, 30, 0.08);
-  --shadow-hover: 0 16px 40px rgba(59, 42, 30, 0.14);
+  --border-subtle: rgba(186, 143, 104, 0.25);
+  --shadow: 0 10px 28px rgba(46, 39, 33, 0.08);
+  --shadow-hover: 0 16px 40px rgba(46, 39, 33, 0.14);
 }
 
 * {
