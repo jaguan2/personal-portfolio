@@ -1,0 +1,133 @@
+#quote {
+  padding: 80px 0 100px;
+  text-align: center;
+  color: var(--text);
+  position: relative;
+}
+
+.quote-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  color: var(--leaf-strong);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.quote-divider {
+  display: inline-block;
+  width: 64px;
+  height: 1px;
+  background: var(--leaf-border);
+}
+
+.quote-label {
+  white-space: nowrap;
+}
+
+.quote-text {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 6%;
+}
+
+.quote-text p {
+  font-family: 'Lora', Georgia, serif;
+  font-style: normal;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0 0 16px;
+  white-space: pre-line;
+}
+
+.quote-author {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--accent-strong);
+  letter-spacing: 0.04em;
+}
+
+.closing-message {
+  margin-top: 56px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* Tablet — iPad landscape and below */
+@media (max-width: 1024px) {
+  #quote {
+    padding: 70px 0 90px;
+  }
+
+  .quote-text p {
+    font-size: 1.45rem;
+  }
+
+  .quote-divider {
+    width: 48px;
+  }
+}
+
+/* Phone — iPad portrait and below */
+@media (max-width: 768px) {
+  #quote {
+    padding: 60px 0 80px;
+  }
+
+  .quote-text p {
+    font-size: 1.4rem;
+  }
+
+  .quote-divider {
+    width: 36px;
+  }
+
+  .quote-label-row {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    margin-bottom: 22px;
+  }
+
+  .quote-author {
+    font-size: 0.9rem;
+  }
+
+  .closing-message {
+    font-size: 0.85rem;
+    margin-top: 44px;
+    padding: 0 6%;
+  }
+}
+
+/* Small phone */
+@media (max-width: 480px) {
+  #quote {
+    padding: 50px 0 60px;
+  }
+
+  .quote-text p {
+    font-size: 1.2rem;
+  }
+
+  .quote-divider {
+    width: 28px;
+  }
+
+  .quote-label-row {
+    font-size: 0.68rem;
+    gap: 12px;
+  }
+}

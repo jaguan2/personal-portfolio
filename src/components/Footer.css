@@ -6,14 +6,6 @@
   color: var(--surface-solid);
 }
 
-.closing-message {
-  color: rgba(255, 253, 248, 0.85);
-  font-size: 1rem;
-  font-style: italic;
-  margin-bottom: 18px;
-  letter-spacing: 0.02em;
-}
-
 .footer-links {
   display: flex;
   justify-content: center;
@@ -46,12 +38,6 @@
     padding: 28px 6% 20px;
   }
 
-  .closing-message {
-    font-size: 0.92rem;
-    margin-bottom: 14px;
-    padding: 0 10px;
-  }
-
   .footer-links {
     gap: 14px;
   }
@@ -69,10 +55,6 @@
 @media (max-width: 480px) {
   #footer {
     padding: 22px 4% 16px;
-  }
-
-  .closing-message {
-    font-size: 0.85rem;
   }
 
   .footer-links a {

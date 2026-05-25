@@ -3,7 +3,6 @@ import './Footer.css'
 function Footer() {
   return (
     <footer id="footer">
-      <p className="closing-message">Thank you for taking a part of your day to scroll.</p>
       <div className="footer-links">
         <a href="https://www.linkedin.com/in/jaguan/" target="_blank" rel="noopener noreferrer">
           LinkedIn
