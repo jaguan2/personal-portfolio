@@ -41,6 +41,16 @@ nav {
   color: var(--leaf);
 }
 
+/* The period in "rkive." picks up the sage accent, like a coffee drop */
+.logo-dot {
+  color: var(--leaf);
+  transition: color 0.3s ease;
+}
+
+.logo:hover .logo-dot {
+  color: var(--accent-strong);
+}
+
 /* Logo tooltip */
 .logo::after {
   content: attr(data-tooltip);

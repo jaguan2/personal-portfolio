@@ -1,6 +1,7 @@
 import coffeeBranch from '../assets/coffee-branch.svg'
 import coffeeSprig from '../assets/coffee-sprig.svg'
 import leafLine from '../assets/leaf-line.svg'
+import steamCurl from '../assets/steam-curl.svg'
 import './Experience.css'
 
 const experiences = [
@@ -35,6 +36,7 @@ function Experience() {
         <img className="float-icon branch-tr" src={coffeeBranch} alt="" aria-hidden="true" />
         <img className="float-icon sprig-bl" src={coffeeSprig} alt="" aria-hidden="true" />
         <img className="float-icon leaf-1" src={leafLine} alt="" aria-hidden="true" />
+        <img className="float-icon steam-tl" src={steamCurl} alt="" aria-hidden="true" />
       </div>
       <div className="container">
         <h1>Experience</h1>

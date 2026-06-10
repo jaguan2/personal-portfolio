@@ -1,5 +1,5 @@
 #about {
-  padding: 100px 0 120px;
+  padding: 88px 0 96px;
   color: var(--text);
   position: relative;
   overflow: hidden;
@@ -34,6 +34,26 @@
   opacity: 0.16;
   animation: twinkle 14s ease-in-out infinite;
   animation-delay: 7s;
+}
+
+#about .vine-tr {
+  width: 62px;
+  right: 5%;
+  top: 10%;
+  left: auto;
+  opacity: 0.18;
+  animation: floatUp 18s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+#about .steam-bl {
+  width: 34px;
+  left: 5%;
+  bottom: 10%;
+  top: auto;
+  opacity: 0.16;
+  animation: steamDrift 8s ease-in-out infinite;
+  animation-delay: 2s;
 }
 
 #about .container {

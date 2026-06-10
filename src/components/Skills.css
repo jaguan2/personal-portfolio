@@ -1,5 +1,5 @@
 #skills {
-  padding: 100px 0 120px;
+  padding: 88px 0 96px;
   color: var(--text);
   position: relative;
   overflow: hidden;
@@ -34,6 +34,16 @@
   opacity: 0.14;
   animation: twinkle 13s ease-in-out infinite;
   animation-delay: 2s;
+}
+
+#skills .vine-bl {
+  width: 60px;
+  left: 5%;
+  bottom: 10%;
+  top: auto;
+  opacity: 0.18;
+  animation: twinkle 15s ease-in-out infinite;
+  animation-delay: 1s;
 }
 
 #skills h1 {

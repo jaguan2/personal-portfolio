@@ -3,6 +3,7 @@ import resumePdf from '../assets/Jason_Resume.pdf'
 import coffeeBranch from '../assets/coffee-branch.svg'
 import coffeeSprig from '../assets/coffee-sprig.svg'
 import leafLine from '../assets/leaf-line.svg'
+import vine from '../assets/vine.svg'
 import './Header.css'
 
 function Header() {
@@ -17,6 +18,7 @@ function Header() {
           <img className="float-icon leaf-1" src={leafLine} alt="" aria-hidden="true" />
           <img className="float-icon leaf-2" src={leafLine} alt="" aria-hidden="true" />
           <img className="float-icon leaf-3" src={leafLine} alt="" aria-hidden="true" />
+          <img className="float-icon vine-r" src={vine} alt="" aria-hidden="true" />
         </div>
         <div className="container">
           <div className="header-content">

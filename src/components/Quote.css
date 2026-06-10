@@ -1,8 +1,9 @@
 #quote {
-  padding: 80px 0 100px;
+  padding: 72px 0 84px;
   text-align: center;
   color: var(--text);
   position: relative;
+  overflow: hidden;
 }
 
 .quote-label-row {
@@ -30,10 +31,46 @@
   white-space: nowrap;
 }
 
+/* Tiny steaming cup beside the label */
+.quote-cup {
+  color: var(--accent-strong);
+  flex-shrink: 0;
+}
+
+.quote-cup-steam {
+  opacity: 0;
+  animation: quoteSteam 3s ease-in-out infinite;
+}
+
+.quote-cup-steam-2 {
+  animation-delay: 0.7s;
+}
+
+@keyframes quoteSteam {
+  0% { opacity: 0; transform: translateY(1.5px); }
+  40% { opacity: 0.8; }
+  80%, 100% { opacity: 0; transform: translateY(-1.5px); }
+}
+
 .quote-text {
   max-width: 720px;
   margin: 0 auto;
   padding: 0 6%;
+  position: relative;
+}
+
+/* Oversized serif quotation mark floating behind the text */
+.quote-text::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.55em;
+  left: 4%;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 7rem;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.22;
+  pointer-events: none;
 }
 
 .quote-text p {
@@ -55,15 +92,6 @@
   font-weight: 500;
   color: var(--accent-strong);
   letter-spacing: 0.04em;
-}
-
-.closing-message {
-  margin-top: 56px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.92rem;
-  font-style: italic;
-  color: var(--text-muted);
-  letter-spacing: 0.02em;
 }
 
 /* Tablet — iPad landscape and below */
@@ -103,12 +131,6 @@
 
   .quote-author {
     font-size: 0.9rem;
-  }
-
-  .closing-message {
-    font-size: 0.85rem;
-    margin-top: 44px;
-    padding: 0 6%;
   }
 }
 

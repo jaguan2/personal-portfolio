@@ -1,4 +1,5 @@
-import { useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import Loader from './components/Loader'
 import Navbar from './components/Navbar'
 import Header from './components/Header'
 import About from './components/About'
@@ -7,12 +8,21 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Quote from './components/Quote'
 import Footer from './components/Footer'
+import ScrollProgress from './components/ScrollProgress'
+import BackToTop from './components/BackToTop'
 import './App.css'
 
 function App() {
+  const [brewing, setBrewing] = useState(true)
+  const handleBrewed = useCallback(() => setBrewing(false), [])
+
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reduced) return
+    if (reduced) {
+      // No scroll animations — content must still be visible
+      document.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'))
+      return
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -67,7 +77,9 @@ function App() {
 
   return (
     <>
+      {brewing && <Loader onFinish={handleBrewed} />}
       <a href="#main" className="skip-link">Skip to main content</a>
+      <ScrollProgress />
       <Navbar />
       <main id="main">
         <Header />
@@ -78,6 +90,7 @@ function App() {
         <Quote />
       </main>
       <Footer />
+      <BackToTop />
     </>
   )
 }

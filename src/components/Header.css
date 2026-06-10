@@ -86,6 +86,17 @@
   animation-delay: 7s;
 }
 
+#header .vine-r {
+  width: 56px;
+  right: 13%;
+  bottom: 14%;
+  left: auto;
+  top: auto;
+  opacity: 0.3;
+  animation: twinkle 15s ease-in-out infinite;
+  animation-delay: 6s;
+}
+
 #header .container {
   padding: 70px 7% 60px;
   position: relative;
@@ -121,6 +132,26 @@
   font-style: italic;
   font-weight: 700;
   color: var(--accent-strong);
+  background: linear-gradient(
+    110deg,
+    var(--accent-strong) 0%,
+    var(--accent-strong) 42%,
+    var(--accent) 50%,
+    var(--accent-strong) 58%,
+    var(--accent-strong) 100%
+  );
+  background-size: 250% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: nameShimmer 6s ease-in-out 2s infinite;
+}
+
+/* Caramel sheen sweeps across the name every few seconds */
+@keyframes nameShimmer {
+  0% { background-position: 100% 0; }
+  35%, 100% { background-position: 0% 0; }
 }
 
 .header-text h1 .wave {
@@ -129,6 +160,52 @@
   font-size: 0.72em;
   display: inline-block;
   vertical-align: middle;
+  transform-origin: 70% 70%;
+}
+
+/* === Hero entrance choreography (after the brewing loader fades) === */
+body.is-loading .header-content {
+  opacity: 0;
+}
+
+body.loaded .header-text h1 {
+  animation: fadeInUp 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.05s both;
+}
+
+body.loaded .header-text p {
+  animation: fadeInUp 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.22s both;
+}
+
+body.loaded .home-button {
+  animation: fadeInUp 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.38s both;
+}
+
+body.loaded .header-image {
+  animation: heroImageIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.28s both;
+}
+
+body.loaded .header-text .wave {
+  animation: waveHand 1.7s ease-in-out 0.9s 1;
+}
+
+@keyframes heroImageIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes waveHand {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(16deg); }
+  30% { transform: rotate(-8deg); }
+  45% { transform: rotate(14deg); }
+  60% { transform: rotate(-4deg); }
+  75% { transform: rotate(10deg); }
 }
 
 .header-text p {
@@ -147,6 +224,21 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: relative;
+}
+
+/* Soft sage halo behind the portrait for depth */
+.header-image::before {
+  content: '';
+  position: absolute;
+  width: 115%;
+  height: 115%;
+  right: -6%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: radial-gradient(circle at 50% 45%, var(--leaf-soft) 0%, rgba(186, 143, 104, 0.12) 45%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .header-image img {
@@ -188,6 +280,25 @@
   letter-spacing: 0.02em;
   text-align: center;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gleam that sweeps across the primary button on hover */
+.button-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 253, 248, 0.35), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.button-primary:hover::before {
+  left: 130%;
 }
 
 .button-primary {

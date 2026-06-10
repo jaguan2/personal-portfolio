@@ -53,7 +53,7 @@ function Navbar() {
           className="logo"
           onClick={handleNavClick}
           data-tooltip="A space where I archive and share my journey, wherever it takes me."
-        >rkive.</a>
+        >rkive<span className="logo-dot">.</span></a>
 
         <button
           ref={menuBtnRef}

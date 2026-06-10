@@ -61,6 +61,13 @@ function Quote() {
     <section id="quote" aria-label="Today's pour">
       <div className="quote-label-row">
         <span className="quote-divider" aria-hidden="true" />
+        <svg className="quote-cup" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path className="quote-cup-steam quote-cup-steam-1" d="M9 7 C8.4 5.8 9.6 4.9 9 3.6" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+          <path className="quote-cup-steam quote-cup-steam-2" d="M13 7 C12.4 5.8 13.6 4.9 13 3.6" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+          <path d="M5 10 h12 v5 a4.5 4.5 0 0 1 -4.5 4.5 h-3 A4.5 4.5 0 0 1 5 15 z" fill="currentColor" />
+          <path d="M17 11.5 h1.5 a2.2 2.2 0 0 1 0 4.4 H17" fill="none" stroke="currentColor" strokeWidth="1.4" />
+          <path d="M4 21.5 h14" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+        </svg>
         <span className="quote-label">today's pour</span>
         <span className="quote-divider" aria-hidden="true" />
       </div>
@@ -70,7 +77,6 @@ function Quote() {
           <cite className="quote-author">— {todaysQuote.author}</cite>
         )}
       </blockquote>
-      <p className="closing-message">Thank you for taking a part of your day to scroll.</p>
     </section>
   )
 }

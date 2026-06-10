@@ -4,6 +4,7 @@ import eduPortalVideo from '../assets/eduPortal.mp4'
 import coffeeBranch from '../assets/coffee-branch.svg'
 import coffeeSprig from '../assets/coffee-sprig.svg'
 import leafLine from '../assets/leaf-line.svg'
+import steamCurl from '../assets/steam-curl.svg'
 import './Projects.css'
 
 const projects = [
@@ -120,6 +121,7 @@ function Projects() {
         <img className="float-icon branch-br" src={coffeeBranch} alt="" aria-hidden="true" />
         <img className="float-icon sprig-tl" src={coffeeSprig} alt="" aria-hidden="true" />
         <img className="float-icon leaf-1" src={leafLine} alt="" aria-hidden="true" />
+        <img className="float-icon steam-tr" src={steamCurl} alt="" aria-hidden="true" />
       </div>
       <div className="container">
       <h1>Projects</h1>

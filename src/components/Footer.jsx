@@ -16,6 +16,7 @@ function Footer() {
           Email
         </a>
       </div>
+      <p className="footer-tagline">Thank you for taking a part of your day to scroll.</p>
     </footer>
   )
 }

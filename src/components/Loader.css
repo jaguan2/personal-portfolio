@@ -1,0 +1,280 @@
+/* Full-screen brewing loader — same airy cream cafe palette as the site */
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(255, 253, 248, 0.55), transparent 62%),
+    var(--bg);
+  transition: opacity 0.55s ease, visibility 0.55s ease;
+}
+
+.loader-closing {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Lock scroll while brewing */
+body.is-loading {
+  overflow: hidden;
+}
+
+/* Faint botanical corners — same motif as the rest of the site */
+.loader-branch {
+  position: absolute;
+  width: 130px;
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.loader-branch-tl {
+  top: -14px;
+  left: -12px;
+  transform: rotate(-12deg);
+}
+
+.loader-branch-br {
+  bottom: -18px;
+  right: -14px;
+  transform: rotate(170deg);
+}
+
+/* === Scene === */
+.loader-scene {
+  position: relative;
+  width: 220px;
+  height: 218px;
+  transition: transform 0.55s ease;
+}
+
+.loader-closing .loader-scene {
+  transform: scale(1.07);
+}
+
+/* Pour stream — scales in from the top, then sinks into the cup */
+.loader-stream {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 50%;
+  width: 7px;
+  height: 122px;
+  margin-left: -3.5px;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, var(--accent-strong), #43301F);
+  transform: scaleY(0);
+  transform-origin: top;
+  animation:
+    loaderStreamIn 0.3s ease-out 0.35s forwards,
+    loaderStreamOut 0.3s ease-in 1.85s forwards;
+}
+
+@keyframes loaderStreamIn {
+  to { transform: scaleY(1); }
+}
+
+@keyframes loaderStreamOut {
+  from { transform: translateY(0) scaleY(1); opacity: 1; }
+  to { transform: translateY(116px) scaleY(0); opacity: 0; }
+}
+
+/* Cup + handle settle together when the pour finishes */
+.loader-cup-group {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  animation: loaderSettle 0.45s ease 2.05s;
+}
+
+@keyframes loaderSettle {
+  0% { transform: translateY(0); }
+  40% { transform: translateY(3px); }
+  70% { transform: translateY(-1.5px); }
+  100% { transform: translateY(0); }
+}
+
+.loader-cup {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  width: 104px;
+  height: 78px;
+  margin-left: -52px;
+  background: var(--surface-solid);
+  border: 3px solid var(--footer);
+  border-radius: 10px 10px 46px 46px / 10px 10px 52px 52px;
+  overflow: hidden;
+}
+
+.loader-handle {
+  position: absolute;
+  top: 116px;
+  left: calc(50% + 44px);
+  width: 32px;
+  height: 36px;
+  border: 6px solid var(--footer);
+  border-radius: 46%;
+}
+
+.loader-saucer {
+  position: absolute;
+  top: 188px;
+  left: 50%;
+  width: 150px;
+  height: 9px;
+  margin-left: -75px;
+  border-radius: 999px;
+  background: var(--footer);
+  box-shadow: 0 10px 18px rgba(46, 39, 33, 0.18);
+}
+
+/* Liquid rises inside the cup; the waves ARE the coffee body */
+.loader-liquid {
+  position: absolute;
+  inset: -2px;
+  transform: translateY(103%);
+  animation: loaderFill 1.7s cubic-bezier(0.25, 0.6, 0.3, 1) 0.5s forwards;
+}
+
+@keyframes loaderFill {
+  to { transform: translateY(17%); }
+}
+
+/* Rotating rounded-square trick: the wobbling top edge reads as a slosh.
+   Back layer is crema-toned and peeks above the front = crema sliver. */
+.loader-wave {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 210px;
+  height: 210px;
+  margin-left: -105px;
+}
+
+.loader-wave-back {
+  border-radius: 46%;
+  background: var(--accent-soft);
+  animation: loaderSpin 8s linear infinite reverse;
+}
+
+.loader-wave-front {
+  top: 5px;
+  border-radius: 44%;
+  background: linear-gradient(to bottom, var(--accent-strong) 0%, #4A301B 30%, #3F2A19 100%);
+  animation: loaderSpin 5.5s linear infinite;
+  animation-delay: -2s;
+}
+
+@keyframes loaderSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Steam — blurred wisps that begin once the cup is nearly full */
+.loader-steam {
+  position: absolute;
+  z-index: 3;
+  top: 42px;
+  left: 50%;
+  width: 80px;
+  height: 56px;
+  margin-left: -40px;
+}
+
+.loader-wisp {
+  position: absolute;
+  bottom: 0;
+  width: 8px;
+  height: 34px;
+  border-radius: 999px;
+  background: rgba(92, 61, 36, 0.5);
+  filter: blur(5px);
+  opacity: 0;
+  animation: loaderSteam 2.6s ease-in-out infinite;
+}
+
+.loader-wisp-1 { left: 14px; animation-delay: 1.9s; }
+.loader-wisp-2 { left: 36px; height: 42px; animation-delay: 2.2s; }
+.loader-wisp-3 { left: 58px; animation-delay: 2.45s; }
+
+@keyframes loaderSteam {
+  0% { opacity: 0; transform: translateY(10px) translateX(0); }
+  35% { opacity: 0.55; }
+  60% { transform: translateY(-12px) translateX(-4px); }
+  100% { opacity: 0; transform: translateY(-26px) translateX(3px); }
+}
+
+/* === Caption === */
+.loader-text {
+  font-family: 'Playfair Display', 'Lora', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: var(--text);
+}
+
+.loader-dots span {
+  opacity: 0;
+  animation: loaderDot 1.4s ease-in-out infinite;
+}
+
+.loader-dots span:nth-child(2) { animation-delay: 0.2s; }
+.loader-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes loaderDot {
+  0%, 60%, 100% { opacity: 0; }
+  30% { opacity: 1; }
+}
+
+@media (max-width: 480px) {
+  .loader-scene {
+    transform: scale(0.85);
+  }
+
+  .loader-closing .loader-scene {
+    transform: scale(0.9);
+  }
+
+  .loader-branch {
+    width: 96px;
+  }
+
+  .loader-text {
+    font-size: 1rem;
+  }
+}
+
+/* Reduced motion: static filled cup with faint steam, quick crossfade exit
+   (the JS also shortens the display time) */
+@media (prefers-reduced-motion: reduce) {
+  .loader-stream {
+    animation: none;
+    opacity: 0;
+  }
+
+  .loader-liquid {
+    animation: none;
+    transform: translateY(17%);
+  }
+
+  .loader-wave-back,
+  .loader-wave-front {
+    animation: none;
+  }
+
+  .loader-wisp {
+    animation: none;
+    opacity: 0.35;
+  }
+
+  .loader-closing .loader-scene {
+    transform: none;
+  }
+}

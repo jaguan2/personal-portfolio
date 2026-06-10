@@ -1,0 +1,73 @@
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 90;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-subtle);
+  background: var(--surface-solid);
+  color: var(--accent-strong);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px);
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease,
+              box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--accent-strong);
+  color: var(--surface-solid);
+  border-color: var(--accent-strong);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.back-to-top:active {
+  transform: translateY(-1px) scale(0.96);
+}
+
+/* Steam wisps rise and fade on a loop */
+.btt-steam {
+  stroke: currentColor;
+  opacity: 0;
+  animation: bttSteam 2.6s ease-in-out infinite;
+}
+
+.btt-steam-2 { animation-delay: 0.5s; }
+.btt-steam-3 { animation-delay: 1s; }
+
+@keyframes bttSteam {
+  0%   { opacity: 0; transform: translateY(2.5px); }
+  35%  { opacity: 0.85; }
+  70%  { opacity: 0; transform: translateY(-2.5px); }
+  100% { opacity: 0; transform: translateY(-2.5px); }
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 46px;
+    height: 46px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btt-steam {
+    animation: none;
+    opacity: 0.6;
+  }
+}
