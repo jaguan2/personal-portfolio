@@ -146,6 +146,11 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: nameShimmer 6s ease-in-out 2s infinite;
+  /* Italic overhang would be clipped by background-clip: text; pad the clip
+     box and pull the next element back so spacing is unchanged */
+  display: inline-block;
+  padding-right: 0.12em;
+  margin-right: -0.12em;
 }
 
 /* Caramel sheen sweeps across the name every few seconds */

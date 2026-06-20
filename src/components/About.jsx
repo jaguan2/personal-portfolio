@@ -25,14 +25,14 @@ function About() {
             <div className="about-col-2">
               <h1>About Me</h1>
               <p>
-                I'm a Computer Science graduate from the University of South Florida, currently
-                serving as a Full Stack Developer Lead at DefTechLink, a startup connecting industry,
-                academia, and government partners to defense innovation opportunities.
+                I'm a Comp Sci alum from the University of South Florida, currently
+                serving as a Full Stack Developer Lead at DefTechLink, a startup that intends
+                to bridge the gap between the defense industry, academia, and government.
               </p>
               <p>
-                My technical background includes full-stack development, cloud technologies (AWS),
-                and applied machine learning, shaped by a research project analyzing social media
-                data and emotional patterns.
+                My technical background includes full-stack development, database management,
+                cloud technologies, and applied machine learning. Beyond work, I am particularly
+                interested in how computer science intersects with cognitive science and social media mining.
               </p>
               <p>
                 As a software engineer, I want to affect people's lives in an innovative and

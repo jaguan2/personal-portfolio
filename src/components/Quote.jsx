@@ -4,15 +4,15 @@ import './Quote.css'
 const quotes = [
   {
     text: 'Everything will be okay in the end.\nIf it\'s not okay,\nit\'s not the end.',
-    author: null
+    author: 'Zhan Xuan 展轩'
   },
   {
     text: 'There\'s something beautiful about the people who turn their pain into kindness, instead of bitterness.',
     author: null
   },
   {
-    text: 'Only when it is dark enough can you see the stars.',
-    author: 'Kamala Harris'
+    text: 'Only when it is dark enough can you see the stars. Let us fill the sky with the light of a billion brilliant stars.',
+    author: null
   },
   {
     text: 'To be young is to burn bright. Don\'t live your life with regrets.',
@@ -20,7 +20,7 @@ const quotes = [
   },
   {
     text: 'Even when you\'re suffering so much that you lose your mind, just as the flower blooms even in the harsh rain, let\'s press on.',
-    author: null
+    author: 'Hwasa'
   },
   {
     text: 'You and your dream were both beautiful. When you know more than anyone that your dream won\'t be rewarded… yet you still challenged it.',
@@ -31,7 +31,7 @@ const quotes = [
     author: 'Ishtar'
   },
   {
-    text: 'No matter what you\'re feeling, I hope you know you\'re allowed to feel that way. You don\'t have to force yourself to get over something right away — you\'re allowed to sit in your pain, your frustration, your exhaustion, whatever it may be, because you\'re only human.',
+    text: 'No matter what you\'re feeling, I hope you know you\'re allowed to feel that way. You don\'t have to force yourself to get over something right away, you\'re allowed to sit in your pain, your frustration, your exhaustion, whatever it may be, because you\'re only human.',
     author: 'Joshua Hong'
   },
   {
@@ -45,6 +45,30 @@ const quotes = [
   {
     text: 'I realize that I have to believe in myself through the bumps against reality as I experience emotions of rejection, confusion, recognition, and dignity. I trust just believing in yourself can make you stand out.',
     author: null
+  },
+  {
+    text: 'Doubt is the foundation by which you break through blind faith.',
+    author: null
+  },
+  {
+    text: 'Maybe you are filling in answers for a test that you don\'t know the questions of.',
+    author: null
+  },
+  {
+    text: 'Not everything a person eats becomes a part of them. Eat too much and it\'ll go right through you.',
+    author: null
+  },
+  {
+    text: 'Just because someone carried it well doesn\'t mean it isn\'t heavy.',
+    author: null
+  },
+  {
+    text: 'It\'s ok to be lost, the journey of being lost is the process of finding yourself.',
+    author: null
+  },
+  {
+    text: 'Be willing to walk at a turtle\'s pace even though everyone is walking at a hare\'s pace, because ultimately taking that time for yourself will help you in getting to where you want to be.',
+    author: 'Sarah Pan'
   }
 ]
 
