@@ -36,6 +36,25 @@
   animation-delay: 2s;
 }
 
+#skills .star-1 {
+  width: 16px;
+  right: 8%;
+  top: 10%;
+  left: auto;
+  opacity: 0.4;
+  animation: starTwinkle 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+#skills .star-2 {
+  width: 12px;
+  left: 6%;
+  top: 20%;
+  opacity: 0.35;
+  animation: starTwinkle 11s ease-in-out infinite;
+  animation-delay: 5s;
+}
+
 #skills .vine-bl {
   width: 60px;
   left: 5%;
@@ -135,7 +154,7 @@
 }
 
 .skill-card li {
-  color: rgba(46, 31, 22, 0.88);
+  color: var(--text-body);
   font-size: 0.9rem;
   padding: 6px 0;
   display: flex;

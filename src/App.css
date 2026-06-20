@@ -7,6 +7,7 @@
   --surface-solid: #FFFDF8;           /* near-white solid */
   --footer: #2E2721;                  /* deep espresso for the grounding cap */
   --text: #2E2721;                    /* warm dark brown (body & headings) */
+  --text-body: rgba(46, 31, 22, 0.88); /* card/paragraph body copy */
   --text-muted: rgba(46, 39, 33, 0.78);
   --text-subtle: rgba(46, 39, 33, 0.60);
 
@@ -29,6 +30,108 @@
   --border-subtle: rgba(186, 143, 104, 0.25);
   --shadow: 0 10px 28px rgba(46, 39, 33, 0.08);
   --shadow-hover: 0 16px 40px rgba(46, 39, 33, 0.14);
+
+  /* Chrome */
+  --nav-bg: rgba(255, 253, 248, 0.86);
+  --hero-band: #BA8F68;
+
+  color-scheme: light;
+}
+
+/* Dark roast — cozy cafe at night. Same warm hue family at lower light:
+   footer darkest → bands → page → cards → golden CTA brightest. */
+[data-theme='dark'] {
+  --bg: #271A11;                        /* deep warm espresso */
+  --bg-warm: #1E1209;                   /* bands go darker than the page at night */
+  --surface: rgba(58, 42, 28, 0.96);    /* raised mocha card — clearly lighter than bg */
+  --surface-solid: #3A2A1C;
+  --footer: #170E08;                    /* darkest roast */
+  --text: #F7EDD8;                      /* cream text */
+  --text-body: rgba(247, 237, 216, 0.9);
+  --text-muted: rgba(247, 237, 216, 0.85);
+  --text-subtle: rgba(247, 237, 216, 0.68);
+
+  /* Caramel goes golden — candlelight on metal */
+  --accent: #E2AD64;
+  --accent-soft: #C79A60;
+  --accent-strong: #E5B576;             /* CTA fill — pairs with dark text */
+  --accent-hover: #EFC992;
+  --accent-strong-hover: #F0CB94;
+
+  /* Moonlit sage */
+  --leaf: #AAC2A7;
+  --leaf-strong: #BCD2B9;
+  --leaf-hover: #B3C9B0;
+  --leaf-soft: rgba(170, 194, 167, 0.16);
+  --leaf-border: rgba(170, 194, 167, 0.36);
+
+  /* Tonal borders + faint caramel glow instead of black shadows */
+  --border: rgba(247, 237, 216, 0.18);
+  --border-subtle: rgba(226, 173, 100, 0.36);
+  --shadow: 0 0 0 1px #4A3624, 0 10px 30px rgba(226, 173, 100, 0.08);
+  --shadow-hover: 0 0 0 1px #5A4530, 0 14px 36px rgba(226, 173, 100, 0.16);
+
+  --nav-bg: rgba(28, 18, 11, 0.88);
+  --hero-band: #1A1009;
+
+  color-scheme: dark;
+}
+
+/* Dark-mode treatments for things tokens can't reach */
+[data-theme='dark'] ::selection {
+  background: rgba(217, 160, 91, 0.38);
+}
+
+[data-theme='dark'] body::after {
+  filter: invert(1);
+  opacity: 0.04;
+}
+
+/* Brown line-art botanicals would vanish at night — the steam curls stay and
+   brighten; everything else hands over to the night decorations */
+[data-theme='dark'] .float-icon:not(.night-decor) {
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3)) brightness(2);
+}
+
+[data-theme='dark'] .float-icon:not(.night-decor):not([class*='steam-']) {
+  display: none;
+}
+
+/* Night decorations (crescent moon, sparse stars) only exist after dark */
+.float-icon.night-decor {
+  display: none;
+}
+
+[data-theme='dark'] .float-icon.night-decor {
+  display: block;
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.9) rotate(0deg);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.08) rotate(8deg);
+  }
+}
+
+/* Photos sit in the room's light instead of punching white holes in it */
+[data-theme='dark'] .header-image img,
+[data-theme='dark'] .about-col-1 img,
+[data-theme='dark'] .media-container img,
+[data-theme='dark'] .media-container video {
+  filter: brightness(0.92) contrast(1.04);
+}
+
+/* Brief crossfade while the theme switches (class added by the toggle, then removed) */
+html.theme-fade,
+html.theme-fade body,
+html.theme-fade *,
+html.theme-fade *::before,
+html.theme-fade *::after {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, fill 0.35s ease, stroke 0.35s ease !important;
 }
 
 * {
@@ -233,7 +336,7 @@ button:focus-visible {
 /* Stronger focus on dark surfaces — cream outline reads on espresso */
 #footer a:focus-visible,
 .navbar nav:has(.nav-links.open) .menu-btn:focus-visible {
-  outline: 2px solid var(--surface-solid);
+  outline: 2px solid #FFFDF8;
 }
 
 /* Selection styling */

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import ThemeToggle from './ThemeToggle'
 import './Navbar.css'
 
 function Navbar() {
@@ -55,24 +56,28 @@ function Navbar() {
           data-tooltip="A space where I archive and share my journey, wherever it takes me."
         >rkive<span className="logo-dot">.</span></a>
 
-        <button
-          ref={menuBtnRef}
-          className="menu-btn"
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={menuOpen}
-          aria-controls="nav-menu"
-          onClick={() => setMenuOpen(v => !v)}
-        >
-          {menuOpen ? '✕' : '☰'}
-        </button>
+        <div className="nav-right">
+          <ul id="nav-menu" className={`nav-links ${menuOpen ? 'open' : ''}`}>
+            <li><a href="#header" className={activeSection === 'header' ? 'active' : ''} onClick={handleNavClick}>Home</a></li>
+            <li><a href="#about" className={activeSection === 'about' ? 'active' : ''} onClick={handleNavClick}>About</a></li>
+            <li><a href="#experience" className={activeSection === 'experience' ? 'active' : ''} onClick={handleNavClick}>Experience</a></li>
+            <li><a href="#skills" className={activeSection === 'skills' ? 'active' : ''} onClick={handleNavClick}>Skills</a></li>
+            <li><a href="#projects" className={activeSection === 'projects' ? 'active' : ''} onClick={handleNavClick}>Projects</a></li>
+          </ul>
 
-        <ul id="nav-menu" className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          <li><a href="#header" className={activeSection === 'header' ? 'active' : ''} onClick={handleNavClick}>Home</a></li>
-          <li><a href="#about" className={activeSection === 'about' ? 'active' : ''} onClick={handleNavClick}>About</a></li>
-          <li><a href="#experience" className={activeSection === 'experience' ? 'active' : ''} onClick={handleNavClick}>Experience</a></li>
-          <li><a href="#skills" className={activeSection === 'skills' ? 'active' : ''} onClick={handleNavClick}>Skills</a></li>
-          <li><a href="#projects" className={activeSection === 'projects' ? 'active' : ''} onClick={handleNavClick}>Projects</a></li>
-        </ul>
+          <ThemeToggle />
+
+          <button
+            ref={menuBtnRef}
+            className="menu-btn"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            aria-controls="nav-menu"
+            onClick={() => setMenuOpen(v => !v)}
+          >
+            {menuOpen ? '✕' : '☰'}
+          </button>
+        </div>
       </nav>
     </div>
   )

@@ -24,6 +24,23 @@
     <!-- Theme Color -->
     <meta name="theme-color" content="#2E271F" />
 
+    <!-- Apply saved/system theme before first paint to avoid a flash of the wrong theme -->
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem('theme')
+          if (theme !== 'light' && theme !== 'dark') {
+            theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+          }
+          document.documentElement.dataset.theme = theme
+          if (theme === 'dark') {
+            var meta = document.querySelector('meta[name="theme-color"]')
+            if (meta) meta.content = '#171210'
+          }
+        } catch (e) { /* storage blocked — default light */ }
+      })()
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500;600;700&family=Noto+Color+Emoji&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet">
     <title>Jason Guan | Full Stack Developer</title>
   </head>

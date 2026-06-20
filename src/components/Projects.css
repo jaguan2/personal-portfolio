@@ -7,7 +7,8 @@
   background: var(--bg-warm);
 }
 
-/* Soft wave seams where the warm band meets the cream sections */
+/* Soft wave seams where the warm band meets the page background.
+   The shape is a mask so the fill color follows the theme tokens. */
 #projects::before,
 #projects::after {
   content: '';
@@ -15,20 +16,25 @@
   left: 0;
   right: 0;
   height: 56px;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  background: var(--bg);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
   pointer-events: none;
   z-index: 0;
 }
 
 #projects::before {
   top: -1px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 56' preserveAspectRatio='none'%3E%3Cpath d='M0 0h1440v22C1200 40 960 4 720 24 480 44 240 16 0 34z' fill='%23FEECC1'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 56' preserveAspectRatio='none'%3E%3Cpath d='M0 0h1440v22C1200 40 960 4 720 24 480 44 240 16 0 34z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 56' preserveAspectRatio='none'%3E%3Cpath d='M0 0h1440v22C1200 40 960 4 720 24 480 44 240 16 0 34z'/%3E%3C/svg%3E");
 }
 
 #projects::after {
   bottom: -1px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 56' preserveAspectRatio='none'%3E%3Cpath d='M0 56h1440V34C1200 16 960 52 720 32 480 12 240 40 0 22z' fill='%23FEECC1'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 56' preserveAspectRatio='none'%3E%3Cpath d='M0 56h1440V34C1200 16 960 52 720 32 480 12 240 40 0 22z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 56' preserveAspectRatio='none'%3E%3Cpath d='M0 56h1440V34C1200 16 960 52 720 32 480 12 240 40 0 22z'/%3E%3C/svg%3E");
 }
 
 #projects .container {
@@ -64,6 +70,26 @@
   opacity: 0.16;
   animation: twinkle 14s ease-in-out infinite;
   animation-delay: 3s;
+}
+
+#projects .star-1 {
+  width: 15px;
+  left: 9%;
+  top: 12%;
+  opacity: 0.4;
+  animation: starTwinkle 9s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+#projects .star-2 {
+  width: 11px;
+  right: 10%;
+  bottom: 16%;
+  left: auto;
+  top: auto;
+  opacity: 0.35;
+  animation: starTwinkle 7s ease-in-out infinite;
+  animation-delay: 4s;
 }
 
 #projects .steam-tr {
@@ -190,7 +216,7 @@
 .slide .description {
   padding-left: 0;
   margin-bottom: 0;
-  color: rgba(46, 31, 22, 0.88);
+  color: var(--text-body);
   list-style: none;
 }
 
