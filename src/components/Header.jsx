@@ -4,6 +4,8 @@ import coffeeBranch from '../assets/coffee-branch.svg'
 import coffeeSprig from '../assets/coffee-sprig.svg'
 import leafLine from '../assets/leaf-line.svg'
 import vine from '../assets/vine.svg'
+import moonCrescent from '../assets/moon-crescent.svg'
+import sparkle from '../assets/sparkle.svg'
 import './Header.css'
 
 function Header() {
@@ -19,6 +21,9 @@ function Header() {
           <img className="float-icon leaf-2" src={leafLine} alt="" aria-hidden="true" />
           <img className="float-icon leaf-3" src={leafLine} alt="" aria-hidden="true" />
           <img className="float-icon vine-r" src={vine} alt="" aria-hidden="true" />
+          <img className="float-icon night-decor moon-tr" src={moonCrescent} alt="" aria-hidden="true" />
+          <img className="float-icon night-decor star-1" src={sparkle} alt="" aria-hidden="true" />
+          <img className="float-icon night-decor star-2" src={sparkle} alt="" aria-hidden="true" />
         </div>
         <div className="container">
           <div className="header-content">

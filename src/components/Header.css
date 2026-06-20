@@ -2,9 +2,14 @@
   width: 100%;
   min-height: 100vh;
   position: relative;
-  background: var(--accent);
+  background: var(--hero-band);
   padding: 100px 28px 28px;
   overflow: hidden;
+}
+
+/* At night the hero panel gets a warm lamplight pool instead of flat cream */
+[data-theme='dark'] .hero-panel {
+  background: radial-gradient(ellipse at 50% 28%, #3C2B1B 0%, var(--bg) 70%);
 }
 
 .hero-panel {
@@ -84,6 +89,35 @@
   opacity: 0.28;
   animation: floatUp 16s ease-in-out infinite;
   animation-delay: 7s;
+}
+
+/* Night decorations — only visible in dark mode */
+#header .moon-tr {
+  width: 52px;
+  right: 9%;
+  top: 12%;
+  left: auto;
+  opacity: 0.55;
+  animation: floatUp 20s ease-in-out infinite;
+}
+
+#header .star-1 {
+  width: 18px;
+  left: 13%;
+  top: 24%;
+  opacity: 0.4;
+  animation: starTwinkle 7s ease-in-out infinite;
+}
+
+#header .star-2 {
+  width: 13px;
+  right: 26%;
+  bottom: 22%;
+  left: auto;
+  top: auto;
+  opacity: 0.35;
+  animation: starTwinkle 9s ease-in-out infinite;
+  animation-delay: 2.5s;
 }
 
 #header .vine-r {

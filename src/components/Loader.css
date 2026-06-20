@@ -251,6 +251,39 @@ body.is-loading {
   }
 }
 
+/* Dark roast loader — latte-toned cup line-art so it reads against the night bg */
+[data-theme='dark'] .loader {
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(42, 29, 19, 0.85), transparent 62%),
+    var(--bg);
+}
+
+[data-theme='dark'] .loader-cup {
+  background: #3A2C1F;
+  border-color: #C7B299;
+}
+
+[data-theme='dark'] .loader-handle {
+  border-color: #C7B299;
+}
+
+[data-theme='dark'] .loader-saucer {
+  background: #C7B299;
+  box-shadow: 0 10px 22px rgba(217, 160, 91, 0.16);
+}
+
+[data-theme='dark'] .loader-stream {
+  background: linear-gradient(to bottom, #E0B684, #B08350);
+}
+
+[data-theme='dark'] .loader-wisp {
+  background: rgba(242, 229, 201, 0.45);
+}
+
+[data-theme='dark'] .loader-branch {
+  filter: brightness(2);
+}
+
 /* Reduced motion: static filled cup with faint steam, quick crossfade exit
    (the JS also shortens the display time) */
 @media (prefers-reduced-motion: reduce) {

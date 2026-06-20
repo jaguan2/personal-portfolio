@@ -2,6 +2,7 @@ import coffeeBranch from '../assets/coffee-branch.svg'
 import coffeeSprig from '../assets/coffee-sprig.svg'
 import leafLine from '../assets/leaf-line.svg'
 import vine from '../assets/vine.svg'
+import sparkle from '../assets/sparkle.svg'
 import './Skills.css'
 
 const skillsData = [
@@ -35,6 +36,8 @@ function Skills() {
         <img className="float-icon sprig-tr" src={coffeeSprig} alt="" aria-hidden="true" />
         <img className="float-icon leaf-1" src={leafLine} alt="" aria-hidden="true" />
         <img className="float-icon vine-bl" src={vine} alt="" aria-hidden="true" />
+        <img className="float-icon night-decor star-1" src={sparkle} alt="" aria-hidden="true" />
+        <img className="float-icon night-decor star-2" src={sparkle} alt="" aria-hidden="true" />
       </div>
       <div className="container">
         <h1>Skills</h1>

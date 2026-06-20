@@ -5,6 +5,7 @@ import coffeeBranch from '../assets/coffee-branch.svg'
 import coffeeSprig from '../assets/coffee-sprig.svg'
 import leafLine from '../assets/leaf-line.svg'
 import steamCurl from '../assets/steam-curl.svg'
+import sparkle from '../assets/sparkle.svg'
 import './Projects.css'
 
 const projects = [
@@ -122,6 +123,8 @@ function Projects() {
         <img className="float-icon sprig-tl" src={coffeeSprig} alt="" aria-hidden="true" />
         <img className="float-icon leaf-1" src={leafLine} alt="" aria-hidden="true" />
         <img className="float-icon steam-tr" src={steamCurl} alt="" aria-hidden="true" />
+        <img className="float-icon night-decor star-1" src={sparkle} alt="" aria-hidden="true" />
+        <img className="float-icon night-decor star-2" src={sparkle} alt="" aria-hidden="true" />
       </div>
       <div className="container">
       <h1>Projects</h1>

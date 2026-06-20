@@ -8,7 +8,7 @@
 }
 
 nav {
-  background: rgba(255, 253, 248, 0.86);
+  background: var(--nav-bg);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   padding: 10px 5%;
@@ -101,6 +101,12 @@ nav {
 .menu-btn:hover {
   background: var(--leaf-soft);
   border-color: var(--leaf);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .nav-links {
