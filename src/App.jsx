@@ -11,6 +11,7 @@ import Quote from './components/Quote'
 import Footer from './components/Footer'
 import ScrollProgress from './components/ScrollProgress'
 import BackToTop from './components/BackToTop'
+import SectionDivider from './components/SectionDivider'
 import './App.css'
 
 function App() {
@@ -84,11 +85,13 @@ function App() {
       <Navbar />
       <main id="main">
         <Header />
+        <SectionDivider />
         <About />
         <Experience />
         <Skills />
         <Projects />
         <OtherWorks />
+        <SectionDivider />
         <Quote />
       </main>
       <Footer />

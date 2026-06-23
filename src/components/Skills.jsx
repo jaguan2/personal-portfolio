@@ -122,7 +122,7 @@ function Skills() {
                   <div className="skill-srow muted">
                     <span>Tax</span>
                     <span className="skill-dots" aria-hidden="true" />
-                    <span>0%</span>
+                    <span>…</span>
                   </div>
                   <div className="skill-srow total">
                     <span>Total</span>
