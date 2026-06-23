@@ -6,6 +6,7 @@ import About from './components/About'
 import Experience from './components/Experience'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
+import OtherWorks from './components/OtherWorks'
 import Quote from './components/Quote'
 import Footer from './components/Footer'
 import ScrollProgress from './components/ScrollProgress'
@@ -87,6 +88,7 @@ function App() {
         <Experience />
         <Skills />
         <Projects />
+        <OtherWorks />
         <Quote />
       </main>
       <Footer />

@@ -41,6 +41,13 @@
   color: rgba(255, 253, 248, 0.62);
 }
 
+.footer-copyright {
+  margin-top: 14px;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 253, 248, 0.45);
+}
+
 /* Phone — iPad portrait and below */
 @media (max-width: 768px) {
   #footer {

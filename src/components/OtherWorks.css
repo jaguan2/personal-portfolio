@@ -1,0 +1,326 @@
+#other-works {
+  padding: 110px 0 120px;
+  color: var(--text);
+  position: relative;
+  overflow: hidden;
+}
+
+#other-works .container {
+  padding: 0 10%;
+}
+
+/* Floating botanicals, consistent with other sections */
+#other-works .branch-bl {
+  width: 100px;
+  left: 2%;
+  bottom: 5%;
+  top: auto;
+  opacity: 0.16;
+  animation: none;
+  transform: rotate(calc(168deg + var(--sway, 0deg)));
+  transition: transform 0.4s ease-out;
+}
+
+#other-works .sprig-tr {
+  width: 78px;
+  right: 3%;
+  top: 7%;
+  left: auto;
+  opacity: 0.16;
+  animation: floatUp 18s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+#other-works .leaf-1 {
+  width: 28px;
+  left: 8%;
+  top: 16%;
+  opacity: 0.14;
+  animation: twinkle 14s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+#other-works .steam-bl {
+  width: 30px;
+  left: 14%;
+  bottom: 18%;
+  top: auto;
+  opacity: 0.14;
+  animation: steamDrift 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* The menu "paper" */
+.menu-card {
+  position: relative;
+  padding: 56px 64px 60px;
+  background:
+    linear-gradient(180deg, #FCEAD0 0%, #FBE6C9 100%);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.menu-deco {
+  position: absolute;
+  pointer-events: none;
+}
+
+.menu-deco.cups {
+  width: 92px;
+  top: 26px;
+  right: 30px;
+  opacity: 0.5;
+  transform: scaleX(-1);
+}
+
+.menu-deco.sprig {
+  width: 34px;
+  bottom: 28px;
+  left: 34px;
+  opacity: 0.4;
+}
+
+/* Header — two-tone display title, like a printed menu masthead */
+.menu-header {
+  margin-bottom: 40px;
+}
+
+.menu-title {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.menu-title-a {
+  color: var(--accent-strong);
+}
+
+.menu-title-b {
+  color: var(--leaf-strong);
+}
+
+.menu-subtitle {
+  margin-top: 10px;
+  color: var(--text-subtle);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+.menu-body {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+
+/* Category heading with the menu's signature underline rule */
+.menu-category-title {
+  display: inline-block;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--text);
+  padding-bottom: 8px;
+  margin-bottom: 22px;
+  border-bottom: 2px solid var(--accent-soft);
+}
+
+.menu-items {
+  list-style: none;
+  /* Auto-fit columns: 2-up on wide cards, 1-up when space is tight,
+     and a lone item stretches to fill the row. */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 34px 52px;
+}
+
+/* Each item: illustrated coffee thumbnail + text body */
+.menu-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.menu-item-thumb {
+  flex-shrink: 0;
+  width: 78px;
+  height: 78px;
+  padding: 13px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--leaf-soft);
+  border: 1px solid var(--border-subtle);
+  box-shadow: inset 0 1px 4px rgba(46, 39, 33, 0.07);
+}
+
+/* Rotate the thumbnail tint so a list of items feels varied */
+.menu-item:nth-child(3n + 2) .menu-item-thumb {
+  background: rgba(186, 143, 104, 0.18);
+}
+
+.menu-item:nth-child(3n + 3) .menu-item-thumb {
+  background: rgba(209, 171, 127, 0.22);
+}
+
+.menu-item-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.menu-item-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.menu-item-title {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 1.18rem;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+/* Dotted leader, the classic menu "title ....... price" flourish */
+.menu-item-dots {
+  flex: 1;
+  height: 0;
+  margin-bottom: 4px;
+  border-bottom: 2px dotted var(--border-subtle);
+  min-width: 18px;
+}
+
+.menu-item-link {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--accent-strong);
+  border: 1.5px solid var(--border);
+  background: rgba(255, 253, 248, 0.6);
+  transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-item-link:hover {
+  color: var(--surface-solid);
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  transform: translateY(-2px) rotate(-6deg);
+}
+
+.menu-item-ingredients {
+  margin-top: 7px;
+  color: var(--accent-strong);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.menu-item-desc {
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  #other-works {
+    padding: 90px 0 100px;
+  }
+
+  .menu-card {
+    padding: 48px 44px 52px;
+  }
+
+  .menu-title {
+    font-size: 2.6rem;
+  }
+}
+
+/* Phone */
+@media (max-width: 768px) {
+  #other-works {
+    padding: 70px 0 80px;
+  }
+
+  #other-works .container {
+    padding: 0 6%;
+  }
+
+  .menu-card {
+    padding: 40px 26px 44px;
+    border-radius: 16px;
+  }
+
+  .menu-deco.cups {
+    width: 66px;
+    top: 20px;
+    right: 18px;
+  }
+
+  .menu-title {
+    font-size: 2.2rem;
+  }
+
+  .menu-category-title {
+    font-size: 1.3rem;
+  }
+
+  .menu-item-title {
+    font-size: 1.08rem;
+  }
+
+  .menu-item-desc {
+    font-size: 0.88rem;
+  }
+
+  .menu-item {
+    gap: 14px;
+  }
+
+  .menu-item-thumb {
+    width: 62px;
+    height: 62px;
+    padding: 10px;
+  }
+}
+
+/* Small phone */
+@media (max-width: 480px) {
+  .menu-card {
+    padding: 32px 20px 36px;
+  }
+
+  .menu-title {
+    font-size: 1.9rem;
+  }
+
+  /* Hide the dotted leader when space is tight */
+  .menu-item-dots {
+    display: none;
+  }
+
+  .menu-item-head {
+    justify-content: space-between;
+  }
+
+  .menu-item-ingredients {
+    font-size: 0.8rem;
+  }
+
+  .menu-item-thumb {
+    width: 54px;
+    height: 54px;
+    padding: 9px;
+  }
+}

@@ -86,8 +86,8 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 40px;
+  align-items: flex-start;
+  gap: 48px;
 }
 
 .about-col-1 {
@@ -138,11 +138,11 @@
 }
 
 .about-col-2 p {
-  line-height: 1.7;
+  line-height: 1.75;
   color: rgba(46, 31, 22, 0.88);
-  margin-bottom: 15px;
+  margin-bottom: 18px;
   font-size: 1rem;
-  max-width: 65ch;
+  max-width: 60ch;
 }
 
 .about-col-2 p:last-child {

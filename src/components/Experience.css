@@ -131,6 +131,17 @@
   gap: 20px;
 }
 
+.card-kind {
+  display: inline-block;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+  margin-bottom: 8px;
+}
+
 .experience-header h3 {
   color: var(--text);
   font-size: 1.3rem;

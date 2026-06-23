@@ -26,6 +26,16 @@ const experiences = [
       { bold: 'Containerized PostgreSQL with Docker', rest: ' for scalable data handling used by 300+ engineers.' },
       { bold: 'Developed 10+ REST APIs', rest: ' using Flask and SQLAlchemy.' }
     ]
+  },
+  {
+    kind: 'Education',
+    title: 'B.S. in Computer Science',
+    company: 'University of South Florida',
+    location: 'Tampa, FL',
+    period: 'Aug 2021 — May 2025',
+    description: [
+      { bold: 'Relevant Coursework:', rest: ' Database Design, Data Storage and Analysis with Hadoop, Automata Theory, Social Media Mining, User Experience Design, Secure Coding, and Operating Systems.' }
+    ]
   }
 ]
 
@@ -39,7 +49,7 @@ function Experience() {
         <img className="float-icon steam-tl" src={steamCurl} alt="" aria-hidden="true" />
       </div>
       <div className="container">
-        <h1>Experience</h1>
+        <h1>Experience &amp; Education</h1>
         <div className="experience-timeline">
           {experiences.map((exp, index) => (
             <div
@@ -49,6 +59,7 @@ function Experience() {
             >
               <div className="experience-header">
                 <div>
+                  {exp.kind && <span className="card-kind">{exp.kind}</span>}
                   <h3>{exp.title}</h3>
                   <p className="company">{exp.company}</p>
                 </div>
@@ -57,11 +68,13 @@ function Experience() {
                   <span className="location">{exp.location}</span>
                 </div>
               </div>
-              <ul className="experience-details">
-                {exp.description.map((item, index) => (
-                  <li key={index}><strong>{item.bold}</strong>{item.rest}</li>
-                ))}
-              </ul>
+              {exp.description?.length > 0 && (
+                <ul className="experience-details">
+                  {exp.description.map((item, index) => (
+                    <li key={index}><strong>{item.bold}</strong>{item.rest}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </div>

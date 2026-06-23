@@ -7,7 +7,7 @@ function Navbar() {
   const menuBtnRef = useRef(null)
 
   useEffect(() => {
-    const sections = ['header', 'about', 'experience', 'skills', 'projects']
+    const sections = ['header', 'about', 'experience', 'skills', 'projects', 'other-works']
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 120
@@ -71,7 +71,8 @@ function Navbar() {
           <li><a href="#about" className={activeSection === 'about' ? 'active' : ''} onClick={handleNavClick}>About</a></li>
           <li><a href="#experience" className={activeSection === 'experience' ? 'active' : ''} onClick={handleNavClick}>Experience</a></li>
           <li><a href="#skills" className={activeSection === 'skills' ? 'active' : ''} onClick={handleNavClick}>Skills</a></li>
-          <li><a href="#projects" className={activeSection === 'projects' ? 'active' : ''} onClick={handleNavClick}>Projects</a></li>
+          <li><a href="#projects" className={activeSection === 'projects' ? 'active' : ''} onClick={handleNavClick}>Featured Work</a></li>
+          <li><a href="#other-works" className={activeSection === 'other-works' ? 'active' : ''} onClick={handleNavClick}>Other Works</a></li>
         </ul>
       </nav>
     </div>

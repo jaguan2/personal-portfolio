@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
+import deftechlinkImage from '../assets/deftechlink.png'
 import twitterFeelImage from '../assets/TwitterFeel.JPG'
-import eduPortalVideo from '../assets/eduPortal.mp4'
 import coffeeBranch from '../assets/coffee-branch.svg'
 import coffeeSprig from '../assets/coffee-sprig.svg'
 import leafLine from '../assets/leaf-line.svg'
@@ -9,111 +9,74 @@ import './Projects.css'
 
 const projects = [
   {
-    id: 1,
-    title: 'TwitterFeel',
-    technologies: 'Python • TensorFlow • Pandas • NumPy • Hugging Face',
-    description: 'A machine learning project that predicts emotional sentiment from tweets. Built and trained LSTM neural networks on a cleaned dataset of 20,000 tweets, using lemmatization and SMOTE to handle class imbalance. The model analyzes tweet history to predict future emotional patterns, achieving an F1 score of 0.82 across accuracy, precision, and recall metrics.',
-    media: { type: 'image', src: twitterFeelImage, alt: 'TwitterFeel' }
+    id: 0,
+    eyebrow: 'Professional Work',
+    title: 'DefTechLink',
+    technologies: 'Python • Flask • SQLAlchemy • PostgreSQL • AWS Lambda • Auth0 • Stripe',
+    description: 'DefTechLink is a defense-tech startup focused on helping innovative companies navigate government contracting and defense markets. I build the backend systems, cloud infrastructure, and data pipelines that aggregate thousands of defense opportunities, making them easier for companies to discover.',
+    link: 'https://deftechlink.com',
+    linkType: 'external',
+    media: { type: 'image', src: deftechlinkImage, alt: 'DefTechLink platform' }
   },
   {
-    id: 2,
-    title: 'Perfect Path',
-    technologies: 'Python • Flask • JavaScript • PostgreSQL • AWS',
-    description: 'A class scheduling platform that helps USF Computer Science students plan their academic journey. Students can create, compare, and share course schedules with friends, choosing from 28 core and elective classes. Features secure user authentication with role-based admin privileges, all backed by a PostgreSQL database hosted on AWS for reliable, real-time access.',
-    media: { type: 'video', src: eduPortalVideo }
+    id: 1,
+    eyebrow: 'Sentiment Analysis & Social Media Mining',
+    title: 'TwitterFeel',
+    technologies: 'Python • TensorFlow • Pandas • NumPy • Hugging Face',
+    description: 'TwitterFeel is a machine learning research project focused on identifying early indicators of depression, anxiety, and suicidal ideation through social media activity. Inspired by the growing mental health crisis and the widespread influence of social media, the project explores whether online behavior can reveal signs of emotional distress before they become more severe. By detecting these warning signs early, the goal is to better understand how technology can support awareness, intervention, and access to help for individuals who may be struggling.',
+    link: 'https://github.com/jaguan2/twitterFeel',
+    linkType: 'github',
+    media: { type: 'image', src: twitterFeelImage, alt: 'TwitterFeel sentiment analysis dashboard' }
   }
 ]
 
+const CoffeeCupIcon = () => (
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    {/* steam */}
+    <path d="M8.5 2.6c-.5.7-.5 1.4 0 2.1M12 2.2c-.5.7-.5 1.4 0 2.1M15.5 2.6c-.5.7-.5 1.4 0 2.1" />
+    {/* cup body */}
+    <path d="M3.5 8h13v4.5a5 5 0 0 1-5 5H8.5a5 5 0 0 1-5-5z" />
+    {/* handle */}
+    <path d="M16.5 9.2h2.3a2.4 2.4 0 0 1 0 4.8h-2.3" />
+    {/* saucer */}
+    <path d="M3 20.5h14" />
+  </svg>
+)
+
+const ExternalIcon = () => (
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+    <polyline points="15 3 21 3 21 9" />
+    <line x1="10" y1="14" x2="21" y2="3" />
+  </svg>
+)
+
+const ExpandIcon = () => (
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <polyline points="15 3 21 3 21 9" />
+    <polyline points="9 21 3 21 3 15" />
+    <line x1="21" y1="3" x2="14" y2="10" />
+    <line x1="3" y1="21" x2="10" y2="14" />
+  </svg>
+)
+
 function Projects() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isMobile, setIsMobile] = useState(false)
-  const [touchStart, setTouchStart] = useState(null)
-  const [touchEnd, setTouchEnd] = useState(null)
-  const autoPlayRef = useRef(null)
+  const [lightbox, setLightbox] = useState(null)
 
-  // Check if mobile
+  // Close on Escape and lock background scroll while the lightbox is open
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768)
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
-  }, [])
-
-  // Auto-advance on mobile
-  useEffect(() => {
-    if (isMobile) {
-      autoPlayRef.current = setInterval(() => {
-        setCurrentIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1))
-      }, 30000) // 30 seconds per slide
+    if (!lightbox) return
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') setLightbox(null)
     }
-
+    document.addEventListener('keydown', onKeyDown)
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
     return () => {
-      if (autoPlayRef.current) {
-        clearInterval(autoPlayRef.current)
-      }
+      document.removeEventListener('keydown', onKeyDown)
+      document.body.style.overflow = prevOverflow
     }
-  }, [isMobile])
-
-  const goToPrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? projects.length - 1 : prevIndex - 1
-    )
-  }
-
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === projects.length - 1 ? 0 : prevIndex + 1
-    )
-  }
-
-  const goToSlide = (index) => {
-    setCurrentIndex(index)
-    // Reset auto-play timer when manually selecting
-    if (autoPlayRef.current) {
-      clearInterval(autoPlayRef.current)
-      autoPlayRef.current = setInterval(() => {
-        setCurrentIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1))
-      }, 30000)
-    }
-  }
-
-  // Swipe handlers for mobile
-  const minSwipeDistance = 50
-
-  const onTouchStart = (e) => {
-    setTouchEnd(null)
-    setTouchStart(e.targetTouches[0].clientX)
-  }
-
-  const onTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX)
-  }
-
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return
-
-    const distance = touchStart - touchEnd
-    const isLeftSwipe = distance > minSwipeDistance
-    const isRightSwipe = distance < -minSwipeDistance
-
-    if (isLeftSwipe) {
-      goToNext()
-    } else if (isRightSwipe) {
-      goToPrevious()
-    }
-  }
-
-  const onKeyDown = (e) => {
-    if (e.key === 'ArrowLeft') {
-      e.preventDefault()
-      goToPrevious()
-    } else if (e.key === 'ArrowRight') {
-      e.preventDefault()
-      goToNext()
-    }
-  }
-
-  const currentProject = projects[currentIndex]
+  }, [lightbox])
 
   return (
     <section id="projects">
@@ -124,61 +87,91 @@ function Projects() {
         <img className="float-icon steam-tr" src={steamCurl} alt="" aria-hidden="true" />
       </div>
       <div className="container">
-      <h1>Projects</h1>
-      <div
-        className="slider-container reveal"
-        role="region"
-        aria-label="Projects carousel"
-        aria-roledescription="carousel"
-        tabIndex={0}
-        onTouchStart={onTouchStart}
-        onTouchMove={onTouchMove}
-        onTouchEnd={onTouchEnd}
-        onKeyDown={onKeyDown}
-      >
-        {/* Hide buttons on mobile */}
-        <button className="slider-btn prev-btn" onClick={goToPrevious} aria-label="Previous project">
-          &#10094;
-        </button>
+        <h1>Featured Work</h1>
+        <div className="projects-list">
+          {projects.map((project) => (
+            <article className="project-row reveal" key={project.id}>
+              <button
+                type="button"
+                className="project-media"
+                onClick={() => setLightbox(project.media)}
+                aria-label={`Expand ${project.title} ${project.media.type === 'video' ? 'demo' : 'image'}`}
+              >
+                {project.media.type === 'video' ? (
+                  <video autoPlay loop muted playsInline aria-label={project.media.alt}>
+                    <source src={project.media.src} type="video/mp4" />
+                  </video>
+                ) : (
+                  <img src={project.media.src} alt={project.media.alt} />
+                )}
+                <span className="media-expand-hint" aria-hidden="true">
+                  <ExpandIcon />
+                </span>
+              </button>
 
-        <div className="slide">
-          <div className="slide-content">
-            <h2>{currentProject.title}</h2>
-            <p className="technologies">{currentProject.technologies}</p>
-            <div className="description">
-              <p>{currentProject.description}</p>
-            </div>
-          </div>
-          <div className="media-container">
-            {currentProject.media.type === 'video' ? (
-              <video autoPlay loop muted playsInline>
-                <source src={currentProject.media.src} type="video/mp4" />
-              </video>
-            ) : (
-              <img src={currentProject.media.src} alt={currentProject.media.alt} />
-            )}
-          </div>
-        </div>
-
-        <button className="slider-btn next-btn" onClick={goToNext} aria-label="Next project">
-          &#10095;
-        </button>
-      </div>
-
-      <div className="slider-navigation">
-        <span className="project-count">{currentIndex + 1} / {projects.length}</span>
-        <div className="slider-dots">
-          {projects.map((_, index) => (
-            <button
-              key={index}
-              className={`dot ${index === currentIndex ? 'active' : ''}`}
-              onClick={() => goToSlide(index)}
-              aria-label={`Go to project ${index + 1}`}
-            />
+              <div className="project-info">
+                {project.eyebrow && (
+                  <p className="project-eyebrow">{project.eyebrow}</p>
+                )}
+                <div className="project-title-row">
+                  <h2 className="project-title">{project.title}</h2>
+                  {project.link && (
+                    <a
+                      className="project-link"
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={project.linkType === 'github' ? 'View on GitHub' : 'View project'}
+                      aria-label={`View ${project.title}${project.linkType === 'github' ? ' on GitHub' : ''}`}
+                    >
+                      {project.linkType === 'github' ? <CoffeeCupIcon /> : <ExternalIcon />}
+                    </a>
+                  )}
+                </div>
+                <p className="project-tech">{project.technologies}</p>
+                {project.description && (
+                  <p className="project-description">{project.description}</p>
+                )}
+                {project.highlights && (
+                  <ul className="project-highlights">
+                    {project.highlights.map((item, i) => (
+                      <li key={i}><strong>{item.bold}</strong>{item.rest}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </article>
           ))}
         </div>
       </div>
-      </div>
+
+      {lightbox && (
+        <div
+          className="lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Expanded project media"
+          onClick={() => setLightbox(null)}
+        >
+          <button
+            type="button"
+            className="lightbox-close"
+            onClick={() => setLightbox(null)}
+            aria-label="Close expanded view"
+          >
+            &times;
+          </button>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            {lightbox.type === 'video' ? (
+              <video autoPlay loop muted playsInline controls aria-label={lightbox.alt}>
+                <source src={lightbox.src} type="video/mp4" />
+              </video>
+            ) : (
+              <img src={lightbox.src} alt={lightbox.alt} />
+            )}
+          </div>
+        </div>
+      )}
     </section>
   )
 }
