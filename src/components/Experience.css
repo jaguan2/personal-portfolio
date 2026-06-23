@@ -97,9 +97,81 @@
 }
 
 .experience-timeline {
+  position: relative;
+}
+
+/* The vertical spine running through the nodes */
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 27px;
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(var(--leaf), var(--leaf-border));
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 30px 80px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+/* Short connector from the node to the card */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 54px;
+  top: 31px;
+  width: 26px;
+  height: 2px;
+  background: var(--leaf-border);
+}
+
+/* Icon node sitting on the spine */
+.timeline-node {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-solid);
+  border: 2px solid var(--leaf-border);
+  color: var(--leaf-strong);
+  box-shadow: 0 4px 12px rgba(46, 31, 22, 0.12);
+  z-index: 2;
+}
+
+/* Education node uses the caramel accent to set it apart from work */
+.timeline-item.is-education .timeline-node {
+  border-color: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+/* "Present" — the top (current) node gets a gentle pulse */
+.timeline-item:first-child .timeline-node {
+  animation: nodePulse 2.6s ease-out infinite;
+}
+
+@keyframes nodePulse {
+  0% { box-shadow: 0 4px 12px rgba(46, 31, 22, 0.12), 0 0 0 0 rgba(79, 111, 82, 0.35); }
+  70% { box-shadow: 0 4px 12px rgba(46, 31, 22, 0.12), 0 0 0 12px rgba(79, 111, 82, 0); }
+  100% { box-shadow: 0 4px 12px rgba(46, 31, 22, 0.12), 0 0 0 0 rgba(79, 111, 82, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-item:first-child .timeline-node {
+    animation: none;
+  }
 }
 
 .experience-card {
@@ -281,6 +353,30 @@
 
   .experience-meta {
     text-align: left;
+  }
+
+  .experience-timeline::before {
+    left: 22px;
+  }
+
+  .timeline-item {
+    padding: 0 0 24px 60px;
+  }
+
+  .timeline-item::before {
+    left: 44px;
+    top: 26px;
+    width: 16px;
+  }
+
+  .timeline-node {
+    width: 44px;
+    height: 44px;
+  }
+
+  .timeline-node svg {
+    width: 18px;
+    height: 18px;
   }
 
   .experience-card {

@@ -4,6 +4,22 @@ import leafLine from '../assets/leaf-line.svg'
 import steamCurl from '../assets/steam-curl.svg'
 import './Experience.css'
 
+const BriefcaseIcon = () => (
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="2" y="7" width="20" height="14" rx="2" />
+    <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+    <path d="M2 13h20" />
+  </svg>
+)
+
+const GradCapIcon = () => (
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M22 10 12 5 2 10l10 5 10-5z" />
+    <path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5" />
+    <line x1="22" y1="10" x2="22" y2="15.5" />
+  </svg>
+)
+
 const experiences = [
   {
     title: 'Full Stack Developer Lead',
@@ -51,32 +67,41 @@ function Experience() {
       <div className="container">
         <h1>Experience &amp; Education</h1>
         <div className="experience-timeline">
-          {experiences.map((exp, index) => (
-            <div
-              key={exp.company}
-              className="experience-card reveal"
-              style={{ '--reveal-delay': `${index * 100}ms` }}
-            >
-              <div className="experience-header">
-                <div>
-                  {exp.kind && <span className="card-kind">{exp.kind}</span>}
-                  <h3>{exp.title}</h3>
-                  <p className="company">{exp.company}</p>
-                </div>
-                <div className="experience-meta">
-                  <span className="period">{exp.period}</span>
-                  <span className="location">{exp.location}</span>
+          {experiences.map((exp, index) => {
+            const isEducation = exp.kind === 'Education'
+            const NodeIcon = isEducation ? GradCapIcon : BriefcaseIcon
+            return (
+              <div
+                key={exp.company}
+                className={`timeline-item reveal${isEducation ? ' is-education' : ''}`}
+                style={{ '--reveal-delay': `${index * 100}ms` }}
+              >
+                <span className="timeline-node" aria-hidden="true">
+                  <NodeIcon />
+                </span>
+                <div className="experience-card">
+                  <div className="experience-header">
+                    <div>
+                      {exp.kind && <span className="card-kind">{exp.kind}</span>}
+                      <h3>{exp.title}</h3>
+                      <p className="company">{exp.company}</p>
+                    </div>
+                    <div className="experience-meta">
+                      <span className="period">{exp.period}</span>
+                      <span className="location">{exp.location}</span>
+                    </div>
+                  </div>
+                  {exp.description?.length > 0 && (
+                    <ul className="experience-details">
+                      {exp.description.map((item, i) => (
+                        <li key={i}><strong>{item.bold}</strong>{item.rest}</li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </div>
-              {exp.description?.length > 0 && (
-                <ul className="experience-details">
-                  {exp.description.map((item, index) => (
-                    <li key={index}><strong>{item.bold}</strong>{item.rest}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
