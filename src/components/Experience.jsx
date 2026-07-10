@@ -27,9 +27,11 @@ const experiences = [
     location: 'Tampa, FL',
     period: 'March 2025 – Present',
     description: [
-      { bold: 'Built a Python data-ingestion pipeline on AWS Lambda + EventBridge', rest: ' ingesting 10+ global defense procurement sources with opportunity scoring, capability tagging across 20 defense categories, and weekly personalized email digests via Mandrill.' },
+      { bold: 'Built a Python data-ingestion pipeline on AWS Lambda + EventBridge', rest: ' processing 1,000+ daily contract notices from 10+ global defense procurement sources, with opportunity scoring and capability tagging across 20 defense categories.' },
       { bold: 'Led backend development', rest: ' across the customer platform and internal dashboard, building 246+ REST endpoints spanning the opportunity lifecycle, user management, and role-based access for 7 user types.' },
-      { bold: 'Designed and maintained the PostgreSQL data layer', rest: ' on AWS RDS, modeling 45+ relational entities across multi-environment schemas with indexing, referential integrity, and audit logging.' }
+      { bold: 'Designed and maintained the PostgreSQL data layer', rest: ' on AWS RDS, modeling 45+ relational entities across multi-environment schemas with indexing, referential integrity, and audit logging.' },
+      { bold: 'Shipped a real-time messaging feature', rest: ' that lets users connect and collaborate directly in the app.' },
+      { bold: 'Implemented a Mandrill-powered email system', rest: ' delivering weekly personalized opportunity digests and automated onboarding drip campaigns.' }
     ]
   },
   {
