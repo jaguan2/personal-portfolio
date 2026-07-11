@@ -128,35 +128,11 @@
   font-style: italic;
 }
 
+/* Keep "Jason" consistent with the rest of the greeting */
 .header-text h1 em {
   font-style: italic;
-  font-weight: 700;
-  color: var(--accent-strong);
-  background: linear-gradient(
-    110deg,
-    var(--accent-strong) 0%,
-    var(--accent-strong) 42%,
-    var(--accent) 50%,
-    var(--accent-strong) 58%,
-    var(--accent-strong) 100%
-  );
-  background-size: 250% 100%;
-  background-position: 100% 0;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: nameShimmer 6s ease-in-out 2s infinite;
-  /* Italic overhang would be clipped by background-clip: text; pad the clip
-     box and pull the next element back so spacing is unchanged */
-  display: inline-block;
-  padding-right: 0.12em;
-  margin-right: -0.12em;
-}
-
-/* Caramel sheen sweeps across the name every few seconds */
-@keyframes nameShimmer {
-  0% { background-position: 100% 0; }
-  35%, 100% { background-position: 0% 0; }
+  font-weight: inherit;
+  color: inherit;
 }
 
 .header-text h1 .wave {

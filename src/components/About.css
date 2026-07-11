@@ -138,11 +138,10 @@
 }
 
 .about-col-2 p {
-  line-height: 1.75;
+  line-height: 1.85;
   color: rgba(46, 31, 22, 0.88);
-  margin-bottom: 18px;
-  font-size: 1rem;
-  max-width: 60ch;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
 }
 
 .about-col-2 p:last-child {

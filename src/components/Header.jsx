@@ -85,7 +85,7 @@ function Header() {
                 </a>
                 <a
                   href={resumePdf}
-                  className="icon-button icon-button-primary"
+                  className="icon-button"
                   download="Jason_Guan_Resume.pdf"
                   title="Download Resume"
                   aria-label="Download Resume"

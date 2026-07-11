@@ -1,0 +1,113 @@
+/* Keep the YouTube iframe present (audio plays) but off-screen */
+.cafe-radio-holder {
+  position: fixed;
+  left: -9999px;
+  top: 0;
+  width: 320px;
+  height: 180px;
+  pointer-events: none;
+}
+
+/* Floating turntable, bottom-left */
+.cafe-radio {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 91;
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  filter: drop-shadow(0 6px 12px rgba(46, 31, 22, 0.28));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.cafe-radio:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.05);
+  filter: drop-shadow(0 9px 16px rgba(46, 31, 22, 0.34));
+}
+
+.cafe-radio:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.turntable {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* --- Colors --- */
+.tt-vinyl { fill: #2E2721; }
+.tt-groove { fill: none; stroke: rgba(255, 253, 248, 0.10); stroke-width: 1; }
+.tt-label { fill: var(--accent); }
+.tt-mark { fill: rgba(46, 39, 33, 0.4); }
+.tt-hole { fill: #2E2721; }
+.tt-arm-rod { stroke: var(--accent-strong); stroke-width: 3.4; stroke-linecap: round; }
+.tt-head { fill: var(--accent-strong); }
+.tt-pivot { fill: var(--accent-strong); }
+.tt-pivot-dot { fill: var(--accent); }
+.tt-note ellipse,
+.tt-note rect { fill: var(--leaf-strong); }
+
+/* --- Record spins while playing --- */
+.tt-record {
+  transform-box: view-box;
+  transform-origin: 44px 60px;
+}
+
+.cafe-radio.is-playing .tt-record {
+  animation: ttSpin 3.4s linear infinite;
+}
+
+@keyframes ttSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* --- Tonearm: lifted when idle, dropped onto the record when playing --- */
+.tt-arm {
+  transform-box: view-box;
+  transform-origin: 84px 24px;
+  transform: rotate(-26deg);
+  transition: transform 0.55s cubic-bezier(0.34, 1.25, 0.64, 1);
+}
+
+.cafe-radio.is-playing .tt-arm {
+  transform: rotate(0deg);
+}
+
+/* --- Music notes float up while playing --- */
+.tt-note { opacity: 0; }
+
+.cafe-radio.is-playing .tt-note-1 { animation: ttNote 2.2s ease-out infinite; }
+.cafe-radio.is-playing .tt-note-2 { animation: ttNote 2.2s ease-out 1.1s infinite; }
+
+@keyframes ttNote {
+  0%   { transform: translateY(4px); opacity: 0; }
+  25%  { opacity: 0.95; }
+  100% { transform: translateY(-16px); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cafe-radio.is-playing .tt-record,
+  .cafe-radio.is-playing .tt-note-1,
+  .cafe-radio.is-playing .tt-note-2 {
+    animation: none;
+  }
+  .tt-arm {
+    transition: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .cafe-radio {
+    left: 14px;
+    bottom: 14px;
+    width: 60px;
+    height: 60px;
+  }
+}

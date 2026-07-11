@@ -103,6 +103,12 @@ nav {
   border-color: var(--leaf);
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .nav-links {
   display: flex;
   list-style: none;

@@ -11,6 +11,7 @@ import Quote from './components/Quote'
 import Footer from './components/Footer'
 import ScrollProgress from './components/ScrollProgress'
 import BackToTop from './components/BackToTop'
+import CafeRadio from './components/CafeRadio'
 import SectionDivider from './components/SectionDivider'
 import './App.css'
 
@@ -96,6 +97,7 @@ function App() {
       </main>
       <Footer />
       <BackToTop />
+      <CafeRadio />
     </>
   )
 }
