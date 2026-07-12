@@ -227,8 +227,11 @@ body.loaded .header-text .wave {
   height: auto;
   object-fit: cover;
   border-radius: 62% 38% 58% 42% / 48% 60% 40% 52%;
-  border: 4px solid var(--surface-solid);
-  box-shadow: 0 18px 44px rgba(59, 42, 30, 0.25);
+  border: 3px solid var(--surface-solid);
+  box-shadow:
+    0 0 0 1px var(--leaf-border),
+    0 10px 22px rgba(59, 42, 30, 0.16),
+    0 26px 52px rgba(59, 42, 30, 0.24);
   transition: transform 0.5s ease, box-shadow 0.5s ease, border-radius 0.6s ease;
 }
 
@@ -236,7 +239,10 @@ body.loaded .header-text .wave {
   .header-image img:hover {
     transform: scale(1.03) rotate(-1deg);
     border-radius: 50% 50% 52% 48% / 56% 44% 56% 44%;
-    box-shadow: 0 22px 52px rgba(59, 42, 30, 0.32);
+    box-shadow:
+      0 0 0 1px var(--leaf),
+      0 14px 30px rgba(59, 42, 30, 0.2),
+      0 30px 60px rgba(59, 42, 30, 0.3);
   }
 }
 

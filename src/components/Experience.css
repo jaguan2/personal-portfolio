@@ -85,9 +85,9 @@
 #experience h1::after {
   content: '';
   display: block;
-  width: 56px;
+  width: 88px;
   height: 3px;
-  background: var(--leaf);
+  background: linear-gradient(90deg, transparent, var(--leaf) 22%, var(--leaf) 78%, transparent);
   border-radius: 2px;
   margin: 12px auto 0;
 }
@@ -181,7 +181,10 @@
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 28px 32px;
-  box-shadow: var(--shadow);
+  box-shadow:
+    0 1px 2px rgba(46, 39, 33, 0.06),
+    0 8px 20px rgba(46, 39, 33, 0.09),
+    0 26px 48px rgba(46, 39, 33, 0.09);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
   border-left: 4px solid var(--leaf);
 }
@@ -189,7 +192,10 @@
 @media (hover: hover) {
   .experience-card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-hover);
+    box-shadow:
+      0 2px 4px rgba(46, 39, 33, 0.08),
+      0 14px 28px rgba(46, 39, 33, 0.13),
+      0 34px 60px rgba(46, 39, 33, 0.13);
     border-left-color: var(--leaf-strong);
     border-left-width: 6px;
   }

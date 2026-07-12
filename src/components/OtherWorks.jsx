@@ -22,13 +22,26 @@ const menu = [
           'A cat-themed class scheduling platform that helps USF Computer Science students plan their academic journey. Students can create, compare, and share course schedules with friends, choosing from 28 core and elective classes.',
         link: 'https://github.com/jaguan2/PurrfectPath',
         drink: 'latte'
+      }
+    ]
+  },
+  {
+    category: 'Web',
+    items: [
+      {
+        title: 'Personal Portfolio',
+        ingredients: 'React • Vite • JavaScript • CSS • GitHub Pages',
+        description:
+          'A place where I document and share my journey in computer science and more. Cheers!',
+        link: 'https://github.com/jaguan2/personal-portfolio',
+        drink: 'matcha'
       },
       {
-        title: 'TaskNook',
-        ingredients: 'Python • Flask • SQLite • JavaScript • HTML/CSS',
+        title: 'Study with Soobin',
+        ingredients: 'React • TypeScript • Vite • Tailwind CSS • YouTube IFrame API',
         description:
-          'A task tracking app designed to help users manage and organize their tasks in a cozy, efficient environment. Users can input tasks and check off completed ones, with various algorithms that optimize task order, such as prioritizing shorter tasks or alternating between short and long ones. Tasks can be arranged dynamically on a calendar, and a progress bar tracks completion and productivity hours.',
-        link: 'https://github.com/jaguan2/TaskNook',
+          'A LifeAt-style Pomodoro study app featuring the K-pop idol Soobin from TXT (Tomorrow x Together). Originating from me watching his vlogs / livestreams while studying for finals.',
+        link: 'https://github.com/jaguan2/studywithsoobin',
         drink: 'coldbrew'
       }
     ]
@@ -43,19 +56,6 @@ const menu = [
           'A Thomas the Train-themed autonomous robot prototype built as an affordable STEM toy for K-12 students. Designed to navigate obstacle courses using ultrasonic sensors on a $30 budget, the robot was modeled in TinkerCAD, then 3D printed and assembled by hand.',
         link: 'https://github.com/jaguan2/Autonomous-Robot',
         drink: 'espresso'
-      }
-    ]
-  },
-  {
-    category: 'Web',
-    items: [
-      {
-        title: 'Personal Portfolio',
-        ingredients: 'React • Vite • JavaScript • CSS • GitHub Pages',
-        description:
-          'A place where I document and share my journey in computer science and more. Cheers!',
-        link: 'https://github.com/jaguan2/personal-portfolio',
-        drink: 'matcha'
       }
     ]
   }

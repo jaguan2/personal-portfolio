@@ -24,7 +24,11 @@
   display: inline-block;
   width: 64px;
   height: 1px;
-  background: var(--leaf-border);
+  background: linear-gradient(90deg, transparent, var(--leaf-border));
+}
+
+.quote-divider:last-of-type {
+  background: linear-gradient(90deg, var(--leaf-border), transparent);
 }
 
 .quote-label {

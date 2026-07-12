@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import deftechlinkImage from '../assets/deftechlink.png'
 import twitterFeelImage from '../assets/TwitterFeel.JPG'
+import tasknookImage from '../assets/tasknook.png'
 import coffeeBranch from '../assets/coffee-branch.svg'
 import coffeeSprig from '../assets/coffee-sprig.svg'
 import leafLine from '../assets/leaf-line.svg'
@@ -27,6 +28,16 @@ const projects = [
     link: 'https://github.com/jaguan2/twitterFeel',
     linkType: 'github',
     media: { type: 'image', src: twitterFeelImage, alt: 'TwitterFeel sentiment analysis dashboard' }
+  },
+  {
+    id: 2,
+    eyebrow: 'Cozy Full-Stack Task Tracker',
+    title: 'TaskNook',
+    technologies: 'React • Vite • Tailwind CSS • Framer Motion • Flask • SQLAlchemy • Web Audio API',
+    description: 'TaskNook is a cozy task tracker inspired by the game and improved on by Virtual Cottage. Customize your work environment, from a rainy window to sunny day. Get work done with our task manager. Adjust the music, from our preset lofi playlist to your custom linked playlist. Connect with friends, share your activity and stay motivated together.',
+    link: 'https://github.com/jaguan2/TaskNook',
+    linkType: 'github',
+    media: { type: 'image', src: tasknookImage, alt: 'TaskNook cozy desk scene with focus timer and rainy window' }
   }
 ]
 

@@ -88,9 +88,9 @@
 #projects h1::after {
   content: '';
   display: block;
-  width: 56px;
+  width: 88px;
   height: 3px;
-  background: var(--leaf);
+  background: linear-gradient(90deg, transparent, var(--leaf) 22%, var(--leaf) 78%, transparent);
   border-radius: 2px;
   margin: 12px auto 0;
 }

@@ -15,16 +15,33 @@
 }
 
 .footer-links a {
+  position: relative;
   color: var(--surface-solid);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
+  padding-bottom: 3px;
   transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  background: var(--leaf-hover);
+  transition: width 0.35s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .footer-links a:hover {
   color: var(--leaf-hover);
   transform: translateY(-2px);
+}
+
+.footer-links a:hover::after {
+  width: 100%;
 }
 
 .divider {

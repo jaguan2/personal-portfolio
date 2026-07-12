@@ -24,7 +24,7 @@ function About() {
             </div>
             <div className="about-col-2">
               <h1>About Me</h1>
-              <p>
+              <p className="about-lead">
                 I'm a Comp Sci alum from the University of South Florida, currently
                 serving as a Full Stack Developer Lead at DefTechLink, a startup that intends
                 to bridge the gap between the defense industry, academia, and government.
