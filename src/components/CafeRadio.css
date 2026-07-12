@@ -34,6 +34,41 @@
   cursor: default;
 }
 
+/* Tucked away while the dark footer is in view — the espresso vinyl
+   is invisible against the matching footer background */
+.cafe-radio.is-tucked {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+}
+
+/* One-time discoverability hint beside the turntable */
+.cafe-radio-hint {
+  position: fixed;
+  left: 100px;
+  bottom: 42px;
+  z-index: 91;
+  background: var(--surface-solid);
+  color: var(--text);
+  font-family: 'Lora', Georgia, serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--leaf-border);
+  box-shadow: 0 4px 14px rgba(46, 39, 33, 0.14);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.cafe-radio-hint.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .turntable {
   display: block;
   width: 100%;
@@ -109,5 +144,12 @@
     bottom: 14px;
     width: 60px;
     height: 60px;
+  }
+
+  .cafe-radio-hint {
+    left: 82px;
+    bottom: 32px;
+    font-size: 0.8rem;
+    padding: 6px 12px;
   }
 }

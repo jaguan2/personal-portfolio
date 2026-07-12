@@ -11,6 +11,35 @@ function CafeRadio() {
   const createdRef = useRef(false)
   const [playing, setPlaying] = useState(false)
   const [ready, setReady] = useState(false)
+  const [overFooter, setOverFooter] = useState(false)
+  const [showHint, setShowHint] = useState(false)
+
+  // Fade out when the dark footer is in view — the vinyl is the same espresso
+  // color as the footer background and visually disappears into it.
+  useEffect(() => {
+    const footer = document.getElementById('footer')
+    if (!footer) return
+    const observer = new IntersectionObserver(
+      ([entry]) => setOverFooter(entry.isIntersecting),
+      { threshold: 0.2 }
+    )
+    observer.observe(footer)
+    return () => observer.disconnect()
+  }, [])
+
+  // One-time "café radio" hint so first-time visitors know the turntable plays music
+  useEffect(() => {
+    if (localStorage.getItem('cafeRadioHintSeen')) return
+    const showTimer = setTimeout(() => setShowHint(true), 2600)
+    const hideTimer = setTimeout(() => {
+      setShowHint(false)
+      localStorage.setItem('cafeRadioHintSeen', '1')
+    }, 8600)
+    return () => {
+      clearTimeout(showTimer)
+      clearTimeout(hideTimer)
+    }
+  }, [])
 
   useEffect(() => {
     if (!VIDEO_ID) return
@@ -79,9 +108,10 @@ function CafeRadio() {
 
       <button
         type="button"
-        className={`cafe-radio ${playing ? 'is-playing' : ''}`}
+        className={`cafe-radio ${playing ? 'is-playing' : ''} ${overFooter ? 'is-tucked' : ''}`}
         onClick={toggle}
         disabled={!ready}
+        tabIndex={overFooter ? -1 : 0}
         aria-label={playing ? 'Pause music' : 'Play music'}
         aria-pressed={playing}
         title={ready ? (playing ? 'Pause music' : 'Play music') : 'Loading music…'}
@@ -118,6 +148,10 @@ function CafeRadio() {
           <circle className="tt-pivot-dot" cx="84" cy="24" r="2.4" />
         </svg>
       </button>
+
+      <span className={`cafe-radio-hint ${showHint && !overFooter ? 'show' : ''}`} aria-hidden="true">
+        café radio&nbsp;♪
+      </span>
     </>
   )
 }
