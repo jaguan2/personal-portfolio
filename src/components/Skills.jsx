@@ -39,9 +39,19 @@ const ToolIcon = () => (
   </svg>
 )
 
+const ServerIcon = () => (
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="2" y="3" width="20" height="7" rx="2" />
+    <rect x="2" y="14" width="20" height="7" rx="2" />
+    <line x1="6.5" y1="6.5" x2="6.51" y2="6.5" />
+    <line x1="6.5" y1="17.5" x2="6.51" y2="17.5" />
+  </svg>
+)
+
 const icons = {
   code: CodeIcon,
   layers: LayersIcon,
+  server: ServerIcon,
   cloud: CloudIcon,
   database: DatabaseIcon,
   tool: ToolIcon
@@ -59,9 +69,14 @@ const skillsData = [
     skills: ['Flask', 'SQLAlchemy', 'Node.js', 'React', 'MUI', 'Bootstrap']
   },
   {
-    category: 'Backend & Cloud',
+    category: 'Backend',
+    icon: 'server',
+    skills: ['REST APIs', 'Auth0', 'Stripe', 'Docker']
+  },
+  {
+    category: 'Cloud',
     icon: 'cloud',
-    skills: ['REST APIs', 'AWS Lambda', 'EventBridge', 'RDS', 'S3', 'EC2', 'SNS', 'Auth0', 'Stripe', 'Docker']
+    skills: ['AWS Lambda', 'EventBridge', 'RDS', 'S3', 'EC2', 'SNS']
   },
   {
     category: 'Databases',
