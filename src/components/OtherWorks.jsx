@@ -17,7 +17,7 @@ const menu = [
     items: [
       {
         title: 'Purrfect Path',
-        ingredients: 'Python • Flask • JavaScript • PostgreSQL • AWS',
+        ingredients: 'Python • Flask • React • PostgreSQL • AWS',
         description:
           'A cat-themed class scheduling platform that helps USF Computer Science students plan their academic journey. Students can create, compare, and share course schedules with friends, choosing from 28 core and elective classes.',
         link: 'https://github.com/jaguan2/PurrfectPath',
