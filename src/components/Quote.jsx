@@ -11,16 +11,12 @@ const quotes = [
     author: null
   },
   {
-    text: 'Only when it is dark enough can you see the stars. Let us fill the sky with the light of a billion brilliant stars.',
+    text: 'Only when it is dark enough can you see the stars.',
     author: null
   },
   {
     text: 'To be young is to burn bright. Don\'t live your life with regrets.',
     author: 'The On1y One, 2024'
-  },
-  {
-    text: 'Even when you\'re suffering so much that you lose your mind, just as the flower blooms even in the harsh rain, let\'s press on.',
-    author: 'Hwasa'
   },
   {
     text: 'You and your dream were both beautiful. When you know more than anyone that your dream won\'t be rewarded… yet you still challenged it.',
@@ -44,7 +40,7 @@ const quotes = [
   },
   {
     text: 'I realize that I have to believe in myself through the bumps against reality as I experience emotions of rejection, confusion, recognition, and dignity. I trust just believing in yourself can make you stand out.',
-    author: null
+    author: 'Soyeon'
   },
   {
     text: 'Doubt is the foundation by which you break through blind faith.',
@@ -69,6 +65,10 @@ const quotes = [
   {
     text: 'Be willing to walk at a turtle\'s pace even though everyone is walking at a hare\'s pace, because ultimately taking that time for yourself will help you in getting to where you want to be.',
     author: 'Sarah Pan'
+  },
+  {
+    text: 'Evidence over affirmation.',
+    author: null
   }
 ]
 
