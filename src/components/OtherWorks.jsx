@@ -22,6 +22,14 @@ const menu = [
           'A cat-themed class scheduling platform that helps USF Computer Science students plan their academic journey. Students can create, compare, and share course schedules with friends, choosing from 28 core and elective classes.',
         link: 'https://github.com/jaguan2/PurrfectPath',
         drink: 'latte'
+      },
+      {
+        title: 'Dopamine',
+        ingredients: 'React • Vite • Flask • SQLAlchemy • SQLite • pytest',
+        description:
+          'Inspired by the Korean "dopamine site" trend, where users can shop and place orders for a dopamine hit, however nothing is shipped! A full stack website designed after my family\'s Japanese restaurant with a 282-dish menu, cart, and checkout.',
+        link: 'https://github.com/jaguan2/dopamine',
+        drink: 'coldbrew'
       }
     ]
   },
@@ -43,6 +51,14 @@ const menu = [
           'A LifeAt-style Pomodoro study app featuring the K-pop idol Soobin from TXT (Tomorrow x Together). Originating from me watching his vlogs / livestreams while studying for finals.',
         link: 'https://github.com/jaguan2/studywithsoobin',
         drink: 'coldbrew'
+      },
+      {
+        title: 'Media Grabber',
+        ingredients: 'React • Node.js • Express • yt-dlp • FFmpeg • MUI',
+        description:
+          'An ad-free media downloader for YouTube, Instagram, and X. Paste a share link and it pulls the video or photos back down as MP4, MP3, JPG, or PNG, with quality options, progress tracking, and batch downloads zipped up in the browser.',
+        link: 'https://github.com/jaguan2/media-grabber',
+        drink: 'espresso'
       }
     ]
   },

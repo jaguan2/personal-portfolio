@@ -138,6 +138,9 @@
   height: auto;
   max-height: 380px;
   object-fit: cover;
+  /* Crop from the bottom, not the middle, so the top of a screenshot
+     (HUD, nav, headers) stays visible */
+  object-position: top;
   display: block;
   border-radius: 16px;
   border: 3px solid var(--surface-solid);

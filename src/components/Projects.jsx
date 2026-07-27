@@ -28,7 +28,7 @@ const projects = [
     link: 'https://deftechlink.com',
     linkType: 'external',
     media: [
-      { type: 'image', src: deftechlinkCover, alt: 'DefTechLink landing page — "Find and Win Defense Contracts Worldwide"' },
+      { type: 'image', src: deftechlinkCover, alt: 'DefTechLink landing page with the headline "Find and Win Defense Contracts Worldwide"' },
       { type: 'image', src: dtlDashboardImage, alt: 'DefTechLink dashboard with due opportunities, upcoming events and recommendations' },
       { type: 'image', src: dtlOpportunitiesImage, alt: 'DefTechLink opportunities board listing global defense solicitations and tenders' },
       { type: 'image', src: deftechlearnImage, alt: 'DefTechLearn course and resource library' },
@@ -55,11 +55,11 @@ const projects = [
     link: 'https://github.com/jaguan2/TaskNook',
     linkType: 'github',
     media: [
-      { type: 'image', src: tasknookLoft, alt: 'TaskNook loft room at night — an L-shaped attic with a resident on the sofa and a sleeping cat' },
-      { type: 'image', src: tasknookCafe, alt: 'TaskNook morning cafe preset with an espresso counter and tables' },
-      { type: 'image', src: tasknookGarden, alt: 'TaskNook secret garden preset — open air with grass, a pond and trees' },
+      { type: 'image', src: tasknookLoft, alt: 'TaskNook loft room at night, an L-shaped attic with a resident on the sofa and a cat on the floor' },
+      { type: 'image', src: tasknookCafe, alt: 'TaskNook corner cafe preset with a bar, chalkboard menu, bookshelves and patrons at the tables' },
+      { type: 'image', src: tasknookGarden, alt: 'TaskNook secret garden preset, open air with grass, a pond and trees' },
       { type: 'image', src: tasknookCabin, alt: 'TaskNook cozy cabin preset with a hearth wall while it snows outside' },
-      { type: 'image', src: tasknookDecorating, alt: 'TaskNook decorating mode — drawing the floor plan on a grid and arranging furniture' },
+      { type: 'image', src: tasknookDecorating, alt: 'TaskNook decorating mode, drawing the floor plan on a grid and arranging furniture' },
       { type: 'image', src: tasknookProgress, alt: 'TaskNook progress panel with daily goal, streak and productivity garden' }
     ]
   }

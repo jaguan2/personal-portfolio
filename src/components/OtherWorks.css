@@ -131,10 +131,11 @@
 
 .menu-items {
   list-style: none;
-  /* Auto-fit columns: 2-up on wide cards, 1-up when space is tight,
-     and a lone item stretches to fill the row. */
+  /* Auto-fit columns sized by the text they need: each item gets a
+     comfortable reading width, so a third item wraps to the next row
+     rather than squeezing the descriptions thin. */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
   gap: 34px 52px;
 }
 
