@@ -38,16 +38,6 @@ const projects = [
   },
   {
     id: 1,
-    eyebrow: 'Sentiment Analysis & Social Media Mining',
-    title: 'TwitterFeel',
-    technologies: 'Python • TensorFlow • PyTorch • Pandas • Hugging Face',
-    description: 'TwitterFeel is a machine learning research project focused on identifying early indicators of depression, anxiety, and suicidal ideation through social media activity. Inspired by the growing mental health crisis and the widespread influence of social media, the project explores whether online behavior can reveal signs of emotional distress before they become more severe. By detecting these warning signs early, the goal is to better understand how technology can support awareness, intervention, and access to help for individuals who may be struggling.',
-    link: 'https://github.com/jaguan2/twitterFeel',
-    linkType: 'github',
-    media: { type: 'image', src: twitterFeelImage, alt: 'TwitterFeel sentiment analysis dashboard' }
-  },
-  {
-    id: 2,
     eyebrow: 'Cozy Full-Stack Task Tracker',
     title: 'TaskNook',
     technologies: 'React • Vite • Tailwind CSS • Framer Motion • Flask • SQLAlchemy • Web Audio API',
@@ -62,6 +52,16 @@ const projects = [
       { type: 'image', src: tasknookDecorating, alt: 'TaskNook decorating mode, drawing the floor plan on a grid and arranging furniture' },
       { type: 'image', src: tasknookProgress, alt: 'TaskNook progress panel with daily goal, streak and productivity garden' }
     ]
+  },
+  {
+    id: 2,
+    eyebrow: 'Sentiment Analysis & Social Media Mining',
+    title: 'TwitterFeel',
+    technologies: 'Python • TensorFlow • PyTorch • Pandas • Hugging Face',
+    description: 'TwitterFeel is a machine learning research project focused on identifying early indicators of depression, anxiety, and suicidal ideation through social media activity. Inspired by the growing mental health crisis and the widespread influence of social media, the project explores whether online behavior can reveal signs of emotional distress before they become more severe. By detecting these warning signs early, the goal is to better understand how technology can support awareness, intervention, and access to help for individuals who may be struggling.',
+    link: 'https://github.com/jaguan2/twitterFeel',
+    linkType: 'github',
+    media: { type: 'image', src: twitterFeelImage, alt: 'TwitterFeel sentiment analysis dashboard' }
   }
 ]
 

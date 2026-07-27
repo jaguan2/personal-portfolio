@@ -139,6 +139,11 @@
   gap: 34px 52px;
 }
 
+/* Opt an item into spanning the full row, whatever the column count */
+.menu-item.is-wide {
+  grid-column: 1 / -1;
+}
+
 /* Each item: illustrated coffee thumbnail + text body */
 .menu-item {
   display: flex;

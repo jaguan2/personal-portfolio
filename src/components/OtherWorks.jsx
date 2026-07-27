@@ -58,7 +58,8 @@ const menu = [
         description:
           'An ad-free media downloader for YouTube, Instagram, and X. Paste a share link and it pulls the video or photos back down as MP4, MP3, JPG, or PNG, with quality options, progress tracking, and batch downloads zipped up in the browser.',
         link: 'https://github.com/jaguan2/media-grabber',
-        drink: 'espresso'
+        drink: 'espresso',
+        wide: true
       }
     ]
   },
@@ -184,7 +185,7 @@ function OtherWorks() {
                   {group.items.map((item) => {
                     const Drink = drinks[item.drink] || DrinkLatte
                     return (
-                      <li className="menu-item" key={item.title}>
+                      <li className={`menu-item${item.wide ? ' is-wide' : ''}`} key={item.title}>
                         <span className="menu-item-thumb" aria-hidden="true">
                           <Drink />
                         </span>
