@@ -1,7 +1,17 @@
 import { useState, useEffect } from 'react'
-import deftechlinkImage from '../assets/deftechlink.png'
+import deftechlinkCover from '../assets/deftechlink.png'
+import dtlDashboardImage from '../assets/dtldashboard.png'
+import dtlOpportunitiesImage from '../assets/dtlopportunities.png'
+import deftechlearnImage from '../assets/deftechlearn.png'
+import deftechpodImage from '../assets/deftechpod.png'
+import dtlOrganizationsImage from '../assets/dtlorganizations.png'
 import twitterFeelImage from '../assets/TwitterFeel.JPG'
-import tasknookImage from '../assets/tasknook.png'
+import tasknookLoft from '../assets/tasknook-loft.webp'
+import tasknookCafe from '../assets/tasknook-cafe.webp'
+import tasknookGarden from '../assets/tasknook-garden.webp'
+import tasknookCabin from '../assets/tasknook-cabin.webp'
+import tasknookDecorating from '../assets/tasknook-decorating.webp'
+import tasknookProgress from '../assets/tasknook-progress.webp'
 import coffeeBranch from '../assets/coffee-branch.svg'
 import coffeeSprig from '../assets/coffee-sprig.svg'
 import leafLine from '../assets/leaf-line.svg'
@@ -17,7 +27,14 @@ const projects = [
     description: 'DefTechLink is a defense-tech startup focused on helping innovative companies navigate government contracting and defense markets. I build the backend systems, cloud infrastructure, and data pipelines that aggregate thousands of defense opportunities, making them easier for companies to discover.',
     link: 'https://deftechlink.com',
     linkType: 'external',
-    media: { type: 'image', src: deftechlinkImage, alt: 'DefTechLink platform' }
+    media: [
+      { type: 'image', src: deftechlinkCover, alt: 'DefTechLink landing page — "Find and Win Defense Contracts Worldwide"' },
+      { type: 'image', src: dtlDashboardImage, alt: 'DefTechLink dashboard with due opportunities, upcoming events and recommendations' },
+      { type: 'image', src: dtlOpportunitiesImage, alt: 'DefTechLink opportunities board listing global defense solicitations and tenders' },
+      { type: 'image', src: deftechlearnImage, alt: 'DefTechLearn course and resource library' },
+      { type: 'image', src: deftechpodImage, alt: 'DefTechPod podcast episode library' },
+      { type: 'image', src: dtlOrganizationsImage, alt: 'DefTechLink organizations directory of defense networks and programmes' }
+    ]
   },
   {
     id: 1,
@@ -37,7 +54,14 @@ const projects = [
     description: 'TaskNook is a cozy task tracker inspired by the game and improved on by Virtual Cottage. Customize your work environment, from a rainy window to sunny day. Get work done with our task manager. Adjust the music, from our preset lofi playlist to your custom linked playlist. Connect with friends, share your activity and stay motivated together.',
     link: 'https://github.com/jaguan2/TaskNook',
     linkType: 'github',
-    media: { type: 'image', src: tasknookImage, alt: 'TaskNook cozy desk scene with focus timer and rainy window' }
+    media: [
+      { type: 'image', src: tasknookLoft, alt: 'TaskNook loft room at night — an L-shaped attic with a resident on the sofa and a sleeping cat' },
+      { type: 'image', src: tasknookCafe, alt: 'TaskNook morning cafe preset with an espresso counter and tables' },
+      { type: 'image', src: tasknookGarden, alt: 'TaskNook secret garden preset — open air with grass, a pond and trees' },
+      { type: 'image', src: tasknookCabin, alt: 'TaskNook cozy cabin preset with a hearth wall while it snows outside' },
+      { type: 'image', src: tasknookDecorating, alt: 'TaskNook decorating mode — drawing the floor plan on a grid and arranging furniture' },
+      { type: 'image', src: tasknookProgress, alt: 'TaskNook progress panel with daily goal, streak and productivity garden' }
+    ]
   }
 ]
 
@@ -71,14 +95,32 @@ const ExpandIcon = () => (
   </svg>
 )
 
+// A project's `media` may be a single object or an array (carousel).
+const galleryOf = (project) =>
+  Array.isArray(project.media) ? project.media : [project.media]
+
 function Projects() {
   const [lightbox, setLightbox] = useState(null)
+  const [slides, setSlides] = useState({})
 
-  // Close on Escape and lock background scroll while the lightbox is open
+  const step = (projectId, length, dir) =>
+    setSlides((prev) => {
+      const current = prev[projectId] ?? 0
+      return { ...prev, [projectId]: (current + dir + length) % length }
+    })
+
+  const stepLightbox = (dir) =>
+    setLightbox((lb) =>
+      lb ? { ...lb, index: (lb.index + dir + lb.gallery.length) % lb.gallery.length } : lb
+    )
+
+  // Close on Escape, arrow-key through the gallery, lock background scroll
   useEffect(() => {
     if (!lightbox) return
     const onKeyDown = (e) => {
       if (e.key === 'Escape') setLightbox(null)
+      else if (e.key === 'ArrowRight') stepLightbox(1)
+      else if (e.key === 'ArrowLeft') stepLightbox(-1)
     }
     document.addEventListener('keydown', onKeyDown)
     const prevOverflow = document.body.style.overflow
@@ -100,25 +142,64 @@ function Projects() {
       <div className="container">
         <h1>Featured Work</h1>
         <div className="projects-list">
-          {projects.map((project) => (
+          {projects.map((project) => {
+            const gallery = galleryOf(project)
+            const index = slides[project.id] ?? 0
+            const current = gallery[index]
+            return (
             <article className="project-row reveal" key={project.id}>
-              <button
-                type="button"
-                className="project-media"
-                onClick={() => setLightbox(project.media)}
-                aria-label={`Expand ${project.title} ${project.media.type === 'video' ? 'demo' : 'image'}`}
-              >
-                {project.media.type === 'video' ? (
-                  <video autoPlay loop muted playsInline aria-label={project.media.alt}>
-                    <source src={project.media.src} type="video/mp4" />
-                  </video>
-                ) : (
-                  <img src={project.media.src} alt={project.media.alt} />
+              <div className="project-media">
+                <button
+                  type="button"
+                  className="media-frame"
+                  onClick={() => setLightbox({ gallery, index })}
+                  aria-label={`Expand ${project.title} ${current.type === 'video' ? 'demo' : 'image'}`}
+                >
+                  {current.type === 'video' ? (
+                    <video key={current.src} autoPlay loop muted playsInline aria-label={current.alt}>
+                      <source src={current.src} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <img src={current.src} alt={current.alt} />
+                  )}
+                  <span className="media-expand-hint" aria-hidden="true">
+                    <ExpandIcon />
+                  </span>
+                </button>
+
+                {gallery.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      className="media-nav media-nav-prev"
+                      onClick={() => step(project.id, gallery.length, -1)}
+                      aria-label={`Previous ${project.title} image`}
+                    >
+                      &#10094;
+                    </button>
+                    <button
+                      type="button"
+                      className="media-nav media-nav-next"
+                      onClick={() => step(project.id, gallery.length, 1)}
+                      aria-label={`Next ${project.title} image`}
+                    >
+                      &#10095;
+                    </button>
+                    <div className="media-dots">
+                      {gallery.map((_, i) => (
+                        <button
+                          key={i}
+                          type="button"
+                          className={`media-dot ${i === index ? 'active' : ''}`}
+                          onClick={() => setSlides((prev) => ({ ...prev, [project.id]: i }))}
+                          aria-label={`Show ${project.title} image ${i + 1}`}
+                          aria-current={i === index}
+                        />
+                      ))}
+                    </div>
+                  </>
                 )}
-                <span className="media-expand-hint" aria-hidden="true">
-                  <ExpandIcon />
-                </span>
-              </button>
+              </div>
 
               <div className="project-info">
                 {project.eyebrow && (
@@ -152,7 +233,8 @@ function Projects() {
                 )}
               </div>
             </article>
-          ))}
+            )
+          })}
         </div>
       </div>
 
@@ -173,12 +255,39 @@ function Projects() {
             &times;
           </button>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            {lightbox.type === 'video' ? (
-              <video autoPlay loop muted playsInline controls aria-label={lightbox.alt}>
-                <source src={lightbox.src} type="video/mp4" />
-              </video>
-            ) : (
-              <img src={lightbox.src} alt={lightbox.alt} />
+            {(() => {
+              const shot = lightbox.gallery[lightbox.index]
+              return shot.type === 'video' ? (
+                <video key={shot.src} autoPlay loop muted playsInline controls aria-label={shot.alt}>
+                  <source src={shot.src} type="video/mp4" />
+                </video>
+              ) : (
+                <img src={shot.src} alt={shot.alt} />
+              )
+            })()}
+
+            {lightbox.gallery.length > 1 && (
+              <>
+                <button
+                  type="button"
+                  className="lightbox-nav lightbox-nav-prev"
+                  onClick={() => stepLightbox(-1)}
+                  aria-label="Previous image"
+                >
+                  &#10094;
+                </button>
+                <button
+                  type="button"
+                  className="lightbox-nav lightbox-nav-next"
+                  onClick={() => stepLightbox(1)}
+                  aria-label="Next image"
+                >
+                  &#10095;
+                </button>
+                <span className="lightbox-count">
+                  {lightbox.index + 1} / {lightbox.gallery.length}
+                </span>
+              </>
             )}
           </div>
         </div>

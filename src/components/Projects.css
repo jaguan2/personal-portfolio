@@ -117,6 +117,12 @@
 
 .project-media {
   position: relative;
+  width: 100%;
+}
+
+/* The clickable image itself (opens the lightbox) */
+.media-frame {
+  position: relative;
   display: block;
   width: 100%;
   padding: 0;
@@ -159,22 +165,92 @@
 }
 
 @media (hover: hover) {
-  .project-media:hover img,
-  .project-media:hover video {
+  .media-frame:hover img,
+  .media-frame:hover video {
     transform: translateY(-4px) scale(1.01);
     border-color: var(--leaf);
     box-shadow: 0 20px 44px rgba(46, 31, 22, 0.32);
   }
 
-  .project-media:hover .media-expand-hint {
+  .media-frame:hover .media-expand-hint {
     opacity: 1;
     transform: scale(1);
   }
 }
 
-.project-media:focus-visible {
+.media-frame:focus-visible {
   outline: 3px solid var(--leaf);
   outline-offset: 4px;
+}
+
+/* === Carousel controls (only render when a project has 2+ media) === */
+.media-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(92, 61, 36, 0.78);
+  color: var(--surface-solid);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.3s ease, background 0.3s ease, transform 0.2s ease;
+}
+
+.media-nav-prev { left: 12px; }
+.media-nav-next { right: 12px; }
+
+.project-media:hover .media-nav,
+.media-nav:focus-visible {
+  opacity: 1;
+}
+
+.media-nav:hover {
+  background: var(--accent-strong);
+}
+
+.media-nav:active {
+  transform: translateY(-50%) scale(0.92);
+}
+
+/* Always visible on touch, where there's no hover */
+@media (hover: none) {
+  .media-nav { opacity: 0.9; }
+}
+
+.media-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.media-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.media-dot:hover {
+  background: var(--leaf);
+}
+
+.media-dot.active {
+  background: var(--leaf-strong);
+  transform: scale(1.3);
 }
 
 /* Lightbox overlay */
@@ -194,8 +270,56 @@
 }
 
 .lightbox-content {
+  position: relative;
   cursor: default;
   animation: lightboxZoom 0.28s ease;
+}
+
+/* Lightbox carousel arrows + counter */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 253, 248, 0.9);
+  color: var(--text);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.lightbox-nav-prev { left: -22px; }
+.lightbox-nav-next { right: -22px; }
+
+.lightbox-nav:hover {
+  background: var(--accent-strong);
+  color: var(--surface-solid);
+}
+
+.lightbox-nav:active {
+  transform: translateY(-50%) scale(0.92);
+}
+
+.lightbox-count {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 253, 248, 0.75);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+  .lightbox-nav-prev { left: 6px; }
+  .lightbox-nav-next { right: 6px; }
 }
 
 .lightbox-content img,
