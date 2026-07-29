@@ -22,27 +22,28 @@ const GradCapIcon = () => (
 
 const experiences = [
   {
-    title: 'Full Stack Developer Lead',
+    title: 'Full-Stack Developer Lead',
     company: 'DefTechLink',
     location: 'Tampa, FL',
     period: 'March 2025 – Present',
     description: [
-      { bold: 'Built a Python data-ingestion pipeline on AWS Lambda + EventBridge', rest: ' processing 1,000+ daily contract notices from 10+ global defense procurement sources, with opportunity scoring and capability tagging across 20 defense categories.' },
-      { bold: 'Led backend development', rest: ' across the customer platform and internal dashboard, building 246+ REST endpoints spanning the opportunity lifecycle, user management, and role-based access for 7 user types.' },
-      { bold: 'Designed and maintained the PostgreSQL data layer', rest: ' on AWS RDS, modeling 45+ relational entities across multi-environment schemas with indexing, referential integrity, and audit logging.' },
-      { bold: 'Shipped a real-time messaging feature', rest: ' that lets users connect and collaborate directly in the app.' },
-      { bold: 'Implemented a Mandrill-powered email system', rest: ' delivering weekly personalized opportunity digests and automated onboarding drip campaigns.' }
+      { bold: 'Spearheaded full-stack development of two production B2B SaaS platforms', rest: ' that aggregate and manage global defense contracting opportunities for technology companies.' },
+      { bold: 'Engineered an AWS Lambda and EventBridge ingestion pipeline', rest: ' processing 1,000+ defense contract notices daily from global government sources, automatically scoring, tagging, and classifying opportunities.' },
+      { bold: 'Engineered AI-powered features using OpenAI', rest: ' for intelligent opportunity matching, executive report generation, and automated content analysis.' },
+      { bold: 'Integrated third-party services', rest: ' including Stripe, OpenAI, QuickBooks, AWS S3, and Mailchimp APIs to deliver subscription billing, AI workflows, cloud storage, payment reconciliation, and customer engagement features.' },
+      { bold: 'Architected PostgreSQL databases on AWS RDS', rest: ', designing scalable schemas, executing production-safe migrations, and maintaining data integrity across development and production environments.' }
     ]
   },
   {
-    title: 'Software Engineer Intern',
+    title: 'Software Engineer Intern (Secret Clearance)',
     company: 'U.S. Department of the Air Force',
     location: 'Warner Robins, GA',
     period: 'June 2024 – July 2024',
     description: [
-      { bold: 'Led backend development', rest: ' for a full-stack management application centralizing metrics and sprint tracking for 10+ projects.' },
-      { bold: 'Containerized PostgreSQL with Docker', rest: ' for scalable data handling used by 300+ engineers.' },
-      { bold: 'Developed 10+ REST APIs', rest: ' using Flask and SQLAlchemy.' }
+      { bold: 'Served as Backend Lead', rest: ' for a full-stack management platform that centralized project metrics and sprint tracking across 10+ engineering projects.' },
+      { bold: 'Containerized PostgreSQL with Docker', rest: ' to support scalable deployment for 300+ engineers.' },
+      { bold: 'Collaborated in Agile development using Jira and Figma', rest: ', contributing to the successful delivery of three development sprints.' },
+      { bold: 'Developed 10+ REST APIs', rest: ' using Flask, SQLAlchemy, and PostgreSQL to support core platform functionality.' }
     ]
   },
   {

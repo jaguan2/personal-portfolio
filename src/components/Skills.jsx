@@ -61,30 +61,30 @@ const skillsData = [
   {
     category: 'Languages',
     icon: 'code',
-    skills: ['Python', 'JavaScript', 'Java', 'C++', 'C', 'HTML/CSS']
+    skills: ['Python', 'JavaScript', 'Java', 'C++', 'C', 'HTML/CSS', 'SQL']
   },
   {
-    category: 'Frameworks',
-    icon: 'layers',
-    skills: ['Flask', 'SQLAlchemy', 'Node.js', 'React', 'MUI', 'Bootstrap']
-  },
-  {
-    category: 'Backend',
+    category: 'Backend & APIs',
     icon: 'server',
-    skills: ['REST APIs', 'Auth0', 'Stripe', 'Docker']
-  },
-  {
-    category: 'Cloud',
-    icon: 'cloud',
-    skills: ['AWS Lambda', 'EventBridge', 'RDS', 'S3', 'EC2', 'SNS']
+    skills: ['REST APIs', 'OpenAI', 'Auth0 (JWT/OAuth)', 'Stripe', 'QuickBooks', 'Mailchimp']
   },
   {
     category: 'Databases',
     icon: 'database',
-    skills: ['SQL', 'PostgreSQL', 'MySQL', 'SQLite']
+    skills: ['PostgreSQL', 'MySQL', 'SQLite']
   },
   {
-    category: 'Tools',
+    category: 'Frameworks & Libraries',
+    icon: 'layers',
+    skills: ['React', 'Flask', 'SQLAlchemy', 'Node.js', 'MUI', 'Bootstrap']
+  },
+  {
+    category: 'Cloud & Infrastructure',
+    icon: 'cloud',
+    skills: ['AWS Lambda', 'EventBridge', 'RDS', 'S3', 'EC2', 'CloudWatch', 'IAM', 'Docker']
+  },
+  {
+    category: 'Developer Tools',
     icon: 'tool',
     skills: ['Git/GitHub', 'Linux', 'Jira', 'Figma', 'Notion']
   }
