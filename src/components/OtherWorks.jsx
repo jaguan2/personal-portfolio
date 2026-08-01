@@ -27,7 +27,7 @@ const menu = [
         title: 'Dopamine',
         ingredients: 'React • Vite • Flask • SQLAlchemy • SQLite • pytest',
         description:
-          'Inspired by the Korean "dopamine site" trend, where users can shop and place orders for a dopamine hit, however nothing is shipped! A full stack website designed after my family\'s Japanese restaurant with a 282-dish menu, cart, and checkout.',
+          'Inspired by the Korean "dopamine site" trend, where users can shop and place orders for a dopamine hit. A full stack website designed after my family\'s Japanese restaurant with a 282-dish menu, cart, and checkout.',
         link: 'https://github.com/jaguan2/dopamine',
         drink: 'coldbrew'
       }
@@ -48,7 +48,7 @@ const menu = [
         title: 'Study with Soobin',
         ingredients: 'React • TypeScript • Vite • Tailwind CSS • YouTube IFrame API',
         description:
-          'A LifeAt-style Pomodoro study app featuring the K-pop idol Soobin from TXT (Tomorrow x Together). Originating from me watching his vlogs / livestreams while studying for finals.',
+          'A study app featuring Soobin from TXT. Random project inspired from me watching his vlogs / livestreams while studying for finals.',
         link: 'https://github.com/jaguan2/studywithsoobin',
         drink: 'coldbrew'
       },

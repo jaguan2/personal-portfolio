@@ -41,7 +41,7 @@ const projects = [
     eyebrow: 'Cozy Full-Stack Task Tracker',
     title: 'TaskNook',
     technologies: 'React • Vite • Tailwind CSS • Framer Motion • Flask • SQLAlchemy • Web Audio API',
-    description: 'TaskNook is a cozy task tracker inspired by the game and improved on by Virtual Cottage. Customize your work environment, from a rainy window to sunny day. Get work done with our task manager. Adjust the music, from our preset lofi playlist to your custom linked playlist. Connect with friends, share your activity and stay motivated together.',
+    description: 'TaskNook is a cozy customizable task tracker that intends to provide every user with an ideal working condition. Customize your work environment, from a rainy window to sunny day. Get work done with our task manager. Adjust the music, from our preset lofi playlist to your custom linked playlist. Connect with friends, share your activity and stay motivated together.',
     link: 'https://github.com/jaguan2/TaskNook',
     linkType: 'github',
     media: [
