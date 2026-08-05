@@ -135,7 +135,9 @@
      comfortable reading width, so a third item wraps to the next row
      rather than squeezing the descriptions thin. */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  /* min() guard: without it the 420px floor can't shrink on a phone and
+     forces the page to scroll sideways. */
+  grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
   gap: 34px 52px;
 }
 
@@ -292,6 +294,12 @@
 
   .menu-item {
     gap: 14px;
+  }
+
+  /* 44px so the global mobile tap-target rule can't stretch it into an oval */
+  .menu-item-link {
+    width: 44px;
+    height: 44px;
   }
 
   .menu-item-thumb {

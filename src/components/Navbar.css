@@ -253,9 +253,10 @@ nav {
     font-size: 1.2rem;
   }
 
+  /* 44px so the global mobile tap-target rule can't stretch it into an oval */
   .menu-btn {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     font-size: 18px;
   }
 

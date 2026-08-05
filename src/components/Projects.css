@@ -224,25 +224,36 @@
   transform: translateY(-50%) scale(0.92);
 }
 
-/* Always visible on touch, where there's no hover */
+/* Always visible on touch, where there's no hover. Sized to 44px so the
+   global mobile min-height rule can't stretch them into ovals. */
 @media (hover: none) {
-  .media-nav { opacity: 0.9; }
+  .media-nav {
+    opacity: 0.9;
+    width: 44px;
+    height: 44px;
+  }
 }
 
 .media-dots {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 4px;
   margin-top: 12px;
 }
 
 .media-dot {
   width: 8px;
   height: 8px;
-  padding: 0;
+  /* Transparent padding grows the tap target to 24px without growing the
+     visible dot. min-height opts out of the global 44px mobile button rule,
+     which would otherwise stretch these into vertical bars. */
+  padding: 8px;
+  box-sizing: content-box;
+  min-height: 0;
   border: none;
   border-radius: 999px;
   background: var(--accent-soft);
+  background-clip: content-box;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
 }
@@ -572,9 +583,10 @@
     font-size: 1.7rem;
   }
 
+  /* 44px so the global mobile tap-target rule can't stretch this into an oval */
   .project-link {
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
   }
 
   .project-description {
