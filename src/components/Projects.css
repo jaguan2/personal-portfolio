@@ -262,9 +262,9 @@
   background: var(--leaf);
 }
 
+/* Same size as the rest; colour alone marks the active slide */
 .media-dot.active {
   background: var(--leaf-strong);
-  transform: scale(1.3);
 }
 
 /* Lightbox overlay */

@@ -269,7 +269,9 @@ html, body {
     line-height: 1.5;
   }
 
-  a, button:not(.dot) {
+  /* Tap targets. Carousel dots are exempt: they get their hit area from
+     transparent padding instead, so a min-height would stretch them into bars. */
+  a, button:not(.dot):not(.media-dot) {
     min-height: 44px;
   }
 

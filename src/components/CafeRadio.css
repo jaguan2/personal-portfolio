@@ -153,3 +153,14 @@
     padding: 6px 12px;
   }
 }
+
+/* Very narrow phones: drop the radio entirely. Two floating buttons crowd
+   the content down here, and the hint is `white-space: nowrap`, so it would
+   run off the right edge. Back-to-top stays, since the nav links are behind
+   the hamburger on mobile and it is the quickest way back up. */
+@media (max-width: 380px) {
+  .cafe-radio,
+  .cafe-radio-hint {
+    display: none;
+  }
+}
