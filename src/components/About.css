@@ -188,6 +188,10 @@
 
   .about-col-1 {
     flex-basis: 100%;
+    /* Clear the 250px desktop floor: min-width beats max-width in CSS, so
+       without this the max-widths below never take effect and the column
+       overflows the card on narrow phones. */
+    min-width: 0;
     max-width: 260px;
   }
 
