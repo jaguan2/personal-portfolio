@@ -227,8 +227,21 @@
 .media-dots {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 4px;
   margin-top: 12px;
+}
+
+/* Slide counter — with long galleries the dots alone stop being countable */
+.media-count {
+  display: block;
+  margin-top: 6px;
+  text-align: center;
+  color: var(--text-subtle);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
 }
 
 .media-dot {

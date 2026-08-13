@@ -7,11 +7,14 @@ import deftechpodImage from '../assets/deftechpod.png'
 import dtlOrganizationsImage from '../assets/dtlorganizations.png'
 import twitterFeelImage from '../assets/TwitterFeel.JPG'
 import tasknookLoft from '../assets/tasknook-loft.webp'
+import tasknookCabin from '../assets/tasknook-cabin.webp'
 import tasknookCafe from '../assets/tasknook-cafe.webp'
 import tasknookGarden from '../assets/tasknook-garden.webp'
-import tasknookCabin from '../assets/tasknook-cabin.webp'
+import tasknookTasks from '../assets/tasknook-tasks.webp'
+import tasknookTimer from '../assets/tasknook-timer.webp'
+import tasknookSounds from '../assets/tasknook-sounds.webp'
 import tasknookDecorating from '../assets/tasknook-decorating.webp'
-import tasknookProgress from '../assets/tasknook-progress.webp'
+import tasknookFriends from '../assets/tasknook-friends.webp'
 import coffeeBranch from '../assets/coffee-branch.svg'
 import coffeeSprig from '../assets/coffee-sprig.svg'
 import leafLine from '../assets/leaf-line.svg'
@@ -44,12 +47,15 @@ const projects = [
     link: 'https://github.com/jaguan2/TaskNook',
     linkType: 'github',
     media: [
-      { type: 'image', src: tasknookLoft, alt: 'TaskNook loft room at night, an L-shaped attic with a resident on the sofa and a cat on the floor' },
-      { type: 'image', src: tasknookCafe, alt: 'TaskNook corner cafe preset with a bar, chalkboard menu, bookshelves and patrons at the tables' },
-      { type: 'image', src: tasknookGarden, alt: 'TaskNook secret garden preset, open air with grass, a pond and trees' },
-      { type: 'image', src: tasknookCabin, alt: 'TaskNook cozy cabin preset with a hearth wall while it snows outside' },
-      { type: 'image', src: tasknookDecorating, alt: 'TaskNook decorating mode, drawing the floor plan on a grid and arranging furniture' },
-      { type: 'image', src: tasknookProgress, alt: 'TaskNook progress panel with daily goal, streak and productivity garden' }
+      { type: 'image', src: tasknookLoft, alt: 'TaskNook loft room at night, an L-shaped attic with a sofa and aquarium on one side and a bed behind a screen on the other' },
+      { type: 'image', src: tasknookCabin, alt: 'TaskNook cozy cabin room with a lit hearth, a dog asleep in front of it and snow falling outside' },
+      { type: 'image', src: tasknookCafe, alt: 'TaskNook corner cafe room with a bar under the menu board and patrons at tables across the open floor' },
+      { type: 'image', src: tasknookGarden, alt: 'TaskNook secret garden room, open air with a pond, a hammock and a cat on a blanket' },
+      { type: 'image', src: tasknookTasks, alt: 'TaskNook task panel with groups, priorities, durations, routines and five ordering algorithms' },
+      { type: 'image', src: tasknookTimer, alt: 'TaskNook focus timer with Pomodoro durations, stopwatch, daily goal and streak' },
+      { type: 'image', src: tasknookSounds, alt: 'TaskNook sounds panel with lofi stations and a procedural ambient mixer' },
+      { type: 'image', src: tasknookDecorating, alt: 'TaskNook decorating mode, drawing the floor plan tile by tile and dragging furniture across the grid' },
+      { type: 'image', src: tasknookFriends, alt: 'TaskNook friends panel showing who is around, what they are working on and whose room is open to visit' }
     ]
   },
   {
@@ -195,6 +201,9 @@ function Projects() {
                         />
                       ))}
                     </div>
+                    <span className="media-count">
+                      {index + 1} / {gallery.length}
+                    </span>
                   </>
                 )}
               </div>
