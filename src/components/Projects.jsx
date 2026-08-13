@@ -63,7 +63,7 @@ const projects = [
     eyebrow: 'Sentiment Analysis & Social Media Mining',
     title: 'TwitterFeel',
     technologies: 'Python • TensorFlow • Pandas • NumPy • Hugging Face',
-    description: 'TwitterFeel is a machine learning research project focused on identifying early indicators of depression, anxiety, and suicidal ideation through social media activity. Inspired by the growing mental health crisis and the widespread influence of social media, the project explores whether online behavior can reveal signs of emotional distress before they become more severe. By detecting these warning signs early, the goal is to better understand how technology can support awareness, intervention, and access to help for individuals who may be struggling.',
+    description: 'TwitterFeel is a machine learning research project focused on identifying early indicators of depression, anxiety, and suicidal ideation through social media activity, inspired by the growing mental health crisis and the widespread influence of social media. By detecting these warning signs early, the goal is to better understand how technology can support awareness, intervention, and access to help for individuals who may be struggling.',
     link: 'https://github.com/jaguan2/twitterFeel',
     linkType: 'github',
     media: { type: 'image', src: twitterFeelImage, alt: 'TwitterFeel sentiment analysis dashboard' }
