@@ -76,7 +76,7 @@ const skillsData = [
   {
     category: 'Frameworks & Libraries',
     icon: 'layers',
-    skills: ['React', 'Flask', 'SQLAlchemy', 'Node.js', 'MUI', 'Bootstrap']
+    skills: ['React', 'Flask', 'FastAPI', 'SQLAlchemy', 'Node.js', 'MUI', 'Bootstrap']
   },
   {
     category: 'Cloud & Infrastructure',

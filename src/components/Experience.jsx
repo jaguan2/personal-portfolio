@@ -1,7 +1,6 @@
 import coffeeBranch from '../assets/coffee-branch.svg'
 import coffeeSprig from '../assets/coffee-sprig.svg'
 import leafLine from '../assets/leaf-line.svg'
-import steamCurl from '../assets/steam-curl.svg'
 import './Experience.css'
 
 const BriefcaseIcon = () => (
@@ -25,7 +24,7 @@ const experiences = [
     title: 'Full-Stack Developer Lead',
     company: 'DefTechLink',
     location: 'Tampa, FL',
-    period: 'March 2025 – Present',
+    period: 'March 2025 – July 2026',
     description: [
       { bold: 'Spearheaded full-stack development of two production B2B SaaS platforms', rest: ' that aggregate and manage global defense contracting opportunities for technology companies.' },
       { bold: 'Engineered an AWS Lambda and EventBridge ingestion pipeline', rest: ' processing 1,000+ defense contract notices daily from global government sources, automatically scoring, tagging, and classifying opportunities.' },
@@ -51,8 +50,9 @@ const experiences = [
     title: 'B.S. in Computer Science',
     company: 'University of South Florida',
     location: 'Tampa, FL',
-    period: 'Aug 2021 — May 2025',
+    period: 'Aug 2021 – May 2025',
     description: [
+      { bold: 'GPA:', rest: ' 3.6 / 4.0' },
       { bold: 'Relevant Coursework:', rest: ' Database Design, Data Storage and Analysis with Hadoop, Automata Theory, Social Media Mining, User Experience Design, Secure Coding, and Operating Systems.' }
     ]
   }
@@ -65,7 +65,6 @@ function Experience() {
         <img className="float-icon branch-tr" src={coffeeBranch} alt="" aria-hidden="true" />
         <img className="float-icon sprig-bl" src={coffeeSprig} alt="" aria-hidden="true" />
         <img className="float-icon leaf-1" src={leafLine} alt="" aria-hidden="true" />
-        <img className="float-icon steam-tl" src={steamCurl} alt="" aria-hidden="true" />
       </div>
       <div className="container">
         <h1>Experience &amp; Education</h1>

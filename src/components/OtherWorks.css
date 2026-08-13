@@ -40,16 +40,6 @@
   animation-delay: 3s;
 }
 
-#other-works .steam-bl {
-  width: 30px;
-  left: 14%;
-  bottom: 18%;
-  top: auto;
-  opacity: 0.14;
-  animation: steamDrift 8s ease-in-out infinite;
-  animation-delay: 2s;
-}
-
 /* The menu "paper" */
 .menu-card {
   position: relative;

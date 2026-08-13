@@ -46,16 +46,6 @@
   animation-delay: 2s;
 }
 
-#about .steam-bl {
-  width: 34px;
-  left: 5%;
-  bottom: 10%;
-  top: auto;
-  opacity: 0.16;
-  animation: steamDrift 8s ease-in-out infinite;
-  animation-delay: 2s;
-}
-
 #about .container {
   padding: 0 10%;
 }

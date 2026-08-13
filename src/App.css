@@ -167,13 +167,6 @@ html {
   }
 }
 
-/* Slow rising drift for the steam-curl accents */
-@keyframes steamDrift {
-  0% { transform: translateY(6px); opacity: 0.06; }
-  45% { opacity: 0.2; }
-  100% { transform: translateY(-16px); opacity: 0.04; }
-}
-
 @keyframes twinkle {
   0%, 100% {
     transform: scale(1) rotate(-8deg);

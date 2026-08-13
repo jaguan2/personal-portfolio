@@ -1,7 +1,6 @@
 import coffeeSprig from '../assets/coffee-sprig.svg'
 import coffeeBranch from '../assets/coffee-branch.svg'
 import leaf from '../assets/leaf.svg'
-import steamCurl from '../assets/steam-curl.svg'
 import './OtherWorks.css'
 
 /*
@@ -159,7 +158,6 @@ function OtherWorks() {
         <img className="float-icon branch-bl" src={coffeeBranch} alt="" aria-hidden="true" />
         <img className="float-icon sprig-tr" src={coffeeSprig} alt="" aria-hidden="true" />
         <img className="float-icon leaf-1" src={leaf} alt="" aria-hidden="true" />
-        <img className="float-icon steam-bl" src={steamCurl} alt="" aria-hidden="true" />
       </div>
 
       <div className="container">

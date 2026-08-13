@@ -62,15 +62,6 @@
   animation-delay: 3s;
 }
 
-#experience .steam-tl {
-  width: 32px;
-  left: 5%;
-  top: 16%;
-  opacity: 0.16;
-  animation: steamDrift 8s ease-in-out infinite;
-  animation-delay: 1s;
-}
-
 #experience h1 {
   text-align: center;
   margin-bottom: 50px;

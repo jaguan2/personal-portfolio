@@ -15,7 +15,6 @@ import tasknookProgress from '../assets/tasknook-progress.webp'
 import coffeeBranch from '../assets/coffee-branch.svg'
 import coffeeSprig from '../assets/coffee-sprig.svg'
 import leafLine from '../assets/leaf-line.svg'
-import steamCurl from '../assets/steam-curl.svg'
 import './Projects.css'
 
 const projects = [
@@ -40,7 +39,7 @@ const projects = [
     id: 1,
     eyebrow: 'Cozy Full-Stack Task Tracker',
     title: 'TaskNook',
-    technologies: 'React • Vite • Tailwind CSS • Framer Motion • Flask • SQLAlchemy • Web Audio API',
+    technologies: 'React • Tailwind CSS • Framer Motion • Flask • SQLAlchemy • Alembic • SQLite • Web Audio API • PyInstaller',
     description: 'TaskNook is a cozy customizable task tracker that intends to provide every user with an ideal working condition. Customize your work environment, from a rainy window to sunny day. Get work done with our task manager. Adjust the music, from our preset lofi playlist to your custom linked playlist. Connect with friends, share your activity and stay motivated together.',
     link: 'https://github.com/jaguan2/TaskNook',
     linkType: 'github',
@@ -57,7 +56,7 @@ const projects = [
     id: 2,
     eyebrow: 'Sentiment Analysis & Social Media Mining',
     title: 'TwitterFeel',
-    technologies: 'Python • TensorFlow • PyTorch • Pandas • Hugging Face',
+    technologies: 'Python • TensorFlow • Pandas • NumPy • Hugging Face',
     description: 'TwitterFeel is a machine learning research project focused on identifying early indicators of depression, anxiety, and suicidal ideation through social media activity. Inspired by the growing mental health crisis and the widespread influence of social media, the project explores whether online behavior can reveal signs of emotional distress before they become more severe. By detecting these warning signs early, the goal is to better understand how technology can support awareness, intervention, and access to help for individuals who may be struggling.',
     link: 'https://github.com/jaguan2/twitterFeel',
     linkType: 'github',
@@ -137,7 +136,6 @@ function Projects() {
         <img className="float-icon branch-br" src={coffeeBranch} alt="" aria-hidden="true" />
         <img className="float-icon sprig-tl" src={coffeeSprig} alt="" aria-hidden="true" />
         <img className="float-icon leaf-1" src={leafLine} alt="" aria-hidden="true" />
-        <img className="float-icon steam-tr" src={steamCurl} alt="" aria-hidden="true" />
       </div>
       <div className="container">
         <h1>Featured Work</h1>
