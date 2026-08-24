@@ -50,6 +50,19 @@ function App() {
   }, [])
 
   useEffect(() => {
+    const sections = document.querySelectorAll('main > section, #header')
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle('motion-active', entry.isIntersecting)
+        if (entry.isIntersecting) entry.target.classList.add('motion-seen')
+      })
+    }, { rootMargin: '18% 0px 18% 0px' })
+
+    sections.forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduced) return
 
@@ -62,6 +75,8 @@ function App() {
       rafId = requestAnimationFrame(() => {
         const scrollY = window.scrollY
         branches.forEach((el, i) => {
+          const section = el.closest('section, header')
+          if (section && !section.classList.contains('motion-active')) return
           const sway = Math.sin((scrollY + i * 90) / 240) * 4
           el.style.setProperty('--sway', `${sway.toFixed(2)}deg`)
         })

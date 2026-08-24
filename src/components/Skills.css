@@ -296,6 +296,11 @@
     font-size: 1.05rem;
   }
 
+  .skill-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
   .skill-name {
     font-size: 0.9rem;
   }

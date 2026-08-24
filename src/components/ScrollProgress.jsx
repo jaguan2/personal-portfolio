@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import './ScrollProgress.css'
 
 function ScrollProgress() {
-  const [progress, setProgress] = useState(0)
+  const barRef = useRef(null)
 
   useEffect(() => {
     let rafId = null
@@ -11,7 +11,8 @@ function ScrollProgress() {
       rafId = requestAnimationFrame(() => {
         const scrollTop = window.scrollY
         const docHeight = document.documentElement.scrollHeight - window.innerHeight
-        setProgress(docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0)
+        const progress = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0
+        if (barRef.current) barRef.current.style.transform = `scaleX(${progress})`
         rafId = null
       })
     }
@@ -27,7 +28,7 @@ function ScrollProgress() {
 
   return (
     <div className="scroll-progress" aria-hidden="true">
-      <div className="scroll-progress-bar" style={{ transform: `scaleX(${progress})` }} />
+      <div ref={barRef} className="scroll-progress-bar" />
     </div>
   )
 }

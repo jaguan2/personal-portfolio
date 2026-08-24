@@ -18,7 +18,7 @@ function About() {
         <div className="about-box reveal">
           <div className="row">
             <div className="about-col-1">
-              <img src={aboutImage} alt="Jason at USF" />
+              <img src={aboutImage} alt="Jason at USF" loading="lazy" decoding="async" />
             </div>
             <div className="about-col-2">
               <h1>About Me</h1>

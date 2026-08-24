@@ -21,6 +21,7 @@
   },
   "homepage": "https://jaguan2.github.io/personal-portfolio/",
   "dependencies": {
+    "gsap": "^3.15.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
   },

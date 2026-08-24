@@ -8,27 +8,18 @@ function Navbar() {
 
   useEffect(() => {
     const sections = ['header', 'about', 'experience', 'skills', 'projects', 'other-works']
+    const elements = sections.map((id) => document.getElementById(id)).filter(Boolean)
+    const visible = new Map()
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => visible.set(entry.target.id, entry))
+      const current = [...visible.values()]
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => Math.abs(a.boundingClientRect.top - 110) - Math.abs(b.boundingClientRect.top - 110))[0]
+      if (current) setActiveSection(current.target.id)
+    }, { rootMargin: '-90px 0px -62% 0px', threshold: 0 })
 
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 120
-
-      for (const sectionId of sections) {
-        const section = document.getElementById(sectionId)
-        if (!section) continue
-        const offsetTop = section.offsetTop
-        const offsetBottom = offsetTop + section.offsetHeight
-
-        if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-          setActiveSection(sectionId)
-          break
-        }
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    handleScroll()
-
-    return () => window.removeEventListener('scroll', handleScroll)
+    elements.forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
   }, [])
 
   useEffect(() => {

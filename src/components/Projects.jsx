@@ -18,6 +18,7 @@ import tasknookFriends from '../assets/tasknook-friends.webp'
 import coffeeBranch from '../assets/coffee-branch.svg'
 import coffeeSprig from '../assets/coffee-sprig.svg'
 import leafLine from '../assets/leaf-line.svg'
+import DepthCarousel from './DepthCarousel'
 import './Projects.css'
 
 const projects = [
@@ -106,14 +107,6 @@ const galleryOf = (project) =>
 
 function Projects() {
   const [lightbox, setLightbox] = useState(null)
-  const [slides, setSlides] = useState({})
-
-  const step = (projectId, length, dir) =>
-    setSlides((prev) => {
-      const current = prev[projectId] ?? 0
-      return { ...prev, [projectId]: (current + dir + length) % length }
-    })
-
   const stepLightbox = (dir) =>
     setLightbox((lb) =>
       lb ? { ...lb, index: (lb.index + dir + lb.gallery.length) % lb.gallery.length } : lb
@@ -148,63 +141,25 @@ function Projects() {
         <div className="projects-list">
           {projects.map((project) => {
             const gallery = galleryOf(project)
-            const index = slides[project.id] ?? 0
-            const current = gallery[index]
             return (
             <article className="project-row reveal" key={project.id}>
               <div className="project-media">
-                <button
-                  type="button"
-                  className="media-frame"
-                  onClick={() => setLightbox({ gallery, index })}
-                  aria-label={`Expand ${project.title} ${current.type === 'video' ? 'demo' : 'image'}`}
-                >
-                  {current.type === 'video' ? (
-                    <video key={current.src} autoPlay loop muted playsInline aria-label={current.alt}>
-                      <source src={current.src} type="video/mp4" />
-                    </video>
-                  ) : (
-                    <img src={current.src} alt={current.alt} />
-                  )}
-                  <span className="media-expand-hint" aria-hidden="true">
-                    <ExpandIcon />
-                  </span>
-                </button>
-
-                {gallery.length > 1 && (
-                  <>
-                    <button
-                      type="button"
-                      className="media-nav media-nav-prev"
-                      onClick={() => step(project.id, gallery.length, -1)}
-                      aria-label={`Previous ${project.title} image`}
-                    >
-                      &#10094;
-                    </button>
-                    <button
-                      type="button"
-                      className="media-nav media-nav-next"
-                      onClick={() => step(project.id, gallery.length, 1)}
-                      aria-label={`Next ${project.title} image`}
-                    >
-                      &#10095;
-                    </button>
-                    <div className="media-dots">
-                      {gallery.map((_, i) => (
-                        <button
-                          key={i}
-                          type="button"
-                          className={`media-dot ${i === index ? 'active' : ''}`}
-                          onClick={() => setSlides((prev) => ({ ...prev, [project.id]: i }))}
-                          aria-label={`Show ${project.title} image ${i + 1}`}
-                          aria-current={i === index}
-                        />
-                      ))}
-                    </div>
-                    <span className="media-count">
-                      {index + 1} / {gallery.length}
-                    </span>
-                  </>
+                {gallery.length > 1 ? (
+                  <DepthCarousel
+                    items={gallery}
+                    label={project.title}
+                    onExpand={(index) => setLightbox({ gallery, index })}
+                  />
+                ) : (
+                  <button
+                    type="button"
+                    className="media-frame"
+                    onClick={() => setLightbox({ gallery, index: 0 })}
+                    aria-label={`Expand ${project.title} image`}
+                  >
+                    <img src={gallery[0].src} alt={gallery[0].alt} loading="lazy" decoding="async" />
+                    <span className="media-expand-hint" aria-hidden="true"><ExpandIcon /></span>
+                  </button>
                 )}
               </div>
 
@@ -269,7 +224,7 @@ function Projects() {
                   <source src={shot.src} type="video/mp4" />
                 </video>
               ) : (
-                <img src={shot.src} alt={shot.alt} />
+                <img src={shot.src} alt={shot.alt} decoding="async" />
               )
             })()}
 

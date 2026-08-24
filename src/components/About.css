@@ -168,6 +168,8 @@
 
   .about-box {
     padding: 28px 22px;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .row {

@@ -1,15 +1,21 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import './BackToTop.css'
 
 function BackToTop() {
-  const [visible, setVisible] = useState(false)
+  const buttonRef = useRef(null)
+  const visibleRef = useRef(false)
 
   useEffect(() => {
     let rafId = null
     const handleScroll = () => {
       if (rafId) return
       rafId = requestAnimationFrame(() => {
-        setVisible(window.scrollY > 600)
+        const visible = window.scrollY > 600
+        if (visible !== visibleRef.current && buttonRef.current) {
+          visibleRef.current = visible
+          buttonRef.current.classList.toggle('show', visible)
+          buttonRef.current.tabIndex = visible ? 0 : -1
+        }
         rafId = null
       })
     }
@@ -29,10 +35,11 @@ function BackToTop() {
 
   return (
     <button
-      className={`back-to-top ${visible ? 'show' : ''}`}
+      ref={buttonRef}
+      className="back-to-top"
       onClick={scrollToTop}
       aria-label="Back to top"
-      tabIndex={visible ? 0 : -1}
+      tabIndex={-1}
     >
       <svg viewBox="0 0 40 40" width="26" height="26" aria-hidden="true">
         {/* steam wisps */}
