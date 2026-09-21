@@ -52,6 +52,14 @@ const menu = [
         drink: 'coldbrew'
       },
       {
+        title: 'PokéSQL',
+        ingredients: 'React • TypeScript • SQLite • WebAssembly • Python • Electron',
+        description:
+          'Whether you are learning SQL for the first time or brushing up before an interview, PokéSQL is an interactive site that lets you explore SQL using Pokémon traits. The latest update includes over one thousand Pokémon and variants, along with a variety of challenges to solve.',
+        link: 'https://github.com/jaguan2/poke-sql',
+        drink: 'latte'
+      },
+      {
         title: 'Media Grabber',
         ingredients: 'React • Node.js • Express • yt-dlp • FFmpeg • MUI',
         description:
