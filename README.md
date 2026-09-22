@@ -12,9 +12,11 @@ A warm, cafe-themed personal portfolio for **Jason Guan** — built from scratch
 
 <p align="center">
   <a href="https://jaguan2.github.io/personal-portfolio/">
-    <img src="docs/screenshot.png" alt="Portfolio preview" width="100%">
+    <img src="docs/screenshots/desktop-home.png" alt="Jason Guan's cafe-themed portfolio homepage" width="100%">
   </a>
 </p>
+
+More views: **[screenshot gallery](docs/screenshots/README.md)** — featured projects, the cafe menu, and mobile. See the [documentation index](docs/README.md) for design notes.
 
 ---
 
@@ -64,8 +66,14 @@ personal-portfolio/
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml            # GitHub Actions → GitHub Pages
+├── docs/
+│   ├── README.md                 # documentation index
+│   ├── screenshots/              # portfolio screenshots and capture guide
+│   └── cafe-background-research.md # background design research
 ├── public/
 │   └── logo.png                  # favicon / static asset
+├── scripts/
+│   └── screenshots.mjs           # repeatable headless Chrome captures
 ├── src/
 │   ├── assets/                   # images, SVGs, video, résumé PDF
 │   │   ├── hero.jpg, about.jpg, deftechlink.png, TwitterFeel.JPG …
@@ -125,6 +133,7 @@ npm run dev
 | `npm run dev` | Start the Vite dev server with hot-reload |
 | `npm run build` | Production build → `dist/` |
 | `npm run preview` | Preview the production build locally |
+| `npm run screenshots` | Capture desktop and mobile views into `docs/screenshots/` (Node 22+) |
 | `npm run deploy` | Build + publish `dist/` to GitHub Pages via `gh-pages` |
 
 ---
