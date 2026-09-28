@@ -7,7 +7,7 @@ const quotes = [
     author: 'Zhan Xuan 展轩'
   },
   {
-    text: 'There\'s something beautiful about the people who turn their pain into kindness, instead of bitterness.',
+    text: 'There\'s something beautiful about the characters who turn their pain into kindness, instead of bitterness.',
     author: null
   },
   {
@@ -67,7 +67,15 @@ const quotes = [
     author: 'Sarah Pan'
   },
   {
-    text: 'Evidence over affirmation.',
+    text: 'It\'s courageous to do one thing at one thing in life, and it\'s cowardly to do everything.',
+    author: null
+  },
+  {
+    text: 'Regret is proof you\'ve grown. The fact that you wish you had done better means you are already someone who would.',
+    author: null
+  },
+  {
+    text: 'There is no losing if your goal is to experience.',
     author: null
   }
 ]
