@@ -24,18 +24,18 @@
     <!-- Theme Color -->
     <meta name="theme-color" content="#2E271F" />
 
-    <!-- Apply saved/system theme before first paint to avoid a flash of the wrong theme -->
+    <!-- Apply saved theme (default light) before first paint to avoid a flash of the wrong theme -->
     <script>
       (function () {
         try {
           var theme = localStorage.getItem('theme')
           if (theme !== 'light' && theme !== 'dark') {
-            theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+            theme = 'light'
           }
           document.documentElement.dataset.theme = theme
           if (theme === 'dark') {
             var meta = document.querySelector('meta[name="theme-color"]')
-            if (meta) meta.content = '#171210'
+            if (meta) meta.content = '#0C1519'
           }
         } catch (e) { /* storage blocked — default light */ }
       })()
