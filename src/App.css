@@ -38,48 +38,90 @@
   color-scheme: light;
 }
 
-/* Dark roast — cozy cafe at night. Same warm hue family at lower light:
-   footer darkest → bands → page → cards → golden CTA brightest. */
+/* Americano at night ? palette from the owner's reference:
+   Chinese black #0C1519, dark jungle green #162127, jet #3A3534,
+   coffee #724B39 and antique brass #CF9D7B. */
 [data-theme='dark'] {
-  --bg: #271A11;                        /* deep warm espresso */
-  --bg-warm: #1E1209;                   /* bands go darker than the page at night */
-  --surface: rgba(58, 42, 28, 0.96);    /* raised mocha card — clearly lighter than bg */
-  --surface-solid: #3A2A1C;
-  --footer: #170E08;                    /* darkest roast */
-  --text: #F7EDD8;                      /* cream text */
-  --text-body: rgba(247, 237, 216, 0.9);
-  --text-muted: rgba(247, 237, 216, 0.85);
-  --text-subtle: rgba(247, 237, 216, 0.68);
+  --bg: #0C1519;
+  --bg-warm: #162127;
+  --surface: rgba(58, 53, 52, 0.96);
+  --surface-solid: #3A3534;
+  --footer: #0C1519;
+  --text: #F2E5D9;
+  --text-body: #DDCEC3;
+  --text-muted: #C9B7AA;
+  --text-subtle: #BBA797;
 
-  /* Caramel goes golden — candlelight on metal */
-  --accent: #E2AD64;
-  --accent-soft: #C79A60;
-  --accent-strong: #E5B576;             /* CTA fill — pairs with dark text */
-  --accent-hover: #EFC992;
-  --accent-strong-hover: #F0CB94;
+  --accent: #CF9D7B;
+  --accent-soft: #724B39;
+  --accent-strong: #CF9D7B;
+  --accent-hover: #E0B696;
+  --accent-strong-hover: #E0B696;
 
-  /* Moonlit sage */
-  --leaf: #AAC2A7;
-  --leaf-strong: #BCD2B9;
-  --leaf-hover: #B3C9B0;
-  --leaf-soft: rgba(170, 194, 167, 0.16);
-  --leaf-border: rgba(170, 194, 167, 0.36);
+  --leaf: #CF9D7B;
+  --leaf-strong: #E0B696;
+  --leaf-hover: #E0B696;
+  --leaf-soft: rgba(207, 157, 123, 0.12);
+  --leaf-border: rgba(207, 157, 123, 0.35);
 
-  /* Tonal borders + faint caramel glow instead of black shadows */
-  --border: rgba(247, 237, 216, 0.18);
-  --border-subtle: rgba(226, 173, 100, 0.36);
-  --shadow: 0 0 0 1px #4A3624, 0 10px 30px rgba(226, 173, 100, 0.08);
-  --shadow-hover: 0 0 0 1px #5A4530, 0 14px 36px rgba(226, 173, 100, 0.16);
-
-  --nav-bg: rgba(28, 18, 11, 0.88);
-  --hero-band: #1A1009;
+  --border: rgba(207, 157, 123, 0.22);
+  --border-subtle: rgba(207, 157, 123, 0.32);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.4);
+  --nav-bg: rgba(12, 21, 25, 0.94);
+  --hero-band: #162127;
 
   color-scheme: dark;
 }
 
+/* Newer gallery and receipt components share the night palette. */
+[data-theme='dark'] .menu-card {
+  background: linear-gradient(150deg, #3A3534, #162127);
+}
+
+[data-theme='dark'] .menu-item-link {
+  background: var(--bg-warm);
+}
+
+[data-theme='dark'] .menu-item-link:hover {
+  background: var(--accent-strong);
+  color: var(--bg);
+}
+
+[data-theme='dark'] .skill-card {
+  box-shadow: var(--shadow);
+}
+
+[data-theme='dark'] .skill-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+[data-theme='dark'] .project-description,
+[data-theme='dark'] .project-highlights li,
+[data-theme='dark'] .skill-name {
+  color: var(--text-body);
+}
+
+[data-theme='dark'] .depth-carousel-arrow {
+  background: #724B39;
+  color: var(--text);
+  border-color: var(--leaf-border);
+}
+
+[data-theme='dark'] .tt-vinyl {
+  fill: #3A3534;
+  stroke: #CF9D7B;
+  stroke-width: 0.6;
+}
+
+[data-theme='dark'] .back-to-top:hover,
+[data-theme='dark'] .skill-card:hover .skill-icon {
+  color: var(--bg);
+}
+
 /* Dark-mode treatments for things tokens can't reach */
 [data-theme='dark'] ::selection {
-  background: rgba(217, 160, 91, 0.38);
+  background: rgba(207, 157, 123, 0.38);
 }
 
 [data-theme='dark'] body::after {
@@ -125,13 +167,50 @@
   filter: brightness(0.92) contrast(1.04);
 }
 
-/* Brief crossfade while the theme switches (class added by the toggle, then removed) */
+/* Fallback for browsers without view transitions. */
 html.theme-fade,
 html.theme-fade body,
 html.theme-fade *,
 html.theme-fade *::before,
 html.theme-fade *::after {
-  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, fill 0.35s ease, stroke 0.35s ease !important;
+  transition: background-color 1.1s ease-in-out, color 1.1s ease-in-out, border-color 1.1s ease-in-out, fill 1.1s ease-in-out, stroke 1.1s ease-in-out !important;
+}
+
+/* Snapshot crossfade keeps gradients and decorations in step with the colors. */
+::view-transition-group(root) {
+  animation: none;
+}
+
+::view-transition-image-pair(root) {
+  isolation: isolate;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  mix-blend-mode: normal;
+  animation-duration: 1.1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+::view-transition-old(root) {
+  animation: none;
+  opacity: 1;
+}
+
+::view-transition-new(root) {
+  animation-name: theme-view-in;
+}
+
+@keyframes theme-view-in {
+  from { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
 }
 
 * {

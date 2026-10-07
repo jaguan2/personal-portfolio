@@ -283,3 +283,9 @@ nav {
     font-size: 14px;
   }
 }
+
+@media (max-width: 768px) {
+  [data-theme='dark'] nav {
+    background: var(--bg);
+  }
+}
