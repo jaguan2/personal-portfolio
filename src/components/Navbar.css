@@ -85,22 +85,36 @@ nav {
 }
 
 /* Hamburger button - hidden by default on desktop */
+/* Bare symbol, no box. The 44px footprint is kept as the touch target
+   (WCAG 2.5.5 / platform guidance) even though nothing is drawn around it,
+   and negative margins stop that footprint from padding out the bar. */
 .menu-btn {
   display: none;
   background: transparent;
-  border: 1px solid var(--leaf-border);
+  border: none;
   color: var(--text);
   width: 44px;
   height: 44px;
+  margin: -10px -8px -10px 0;
+  padding: 0;
   border-radius: 8px;
-  font-size: 20px;
+  font-size: 22px;
+  line-height: 1;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background 0.3s ease;
 }
 
-.menu-btn:hover {
+/* Keep some feedback on press, since the border is gone */
+.menu-btn:hover,
+.menu-btn[aria-expanded='true'] {
+  color: var(--leaf-strong);
   background: var(--leaf-soft);
-  border-color: var(--leaf);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .nav-right {
@@ -138,7 +152,7 @@ nav {
   position: absolute;
   left: 0;
   bottom: 0;
-  transition: width 0.3s ease;
+  transition: width 0.35s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .nav-links li a:hover {
@@ -177,7 +191,10 @@ nav {
 /* Phone — iPad portrait and below: show hamburger, convert nav to dropdown */
 @media (max-width: 768px) {
   nav {
-    padding: 12px 4%;
+    padding: 14px 4%;
+    background: rgba(255, 253, 248, 0.98);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .logo {
@@ -254,9 +271,7 @@ nav {
   }
 
   .menu-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .nav-links {

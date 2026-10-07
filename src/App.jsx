@@ -6,10 +6,13 @@ import About from './components/About'
 import Experience from './components/Experience'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
+import OtherWorks from './components/OtherWorks'
 import Quote from './components/Quote'
 import Footer from './components/Footer'
 import ScrollProgress from './components/ScrollProgress'
 import BackToTop from './components/BackToTop'
+import CafeRadio from './components/CafeRadio'
+import SectionDivider from './components/SectionDivider'
 import './App.css'
 
 function App() {
@@ -47,6 +50,19 @@ function App() {
   }, [])
 
   useEffect(() => {
+    const sections = document.querySelectorAll('main > section, #header')
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle('motion-active', entry.isIntersecting)
+        if (entry.isIntersecting) entry.target.classList.add('motion-seen')
+      })
+    }, { rootMargin: '18% 0px 18% 0px' })
+
+    sections.forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduced) return
 
@@ -59,6 +75,8 @@ function App() {
       rafId = requestAnimationFrame(() => {
         const scrollY = window.scrollY
         branches.forEach((el, i) => {
+          const section = el.closest('section, header')
+          if (section && !section.classList.contains('motion-active')) return
           const sway = Math.sin((scrollY + i * 90) / 240) * 4
           el.style.setProperty('--sway', `${sway.toFixed(2)}deg`)
         })
@@ -83,14 +101,18 @@ function App() {
       <Navbar />
       <main id="main">
         <Header />
+        <SectionDivider />
         <About />
         <Experience />
         <Skills />
         <Projects />
+        <OtherWorks />
+        <SectionDivider />
         <Quote />
       </main>
       <Footer />
       <BackToTop />
+      <CafeRadio />
     </>
   )
 }
