@@ -159,57 +159,38 @@
   }
 }
 
-/* Photos sit in the room's light instead of punching white holes in it */
-[data-theme='dark'] .header-image img,
-[data-theme='dark'] .about-col-1 img,
-[data-theme='dark'] .media-container img,
-[data-theme='dark'] .media-container video {
-  filter: brightness(0.92) contrast(1.04);
-}
-
-/* Fallback for browsers without view transitions. */
+/* Keep photos and text crisp: only surfaces ease between theme colors. */
 html.theme-fade,
 html.theme-fade body,
-html.theme-fade *,
-html.theme-fade *::before,
-html.theme-fade *::after {
-  transition: background-color 1.1s ease-in-out, color 1.1s ease-in-out, border-color 1.1s ease-in-out, fill 1.1s ease-in-out, stroke 1.1s ease-in-out !important;
+html.theme-fade #root,
+html.theme-fade #header,
+html.theme-fade #experience,
+html.theme-fade #projects,
+html.theme-fade #footer,
+html.theme-fade nav,
+html.theme-fade .about-box,
+html.theme-fade .about-box::before,
+html.theme-fade .about-col-1 img,
+html.theme-fade .experience-card,
+html.theme-fade .timeline-node,
+html.theme-fade .skill-card {
+  transition: background-color 0.3s ease-out, border-color 0.3s ease-out !important;
 }
 
-/* Snapshot crossfade keeps gradients and decorations in step with the colors. */
-::view-transition-group(root) {
-  animation: none;
-}
-
-::view-transition-image-pair(root) {
-  isolation: isolate;
-}
-
-::view-transition-old(root),
-::view-transition-new(root) {
-  mix-blend-mode: normal;
-  animation-duration: 1.1s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: both;
-}
-
-::view-transition-old(root) {
-  animation: none;
-  opacity: 1;
-}
-
-::view-transition-new(root) {
-  animation-name: theme-view-in;
-}
-
-@keyframes theme-view-in {
-  from { opacity: 0; }
+/* Navigation hover rules must not fade text during a theme switch. */
+html.theme-fade nav .logo,
+html.theme-fade nav .logo-dot,
+html.theme-fade nav .nav-links a,
+html.theme-fade nav .menu-btn,
+html.theme-fade nav .theme-toggle,
+html.theme-fade nav .theme-toggle-label {
+  transition: background-color 0.3s ease-out, border-color 0.3s ease-out !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation: none;
+  html.theme-fade,
+  html.theme-fade * {
+    transition: none !important;
   }
 }
 
