@@ -4,11 +4,9 @@ import './ThemeToggle.css'
 function ThemeToggle() {
   const [dark, setDark] = useState(() => document.documentElement.dataset.theme === 'dark')
 
-  const transitionRef = useRef(null)
   const fadeTimerRef = useRef(null)
 
   useEffect(() => () => {
-    transitionRef.current?.skipTransition()
     window.clearTimeout(fadeTimerRef.current)
     document.documentElement.classList.remove('theme-fade')
   }, [])
@@ -29,19 +27,14 @@ function ThemeToggle() {
       if (meta) meta.content = theme === 'dark' ? '#0C1519' : '#2E271F'
     }
 
-    transitionRef.current?.skipTransition()
     window.clearTimeout(fadeTimerRef.current)
     root.classList.remove('theme-fade')
 
-    if (!reducedMotion && typeof document.startViewTransition === 'function') {
-      // Crossfade complete views, including gradients, photos and decorations.
-      transitionRef.current = document.startViewTransition(applyTheme)
-    } else if (!reducedMotion) {
+    if (!reducedMotion) {
       root.classList.add('theme-fade')
-      // Commit the transition styles before changing the theme colors.
       void root.offsetWidth
       applyTheme()
-      fadeTimerRef.current = window.setTimeout(() => root.classList.remove('theme-fade'), 1200)
+      fadeTimerRef.current = window.setTimeout(() => root.classList.remove('theme-fade'), 400)
     } else {
       applyTheme()
     }
