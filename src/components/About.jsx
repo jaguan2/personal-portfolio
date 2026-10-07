@@ -3,6 +3,7 @@ import coffeeBranch from '../assets/coffee-branch.svg'
 import coffeeSprig from '../assets/coffee-sprig.svg'
 import leafLine from '../assets/leaf-line.svg'
 import vine from '../assets/vine.svg'
+import sparkle from '../assets/sparkle.svg'
 import './About.css'
 
 function About() {
@@ -13,6 +14,8 @@ function About() {
         <img className="float-icon sprig-br" src={coffeeSprig} alt="" aria-hidden="true" />
         <img className="float-icon leaf-1" src={leafLine} alt="" aria-hidden="true" />
         <img className="float-icon vine-tr" src={vine} alt="" aria-hidden="true" />
+        <img className="float-icon night-decor star-1" src={sparkle} alt="" aria-hidden="true" />
+        <img className="float-icon night-decor star-2" src={sparkle} alt="" aria-hidden="true" />
       </div>
       <div className="container">
         <div className="about-box reveal">

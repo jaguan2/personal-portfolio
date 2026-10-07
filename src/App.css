@@ -7,6 +7,7 @@
   --surface-solid: #FFFDF8;           /* near-white solid */
   --footer: #2E2721;                  /* deep espresso for the grounding cap */
   --text: #2E2721;                    /* warm dark brown (body & headings) */
+  --text-body: rgba(46, 31, 22, 0.88); /* card/paragraph body copy */
   --text-muted: rgba(46, 39, 33, 0.78);
   --text-subtle: rgba(46, 39, 33, 0.60);
 
@@ -29,6 +30,168 @@
   --border-subtle: rgba(186, 143, 104, 0.25);
   --shadow: 0 10px 28px rgba(46, 39, 33, 0.08);
   --shadow-hover: 0 16px 40px rgba(46, 39, 33, 0.14);
+
+  /* Chrome */
+  --nav-bg: rgba(255, 253, 248, 0.86);
+  --hero-band: #BA8F68;
+
+  color-scheme: light;
+}
+
+/* Americano at night ? palette from the owner's reference:
+   Chinese black #0C1519, dark jungle green #162127, jet #3A3534,
+   coffee #724B39 and antique brass #CF9D7B. */
+[data-theme='dark'] {
+  --bg: #0C1519;
+  --bg-warm: #162127;
+  --surface: rgba(58, 53, 52, 0.96);
+  --surface-solid: #3A3534;
+  --footer: #0C1519;
+  --text: #F2E5D9;
+  --text-body: #DDCEC3;
+  --text-muted: #C9B7AA;
+  --text-subtle: #BBA797;
+
+  --accent: #CF9D7B;
+  --accent-soft: #724B39;
+  --accent-strong: #CF9D7B;
+  --accent-hover: #E0B696;
+  --accent-strong-hover: #E0B696;
+
+  --leaf: #CF9D7B;
+  --leaf-strong: #E0B696;
+  --leaf-hover: #E0B696;
+  --leaf-soft: rgba(207, 157, 123, 0.12);
+  --leaf-border: rgba(207, 157, 123, 0.35);
+
+  --border: rgba(207, 157, 123, 0.22);
+  --border-subtle: rgba(207, 157, 123, 0.32);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.4);
+  --nav-bg: rgba(12, 21, 25, 0.94);
+  --hero-band: #162127;
+
+  color-scheme: dark;
+}
+
+/* Newer gallery and receipt components share the night palette. */
+[data-theme='dark'] .menu-card {
+  background: linear-gradient(150deg, #3A3534, #162127);
+}
+
+[data-theme='dark'] .menu-item-link {
+  background: var(--bg-warm);
+}
+
+[data-theme='dark'] .menu-item-link:hover {
+  background: var(--accent-strong);
+  color: var(--bg);
+}
+
+[data-theme='dark'] .skill-card {
+  box-shadow: var(--shadow);
+}
+
+[data-theme='dark'] .skill-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+[data-theme='dark'] .project-description,
+[data-theme='dark'] .project-highlights li,
+[data-theme='dark'] .skill-name {
+  color: var(--text-body);
+}
+
+[data-theme='dark'] .depth-carousel-arrow {
+  background: #724B39;
+  color: var(--text);
+  border-color: var(--leaf-border);
+}
+
+[data-theme='dark'] .tt-vinyl {
+  fill: #3A3534;
+  stroke: #CF9D7B;
+  stroke-width: 0.6;
+}
+
+[data-theme='dark'] .back-to-top:hover,
+[data-theme='dark'] .skill-card:hover .skill-icon {
+  color: var(--bg);
+}
+
+/* Dark-mode treatments for things tokens can't reach */
+[data-theme='dark'] ::selection {
+  background: rgba(207, 157, 123, 0.38);
+}
+
+[data-theme='dark'] body::after {
+  filter: invert(1);
+  opacity: 0.04;
+}
+
+/* Brown line-art botanicals would vanish at night — the steam curls stay and
+   brighten; everything else hands over to the night decorations */
+[data-theme='dark'] .float-icon:not(.night-decor) {
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3)) brightness(2);
+}
+
+[data-theme='dark'] .float-icon:not(.night-decor):not([class*='steam-']) {
+  display: none;
+}
+
+/* Night decorations (crescent moon, sparse stars) only exist after dark */
+.float-icon.night-decor {
+  display: none;
+}
+
+[data-theme='dark'] .float-icon.night-decor {
+  display: block;
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.9) rotate(0deg);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.08) rotate(8deg);
+  }
+}
+
+/* Keep photos and text crisp: only surfaces ease between theme colors. */
+html.theme-fade,
+html.theme-fade body,
+html.theme-fade #root,
+html.theme-fade #header,
+html.theme-fade #experience,
+html.theme-fade #projects,
+html.theme-fade #footer,
+html.theme-fade nav,
+html.theme-fade .about-box,
+html.theme-fade .about-box::before,
+html.theme-fade .about-col-1 img,
+html.theme-fade .experience-card,
+html.theme-fade .timeline-node,
+html.theme-fade .skill-card {
+  transition: background-color 0.3s ease-out, border-color 0.3s ease-out !important;
+}
+
+/* Navigation hover rules must not fade text during a theme switch. */
+html.theme-fade nav .logo,
+html.theme-fade nav .logo-dot,
+html.theme-fade nav .nav-links a,
+html.theme-fade nav .menu-btn,
+html.theme-fade nav .theme-toggle,
+html.theme-fade nav .theme-toggle-label {
+  transition: background-color 0.3s ease-out, border-color 0.3s ease-out !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.theme-fade,
+  html.theme-fade * {
+    transition: none !important;
+  }
 }
 
 * {
@@ -254,7 +417,7 @@ button:focus-visible {
 /* Stronger focus on dark surfaces — cream outline reads on espresso */
 #footer a:focus-visible,
 .navbar nav:has(.nav-links.open) .menu-btn:focus-visible {
-  outline: 2px solid var(--surface-solid);
+  outline: 2px solid #FFFDF8;
 }
 
 /* Selection styling */

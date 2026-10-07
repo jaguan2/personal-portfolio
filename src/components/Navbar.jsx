@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import ThemeToggle from './ThemeToggle'
 import './Navbar.css'
 
 function Navbar() {
@@ -55,6 +56,8 @@ function Navbar() {
             <li><a href="#projects" className={activeSection === 'projects' ? 'active' : ''} onClick={handleNavClick}>Featured Work</a></li>
             <li><a href="#other-works" className={activeSection === 'other-works' ? 'active' : ''} onClick={handleNavClick}>Other Works</a></li>
           </ul>
+
+          <ThemeToggle />
 
           <button
             ref={menuBtnRef}

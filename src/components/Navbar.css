@@ -8,7 +8,7 @@
 }
 
 nav {
-  background: rgba(255, 253, 248, 0.86);
+  background: var(--nav-bg);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   padding: 10px 5%;
@@ -109,6 +109,12 @@ nav {
 .menu-btn[aria-expanded='true'] {
   color: var(--leaf-strong);
   background: var(--leaf-soft);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .nav-right {
@@ -275,5 +281,11 @@ nav {
   .nav-links li a {
     padding: 10px 14px;
     font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  [data-theme='dark'] nav {
+    background: var(--bg);
   }
 }

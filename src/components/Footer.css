@@ -1,9 +1,11 @@
+/* The footer is espresso-dark in both themes, so its text stays cream
+   regardless of the active theme tokens */
 #footer {
   background: var(--footer);
   padding: 40px 10% 28px;
   text-align: center;
   border-top: 3px solid var(--leaf);
-  color: var(--surface-solid);
+  color: #FFFDF8;
 }
 
 .footer-links {
@@ -16,7 +18,7 @@
 
 .footer-links a {
   position: relative;
-  color: var(--surface-solid);
+  color: #FFFDF8;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;

@@ -7,9 +7,14 @@
   overflow: hidden;
 }
 
+/* Put the night glow across the full hero so the inset panel has no seam. */
+[data-theme='dark'] #header {
+  background: radial-gradient(ellipse at 65% 35%, rgba(114, 75, 57, 0.3) 0%, var(--bg) 70%);
+}
+
 .hero-panel {
   position: relative;
-  background: var(--bg);
+  background: transparent;
   border-radius: 0;
   min-height: calc(100vh - 128px);
   overflow: hidden;
@@ -84,6 +89,35 @@
   opacity: 0.28;
   animation: floatUp 16s ease-in-out infinite;
   animation-delay: 7s;
+}
+
+/* Night decorations — only visible in dark mode */
+#header .moon-tr {
+  width: 52px;
+  right: 9%;
+  top: 12%;
+  left: auto;
+  opacity: 0.55;
+  animation: floatUp 20s ease-in-out infinite;
+}
+
+#header .star-1 {
+  width: 18px;
+  left: 13%;
+  top: 24%;
+  opacity: 0.4;
+  animation: starTwinkle 7s ease-in-out infinite;
+}
+
+#header .star-2 {
+  width: 13px;
+  right: 26%;
+  bottom: 22%;
+  left: auto;
+  top: auto;
+  opacity: 0.35;
+  animation: starTwinkle 9s ease-in-out infinite;
+  animation-delay: 2.5s;
 }
 
 #header .vine-r {
@@ -227,9 +261,8 @@ body.loaded .header-text .wave {
   height: auto;
   object-fit: cover;
   border-radius: 62% 38% 58% 42% / 48% 60% 40% 52%;
-  border: 3px solid var(--surface-solid);
+  border: 0;
   box-shadow:
-    0 0 0 1px var(--leaf-border),
     0 10px 22px rgba(59, 42, 30, 0.16),
     0 26px 52px rgba(59, 42, 30, 0.24);
   transition: transform 0.5s ease, box-shadow 0.5s ease, border-radius 0.6s ease;
@@ -240,7 +273,6 @@ body.loaded .header-text .wave {
     transform: scale(1.03) rotate(-1deg);
     border-radius: 50% 50% 52% 48% / 56% 44% 56% 44%;
     box-shadow:
-      0 0 0 1px var(--leaf),
       0 14px 30px rgba(59, 42, 30, 0.2),
       0 30px 60px rgba(59, 42, 30, 0.3);
   }
