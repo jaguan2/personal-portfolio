@@ -48,14 +48,14 @@ const projects = [
     link: 'https://github.com/jaguan2/TaskNook',
     linkType: 'github',
     media: [
-      { type: 'image', src: tasknookLoft, alt: 'TaskNook loft room at night, an L-shaped attic with a sofa and aquarium on one side and a bed behind a screen on the other' },
+      { type: 'image', src: tasknookLoft, alt: 'TaskNook loft room at night with a window-side workstation, aquarium, reading chair and bed' },
       { type: 'image', src: tasknookCabin, alt: 'TaskNook cozy cabin room with a lit hearth, a dog asleep in front of it and snow falling outside' },
       { type: 'image', src: tasknookCafe, alt: 'TaskNook corner cafe room with a bar under the menu board and patrons at tables across the open floor' },
-      { type: 'image', src: tasknookGarden, alt: 'TaskNook secret garden room, open air with a pond, a hammock and a cat on a blanket' },
+      { type: 'image', src: tasknookGarden, alt: 'TaskNook open-air secret garden with a pond, bench, hammock and a dog on a blanket' },
       { type: 'image', src: tasknookTasks, alt: 'TaskNook task panel with groups, priorities, durations, routines and five ordering algorithms' },
-      { type: 'image', src: tasknookTimer, alt: 'TaskNook focus timer with Pomodoro durations, stopwatch, daily goal and streak' },
+      { type: 'image', src: tasknookTimer, alt: 'TaskNook loft with a compact focus timer in the upper-left corner and a to-do list in the upper-right corner' },
       { type: 'image', src: tasknookSounds, alt: 'TaskNook sounds panel with lofi stations and a procedural ambient mixer' },
-      { type: 'image', src: tasknookDecorating, alt: 'TaskNook decorating mode, drawing the floor plan tile by tile and dragging furniture across the grid' },
+      { type: 'image', src: tasknookDecorating, alt: 'TaskNook decorating mode with a floor grid and a room panel for presets, floor dimensions and room materials' },
       { type: 'image', src: tasknookFriends, alt: 'TaskNook friends panel showing who is around, what they are working on and whose room is open to visit' }
     ]
   },
