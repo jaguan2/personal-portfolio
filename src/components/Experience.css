@@ -110,9 +110,9 @@
 #experience h1::after {
   content: '';
   display: block;
-  width: 56px;
+  width: 88px;
   height: 3px;
-  background: var(--leaf);
+  background: linear-gradient(90deg, transparent, var(--leaf) 22%, var(--leaf) 78%, transparent);
   border-radius: 2px;
   margin: 12px auto 0;
 }
@@ -122,9 +122,95 @@
 }
 
 .experience-timeline {
+  position: relative;
+}
+
+/* The vertical spine running through the nodes */
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 27px;
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(var(--leaf), var(--leaf-border));
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 30px 80px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+/* Short connector from the node to the card */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 54px;
+  top: 31px;
+  width: 26px;
+  height: 2px;
+  background: var(--leaf-border);
+}
+
+/* Icon node sitting on the spine */
+.timeline-node {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-solid);
+  border: 2px solid var(--leaf-border);
+  color: var(--leaf-strong);
+  box-shadow: 0 4px 12px rgba(46, 31, 22, 0.12);
+  z-index: 2;
+}
+
+/* Education node uses the caramel accent to set it apart from work */
+.timeline-item.is-education .timeline-node {
+  border-color: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+/* "Present" — the top (current) node gets a gentle pulse */
+.timeline-item:first-child .timeline-node {
+  animation: none;
+}
+
+#experience.motion-active .timeline-item:first-child .timeline-node {
+  animation: nodePulse 2.6s ease-out infinite;
+}
+
+.timeline-item.visible .timeline-node {
+  animation: timelineNodeIn 0.48s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes timelineNodeIn {
+  from { opacity: 0; transform: scale(0.55) rotate(-12deg); }
+  to { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+@keyframes nodePulse {
+  0% { box-shadow: 0 4px 12px rgba(46, 31, 22, 0.12), 0 0 0 0 rgba(79, 111, 82, 0.35); }
+  70% { box-shadow: 0 4px 12px rgba(46, 31, 22, 0.12), 0 0 0 12px rgba(79, 111, 82, 0); }
+  100% { box-shadow: 0 4px 12px rgba(46, 31, 22, 0.12), 0 0 0 0 rgba(79, 111, 82, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-item:first-child .timeline-node,
+  .timeline-item.visible .timeline-node {
+    animation: none;
+  }
 }
 
 .experience-card {
@@ -134,7 +220,10 @@
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 28px 32px;
-  box-shadow: var(--shadow);
+  box-shadow:
+    0 1px 2px rgba(46, 39, 33, 0.06),
+    0 8px 20px rgba(46, 39, 33, 0.09),
+    0 26px 48px rgba(46, 39, 33, 0.09);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
   border-left: 4px solid var(--leaf);
 }
@@ -142,7 +231,10 @@
 @media (hover: hover) {
   .experience-card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-hover);
+    box-shadow:
+      0 2px 4px rgba(46, 39, 33, 0.08),
+      0 14px 28px rgba(46, 39, 33, 0.13),
+      0 34px 60px rgba(46, 39, 33, 0.13);
     border-left-color: var(--leaf-strong);
     border-left-width: 6px;
   }
@@ -154,6 +246,17 @@
   align-items: flex-start;
   margin-bottom: 20px;
   gap: 20px;
+}
+
+.card-kind {
+  display: inline-block;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+  margin-bottom: 8px;
 }
 
 .experience-header h3 {
@@ -297,9 +400,35 @@
     text-align: left;
   }
 
+  .experience-timeline::before {
+    left: 22px;
+  }
+
+  .timeline-item {
+    padding: 0 0 24px 60px;
+  }
+
+  .timeline-item::before {
+    left: 44px;
+    top: 26px;
+    width: 16px;
+  }
+
+  .timeline-node {
+    width: 44px;
+    height: 44px;
+  }
+
+  .timeline-node svg {
+    width: 18px;
+    height: 18px;
+  }
+
   .experience-card {
     padding: 22px;
     border-left-width: 3px;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .experience-header h3 {

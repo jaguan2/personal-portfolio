@@ -2,7 +2,7 @@
   width: 100%;
   min-height: 100vh;
   position: relative;
-  background: var(--hero-band);
+  background: var(--bg);
   padding: 100px 28px 28px;
   overflow: hidden;
 }
@@ -15,10 +15,10 @@
 .hero-panel {
   position: relative;
   background: var(--bg);
-  border-radius: 32px;
+  border-radius: 0;
   min-height: calc(100vh - 128px);
   overflow: hidden;
-  box-shadow: 0 24px 60px rgba(46, 31, 22, 0.22);
+  box-shadow: none;
 }
 
 /* Hero botanical line-art positions */
@@ -162,30 +162,11 @@
   font-style: italic;
 }
 
+/* Keep "Jason" consistent with the rest of the greeting */
 .header-text h1 em {
   font-style: italic;
-  font-weight: 700;
-  color: var(--accent-strong);
-  background: linear-gradient(
-    110deg,
-    var(--accent-strong) 0%,
-    var(--accent-strong) 42%,
-    var(--accent) 50%,
-    var(--accent-strong) 58%,
-    var(--accent-strong) 100%
-  );
-  background-size: 250% 100%;
-  background-position: 100% 0;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: nameShimmer 6s ease-in-out 2s infinite;
-}
-
-/* Caramel sheen sweeps across the name every few seconds */
-@keyframes nameShimmer {
-  0% { background-position: 100% 0; }
-  35%, 100% { background-position: 0% 0; }
+  font-weight: inherit;
+  color: inherit;
 }
 
 .header-text h1 .wave {
@@ -280,8 +261,11 @@ body.loaded .header-text .wave {
   height: auto;
   object-fit: cover;
   border-radius: 62% 38% 58% 42% / 48% 60% 40% 52%;
-  border: 4px solid var(--surface-solid);
-  box-shadow: 0 18px 44px rgba(59, 42, 30, 0.25);
+  border: 3px solid var(--surface-solid);
+  box-shadow:
+    0 0 0 1px var(--leaf-border),
+    0 10px 22px rgba(59, 42, 30, 0.16),
+    0 26px 52px rgba(59, 42, 30, 0.24);
   transition: transform 0.5s ease, box-shadow 0.5s ease, border-radius 0.6s ease;
 }
 
@@ -289,77 +273,74 @@ body.loaded .header-text .wave {
   .header-image img:hover {
     transform: scale(1.03) rotate(-1deg);
     border-radius: 50% 50% 52% 48% / 56% 44% 56% 44%;
-    box-shadow: 0 22px 52px rgba(59, 42, 30, 0.32);
+    box-shadow:
+      0 0 0 1px var(--leaf),
+      0 14px 30px rgba(59, 42, 30, 0.2),
+      0 30px 60px rgba(59, 42, 30, 0.3);
   }
 }
 
 .home-button {
   display: flex;
-  gap: 1rem;
-  margin-top: 25px;
+  gap: 0.85rem;
+  margin-top: 28px;
 }
 
-.button {
+.icon-button {
   display: flex;
-  text-decoration: none;
   justify-content: center;
   align-items: center;
-  width: fit-content;
-  min-height: 44px;
-  padding: 12px 28px;
-  border-radius: 999px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  text-decoration: none;
   cursor: pointer;
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0.02em;
-  text-align: center;
-  transition: all 0.3s ease;
+  color: var(--text);
+  background: var(--surface-solid);
+  border: 2px solid var(--accent-soft);
+  transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
+.icon-button:hover {
+  border-color: var(--leaf);
+  color: var(--leaf-strong);
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 4px var(--leaf-soft);
+}
+
+/* Primary (Download CV) — filled brown to keep it the standout action */
+.icon-button-primary {
+  color: var(--surface-solid);
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  box-shadow: 0 6px 18px rgba(92, 61, 36, 0.30);
+}
+
 /* Gleam that sweeps across the primary button on hover */
-.button-primary::before {
+.icon-button-primary::before {
   content: '';
   position: absolute;
   top: 0;
-  left: -80%;
-  width: 50%;
+  left: -90%;
+  width: 55%;
   height: 100%;
-  background: linear-gradient(100deg, transparent, rgba(255, 253, 248, 0.35), transparent);
+  background: linear-gradient(100deg, transparent, rgba(255, 253, 248, 0.4), transparent);
   transform: skewX(-20deg);
   transition: left 0.5s ease;
 }
 
-.button-primary:hover::before {
-  left: 130%;
-}
-
-.button-primary {
+.icon-button-primary:hover {
   color: var(--surface-solid);
-  background: var(--accent-strong);
-  border: 2px solid var(--accent-strong);
-  box-shadow: 0 6px 18px rgba(92, 61, 36, 0.30);
-}
-
-.button-primary:hover {
   background: var(--accent-strong-hover);
   border-color: var(--accent-strong-hover);
   transform: translateY(-3px);
   box-shadow: 0 10px 26px rgba(92, 61, 36, 0.42);
 }
 
-.button-secondary {
-  color: var(--text);
-  background: var(--surface-solid);
-  border: 2px solid var(--accent-soft);
-}
-
-.button-secondary:hover {
-  border-color: var(--leaf);
-  color: var(--leaf-strong);
-  transform: translateY(-3px);
-  box-shadow: 0 0 0 4px var(--leaf-soft);
+.icon-button-primary:hover::before {
+  left: 140%;
 }
 
 /* Tablet — iPad landscape and below */
@@ -448,9 +429,9 @@ body.loaded .header-text .wave {
     gap: 0.75rem;
   }
 
-  .button {
-    padding: 10px 22px;
-    font-size: 13px;
+  .icon-button {
+    width: 48px;
+    height: 48px;
   }
 
   #header .branch-tl { width: 70px; opacity: 0.32; }
@@ -486,12 +467,12 @@ body.loaded .header-text .wave {
   }
 
   .home-button {
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
   }
 
-  .button {
-    width: 100%;
-    max-width: 220px;
+  .icon-button {
+    width: 46px;
+    height: 46px;
   }
 }

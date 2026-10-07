@@ -8,28 +8,19 @@ function Navbar() {
   const menuBtnRef = useRef(null)
 
   useEffect(() => {
-    const sections = ['header', 'about', 'experience', 'skills', 'projects']
+    const sections = ['header', 'about', 'experience', 'skills', 'projects', 'other-works']
+    const elements = sections.map((id) => document.getElementById(id)).filter(Boolean)
+    const visible = new Map()
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => visible.set(entry.target.id, entry))
+      const current = [...visible.values()]
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => Math.abs(a.boundingClientRect.top - 110) - Math.abs(b.boundingClientRect.top - 110))[0]
+      if (current) setActiveSection(current.target.id)
+    }, { rootMargin: '-90px 0px -62% 0px', threshold: 0 })
 
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 120
-
-      for (const sectionId of sections) {
-        const section = document.getElementById(sectionId)
-        if (!section) continue
-        const offsetTop = section.offsetTop
-        const offsetBottom = offsetTop + section.offsetHeight
-
-        if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-          setActiveSection(sectionId)
-          break
-        }
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    handleScroll()
-
-    return () => window.removeEventListener('scroll', handleScroll)
+    elements.forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
   }, [])
 
   useEffect(() => {
@@ -62,7 +53,8 @@ function Navbar() {
             <li><a href="#about" className={activeSection === 'about' ? 'active' : ''} onClick={handleNavClick}>About</a></li>
             <li><a href="#experience" className={activeSection === 'experience' ? 'active' : ''} onClick={handleNavClick}>Experience</a></li>
             <li><a href="#skills" className={activeSection === 'skills' ? 'active' : ''} onClick={handleNavClick}>Skills</a></li>
-            <li><a href="#projects" className={activeSection === 'projects' ? 'active' : ''} onClick={handleNavClick}>Projects</a></li>
+            <li><a href="#projects" className={activeSection === 'projects' ? 'active' : ''} onClick={handleNavClick}>Featured Work</a></li>
+            <li><a href="#other-works" className={activeSection === 'other-works' ? 'active' : ''} onClick={handleNavClick}>Other Works</a></li>
           </ul>
 
           <ThemeToggle />

@@ -1,0 +1,6 @@
+.section-divider {
+  width: min(720px, 82%);
+  height: 1px;
+  margin: 0 auto;
+  background: linear-gradient(90deg, transparent, var(--border-subtle) 50%, transparent);
+}

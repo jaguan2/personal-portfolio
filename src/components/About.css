@@ -86,7 +86,10 @@
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 48px;
-  box-shadow: var(--shadow);
+  box-shadow:
+    0 1px 2px rgba(46, 39, 33, 0.06),
+    0 8px 20px rgba(46, 39, 33, 0.09),
+    0 30px 56px rgba(46, 39, 33, 0.10);
   position: relative;
 }
 
@@ -105,8 +108,8 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 40px;
+  align-items: flex-start;
+  gap: 48px;
 }
 
 .about-col-1 {
@@ -149,19 +152,18 @@
 .about-col-2 h1::after {
   content: '';
   display: block;
-  width: 48px;
+  width: 72px;
   height: 3px;
-  background: var(--leaf);
+  background: linear-gradient(90deg, var(--leaf) 55%, transparent);
   border-radius: 2px;
   margin-top: 8px;
 }
 
 .about-col-2 p {
-  line-height: 1.7;
+  line-height: 1.85;
   color: var(--text-body);
-  margin-bottom: 15px;
-  font-size: 1rem;
-  max-width: 65ch;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
 }
 
 .about-col-2 p:last-child {
@@ -195,6 +197,8 @@
 
   .about-box {
     padding: 28px 22px;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .row {
@@ -205,6 +209,10 @@
 
   .about-col-1 {
     flex-basis: 100%;
+    /* Clear the 250px desktop floor: min-width beats max-width in CSS, so
+       without this the max-widths below never take effect and the column
+       overflows the card on narrow phones. */
+    min-width: 0;
     max-width: 260px;
   }
 
