@@ -39,7 +39,7 @@ const menu = [
         title: 'Personal Portfolio',
         ingredients: 'React • Vite • JavaScript • CSS • GitHub Pages',
         description:
-          'A place where I document and share my journey in computer science and more. Cheers!',
+          'Right here! A place where I document and share my journey in computer science and more. Cheers!',
         link: 'https://github.com/jaguan2/personal-portfolio',
         drink: 'matcha'
       },

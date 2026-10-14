@@ -26,9 +26,9 @@ function About() {
             <div className="about-col-2">
               <h1>About Me</h1>
               <p className="about-lead">
-                I'm a Comp Sci alum from the University of South Florida, currently
-                serving as a Full Stack Developer Lead at DefTechLink, a startup that intends
-                to bridge the gap between the defense industry, academia, and government.
+                Hi, I'm Jason Guan. I'm a software engineer with a background in full-stack development.
+                I graduated from the University of South Florida with a Bachelor of Science in
+                Computer Science in May 2025.
               </p>
               <p>
                 My technical background includes full-stack development, database management,

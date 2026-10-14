@@ -1,4 +1,4 @@
-import { useMemo, useState, useRef, useCallback, useEffect } from 'react'
+import { useMemo, useState, useRef, useCallback, useEffect, useLayoutEffect } from 'react'
 import './Quote.css'
 
 const quotes = [
@@ -100,64 +100,116 @@ function Quote() {
   }, [])
 
   const [offset, setOffset] = useState(0)
-  const touchStartX = useRef(null)
-  const touchEndX = useRef(null)
+  const dragRef = useRef(null)
+  const dragFrameRef = useRef(null)
+  const directionRef = useRef(1)
   const containerRef = useRef(null)
+  const stageRef = useRef(null)
+  const contentRef = useRef(null)
 
   const move = useCallback((dir) => {
+    directionRef.current = dir
     setOffset((o) => Math.max(-MAX_BACK, Math.min(MAX_FORWARD, o + dir)))
   }, [])
 
-  // Trackpad / horizontal-wheel swipe on desktop. A native non-passive listener
-  // lets us preventDefault on horizontal intent while leaving vertical scroll alone.
+  // One change per gesture. Rearm when momentum ends, rather than blocking
+  // the next intentional swipe for a fixed two seconds.
   useEffect(() => {
     const el = containerRef.current
     if (!el) return
-    // One swipe = one quote, then a ~2s gate. The gate also absorbs the trackpad's
-    // momentum tail, so a single flick can't sneak in extra moves.
-    const STEP = 30
-    const COOLDOWN = 2000
-    let accum = 0
-    let lastMove = -Infinity
+    let accumulated = 0
+    let direction = 0
+    let consumed = false
     let resetId = null
-    const onWheel = (e) => {
-      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return // vertical: let the page scroll
-      e.preventDefault()
-      if (e.timeStamp - lastMove < COOLDOWN) { accum = 0; return } // inside the gate: ignore
-      accum += e.deltaX
+    const reset = () => {
+      accumulated = 0
+      direction = 0
+      consumed = false
+    }
+    const onWheel = (event) => {
+      if (event.ctrlKey) return // Preserve trackpad pinch-to-zoom.
+      const horizontal = event.shiftKey && !event.deltaX ? event.deltaY : event.deltaX
+      if (!horizontal || (!event.shiftKey && Math.abs(horizontal) <= Math.abs(event.deltaY))) return
+      event.preventDefault()
+      const nextDirection = Math.sign(horizontal)
+      if (direction && nextDirection !== direction) reset()
+      direction = nextDirection
       clearTimeout(resetId)
-      resetId = setTimeout(() => { accum = 0 }, 120) // drop a stale partial swipe
-      if (accum >= STEP) { move(1); accum = 0; lastMove = e.timeStamp }
-      else if (accum <= -STEP) { move(-1); accum = 0; lastMove = e.timeStamp }
+      resetId = setTimeout(reset, 160)
+      if (consumed) return
+      const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? el.clientWidth : 1
+      accumulated += horizontal * unit
+      if (Math.abs(accumulated) >= 36) {
+        move(nextDirection)
+        consumed = true
+      }
     }
     el.addEventListener('wheel', onWheel, { passive: false })
-    return () => el.removeEventListener('wheel', onWheel)
+    return () => {
+      el.removeEventListener('wheel', onWheel)
+      clearTimeout(resetId)
+      cancelAnimationFrame(dragFrameRef.current)
+    }
   }, [move])
 
   const index = ((todayIndex + offset) % quotes.length + quotes.length) % quotes.length
   const quote = quotes[index]
   const label = dayLabel(offset)
 
-  // Pointer events unify mouse drag (desktop) and touch swipe (mobile)
-  const minSwipe = 28
-  const onPointerDown = (e) => {
-    if (e.button && e.button !== 0) return
-    touchEndX.current = null
-    touchStartX.current = e.clientX
-    try { e.currentTarget.setPointerCapture(e.pointerId) } catch { /* not supported */ }
-  }
-  const onPointerMove = (e) => {
-    if (touchStartX.current === null) return
-    touchEndX.current = e.clientX
-  }
-  const onPointerEnd = () => {
-    if (touchStartX.current !== null && touchEndX.current !== null) {
-      const dist = touchStartX.current - touchEndX.current
-      if (dist > minSwipe) move(1)        // drag/swipe left → forward (tomorrow)
-      else if (dist < -minSwipe) move(-1) // drag/swipe right → back (yesterday)
+  // Fit only the current quote; remeasure after font loads or viewport changes.
+  useLayoutEffect(() => {
+    const stage = stageRef.current
+    const content = contentRef.current
+    if (!stage || !content) return
+    const resize = () => {
+      stage.style.height = `${content.offsetHeight}px`
     }
-    touchStartX.current = null
-    touchEndX.current = null
+    resize()
+    const observer = new ResizeObserver(resize)
+    observer.observe(content)
+    return () => observer.disconnect()
+  }, [index])
+
+  const resetDrag = () => {
+    dragRef.current = null
+    cancelAnimationFrame(dragFrameRef.current)
+    containerRef.current?.classList.remove('is-dragging')
+    containerRef.current?.style.setProperty('--quote-drag', '0px')
+  }
+
+  const onPointerDown = (event) => {
+    if (!event.isPrimary || event.button !== 0) return
+    dragRef.current = { id: event.pointerId, x: event.clientX, y: event.clientY, horizontal: false }
+  }
+  const onPointerMove = (event) => {
+    const drag = dragRef.current
+    if (!drag || drag.id !== event.pointerId) return
+    const x = event.clientX - drag.x
+    const y = event.clientY - drag.y
+    if (!drag.horizontal) {
+      if (Math.abs(y) > 8 && Math.abs(y) >= Math.abs(x)) {
+        resetDrag()
+        return
+      }
+      if (Math.abs(x) < 8 || Math.abs(x) <= Math.abs(y) * 1.2) return
+      drag.horizontal = true
+      event.currentTarget.setPointerCapture(event.pointerId)
+      event.currentTarget.classList.add('is-dragging')
+    }
+    cancelAnimationFrame(dragFrameRef.current)
+    dragFrameRef.current = requestAnimationFrame(() => {
+      containerRef.current?.style.setProperty('--quote-drag', `${Math.max(-48, Math.min(48, x * 0.35))}px`)
+    })
+  }
+  const onPointerEnd = (event) => {
+    const drag = dragRef.current
+    if (!drag || drag.id !== event.pointerId) return
+    const distance = event.clientX - drag.x
+    const threshold = Math.min(64, event.currentTarget.clientWidth * 0.12)
+    const shouldMove = drag.horizontal && Math.abs(distance) >= threshold
+    resetDrag()
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId)
+    if (shouldMove) move(distance < 0 ? 1 : -1)
   }
 
   const onKeyDown = (e) => {
@@ -189,14 +241,22 @@ function Quote() {
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerEnd}
-        onPointerCancel={onPointerEnd}
+        onPointerCancel={resetDrag}
+        onLostPointerCapture={resetDrag}
         onKeyDown={onKeyDown}
       >
-        <div className="quote-inner" key={index}>
-          <p>&ldquo;{quote.text}&rdquo;</p>
-          {quote.author && (
-            <cite className="quote-author">— {quote.author}</cite>
-          )}
+        <div className="quote-stage" ref={stageRef}>
+          <div
+            className="quote-inner"
+            ref={contentRef}
+            key={index}
+            style={{ '--quote-enter-x': `${directionRef.current * 14}px` }}
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <p>&ldquo;{quote.text}&rdquo;</p>
+            {quote.author && <cite className="quote-author">— {quote.author}</cite>}
+          </div>
         </div>
       </blockquote>
     </section>

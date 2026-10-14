@@ -26,25 +26,22 @@ const experiences = [
     company: 'DefTechLink',
     location: 'Tampa, FL',
     period: 'March 2025 – July 2026',
-    description: [
-      { bold: 'Spearheaded full-stack development of two production B2B SaaS platforms', rest: ' that aggregate and manage global defense contracting opportunities for technology companies.' },
-      { bold: 'Engineered an AWS Lambda and EventBridge ingestion pipeline', rest: ' processing 1,000+ defense contract notices daily from global government sources, automatically scoring, tagging, and classifying opportunities.' },
-      { bold: 'Engineered AI-powered features using OpenAI', rest: ' for intelligent opportunity matching, executive report generation, and automated content analysis.' },
-      { bold: 'Integrated third-party services', rest: ' including Stripe, OpenAI, QuickBooks, AWS S3, and Mailchimp APIs to deliver subscription billing, AI workflows, cloud storage, payment reconciliation, and customer engagement features.' },
-      { bold: 'Architected PostgreSQL databases on AWS RDS', rest: ', designing scalable schemas, executing production-safe migrations, and maintaining data integrity across development and production environments.' }
+    details: [
+      'Led full-stack development of two defense-tech SaaS platforms, building backend APIs and PostgreSQL databases to help companies discover government contracting opportunities.',
+      'Built AWS Lambda and EventBridge pipelines processing 1,000+ contract notices daily, with automated scoring, tagging, and classification.',
+      'Developed AI-powered opportunity matching and reports with OpenAI, alongside integrations for subscription billing, cloud storage, and customer engagement.'
     ]
   },
   {
-    title: 'Software Engineer Intern (Secret Clearance)',
+    title: 'Software Engineer Intern',
     company: 'U.S. Department of the Air Force',
     location: 'Warner Robins, GA',
     period: 'June 2024 – July 2024',
-    description: [
-      { bold: 'Served as Backend Lead', rest: ' for a full-stack management platform that centralized project metrics and sprint tracking across 10+ engineering projects.' },
-      { bold: 'Containerized PostgreSQL with Docker', rest: ' to support scalable deployment for 300+ engineers.' },
-      { bold: 'Collaborated in Agile development using Jira and Figma', rest: ', contributing to the successful delivery of three development sprints.' },
-      { bold: 'Developed 10+ REST APIs', rest: ' using Flask, SQLAlchemy, and PostgreSQL to support core platform functionality.' }
-    ]
+    details: [
+      'Served as Backend Lead for a management platform centralizing project metrics and sprint tracking across 10+ engineering projects.',
+      'Developed 10+ REST APIs with Flask and SQLAlchemy, and containerized PostgreSQL with Docker to support deployment for 300+ engineers.'
+    ],
+    credential: { label: 'Secret security clearance', date: 'Granted: July 2024' }
   },
   {
     kind: 'Education',
@@ -52,10 +49,11 @@ const experiences = [
     company: 'University of South Florida',
     location: 'Tampa, FL',
     period: 'Aug 2021 – May 2025',
-    description: [
-      { bold: 'GPA:', rest: ' 3.6 / 4.0' },
-      { bold: 'Relevant Coursework:', rest: ' Database Design, Data Storage and Analysis with Hadoop, Automata Theory, Social Media Mining, User Experience Design, Secure Coding, and Operating Systems.' }
-    ]
+    details: [
+      'Studied database design, secure coding, operating systems, and user experience design, with additional coursework in social media mining and data analysis with Hadoop.',
+      'Graduated in May 2025 with a GPA of 3.6 / 4.0.'
+    ],
+    credential: { label: 'AWS Certified Cloud Practitioner', date: 'Issued: October 2026' }
   }
 ]
 
@@ -70,7 +68,7 @@ function Experience() {
         <img className="float-icon night-decor star-2" src={sparkle} alt="" aria-hidden="true" />
       </div>
       <div className="container">
-        <h1>Experience &amp; Education</h1>
+        <h1>Education &amp; Experiences</h1>
         <div className="experience-timeline">
           {experiences.map((exp, index) => {
             const isEducation = exp.kind === 'Education'
@@ -96,13 +94,17 @@ function Experience() {
                       <span className="location">{exp.location}</span>
                     </div>
                   </div>
-                  {exp.description?.length > 0 && (
-                    <ul className="experience-details">
-                      {exp.description.map((item, i) => (
-                        <li key={i}><strong>{item.bold}</strong>{item.rest}</li>
-                      ))}
-                    </ul>
-                  )}
+                  <ul className="experience-details">
+                    {exp.details.map((detail) => (
+                      <li key={detail}>{detail}</li>
+                    ))}
+                    {exp.credential && (
+                      <li>
+                        <strong>{exp.credential.label}</strong>
+                        <span> · {exp.credential.date}</span>
+                      </li>
+                    )}
+                  </ul>
                 </div>
               </div>
             )

@@ -7,14 +7,13 @@ import deftechpodImage from '../assets/deftechpod.png'
 import dtlOrganizationsImage from '../assets/dtlorganizations.png'
 import twitterFeelImage from '../assets/TwitterFeel.JPG'
 import tasknookLoft from '../assets/tasknook-loft.webp'
-import tasknookCabin from '../assets/tasknook-cabin.webp'
-import tasknookCafe from '../assets/tasknook-cafe.webp'
-import tasknookGarden from '../assets/tasknook-garden.webp'
-import tasknookTasks from '../assets/tasknook-tasks.webp'
-import tasknookTimer from '../assets/tasknook-timer.webp'
-import tasknookSounds from '../assets/tasknook-sounds.webp'
-import tasknookDecorating from '../assets/tasknook-decorating.webp'
-import tasknookFriends from '../assets/tasknook-friends.webp'
+import tasknookCommonRoom from '../assets/tasknook-common-room.webp'
+import tasknookLibrary from '../assets/tasknook-library.webp'
+import tasknookLibrarySeats from '../assets/tasknook-library-seats.webp'
+import tasknookCharacterCustomization from '../assets/tasknook-character-customization.webp'
+import tasknookCharacterOutfits from '../assets/tasknook-character-outfits.webp'
+import tasknookCharacterModels from '../assets/tasknook-character-models.webp'
+import tasknookCharacterSeated from '../assets/tasknook-character-seated.webp'
 import coffeeBranch from '../assets/coffee-branch.svg'
 import coffeeSprig from '../assets/coffee-sprig.svg'
 import leafLine from '../assets/leaf-line.svg'
@@ -45,19 +44,18 @@ const projects = [
     eyebrow: 'Cozy Full-Stack Task Tracker',
     title: 'TaskNook',
     technologies: 'React • Tailwind CSS • Framer Motion • Flask • SQLAlchemy • Alembic • SQLite • Web Audio API • PyInstaller',
-    description: 'TaskNook is a cozy customizable task tracker that intends to provide every user with an ideal working condition. Customize your work environment, from a rainy window to sunny day. Get work done with our task manager. Adjust the music, from our preset lofi playlist to your custom linked playlist. Connect with friends, share your activity and stay motivated together.',
+    description: 'TaskNook is a cozy customizable task tracker that intends to provide every user with an ideal working condition. Customize your work environment, from a rainy window to sunny day. Connect with friends, share your activity and stay motivated together.',
     link: 'https://github.com/jaguan2/TaskNook',
     linkType: 'github',
     media: [
-      { type: 'image', src: tasknookLoft, alt: 'TaskNook loft room at night with a window-side workstation, aquarium, reading chair and bed' },
-      { type: 'image', src: tasknookCabin, alt: 'TaskNook cozy cabin room with a lit hearth, a dog asleep in front of it and snow falling outside' },
-      { type: 'image', src: tasknookCafe, alt: 'TaskNook corner cafe room with a bar under the menu board and patrons at tables across the open floor' },
-      { type: 'image', src: tasknookGarden, alt: 'TaskNook open-air secret garden with a pond, bench, hammock and a dog on a blanket' },
-      { type: 'image', src: tasknookTasks, alt: 'TaskNook task panel with groups, priorities, durations, routines and five ordering algorithms' },
-      { type: 'image', src: tasknookTimer, alt: 'TaskNook loft with a compact focus timer in the upper-left corner and a to-do list in the upper-right corner' },
-      { type: 'image', src: tasknookSounds, alt: 'TaskNook sounds panel with lofi stations and a procedural ambient mixer' },
-      { type: 'image', src: tasknookDecorating, alt: 'TaskNook decorating mode with a floor grid and a room panel for presets, floor dimensions and room materials' },
-      { type: 'image', src: tasknookFriends, alt: 'TaskNook friends panel showing who is around, what they are working on and whose room is open to visit' }
+      { type: 'image', src: tasknookLoft, alt: 'TaskNook loft at night with a workstation, aquarium, reading chair and bed' },
+      { type: 'image', src: tasknookCommonRoom, alt: 'TaskNook Common Cottage with shared desks, a raised reading nook and seated neighbours' },
+      { type: 'image', src: tasknookLibrary, alt: 'TaskNook Grand Library with tall bookshelves, arched windows, shared study tables and reading areas' },
+      { type: 'image', src: tasknookLibrarySeats, alt: 'TaskNook Grand Library with available seats highlighted and a seat-selection menu open' },
+      { type: 'image', src: tasknookCharacterCustomization, alt: 'TaskNook character editor with a model preview, style options, colour choices and body proportion controls' },
+      { type: 'image', src: tasknookCharacterOutfits, alt: 'TaskNook profile panel showing saved outfits and character previews beside the cozy lounge' },
+      { type: 'image', src: tasknookCharacterModels, alt: 'Ten TaskNook standing character models with varied hairstyles, clothing and accessories' },
+      { type: 'image', src: tasknookCharacterSeated, alt: 'Ten TaskNook character models in seated poses with varied outfits and resting postures' }
     ]
   },
   {
