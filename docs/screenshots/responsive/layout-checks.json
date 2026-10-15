@@ -1,0 +1,173 @@
+[
+  {
+    "name": "phone-small-home",
+    "width": 320,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "phone-small-skills",
+    "width": 320,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "phone-home",
+    "width": 390,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "phone-projects",
+    "width": 390,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "phone-menu",
+    "width": 390,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "phone-experience",
+    "width": 390,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "phone-landscape-home",
+    "width": 844,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "phone-wide-skills",
+    "width": 600,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "ipad-mini-home",
+    "width": 768,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "ipad-mini-about",
+    "width": 768,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "ipad-home",
+    "width": 820,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "ipad-experience",
+    "width": 820,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "ipad-projects",
+    "width": 820,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "ipad-skills",
+    "width": 820,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "ipad-landscape-home",
+    "width": 1180,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "ipad-landscape-projects",
+    "width": 1180,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "ipad-pro-home",
+    "width": 1024,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "ipad-pro-landscape-home",
+    "width": 1366,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "phone-dark-projects",
+    "width": 390,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  }
+]

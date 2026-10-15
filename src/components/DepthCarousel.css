@@ -19,7 +19,7 @@
 
 .depth-carousel-stage {
   position: absolute;
-  inset: 0 62px 38px 82px;
+  inset: 0 38px 48px 30px;
   transform-style: preserve-3d;
 }
 
@@ -101,22 +101,31 @@
   gap: 12px;
 }
 
-.depth-carousel-dots { display: flex; align-items: center; gap: 3px; }
+.depth-carousel-dots { display: flex; align-items: center; }
 
 .depth-carousel-dot {
-  width: 7px;
-  height: 7px;
-  min-height: 0;
-  box-sizing: content-box;
-  padding: 7px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 44px;
+  min-height: 44px;
+  flex-shrink: 0;
+  padding: 0;
   border: 0;
   border-radius: 50%;
-  background: var(--accent-soft);
-  background-clip: content-box;
+  background: transparent;
   cursor: pointer;
 }
 
-.depth-carousel-dot.active { background: var(--leaf-strong); }
+.depth-carousel-dot::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+}
+
+.depth-carousel-dot.active::before { background: var(--leaf-strong); }
 
 .depth-carousel-count {
   color: var(--text-subtle);
@@ -126,20 +135,27 @@
   font-variant-numeric: tabular-nums;
 }
 
-@media (max-width: 768px) {
-  .depth-carousel { height: clamp(250px, 66vw, 340px); }
-  .depth-carousel-stage { inset: 0 52px 36px 64px; }
-  .depth-carousel-card { left: 50%; width: min(100%, 520px); }
-  .depth-carousel-arrow { width: 44px; height: 44px; }
-  .depth-carousel-prev { left: 2px; }
-  .depth-carousel-next { right: -8px; }
+@media (min-width: 769px) and (max-width: 1024px) {
+  .depth-carousel { height: 420px; }
 }
 
-@media (max-width: 480px) {
-  .depth-carousel { height: 240px; perspective: 900px; }
-  .depth-carousel-stage { inset: 0 42px 36px 50px; }
-  .depth-carousel-arrow { width: 38px; height: 38px; }
-  .depth-carousel-next { right: 0; }
+@media (max-width: 768px) {
+  /* Give the current screenshot the full column on phones. */
+  .depth-carousel {
+    height: auto;
+    aspect-ratio: 16 / 10;
+    box-sizing: content-box;
+    padding-bottom: 52px;
+  }
+  .depth-carousel-stage { inset: 0 0 52px; }
+  .depth-carousel-card {
+    width: 100%;
+    transform: translate(-50%, -50%) !important;
+  }
+  .depth-carousel-card[aria-hidden='true'] { visibility: hidden; }
+  .depth-carousel-arrow { width: 44px; height: 44px; top: calc((100% - 52px) / 2); }
+  .depth-carousel-prev { left: 8px; }
+  .depth-carousel-next { right: 8px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

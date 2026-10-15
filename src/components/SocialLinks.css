@@ -46,7 +46,7 @@
   outline-offset: 3px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .social-links {
     left: max(12px, env(safe-area-inset-left));
     top: auto;

@@ -105,6 +105,7 @@
   border: 1px solid var(--border-subtle);
   background: var(--surface-solid);
   box-shadow: 0 12px 26px rgba(30, 24, 20, 0.14);
+  transition: transform 250ms ease, box-shadow 250ms ease;
 }
 
 .about-photo {
@@ -147,7 +148,7 @@
   transform: rotate(-8deg);
 }
 
-.about-photo-clouds {
+.about-photo-city {
   z-index: 0;
   width: 74%;
   right: -2%;
@@ -155,9 +156,21 @@
   transform: rotate(9deg);
 }
 
-.about-photo-clouds img {
+@media (hover: hover) and (pointer: fine) {
+  .about-photo:hover {
+    z-index: 4;
+    transform: translateY(-8px) rotate(2deg) scale(1.08);
+    box-shadow: 0 22px 42px rgba(30, 24, 20, 0.24);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-photo { transition: none; }
+}
+
+.about-photo-city img {
   aspect-ratio: 4 / 3;
-  object-position: center 48%;
+  object-position: center 40%;
 }
 
 .about-photo-riverside {
@@ -168,9 +181,9 @@
   transform: rotate(4deg);
 }
 
-.about-photo-clouds figcaption { text-align: right; }
+.about-photo-city figcaption { text-align: right; }
 
-.about-photo-clouds figcaption,
+.about-photo-city figcaption,
 .about-photo-riverside figcaption { font-size: 0.71rem; }
 
 @media (max-width: 1100px) {
@@ -192,7 +205,7 @@
   .about-copy .about-background,
   .about-copy .about-personal { max-width: none; }
   .about-photo-board { width: min(100%, 500px); height: 600px; margin: 0 auto; }
-  .about-photo-clouds { top: -20px; }
+  .about-photo-city { top: -20px; }
   .about-photo-portrait { top: 90px; }
   .about-photo-riverside { width: 44%; bottom: -20px; }
 }
@@ -205,10 +218,10 @@
   .about-coffee-note { font-size: 0.84rem; }
   .about-photo-board { height: calc(90vw + 100px); }
   .about-photo-portrait { width: 64%; top: 65px; }
-  .about-photo-clouds { top: -12px; }
+  .about-photo-city { top: -12px; }
   .about-photo-riverside { width: 47%; bottom: -5px; }
   .about-photo { padding: 6px 6px 0; }
   .about-photo figcaption { padding: 9px 2px 10px; font-size: 0.7rem; }
-  .about-photo-clouds figcaption,
+  .about-photo-city figcaption,
   .about-photo-riverside figcaption { font-size: 0.7rem; }
 }

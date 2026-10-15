@@ -153,7 +153,7 @@
 
 .header-text h1 {
   font-family: 'Playfair Display', 'Fredoka', serif;
-  font-size: 68px;
+  font-size: clamp(2rem, 4.7vw, 4.25rem);
   margin-top: 20px;
   color: var(--text);
   font-weight: 500;
@@ -219,12 +219,22 @@ body.loaded .header-text .wave {
   75% { transform: rotate(10deg); }
 }
 
-.header-text p {
+.header-text .hero-focus {
+  margin-top: 20px;
+  max-width: 36ch;
+  color: var(--text-body);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.header-text .hero-quote {
   color: var(--text-muted);
   font-family: 'Montserrat', sans-serif;
   font-style: italic;
   margin-top: 14px;
-  font-size: 1.15rem;
+  font-size: 1rem;
   position: relative;
   padding-left: 18px;
   border-left: 3px solid var(--leaf);
@@ -275,6 +285,15 @@ body.loaded .header-text .wave {
 }
 
 /* Tablet — iPad landscape and below */
+@media (min-width: 769px) and (max-width: 1100px) {
+  #header { min-height: auto; }
+  .hero-panel { min-height: 0; }
+  .header-content { min-height: 520px; }
+  .header-text { flex: 1; min-width: 0; }
+  .header-text h1 { font-size: clamp(2rem, 4.2vw, 2.7rem); }
+  .header-image { flex: 0 0 36%; }
+}
+
 @media (max-width: 1024px) {
   #header {
     padding: 96px 18px 18px;
@@ -293,7 +312,7 @@ body.loaded .header-text .wave {
   }
 
   .header-text h1 {
-    font-size: 52px;
+    font-size: clamp(2rem, 4.2vw, 2.7rem);
   }
 
   .header-image {
@@ -336,7 +355,12 @@ body.loaded .header-text .wave {
     margin-top: 10px;
   }
 
-  .header-text p {
+  .header-text .hero-focus {
+    margin: 16px auto 0;
+    font-size: 1rem;
+  }
+
+  .header-text .hero-quote {
     font-size: 16px;
     border-left-width: 2px;
     padding-left: 14px;
@@ -358,6 +382,7 @@ body.loaded .header-text .wave {
   #header .branch-br { width: 80px; opacity: 0.32; }
   #header .sprig-tr, #header .sprig-bl { width: 54px; opacity: 0.3; }
   #header .leaf-1, #header .leaf-2, #header .leaf-3 { width: 22px; opacity: 0.22; }
+  #header .moon-tr { top: 52%; right: 2%; width: 32px; }
 }
 
 /* Small mobile */
@@ -378,7 +403,7 @@ body.loaded .header-text .wave {
     font-size: 32px;
   }
 
-  .header-text p {
+  .header-text .hero-quote {
     font-size: 14px;
   }
 
@@ -386,4 +411,15 @@ body.loaded .header-text .wave {
     max-width: 220px;
   }
 
+}
+
+/* Keep the greeting visible in short phone and tablet landscape windows. */
+@media (min-width: 600px) and (max-width: 1100px) and (max-height: 600px) {
+  #header { min-height: auto; padding: 84px 18px 24px; }
+  .hero-panel { min-height: 0; }
+  #header .container { padding: 24px 5%; }
+  .header-content { min-height: 0; flex-direction: row; text-align: left; gap: 24px; }
+  .header-text { flex: 1; min-width: 0; }
+  .header-image { flex: 0 0 36%; margin-top: 0; }
+  .header-image img { width: auto; max-height: min(260px, 60svh); }
 }

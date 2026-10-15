@@ -2,32 +2,47 @@ import { useState, useEffect } from 'react'
 import coffeeBranch from '../assets/coffee-branch.svg'
 import './Loader.css'
 
-const POUR_MS = 2350
-const FADE_MS = 550
-const REDUCED_MS = 700
+const POUR_MS = 800
+const FADE_MS = 250
+const SESSION_KEY = 'portfolio:brewed'
 
 function Loader({ onFinish }) {
+  const [shouldBrew] = useState(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return false
+    try {
+      return sessionStorage.getItem(SESSION_KEY) !== 'true'
+    } catch {
+      return true
+    }
+  })
   const [closing, setClosing] = useState(false)
 
   useEffect(() => {
-    document.body.classList.add('is-loading')
-
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const showMs = reduced ? REDUCED_MS : POUR_MS
-
-    const closeTimer = setTimeout(() => setClosing(true), showMs)
-    const doneTimer = setTimeout(() => {
+    if (!shouldBrew) {
       document.body.classList.remove('is-loading')
       document.body.classList.add('loaded')
       onFinish()
-    }, showMs + FADE_MS)
+      return
+    }
+
+    document.body.classList.remove('loaded')
+    document.body.classList.add('is-loading')
+    const closeTimer = setTimeout(() => setClosing(true), POUR_MS)
+    const doneTimer = setTimeout(() => {
+      document.body.classList.remove('is-loading')
+      document.body.classList.add('loaded')
+      try { sessionStorage.setItem(SESSION_KEY, 'true') } catch { /* Storage can be blocked. */ }
+      onFinish()
+    }, POUR_MS + FADE_MS)
 
     return () => {
       clearTimeout(closeTimer)
       clearTimeout(doneTimer)
       document.body.classList.remove('is-loading')
     }
-  }, [onFinish])
+  }, [onFinish, shouldBrew])
+
+  if (!shouldBrew) return null
 
   return (
     <div className={`loader ${closing ? 'loader-closing' : ''}`} role="status" aria-label="Loading">

@@ -1,4 +1,4 @@
-import goldenClouds from '../assets/about-golden-clouds.webp'
+import cityStroll from '../assets/about-city-stroll.webp'
 import portrait from '../assets/about-jason-outdoors.webp'
 import riversideWalk from '../assets/about-riverside-walk.webp'
 import coffeeBranch from '../assets/coffee-branch.svg'
@@ -41,9 +41,9 @@ function About() {
               <img src={riversideWalk} alt="A winding path through a grassy hillside overlooking a wide river" width="750" height="1000" loading="lazy" decoding="async" />
               <figcaption><time dateTime="2026-07-05">7.5.2026</time></figcaption>
             </figure>
-            <figure className="about-photo about-photo-clouds">
-              <img src={goldenClouds} alt="Golden clouds above treetops, with the moon in a pale blue sky" width="525" height="700" loading="lazy" decoding="async" />
-              <figcaption><time dateTime="2026-03-01">3.1.2026</time></figcaption>
+            <figure className="about-photo about-photo-city">
+              <img src={cityStroll} alt="A castle-like building above green gardens beneath bright summer clouds" width="750" height="1000" loading="lazy" decoding="async" />
+              <figcaption><time dateTime="2026-07-05">7.5.2026</time></figcaption>
             </figure>
             <figure className="about-photo about-photo-portrait">
               <img src={portrait} alt="Jason relaxing on the grass in his graduation outfit, with a book over his face" width="800" height="1000" loading="lazy" decoding="async" />

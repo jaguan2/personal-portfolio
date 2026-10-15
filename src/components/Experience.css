@@ -458,6 +458,11 @@
 
 /* Small phone */
 @media (max-width: 480px) {
+  .experience-timeline::before { left: 16px; }
+  .timeline-item { padding-left: 42px; }
+  .timeline-item::before { left: 32px; width: 10px; top: 18px; }
+  .timeline-node { width: 32px; height: 32px; }
+  .timeline-node svg { width: 16px; height: 16px; }
   #experience {
     padding: 78px 0 86px;
   }

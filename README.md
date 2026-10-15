@@ -31,12 +31,12 @@ I'm **Jason Guan**, a Computer Science graduate from the University of South Flo
 ## ✨ Features
 
 - **Cafe / lofi aesthetic** — cream palette with sage & caramel accents, hand-drawn botanical motifs, and a subtle paper-grain texture.
-- **Coffee-brewing loader** — a CSS-animated cup "brews" on first load before the site fades in.
+- **Coffee-brewing loader** — a one-second intro on the first visit per tab session; repeat visits and reduced-motion mode skip it.
 - **Sticky navbar** — active-section highlighting on scroll, plus a mobile hamburger menu.
 - **Hero** - greeting and portrait, with contact and resume links in the persistent side rail.
 - **Experience & Education timeline** — a vertical spine with icon nodes (briefcase for work, cap for education).
-- **Skills** — pinned "index cards" with a receipt-style *Subtotal / Tax / Total* summary.
-- **Featured Work** — alternating image/text project rows with a click-to-expand lightbox.
+- **Skills** — pinned cards with receipt-style line items and dotted leaders.
+- **Featured Work** — alternating image/text project rows with keyboard-operated galleries and a modal lightbox that keeps focus inside and returns it on close.
 - **Other Works** — secondary projects styled like a **printed cafe menu**, each with an illustrated drink.
 - **Daily Quote browser** — a "today's pour" that rotates by day and is swipeable (pointer, touch, keyboard, trackpad).
 - **Cafe Radio** — a bottom-right turntable with the current mix title, play/pause controls, and saved volume. The YouTube player loads when its controls are first opened.

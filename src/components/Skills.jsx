@@ -62,7 +62,7 @@ const skillsData = [
   {
     category: 'Languages',
     icon: 'code',
-    skills: ['Python', 'JavaScript', 'Java', 'C++', 'C', 'HTML/CSS', 'SQL']
+    skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C++', 'C', 'HTML/CSS', 'SQL']
   },
   {
     category: 'Backend & APIs',
@@ -77,17 +77,17 @@ const skillsData = [
   {
     category: 'Frameworks & Libraries',
     icon: 'layers',
-    skills: ['React', 'Flask', 'FastAPI', 'SQLAlchemy', 'Node.js', 'MUI', 'Bootstrap']
+    skills: ['React', 'Flask', 'FastAPI', 'SQLAlchemy', 'Node.js', 'Express', 'Tailwind CSS', 'MUI', 'Bootstrap']
   },
   {
-    category: 'Cloud & Infrastructure',
+    category: 'Cloud & DevOps',
     icon: 'cloud',
-    skills: ['AWS Lambda', 'EventBridge', 'RDS', 'S3', 'EC2', 'CloudWatch', 'IAM', 'Docker']
+    skills: ['AWS Lambda · EventBridge', 'AWS RDS · S3 · EC2', 'AWS IAM · CloudWatch', 'Docker', 'CI/CD · GitHub Actions']
   },
   {
-    category: 'Developer Tools',
+    category: 'Development Tools',
     icon: 'tool',
-    skills: ['Git/GitHub', 'Linux', 'Jira', 'Figma', 'Notion']
+    skills: ['pytest', 'Playwright', 'Git/GitHub', 'Linux', 'Jira', 'Figma', 'Notion']
   }
 ]
 
@@ -131,23 +131,6 @@ function Skills() {
                   ))}
                 </ul>
 
-                <div className="skill-summary">
-                  <div className="skill-srow">
-                    <span>Subtotal</span>
-                    <span className="skill-dots" aria-hidden="true" />
-                    <span>{item.skills.length}</span>
-                  </div>
-                  <div className="skill-srow muted">
-                    <span>Tax</span>
-                    <span className="skill-dots" aria-hidden="true" />
-                    <span>…</span>
-                  </div>
-                  <div className="skill-srow total">
-                    <span>Total</span>
-                    <span className="skill-dots" aria-hidden="true" />
-                    <span>{item.skills.length}</span>
-                  </div>
-                </div>
                 </div>
               </div>
             )

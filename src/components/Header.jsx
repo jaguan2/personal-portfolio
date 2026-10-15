@@ -28,8 +28,8 @@ function Header() {
           <div className="header-content">
             <div className="header-text">
               <h1>Hi, I'm <em>Jason</em> <span className="wave">👋</span></h1>
-              <p>"Passion makes the impossible happen"</p>
-
+              <p className="hero-focus">Full-Stack Developer</p>
+              <p className="hero-quote">"Passion makes the impossible happen"</p>
             </div>
             <div className="header-image">
               <img src={heroImage} alt="Jason Guan" />

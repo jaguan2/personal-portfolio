@@ -283,8 +283,16 @@
   }
 
   .menu-item {
-    gap: 14px;
+    display: grid;
+    grid-template-columns: 54px minmax(0, 1fr);
+    gap: 8px 12px;
   }
+
+  .menu-item-body { display: contents; }
+  .menu-item-head { min-width: 0; align-items: center; gap: 8px; }
+  .menu-item-title { min-width: 0; flex-shrink: 1; overflow-wrap: anywhere; }
+  .menu-item-ingredients,
+  .menu-item-desc { grid-column: 1 / -1; margin-top: 0; }
 
   /* 44px so the global mobile tap-target rule can't stretch it into an oval */
   .menu-item-link {
@@ -293,8 +301,8 @@
   }
 
   .menu-item-thumb {
-    width: 62px;
-    height: 62px;
+    width: 54px;
+    height: 54px;
     padding: 10px;
   }
 }

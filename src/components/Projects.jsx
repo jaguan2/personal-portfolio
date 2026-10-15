@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useRef, useLayoutEffect } from 'react'
 import deftechlinkCover from '../assets/deftechlink.png'
 import dtlDashboardImage from '../assets/dtldashboard.png'
 import dtlOpportunitiesImage from '../assets/dtlopportunities.png'
@@ -27,7 +27,7 @@ const projects = [
     eyebrow: 'Professional Work',
     title: 'DefTechLink',
     technologies: 'Python • Flask • SQLAlchemy • PostgreSQL • AWS Lambda • Auth0 • Stripe',
-    description: 'DefTechLink is a defense-tech startup focused on helping innovative companies navigate government contracting and defense markets. I build the backend systems, cloud infrastructure, and data pipelines that aggregate thousands of defense opportunities, making them easier for companies to discover.',
+    description: 'DefTechLink helps technology companies discover government contracting opportunities. I built backend APIs, cloud infrastructure, and data pipelines for two production SaaS platforms, including an AWS pipeline that processed 1,000+ contract notices daily.',
     link: 'https://deftechlink.com',
     linkType: 'external',
     media: [
@@ -60,13 +60,13 @@ const projects = [
   },
   {
     id: 2,
-    eyebrow: 'Sentiment Analysis & Social Media Mining',
+    eyebrow: 'Next-Tweet Emotion Prediction',
     title: 'TwitterFeel',
     technologies: 'Python • TensorFlow • Pandas • NumPy • Hugging Face',
-    description: 'TwitterFeel is a machine learning research project focused on identifying early indicators of depression, anxiety, and suicidal ideation through social media activity, inspired by the growing mental health crisis and the widespread influence of social media. By detecting these warning signs early, the goal is to better understand how technology can support awareness, intervention, and access to help for individuals who may be struggling.',
+    description: 'TwitterFeel explores predicting the emotion of a user\'s next tweet from their posting history. I built a pipeline using transformer embeddings and TensorFlow LSTM models, and evaluated it with user-disjoint splits against majority-class and previous-emotion baselines.',
     link: 'https://github.com/jaguan2/twitterFeel',
     linkType: 'github',
-    media: { type: 'image', src: twitterFeelImage, alt: 'TwitterFeel sentiment analysis dashboard' }
+    media: { type: 'image', src: twitterFeelImage, alt: 'TwitterFeel confusion matrices comparing model evaluation results' }
   }
 ]
 
@@ -106,27 +106,29 @@ const galleryOf = (project) =>
 
 function Projects() {
   const [lightbox, setLightbox] = useState(null)
+  const lightboxRef = useRef(null)
+  const closeRef = useRef(null)
+  const lightboxOpen = lightbox !== null
   const stepLightbox = (dir) =>
     setLightbox((lb) =>
       lb ? { ...lb, index: (lb.index + dir + lb.gallery.length) % lb.gallery.length } : lb
     )
 
-  // Close on Escape, arrow-key through the gallery, lock background scroll
-  useEffect(() => {
-    if (!lightbox) return
-    const onKeyDown = (e) => {
-      if (e.key === 'Escape') setLightbox(null)
-      else if (e.key === 'ArrowRight') stepLightbox(1)
-      else if (e.key === 'ArrowLeft') stepLightbox(-1)
-    }
-    document.addEventListener('keydown', onKeyDown)
+  // A native modal keeps the rest of the page inert and contains keyboard focus.
+  useLayoutEffect(() => {
+    if (!lightboxOpen) return
+    const dialog = lightboxRef.current
+    const opener = document.activeElement
     const prevOverflow = document.body.style.overflow
+    dialog.showModal()
+    closeRef.current?.focus({ preventScroll: true })
     document.body.style.overflow = 'hidden'
     return () => {
-      document.removeEventListener('keydown', onKeyDown)
+      dialog.close()
       document.body.style.overflow = prevOverflow
+      if (opener?.isConnected) opener.focus({ preventScroll: true })
     }
-  }, [lightbox])
+  }, [lightboxOpen])
 
   return (
     <section id="projects">
@@ -202,14 +204,41 @@ function Projects() {
       </div>
 
       {lightbox && (
-        <div
+        <dialog
+          ref={lightboxRef}
           className="lightbox"
-          role="dialog"
           aria-modal="true"
           aria-label="Expanded project media"
-          onClick={() => setLightbox(null)}
+          onCancel={(event) => {
+            event.preventDefault()
+            setLightbox(null)
+          }}
+          onKeyDown={(event) => {
+            if (event.key === 'Tab') {
+              const controls = event.currentTarget.querySelectorAll('button:not([disabled]), video[controls]')
+              const first = controls[0]
+              const last = controls[controls.length - 1]
+              if (event.shiftKey && (document.activeElement === first || document.activeElement === event.currentTarget)) {
+                event.preventDefault()
+                last?.focus()
+              } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault()
+                first?.focus()
+              }
+              return
+            }
+            if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+              event.preventDefault()
+              event.stopPropagation()
+              stepLightbox(event.key === 'ArrowRight' ? 1 : -1)
+            }
+          }}
+          onClick={(event) => {
+            if (event.target === event.currentTarget) setLightbox(null)
+          }}
         >
           <button
+            ref={closeRef}
             type="button"
             className="lightbox-close"
             onClick={() => setLightbox(null)}
@@ -253,7 +282,7 @@ function Projects() {
               </>
             )}
           </div>
-        </div>
+        </dialog>
       )}
     </section>
   )

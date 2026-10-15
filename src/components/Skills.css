@@ -182,6 +182,7 @@
 }
 
 .skill-card-head h3 {
+  min-width: 0;
   margin: 0;
   color: var(--text);
   font-family: 'Fredoka', sans-serif;
@@ -211,7 +212,8 @@
 .skill-name {
   font-size: 0.92rem;
   color: rgba(46, 31, 22, 0.9);
-  white-space: nowrap;
+  min-width: 0;
+  overflow-wrap: anywhere;
   transition: color 0.25s ease;
 }
 
@@ -237,42 +239,6 @@
 .skill-row:hover .skill-check {
   color: var(--leaf-strong);
   transform: scale(1.2);
-}
-
-/* Receipt-style summary: subtotal / tax / total */
-.skill-summary {
-  margin-top: 14px;
-  padding-top: 12px;
-  border-top: 1.5px dashed var(--border-subtle);
-}
-
-.skill-srow {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  padding: 2px 0;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-subtle);
-}
-
-.skill-srow.muted {
-  opacity: 0.7;
-}
-
-.skill-srow.total {
-  margin-top: 7px;
-  padding-top: 8px;
-  border-top: 3px double var(--border-subtle);
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--leaf-strong);
-}
-
-.skill-srow .skill-dots {
-  border-bottom-color: var(--border-subtle);
 }
 
 /* Tablet — 3 → 2 cols */
@@ -326,6 +292,10 @@
 }
 
 /* Small phone — 2 → 1 col */
+@media (max-width: 560px) {
+  .skills-grid { column-count: 1; }
+}
+
 @media (max-width: 480px) {
   #skills {
     padding: 50px 0 60px;

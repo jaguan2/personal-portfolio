@@ -11,7 +11,7 @@
   background:
     radial-gradient(ellipse at 50% 38%, rgba(255, 253, 248, 0.55), transparent 62%),
     var(--bg);
-  transition: opacity 0.55s ease, visibility 0.55s ease;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
 .loader-closing {
@@ -50,7 +50,7 @@ body.is-loading {
   position: relative;
   width: 220px;
   height: 218px;
-  transition: transform 0.55s ease;
+  transition: transform 0.25s ease;
 }
 
 .loader-closing .loader-scene {
@@ -71,8 +71,8 @@ body.is-loading {
   transform: scaleY(0);
   transform-origin: top;
   animation:
-    loaderStreamIn 0.3s ease-out 0.35s forwards,
-    loaderStreamOut 0.3s ease-in 1.85s forwards;
+    loaderStreamIn 0.15s ease-out 0.1s forwards,
+    loaderStreamOut 0.15s ease-in 0.6s forwards;
 }
 
 @keyframes loaderStreamIn {
@@ -89,7 +89,7 @@ body.is-loading {
   position: absolute;
   inset: 0;
   z-index: 2;
-  animation: loaderSettle 0.45s ease 2.05s;
+  animation: loaderSettle 0.2s ease 0.7s;
 }
 
 @keyframes loaderSettle {
@@ -139,7 +139,7 @@ body.is-loading {
   position: absolute;
   inset: -2px;
   transform: translateY(103%);
-  animation: loaderFill 1.7s cubic-bezier(0.25, 0.6, 0.3, 1) 0.5s forwards;
+  animation: loaderFill 0.6s cubic-bezier(0.25, 0.6, 0.3, 1) 0.1s forwards;
 }
 
 @keyframes loaderFill {
@@ -199,9 +199,9 @@ body.is-loading {
   animation: loaderSteam 2.6s ease-in-out infinite;
 }
 
-.loader-wisp-1 { left: 14px; animation-delay: 1.9s; }
-.loader-wisp-2 { left: 36px; height: 42px; animation-delay: 2.2s; }
-.loader-wisp-3 { left: 58px; animation-delay: 2.45s; }
+.loader-wisp-1 { left: 14px; animation-delay: 0.6s; }
+.loader-wisp-2 { left: 36px; height: 42px; animation-delay: 0.7s; }
+.loader-wisp-3 { left: 58px; animation-delay: 0.8s; }
 
 @keyframes loaderSteam {
   0% { opacity: 0; transform: translateY(10px) translateX(0); }
@@ -284,8 +284,7 @@ body.is-loading {
   filter: brightness(2);
 }
 
-/* Reduced motion: static filled cup with faint steam, quick crossfade exit
-   (the JS also shortens the display time) */
+/* Fallback if reduced-motion is enabled while the intro is already open. */
 @media (prefers-reduced-motion: reduce) {
   .loader-stream {
     animation: none;

@@ -1,0 +1,319 @@
+% Master resume / project bank. Original resume is preserved separately.
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\ifdefined\pdfglyphtounicode
+  \IfFileExists{glyphtounicode.tex}{\input{glyphtounicode}}{}
+\fi
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\ifdefined\pdfgentounicode\pdfgentounicode=1\fi
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+% Use the original single-line project heading with a repository link.
+\newcommand{\resumeLinkedProject}[3]{
+    \resumeProjectHeading{\textbf{#1} $|$ #3 $|$ \href{https://#2}{\underline{GitHub}}}{}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% MASTER / TAILORED SELECTION
+% Default: full project bank. For a tailored resume, uncomment and edit this:
+% \newcommand{\SelectedProjects}{\projectTaskNook\projectPokeSQL}
+% You may list project commands in any order. All definitions live below.
+% Alternatively compile Jason_Guan_Tailored_Resume.tex without editing this file.
+\newif\ifMasterResume
+\ifdefined\SelectedProjects
+  \MasterResumefalse
+\else
+  \MasterResumetrue
+  \newcommand{\SelectedProjects}{
+    \projectTaskNook
+    \projectPokeSQL
+    \projectTwitterFeel
+    \projectPurrfectPath
+    \projectSERAPH
+    \MasterProjectPageBreak
+    \projectDopamine
+    \projectMediaGrabber
+    \projectStudyWithSoobin
+    \projectPortfolio
+    \projectAutonomousRobot
+  }
+\fi
+
+% Wrapping headings keep longer stacks readable without scaling down text.
+\newcommand{\projectEntry}[3]{
+  \ifMasterResume
+    \item \textbf{#1} \hfill \small\href{#2}{\underline{GitHub}}\\[2pt]
+    {\small\textit{#3}}\vspace{-5pt}
+  \else
+    \item {\small\textbf{#1} $|$ #3 $|$ \href{#2}{\underline{GitHub}}}\vspace{-7pt}
+  \fi
+}
+\newcommand{\MasterProjectPageBreak}{
+  \ifMasterResume
+    \resumeSubHeadingListEnd
+    \clearpage
+    \section{Projects (continued)}
+    \resumeSubHeadingListStart
+  \fi
+}
+% Clear page numbers make the full project bank easier to navigate.
+\ifMasterResume
+  \fancyfoot[C]{\small Jason Guan \enspace $|$ \enspace \thepage}
+\fi
+
+% PROJECT BANK: edit bullets here once; select projects near the top of this file.
+% Project dates are omitted because verified dates are not available for all entries.
+\newcommand{\projectTaskNook}{
+  \projectEntry{TaskNook}{https://github.com/jaguan2/TaskNook}{React, Flask, SQLite, Alembic, PyInstaller}
+  \resumeItemListStart
+    \resumeItem{Built a desktop productivity app combining task scheduling, recurring routines, and a Pomodoro timer with a customizable isometric workspace, ambient audio, and time-of-day themes.}
+    \resumeItem{Developed an interactive SVG room editor with drag-and-drop furniture placement, depth sorting, and customizable floor plans.}
+    \resumeItem{Implemented database upgrades with automatic SQLite backups and regression tests; configured GitHub Actions for Vitest, pytest, migration checks, and packaged Windows smoke tests.}
+  \resumeItemListEnd
+}
+
+\newcommand{\projectPokeSQL}{
+  \projectEntry{Pok\'eSQL}{https://github.com/jaguan2/poke-sql}{React, TypeScript, SQLite, WebAssembly, Python, Electron}
+  \resumeItemListStart
+    \resumeItem{Built an interactive SQL practice application with a bundled relational dataset of 1,025 Pok\'emon, a syntax-highlighted editor, schema autocomplete, and eight guided challenges with isolated answer checking.}
+    \resumeItem{Moved SQLite query execution into a Web Worker with cancellation and timeout recovery; persisted database snapshots, query history, and challenge progress locally with IndexedDB.}
+    \resumeItem{Packaged an offline Windows desktop app with Electron and added browser and desktop checks for persistence, transactions, query interruption, and offline reload.}
+  \resumeItemListEnd
+}
+
+\newcommand{\projectTwitterFeel}{
+  \projectEntry{TwitterFeel}{https://github.com/jaguan2/twitterFeel}{Python, TensorFlow, Hugging Face, scikit-learn, pandas, NumPy}
+  \resumeItemListStart
+    \resumeItem{Built a machine learning pipeline to predict a user's next-tweet emotion from posting history, using transformer embeddings and TensorFlow LSTM models.}
+    \resumeItem{Evaluated generalization with user-disjoint train/test splits and compared predictions against majority-class and previous-emotion persistence baselines.}
+    \ifMasterResume
+      \resumeItem{Extended the research workflow with audited data preparation, historical emotion features, shared development folds, per-user metrics, and reproducible run artifacts.}
+    \fi
+  \resumeItemListEnd
+}
+
+\newcommand{\projectPurrfectPath}{
+  \projectEntry{Purrfect Path}{https://github.com/jaguan2/PurrfectPath}{Python, Flask, React, PostgreSQL, AWS}
+  \resumeItemListStart
+    \resumeItem{Built a full-stack course scheduling platform for University of South Florida Computer Science students, supporting academic planning across 28 core and elective courses.}
+    \resumeItem{Implemented workflows for students to create, compare, and share course schedules with friends through a cat-themed interface.}
+  \resumeItemListEnd
+}
+
+% Professional project: use as an alternative to the Air Force experience bullets,
+% or shorten that experience entry to avoid repeating the same contribution.
+\newcommand{\projectSERAPH}{
+  \projectEntry{SERAPH -- Engineering Project Dashboard}{https://github.com/jaguan2/SERAPH}{React, Flask, SQLAlchemy, PostgreSQL, Docker}
+  \resumeItemListStart
+    \resumeItem{Served as backend lead for an engineering management platform centralizing project metrics and sprint tracking across 10+ projects during a U.S. Department of the Air Force internship.}
+    \resumeItem{Developed 10+ REST API endpoints with Flask and SQLAlchemy and containerized PostgreSQL with Docker for a platform designed to support 300+ engineers.}
+  \resumeItemListEnd
+}
+
+\newcommand{\projectDopamine}{
+  \projectEntry{Dopamine -- Restaurant Ordering Platform}{https://github.com/jaguan2/dopamine}{React, Vite, Flask, SQLAlchemy, SQLite, pytest}
+  \resumeItemListStart
+    \resumeItem{Built a full-stack restaurant ordering application with menu browsing, a persistent cart, pickup and delivery checkout, order tracking, and a kitchen dashboard.}
+    \resumeItem{Implemented server-side price calculation in integer cents, order-line price snapshots, and validated order-status transitions to preserve pricing and order history.}
+    \resumeItem{Added API-contract tests using a disposable database to verify ordering behavior; implemented request rate limiting and key-protected kitchen routes.}
+  \resumeItemListEnd
+}
+
+\newcommand{\projectMediaGrabber}{
+  \projectEntry{Media Grabber}{https://github.com/jaguan2/media-grabber}{React, Node.js, Express, yt-dlp, FFmpeg, MUI}
+  \resumeItemListStart
+    \resumeItem{Built a media download application for YouTube, Instagram, and X with format and quality selection, background download jobs, and progress polling.}
+    \resumeItem{Integrated yt-dlp and FFmpeg for video/audio extraction and merging; streamed image conversion through a server proxy and assembled selected photos into ZIP archives in the browser.}
+    \resumeItem{Managed per-job temporary directories with cleanup after downloads and periodic removal of abandoned files; packaged the frontend, API, and native tools as a portable Windows application.}
+  \resumeItemListEnd
+}
+
+\newcommand{\projectStudyWithSoobin}{
+  \projectEntry{Study with Soobin}{https://github.com/jaguan2/studywithsoobin}{React, TypeScript, Vite, Tailwind CSS, YouTube IFrame API}
+  \resumeItemListStart
+    \resumeItem{Built a browser-based study app combining embedded video, configurable Pomodoro cycles, task planning, and locally persisted focus statistics and preferences.}
+    \resumeItem{Implemented video discovery with search and filters, playback controls, keyboard shortcuts, and saved playback positions; maintained timer and music state while switching tool panels.}
+    \resumeItem{Created a procedural ambient-sound mixer with independently adjustable rain, wind, fireplace, and caf\'e channels using the Web Audio API.}
+  \resumeItemListEnd
+}
+
+\newcommand{\projectPortfolio}{
+  \projectEntry{Personal Portfolio}{https://github.com/jaguan2/personal-portfolio}{React, Vite, JavaScript, CSS, GSAP, GitHub Actions}
+  \resumeItemListStart
+    \resumeItem{Designed and built a responsive personal portfolio with a custom caf\'e-inspired visual system, project galleries, and a YouTube-powered music player.}
+    \resumeItem{Implemented keyboard-accessible modal galleries with focus restoration, reduced-motion support, and responsive navigation; configured automated GitHub Pages deployment with GitHub Actions.}
+  \resumeItemListEnd
+}
+
+\newcommand{\projectAutonomousRobot}{
+  \projectEntry{Autonomous Robot}{https://github.com/jaguan2/Autonomous-Robot}{Arduino, C++, TinkerCAD, Ultrasonic Sensors, 3D Printing}
+  \resumeItemListStart
+    \resumeItem{Prototyped a \$30 autonomous robot as an affordable STEM toy for K--12 students, using Arduino, C++, and ultrasonic sensors for obstacle-course navigation.}
+    \resumeItem{Modeled a train-themed enclosure in TinkerCAD, then 3D printed and assembled the robot hardware.}
+  \resumeItemListEnd
+}
+
+\begin{document}
+
+
+\begin{center}
+  \textbf{\Huge \scshape Jason Guan} \\ \vspace{1pt}
+  \resizebox{\textwidth}{!}{\small
+    727-512-2452 $|$ \href{mailto:tpaguan@gmail.com}{\underline{tpaguan@gmail.com}} $|$
+    \href{https://www.linkedin.com/in/jaguan/}{\underline{linkedin.com/in/jaguan}} $|$
+    \href{https://github.com/jaguan2}{\underline{github.com/jaguan2}} $|$
+    \href{https://jaguan2.github.io/personal-portfolio/}{\underline{jaguan2.github.io/personal-portfolio}}%
+  }
+\end{center}
+
+%-----------EXPERIENCE-----------
+\section{Work Experience}
+\resumeSubHeadingListStart
+\resumeSubheading{DefTechLink}{Tampa, FL}{Full-Stack Developer Lead}{March 2025 -- July 2026}
+\resumeItemListStart
+    \resumeItem{Led full-stack development of two production B2B SaaS platforms that aggregate and manage global defense contracting opportunities for technology companies, using React, Flask, PostgreSQL, and AWS.}
+    \resumeItem{Built an AWS Lambda and EventBridge pipeline ingesting 1,000+ defense contract notices daily from global government sources, with automated scoring, tagging, and classification.}
+    \resumeItem{Developed OpenAI-powered workflows for opportunity matching, executive report generation, and automated content analysis.}
+    \resumeItem{Integrated Stripe subscription billing, QuickBooks payment reconciliation, AWS S3 storage, and Mailchimp customer engagement workflows.}
+    \resumeItem{Implemented Auth0 authentication, JWT validation, and role-based authorization for Flask APIs and application workflows.}
+    \resumeItem{Designed PostgreSQL schemas on AWS RDS and executed production-safe migrations to preserve data integrity across development and production environments.}
+\resumeItemListEnd
+
+\resumeSubheading{U.S. Department of the Air Force}{Warner Robins, GA}{Software Engineer Intern}{June 2024 -- July 2024}
+\resumeItemListStart
+    \resumeItem{Served as backend lead for a management platform centralizing project metrics and sprint tracking across 10+ engineering projects.}
+    \resumeItem{Developed 10+ REST API endpoints using Flask, SQLAlchemy, and PostgreSQL; containerized PostgreSQL with Docker for a platform designed to support 300+ engineers.}
+    \resumeItem{Collaborated across three Agile sprints using Jira and Figma to translate project requirements into application features.}
+    \resumeItem{\textbf{U.S. Government Secret Clearance:} Granted in 2024}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading{University of South Florida}{Tampa, FL}
+  {B.S. in Computer Science}{Aug 2021 --- May 2025}
+\item \small{\textbf{Certifications:} AWS Cloud Practitioner $\cdot$ Issued: October 2026}
+\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+\small{\item{
+\textbf{Languages:} Python, JavaScript, TypeScript, SQL, Java, C++, C, HTML/CSS\\
+\textbf{Frameworks \& Libraries:} React, Flask, SQLAlchemy, Node.js, Tailwind CSS, MUI\\
+\textbf{Cloud \& Data:} AWS (Lambda, EventBridge, RDS, S3, EC2, CloudWatch, IAM), PostgreSQL, MySQL, SQLite\\
+\textbf{APIs \& Security:} REST APIs, Auth0, JWT/OAuth, OpenAI, Stripe, QuickBooks\\
+\textbf{Testing \& Delivery:} Vitest, pytest, Playwright, GitHub Actions, Alembic, Docker, Git, Linux
+}}
+\end{itemize}
+
+
+%-----------PROJECTS-----------
+\ifMasterResume\clearpage\fi
+\section{Projects}
+\resumeSubHeadingListStart
+\SelectedProjects
+\resumeSubHeadingListEnd
+\end{document}

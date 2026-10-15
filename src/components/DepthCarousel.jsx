@@ -106,6 +106,8 @@ function DepthCarousel({ items, label, onExpand }) {
   }
 
   const onKeyDown = (event) => {
+    // Let the image, arrows, and dots keep their native button behavior.
+    if (event.target !== event.currentTarget) return
     if (event.key === 'ArrowLeft') {
       event.preventDefault()
       step(-1)
