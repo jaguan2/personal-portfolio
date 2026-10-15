@@ -50,8 +50,7 @@ const experiences = [
     location: 'Tampa, FL',
     period: 'Aug 2021 – May 2025',
     details: [
-      'Studied database design, secure coding, operating systems, and user experience design, with additional coursework in social media mining and data analysis with Hadoop.',
-      'Graduated in May 2025 with a GPA of 3.6 / 4.0.'
+      'Studied database design, secure coding, operating systems, and user experience design, with additional coursework in social media mining and data analysis with Hadoop.'
     ],
     credential: { label: 'AWS Certified Cloud Practitioner', date: 'Issued: October 2026' }
   }
