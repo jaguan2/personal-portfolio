@@ -191,10 +191,6 @@ body.loaded .header-text p {
   animation: fadeInUp 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.22s both;
 }
 
-body.loaded .home-button {
-  animation: fadeInUp 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.38s both;
-}
-
 body.loaded .header-image {
   animation: heroImageIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.28s both;
 }
@@ -278,69 +274,6 @@ body.loaded .header-text .wave {
   }
 }
 
-.home-button {
-  display: flex;
-  gap: 0.85rem;
-  margin-top: 28px;
-}
-
-.icon-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  text-decoration: none;
-  cursor: pointer;
-  color: var(--text);
-  background: var(--surface-solid);
-  border: 2px solid var(--accent-soft);
-  transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.icon-button:hover {
-  border-color: var(--leaf);
-  color: var(--leaf-strong);
-  transform: translateY(-3px);
-  box-shadow: 0 0 0 4px var(--leaf-soft);
-}
-
-/* Primary (Download CV) — filled brown to keep it the standout action */
-.icon-button-primary {
-  color: var(--surface-solid);
-  background: var(--accent-strong);
-  border-color: var(--accent-strong);
-  box-shadow: 0 6px 18px rgba(92, 61, 36, 0.30);
-}
-
-/* Gleam that sweeps across the primary button on hover */
-.icon-button-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -90%;
-  width: 55%;
-  height: 100%;
-  background: linear-gradient(100deg, transparent, rgba(255, 253, 248, 0.4), transparent);
-  transform: skewX(-20deg);
-  transition: left 0.5s ease;
-}
-
-.icon-button-primary:hover {
-  color: var(--surface-solid);
-  background: var(--accent-strong-hover);
-  border-color: var(--accent-strong-hover);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 26px rgba(92, 61, 36, 0.42);
-}
-
-.icon-button-primary:hover::before {
-  left: 140%;
-}
-
 /* Tablet — iPad landscape and below */
 @media (max-width: 1024px) {
   #header {
@@ -421,17 +354,6 @@ body.loaded .header-text .wave {
     max-width: 280px;
   }
 
-  .home-button {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-
-  .icon-button {
-    width: 48px;
-    height: 48px;
-  }
-
   #header .branch-tl { width: 70px; opacity: 0.32; }
   #header .branch-br { width: 80px; opacity: 0.32; }
   #header .sprig-tr, #header .sprig-bl { width: 54px; opacity: 0.3; }
@@ -464,13 +386,4 @@ body.loaded .header-text .wave {
     max-width: 220px;
   }
 
-  .home-button {
-    justify-content: center;
-    gap: 0.7rem;
-  }
-
-  .icon-button {
-    width: 46px;
-    height: 46px;
-  }
 }

@@ -3,19 +3,10 @@ import './Footer.css'
 function Footer() {
   return (
     <footer id="footer">
-      <div className="footer-links">
-        <a href="https://www.linkedin.com/in/jaguan/" target="_blank" rel="noopener noreferrer">
-          LinkedIn
-        </a>
-        <span className="divider">•</span>
-        <a href="https://github.com/jaguan2" target="_blank" rel="noopener noreferrer">
-          GitHub
-        </a>
-        <span className="divider">•</span>
-        <a href="mailto:tpaguan@gmail.com">
-          Email
-        </a>
-      </div>
+      <p className="footer-identity">
+        <strong>Jason Guan</strong>
+        <span>Software Engineer</span>
+      </p>
       <p className="footer-tagline">Thank you for taking a part of your day to scroll.</p>
       <p className="footer-copyright">© 2026 Jason Guan</p>
     </footer>

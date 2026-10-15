@@ -1,47 +1,57 @@
-import aboutImage from '../assets/about.jpg'
+import goldenClouds from '../assets/about-golden-clouds.webp'
+import portrait from '../assets/about-jason-outdoors.webp'
+import riversideWalk from '../assets/about-riverside-walk.webp'
 import coffeeBranch from '../assets/coffee-branch.svg'
 import coffeeSprig from '../assets/coffee-sprig.svg'
-import leafLine from '../assets/leaf-line.svg'
-import vine from '../assets/vine.svg'
 import sparkle from '../assets/sparkle.svg'
 import './About.css'
 
 function About() {
   return (
-    <section id="about">
-      <div className="floating-elements">
-        <img className="float-icon branch-tl" src={coffeeBranch} alt="" aria-hidden="true" />
-        <img className="float-icon sprig-br" src={coffeeSprig} alt="" aria-hidden="true" />
-        <img className="float-icon leaf-1" src={leafLine} alt="" aria-hidden="true" />
-        <img className="float-icon vine-tr" src={vine} alt="" aria-hidden="true" />
-        <img className="float-icon night-decor star-1" src={sparkle} alt="" aria-hidden="true" />
-        <img className="float-icon night-decor star-2" src={sparkle} alt="" aria-hidden="true" />
+    <section id="about" aria-labelledby="about-heading">
+      <div className="floating-elements" aria-hidden="true">
+        <img className="float-icon branch-tl" src={coffeeBranch} alt="" />
+        <img className="float-icon sprig-br" src={coffeeSprig} alt="" />
+        <img className="float-icon night-decor star-1" src={sparkle} alt="" />
       </div>
       <div className="container">
-        <div className="about-box reveal">
-          <div className="row">
-            <div className="about-col-1">
-              <img src={aboutImage} alt="Jason at USF" loading="lazy" decoding="async" />
-            </div>
-            <div className="about-col-2">
-              <h1>About Me</h1>
-              <p className="about-lead">
-                Hi, I'm Jason Guan. I'm a software engineer with a background in full-stack development.
-                I graduated from the University of South Florida with a Bachelor of Science in
-                Computer Science in May 2025.
-              </p>
-              <p>
-                My technical background includes full-stack development, database management,
-                cloud technologies, and applied machine learning. Beyond work, I am particularly
-                interested in how computer science intersects with cognitive science and social media mining.
-              </p>
-              <p>
-                As a software engineer, I want to affect people's lives in an innovative and
-                meaningful way. Let's connect and explore exciting possibilities together.
-              </p>
-            </div>
+        <div className="about-journal">
+          <div className="about-copy reveal">
+            <h1 id="about-heading">About Me</h1>
+            <p className="about-lead">
+              Hi, I'm Jason Guan. I'm a software engineer.
+              I graduated from the University of South Florida with a Bachelor of Science in
+              Computer Science in May 2025.
+            </p>
+            <p className="about-background">
+              My background is primarily in full-stack development and data analysis,
+              working with tools such as React, Flask, PostgreSQL, and AWS.
+              {' '}I'm drawn to work that feels meaningful to me, where I can build innovative
+              software that makes a difference in people's lives.
+            </p>
+            <p className="about-personal">
+              Outside of developing, I enjoy things that keep me grounded, like going to the gym,
+              catching up with friends over good food, and trying new caf&#233;s. I also love
+              quiet nature walks and taking in the sky and moon.
+            </p>
+          </div>
+
+          <div className="about-photo-board reveal" role="group" aria-label="A few moments from my camera roll">
+            <figure className="about-photo about-photo-riverside">
+              <img src={riversideWalk} alt="A winding path through a grassy hillside overlooking a wide river" width="750" height="1000" loading="lazy" decoding="async" />
+              <figcaption><time dateTime="2026-07-05">7.5.2026</time></figcaption>
+            </figure>
+            <figure className="about-photo about-photo-clouds">
+              <img src={goldenClouds} alt="Golden clouds above treetops, with the moon in a pale blue sky" width="525" height="700" loading="lazy" decoding="async" />
+              <figcaption><time dateTime="2026-03-01">3.1.2026</time></figcaption>
+            </figure>
+            <figure className="about-photo about-photo-portrait">
+              <img src={portrait} alt="Jason relaxing on the grass in his graduation outfit, with a book over his face" width="800" height="1000" loading="lazy" decoding="async" />
+              <figcaption><time dateTime="2026-07-05">7.5.2026</time></figcaption>
+            </figure>
           </div>
         </div>
+
       </div>
     </section>
   )

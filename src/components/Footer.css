@@ -1,98 +1,74 @@
-/* The footer is espresso-dark in both themes, so its text stays cream
-   regardless of the active theme tokens */
+/* A shallow wave softens the edge without adding a thick footer band. */
 #footer {
-  background: var(--footer);
-  padding: 40px 10% 28px;
-  text-align: center;
-  border-top: 3px solid var(--leaf);
-  color: #FFFDF8;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 22px;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 28px;
+  margin-top: 28px;
+  padding: 26px max(10%, 92px) 28px;
+  background: var(--footer);
   color: #FFFDF8;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  padding-bottom: 3px;
-  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.footer-links a::after {
+#footer::before {
   content: '';
   position: absolute;
+  right: 0;
   left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 1px;
-  background: var(--leaf-hover);
-  transition: width 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+  top: -27px;
+  height: 28px;
+  background: var(--footer);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 36' preserveAspectRatio='none'%3E%3Cpath d='M0 20C180 4 330 4 510 18S820 36 1030 18 1300 4 1440 14V36H0Z'/%3E%3C/svg%3E") 0 0 / 100% 100% no-repeat;
 }
 
-.footer-links a:hover {
-  color: var(--leaf-hover);
-  transform: translateY(-2px);
+.footer-identity {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  line-height: 1.6;
 }
 
-.footer-links a:hover::after {
-  width: 100%;
+.footer-identity strong {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
 }
 
-.divider {
-  color: rgba(255, 253, 248, 0.35);
-  font-size: 0.8rem;
+.footer-identity span {
+  color: rgba(255, 253, 248, 0.7);
+  font-size: 0.75rem;
 }
 
 .footer-tagline {
-  margin-top: 18px;
   font-family: 'Lora', Georgia, serif;
   font-style: italic;
-  font-size: 0.88rem;
-  letter-spacing: 0.04em;
-  color: rgba(255, 253, 248, 0.62);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: rgba(255, 253, 248, 0.7);
 }
 
 .footer-copyright {
-  margin-top: 14px;
-  font-size: 0.8rem;
-  letter-spacing: 0.04em;
-  color: rgba(255, 253, 248, 0.45);
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  line-height: 1.6;
+  color: rgba(255, 253, 248, 0.55);
 }
 
-/* Phone — iPad portrait and below */
 @media (max-width: 768px) {
   #footer {
-    padding: 28px 6% 20px;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 18px;
+    padding: 20px 6% calc(88px + env(safe-area-inset-bottom));
+    text-align: center;
   }
 
-  .footer-links {
-    gap: 14px;
-  }
-
-  .footer-links a {
-    font-size: 0.88rem;
-  }
-
-  .divider {
-    font-size: 0.7rem;
-  }
-}
-
-/* Small phone */
-@media (max-width: 480px) {
-  #footer {
-    padding: 22px 4% 16px;
-  }
-
-  .footer-links a {
-    font-size: 0.82rem;
-  }
+  #footer::before { top: -17px; height: 18px; }
+  .footer-identity { align-items: center; margin-bottom: 6px; }
+  .footer-tagline { font-size: 0.76rem; }
+  .footer-copyright { font-size: 0.7rem; }
 }
