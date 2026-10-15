@@ -19,7 +19,9 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \usepackage{graphicx}
-\IfFileExists{glyphtounicode.tex}{\input{glyphtounicode}}{}
+\ifdefined\pdfglyphtounicode
+  \IfFileExists{glyphtounicode.tex}{\input{glyphtounicode}}{}
+\fi
 
 
 %----------FONT OPTIONS----------
@@ -150,7 +152,7 @@
 \resumeSubHeadingListStart
 \resumeSubheading{University of South Florida}{Tampa, FL}
   {B.S. in Computer Science}{Aug 2021 --- May 2025}
-\item \small{\textbf{AWS Certified Cloud Practitioner} $\cdot$ Issued: October 2026}
+\item \small{\textbf{Certifications:} AWS Cloud Practitioner $\cdot$ Issued: October 2026}
 \resumeSubHeadingListEnd
 
 %-----------TECHNICAL SKILLS-----------
