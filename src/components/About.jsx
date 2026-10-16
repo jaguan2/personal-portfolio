@@ -26,13 +26,12 @@ function About() {
             <p className="about-background">
               My background is primarily in full-stack development and data analysis,
               working with tools such as React, Flask, PostgreSQL, and AWS.
-              {' '}I'm drawn to work that feels meaningful to me, where I can build innovative
-              software that makes a difference in people's lives.
+              {' '}As a software engineer, I want to affect people's lives in an innovative and
+              meaningful way. Let's connect and explore exciting possibilities together.
             </p>
             <p className="about-personal">
               Outside of developing, I enjoy things that keep me grounded, like going to the gym,
-              catching up with friends over good food, and trying new caf&#233;s. I also love
-              quiet nature walks and taking in the sky and moon.
+              catching up with friends over good food, and trying new caf&#233;s.
             </p>
           </div>
 
@@ -47,7 +46,6 @@ function About() {
             </figure>
             <figure className="about-photo about-photo-portrait">
               <img src={portrait} alt="Jason relaxing on the grass in his graduation outfit, with a book over his face" width="800" height="1000" loading="lazy" decoding="async" />
-              <figcaption><time dateTime="2026-07-05">7.5.2026</time></figcaption>
             </figure>
           </div>
         </div>
