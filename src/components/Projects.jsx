@@ -60,10 +60,10 @@ const projects = [
   },
   {
     id: 2,
-    eyebrow: 'Next-Tweet Emotion Prediction',
+    eyebrow: 'Sentiment Analysis',
     title: 'TwitterFeel',
     technologies: 'Python • TensorFlow • Pandas • NumPy • Hugging Face',
-    description: 'TwitterFeel explores predicting the emotion of a user\'s next tweet from their posting history. I built a pipeline using transformer embeddings and TensorFlow LSTM models, and evaluated it with user-disjoint splits against majority-class and previous-emotion baselines.',
+    description: 'TwitterFeel explores the relationship between social media and mental health through emotional patterns in a user\'s tweets. The project combines sentiment and emotion analysis with models that use a sequence of previous tweets to predict the emotion of the next post.',
     link: 'https://github.com/jaguan2/twitterFeel',
     linkType: 'github',
     media: { type: 'image', src: twitterFeelImage, alt: 'TwitterFeel confusion matrices comparing model evaluation results' }
