@@ -19,7 +19,7 @@ function About() {
           <div className="about-copy reveal">
             <h1 id="about-heading">About Me</h1>
             <p className="about-lead">
-              Hi, I'm Jason Guan. I'm a software engineer.
+              Hi, I'm Jason Guan.
               I graduated from the University of South Florida with a Bachelor of Science in
               Computer Science in May 2025.
             </p>

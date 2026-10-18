@@ -38,8 +38,8 @@ const experiences = [
     location: 'Warner Robins, GA',
     period: 'June 2024 – July 2024',
     details: [
-      'Served as Backend Lead for a management platform centralizing project metrics and sprint tracking across 10+ engineering projects.',
-      'Developed 10+ REST APIs with Flask and SQLAlchemy, and containerized PostgreSQL with Docker to support deployment for 300+ engineers.'
+      'Served as Backend Lead within an 8-person team, developing a management platform centralizing project metrics and sprint tracking across 10+ engineering projects.',
+      'Developed REST APIs with Flask and SQLAlchemy, and containerized PostgreSQL with Docker to support deployment for 300+ engineers.'
     ],
     credential: { label: 'Secret security clearance', date: 'Granted: July 2024' }
   },
@@ -50,7 +50,7 @@ const experiences = [
     location: 'Tampa, FL',
     period: 'Aug 2021 – May 2025',
     details: [
-      'Studied database design, secure coding, operating systems, and user experience design, with additional coursework in social media mining and data analysis with Hadoop.'
+      'Studied computing systems, with specialized coursework in database design, user experience design, social media mining, and data analysis with Hadoop.'
     ],
     credential: { label: 'AWS Certified Cloud Practitioner', date: 'Issued: October 2026' }
   }
