@@ -8,9 +8,27 @@ import { fileURLToPath } from 'node:url'
 import { createServer } from 'vite'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
-const responsive = process.argv.includes('--responsive')
-const output = join(root, 'docs', 'screenshots', ...(responsive ? ['responsive'] : []))
-const shots = responsive ? [
+const duo = process.argv.includes('--duo')
+const responsive = duo || process.argv.includes('--responsive')
+const outputArgument = process.argv.find(value => value.startsWith('--output='))
+const output = outputArgument
+  ? resolve(root, outputArgument.slice('--output='.length))
+  : join(root, 'docs', 'screenshots', ...(duo ? ['duo'] : responsive ? ['responsive'] : []))
+const duoViewports = [
+  { name: 'duo-outer', width: 466, height: 678 },
+  { name: 'duo-inner', width: 626, height: 890 },
+  { name: 'duo-outer-landscape', width: 678, height: 466 },
+  { name: 'duo-inner-landscape', width: 890, height: 626 },
+]
+const shots = duo ? duoViewports.flatMap(viewport => [
+  { name: 'home' },
+  { name: 'about', selector: '#about' },
+  { name: 'experience', selector: '#experience' },
+  { name: 'skills', selector: '#skills' },
+  { name: 'projects', selector: '#projects' },
+  { name: 'menu', selector: '#other-works' },
+  { name: 'dark-projects', selector: '#projects', dark: true },
+].map(section => ({ ...viewport, ...section, name: `${viewport.name}-${section.name}`, deviceScaleFactor: 3, mobile: true }))) : responsive ? [
   { name: 'phone-small-home', width: 320, height: 720 },
   { name: 'phone-small-skills', width: 320, height: 720, selector: '#skills' },
   { name: 'phone-home', width: 390, height: 844 },
@@ -102,7 +120,8 @@ try {
   const checks = []
   for (const shot of shots) {
     const captureUrl = `${url}?capture=${shot.name}`
-    await send('Emulation.setDeviceMetricsOverride', { width: shot.width, height: shot.height, deviceScaleFactor: 1, mobile: shot.width < 768 })
+    await send('Emulation.setDeviceMetricsOverride', { width: shot.width, height: shot.height,
+      deviceScaleFactor: shot.deviceScaleFactor ?? 1, mobile: shot.mobile ?? shot.width < 768 })
     await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] })
     await send('Page.navigate', { url: captureUrl })
     await until(async () => {
@@ -111,7 +130,10 @@ try {
     }, 'portfolio loader')
     await evaluate('document.fonts.ready.then(() => true)')
     await evaluate('document.activeElement?.blur()')
-    if (shot.dark) await evaluate("document.querySelector('.theme-toggle').click()")
+    const expectedTheme = shot.dark ? 'dark' : 'light'
+    if (await evaluate('document.documentElement.dataset.theme') !== expectedTheme) {
+      await evaluate("document.querySelector('.theme-toggle').click()")
+    }
     // Load below-the-fold images before capturing complete sections.
     await evaluate("document.querySelectorAll('img[loading=lazy]').forEach(image => { image.loading = 'eager' }); true")
     await until(() => evaluate('[...document.images].every(image => image.complete && image.naturalWidth > 0)'), 'images')
@@ -144,7 +166,7 @@ try {
         const dot = document.querySelector('.depth-carousel-dot').getBoundingClientRect();
         const visualDot = getComputedStyle(document.querySelector('.depth-carousel-dot'), '::before');
         if (visualDot.content !== 'none' && visualDot.width !== visualDot.height) problems.push({selector:'.depth-carousel-dot::before',text:'Marker is not circular'});
-        return {width:innerWidth,problems,dot:{width:dot.width,height:dot.height}};
+        return {width:innerWidth,height:innerHeight,deviceScaleFactor:devicePixelRatio,problems,dot:{width:dot.width,height:dot.height}};
       })()`)
       checks.push({name:shot.name,...result})
       console.log(JSON.stringify(checks.at(-1)))
@@ -158,7 +180,7 @@ try {
     if (!image.data) throw new Error(`Empty screenshot: ${shot.name}`)
     writeFileSync(join(output, `${shot.name}.png`), Buffer.from(image.data, 'base64'))
     console.log(`Captured ${shot.name}.png (${shot.width} × ${fullSection ? clip.height : shot.height})`)
-    if (responsive && shot.name === 'phone-projects') {
+    if (responsive && (shot.name === 'phone-projects' || (duo && shot.name.endsWith('-projects') && !shot.dark))) {
       const swipe = await evaluate(`(() => {
         const el = document.querySelector('.depth-carousel-card[tabindex="0"]');
         el.scrollIntoView({block:'center',behavior:'instant'});
@@ -171,30 +193,61 @@ try {
       await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]})
       await delay(100)
       const swipePassed = await evaluate("document.querySelector('.depth-carousel-count').textContent.trim() === '2 / 6' && !document.querySelector('dialog[open]')")
-      console.log(`Phone gallery swipe: ${swipePassed ? 'PASS' : 'FAIL'}`)
+      console.log(`${shot.name} gallery swipe: ${swipePassed ? 'PASS' : 'FAIL'}`)
       if (!swipePassed) process.exitCode = 1
       await evaluate("document.querySelector('.depth-carousel-card[tabindex=\"0\"]').click()")
       await delay(100)
       const modalPassed = await evaluate("!!document.querySelector('dialog[open]')?.contains(document.activeElement)")
       if (!modalPassed) process.exitCode = 1
-      console.log(`Phone lightbox focus: ${modalPassed ? 'PASS' : 'FAIL'}`)
+      console.log(`${shot.name} lightbox focus: ${modalPassed ? 'PASS' : 'FAIL'}`)
       await evaluate("document.querySelector('dialog[open] button').click()")
       await send('Emulation.setTouchEmulationEnabled',{enabled:false})
     }
-    if (responsive && shot.name === 'phone-home') {
+    if (responsive && (shot.name === 'phone-home' || (duo && shot.name.endsWith('-home') && shot.width <= 768))) {
       await evaluate("document.querySelector('.menu-btn').click()")
       await delay(50)
       const menuPassed = await evaluate("document.querySelector('.menu-btn').getAttribute('aria-expanded') === 'true' && getComputedStyle(document.querySelector('.nav-links')).display !== 'none'")
       await evaluate("document.querySelector('.nav-links a[href=\"#about\"]').click()")
       await delay(50)
       const closePassed = await evaluate("document.querySelector('.menu-btn').getAttribute('aria-expanded') === 'false'")
-      console.log(`Phone menu open / navigate / close: ${menuPassed && closePassed ? 'PASS' : 'FAIL'}`)
+      console.log(`${shot.name} menu open / navigate / close: ${menuPassed && closePassed ? 'PASS' : 'FAIL'}`)
       if (!menuPassed || !closePassed) process.exitCode = 1
     }
   }
   if (responsive) {
     writeFileSync(join(output, 'layout-checks.json'), JSON.stringify(checks, null, 2))
     if (checks.some(check => check.problems.length)) process.exitCode = 1
+  }
+  if (duo) {
+    // Fold/rotate the same live page: theme and gallery selection must survive.
+    await evaluate("document.querySelector('.depth-carousel-next').click()")
+    await until(() => evaluate("document.querySelector('.depth-carousel-count').textContent.trim() === '2 / 6'"), 'gallery selection')
+    const state = await evaluate(`(() => {
+      window.__duoResizeMarker = 'duo-resize-check';
+      return { theme: document.documentElement.dataset.theme,
+        gallery: document.querySelector('.depth-carousel-count').textContent.trim() };
+    })()`)
+    const resizing = []
+    for (const viewport of [...duoViewports, duoViewports[0]]) {
+      await send('Emulation.setDeviceMetricsOverride', { width: viewport.width, height: viewport.height, deviceScaleFactor: 3, mobile: true })
+      await evaluate("window.scrollTo({top: 0, behavior: 'instant'})")
+      await delay(100)
+      const result = await evaluate(`(() => {
+        const problems = [];
+        if (window.__duoResizeMarker !== 'duo-resize-check') problems.push('Page reloaded');
+        if (document.documentElement.dataset.theme !== ${JSON.stringify(state.theme)}) problems.push('Theme changed');
+        if (document.querySelector('.depth-carousel-count').textContent.trim() !== ${JSON.stringify(state.gallery)}) problems.push('Gallery selection changed');
+        if (document.documentElement.scrollWidth > innerWidth) problems.push('Horizontal overflow');
+        const greeting = document.querySelector('.header-text').getBoundingClientRect();
+        const nav = document.querySelector('nav').getBoundingClientRect();
+        if (greeting.top < nav.bottom || greeting.right > innerWidth || greeting.left < 0 || greeting.bottom > innerHeight) problems.push('Greeting clipped');
+        return { width: innerWidth, height: innerHeight, problems };
+      })()`)
+      resizing.push({ name: viewport.name, ...result })
+    }
+    writeFileSync(join(output, 'resize-checks.json'), JSON.stringify(resizing, null, 2))
+    if (resizing.some(check => check.problems.length)) process.exitCode = 1
+    console.log(`Duo live folding / rotation: ${resizing.every(check => !check.problems.length) ? 'PASS' : 'FAIL'}`)
   }
 } finally {
   socket?.close()

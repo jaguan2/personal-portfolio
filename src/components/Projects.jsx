@@ -45,6 +45,9 @@ const projects = [
     title: 'TaskNook',
     technologies: 'React • Tailwind CSS • Framer Motion • Flask • SQLAlchemy • Alembic • SQLite • Web Audio API • PyInstaller',
     description: 'TaskNook is a cozy customizable task tracker that intends to provide every user with an ideal working condition. Customize your work environment, from a rainy window to sunny day. Connect with friends, share your activity and stay motivated together.',
+    highlights: [
+      { bold: 'Developed an interactive SVG room editor', rest: ' with drag-and-drop furniture placement, depth sorting, and customizable floor plans.' }
+    ],
     link: 'https://github.com/jaguan2/TaskNook',
     linkType: 'github',
     media: [

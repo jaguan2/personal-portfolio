@@ -1,0 +1,310 @@
+[
+  {
+    "name": "duo-outer-home",
+    "width": 466,
+    "height": 678,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-outer-about",
+    "width": 466,
+    "height": 678,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-outer-experience",
+    "width": 466,
+    "height": 678,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-outer-skills",
+    "width": 466,
+    "height": 678,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-outer-projects",
+    "width": 466,
+    "height": 678,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-outer-menu",
+    "width": 466,
+    "height": 678,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-outer-dark-projects",
+    "width": 466,
+    "height": 678,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-inner-home",
+    "width": 626,
+    "height": 890,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-inner-about",
+    "width": 626,
+    "height": 890,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-inner-experience",
+    "width": 626,
+    "height": 890,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-inner-skills",
+    "width": 626,
+    "height": 890,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-inner-projects",
+    "width": 626,
+    "height": 890,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-inner-menu",
+    "width": 626,
+    "height": 890,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-inner-dark-projects",
+    "width": 626,
+    "height": 890,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-outer-landscape-home",
+    "width": 678,
+    "height": 466,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-outer-landscape-about",
+    "width": 678,
+    "height": 466,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-outer-landscape-experience",
+    "width": 678,
+    "height": 466,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-outer-landscape-skills",
+    "width": 678,
+    "height": 466,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-outer-landscape-projects",
+    "width": 678,
+    "height": 466,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-outer-landscape-menu",
+    "width": 678,
+    "height": 466,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-outer-landscape-dark-projects",
+    "width": 678,
+    "height": 466,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-inner-landscape-home",
+    "width": 890,
+    "height": 626,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-inner-landscape-about",
+    "width": 890,
+    "height": 626,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-inner-landscape-experience",
+    "width": 890,
+    "height": 626,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-inner-landscape-skills",
+    "width": 890,
+    "height": 626,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-inner-landscape-projects",
+    "width": 890,
+    "height": 626,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-inner-landscape-menu",
+    "width": 890,
+    "height": 626,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  },
+  {
+    "name": "duo-inner-landscape-dark-projects",
+    "width": 890,
+    "height": 626,
+    "deviceScaleFactor": 3,
+    "problems": [],
+    "dot": {
+      "width": 28,
+      "height": 44
+    }
+  }
+]

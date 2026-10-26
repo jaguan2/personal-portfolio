@@ -1,0 +1,32 @@
+[
+  {
+    "name": "duo-outer",
+    "width": 466,
+    "height": 678,
+    "problems": []
+  },
+  {
+    "name": "duo-inner",
+    "width": 626,
+    "height": 890,
+    "problems": []
+  },
+  {
+    "name": "duo-outer-landscape",
+    "width": 678,
+    "height": 466,
+    "problems": []
+  },
+  {
+    "name": "duo-inner-landscape",
+    "width": 890,
+    "height": 626,
+    "problems": []
+  },
+  {
+    "name": "duo-outer",
+    "width": 466,
+    "height": 678,
+    "problems": []
+  }
+]

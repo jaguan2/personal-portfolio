@@ -414,7 +414,7 @@ body.loaded .header-text .wave {
 }
 
 /* Keep the greeting visible in short phone and tablet landscape windows. */
-@media (min-width: 600px) and (max-width: 1100px) and (max-height: 600px) {
+@media (min-width: 600px) and (max-width: 1100px) and (max-height: 700px) and (orientation: landscape) {
   #header { min-height: auto; padding: 84px 18px 24px; }
   .hero-panel { min-height: 0; }
   #header .container { padding: 24px 5%; }
