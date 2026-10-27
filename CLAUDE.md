@@ -55,3 +55,10 @@ When considering another React Bits component:
 - Do not combine `.reveal` transforms with another transform animation on the same element; use a wrapper or opt that section out of `.reveal`.
 - Project media must keep descriptive alt text and remain accessible through the lightbox by mouse and keyboard.
 - Preserve unrelated working-tree changes.
+
+## Shared agent toolkit
+
+For substantive implementation, use the installed `toolkit-engineering` skill;
+use `toolkit-structural-review` for structural review and `toolkit-verify` for
+verification. [Setup and version pin](docs/AGENT_SKILLS.md) describe discovery
+and fallback behavior. Project-specific rules above remain authoritative.
