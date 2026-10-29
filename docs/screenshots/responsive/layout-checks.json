@@ -2,6 +2,8 @@
   {
     "name": "phone-small-home",
     "width": 320,
+    "height": 720,
+    "deviceScaleFactor": 1,
     "problems": [],
     "dot": {
       "width": 28,
@@ -11,6 +13,8 @@
   {
     "name": "phone-small-skills",
     "width": 320,
+    "height": 720,
+    "deviceScaleFactor": 1,
     "problems": [],
     "dot": {
       "width": 28,
@@ -20,6 +24,8 @@
   {
     "name": "phone-home",
     "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 1,
     "problems": [],
     "dot": {
       "width": 28,
@@ -29,6 +35,8 @@
   {
     "name": "phone-projects",
     "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 1,
     "problems": [],
     "dot": {
       "width": 28,
@@ -38,6 +46,8 @@
   {
     "name": "phone-menu",
     "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 1,
     "problems": [],
     "dot": {
       "width": 28,
@@ -47,6 +57,8 @@
   {
     "name": "phone-experience",
     "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 1,
     "problems": [],
     "dot": {
       "width": 28,
@@ -56,6 +68,8 @@
   {
     "name": "phone-landscape-home",
     "width": 844,
+    "height": 390,
+    "deviceScaleFactor": 1,
     "problems": [],
     "dot": {
       "width": 28,
@@ -65,6 +79,8 @@
   {
     "name": "phone-wide-skills",
     "width": 600,
+    "height": 900,
+    "deviceScaleFactor": 1,
     "problems": [],
     "dot": {
       "width": 28,
@@ -74,6 +90,8 @@
   {
     "name": "ipad-mini-home",
     "width": 768,
+    "height": 1024,
+    "deviceScaleFactor": 1,
     "problems": [],
     "dot": {
       "width": 28,
@@ -83,6 +101,8 @@
   {
     "name": "ipad-mini-about",
     "width": 768,
+    "height": 1024,
+    "deviceScaleFactor": 1,
     "problems": [],
     "dot": {
       "width": 28,
@@ -92,6 +112,8 @@
   {
     "name": "ipad-home",
     "width": 820,
+    "height": 1180,
+    "deviceScaleFactor": 1,
     "problems": [],
     "dot": {
       "width": 28,
@@ -101,6 +123,8 @@
   {
     "name": "ipad-experience",
     "width": 820,
+    "height": 1180,
+    "deviceScaleFactor": 1,
     "problems": [],
     "dot": {
       "width": 28,
@@ -110,6 +134,8 @@
   {
     "name": "ipad-projects",
     "width": 820,
+    "height": 1180,
+    "deviceScaleFactor": 1,
     "problems": [],
     "dot": {
       "width": 28,
@@ -119,6 +145,8 @@
   {
     "name": "ipad-skills",
     "width": 820,
+    "height": 1180,
+    "deviceScaleFactor": 1,
     "problems": [],
     "dot": {
       "width": 28,
@@ -128,6 +156,8 @@
   {
     "name": "ipad-landscape-home",
     "width": 1180,
+    "height": 820,
+    "deviceScaleFactor": 1,
     "problems": [],
     "dot": {
       "width": 28,
@@ -137,6 +167,8 @@
   {
     "name": "ipad-landscape-projects",
     "width": 1180,
+    "height": 820,
+    "deviceScaleFactor": 1,
     "problems": [],
     "dot": {
       "width": 28,
@@ -146,6 +178,8 @@
   {
     "name": "ipad-pro-home",
     "width": 1024,
+    "height": 1366,
+    "deviceScaleFactor": 1,
     "problems": [],
     "dot": {
       "width": 28,
@@ -155,6 +189,8 @@
   {
     "name": "ipad-pro-landscape-home",
     "width": 1366,
+    "height": 1024,
+    "deviceScaleFactor": 1,
     "problems": [],
     "dot": {
       "width": 28,
@@ -164,6 +200,8 @@
   {
     "name": "phone-dark-projects",
     "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 1,
     "problems": [],
     "dot": {
       "width": 28,

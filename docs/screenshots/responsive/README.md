@@ -1,5 +1,13 @@
 # Responsive verification
 
+Rechecked October 29, 2026 after enlarging the opening name heading. All 19
+viewport captures passed overflow and contact-dock overlap checks. The opening
+now pairs the portrait with Jason's coffee photo, using an optimized WebP copy.
+Phone menu
+navigation, gallery touch swiping, lightbox focus, and the production build
+passed. Opening screenshots below reflect the larger name. The short landscape
+layout uses tighter type spacing to keep the introduction above the contact dock.
+
 Checked October 15, 2026 using Chrome viewport emulation. Layout captures use
 reduced motion. The production build passed.
 

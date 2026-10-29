@@ -1,0 +1,1874 @@
+{
+  "review-desktop": {
+    "width": 1440,
+    "height": 900,
+    "theme": "light",
+    "elements": {
+      ".header-text": {
+        "text": "Jason Guan.Full-Stack Developer\"Passion makes the impossible happen\"",
+        "x": 124.875,
+        "y": 315.390625,
+        "width": 595.125,
+        "height": 339.21875,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "30px",
+        "fontWeight": "400"
+      },
+      "h1": {
+        "text": "Jason Guan.",
+        "x": 124.875,
+        "y": 315.390625,
+        "width": 595.125,
+        "height": 248.34375,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "126.72px",
+        "fontWeight": "700"
+      },
+      ".hero-focus": {
+        "text": "Full-Stack Developer",
+        "x": 124.875,
+        "y": 583.734375,
+        "width": 441.8125,
+        "height": 31.28125,
+        "color": "rgba(46, 31, 22, 0.88)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "18.4px",
+        "fontWeight": "500"
+      },
+      ".hero-quote": {
+        "text": "\"Passion makes the impossible happen\"",
+        "x": 124.875,
+        "y": 629.015625,
+        "width": 595.125,
+        "height": 25.59375,
+        "color": "rgba(46, 39, 33, 0.78)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".hero-portrait": {
+        "text": "",
+        "x": 898.546875,
+        "y": 224.46875,
+        "width": 416.578125,
+        "height": 521.046875,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".hero-coffee": {
+        "text": "",
+        "x": 836.53662109375,
+        "y": 538.5618896484375,
+        "width": 207.3330078125,
+        "height": 257.548095703125,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".social-links": {
+        "text": "",
+        "x": 22,
+        "y": 356,
+        "width": 44,
+        "height": 188,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".cafe-radio": {
+        "text": "",
+        "x": 1356,
+        "y": 818,
+        "width": 62,
+        "height": 62,
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "13.3333px",
+        "fontWeight": "400"
+      },
+      ".project-tech": {
+        "text": "Python â€¢ Flask â€¢ SQLAlchemy â€¢ PostgreSQL â€¢ AWS Lambda â€¢ Auth0 â€¢ Stripe",
+        "x": 765.265625,
+        "y": 4560.140625,
+        "width": 530.71875,
+        "height": 47.09375,
+        "color": "rgb(92, 61, 36)",
+        "background": "rgb(245, 221, 168)",
+        "fontSize": "14.72px",
+        "fontWeight": "600"
+      },
+      ".project-eyebrow": {
+        "text": "Professional Work",
+        "x": 765.265625,
+        "y": 4465.4375,
+        "width": 530.71875,
+        "height": 20.46875,
+        "color": "rgb(92, 61, 36)",
+        "background": "rgb(245, 221, 168)",
+        "fontSize": "12.8px",
+        "fontWeight": "600"
+      },
+      ".project-description": {
+        "text": "DefTechLink helps technology companies discover government contracting opportunities. I built backend APIs, cloud infrastructure, and data pipelines for two production Sa",
+        "x": 765.265625,
+        "y": 4631.234375,
+        "width": 530.71875,
+        "height": 143.984375,
+        "color": "rgba(46, 31, 22, 0.85)",
+        "background": "rgb(245, 221, 168)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".skill-name": {
+        "text": "Python",
+        "x": 167.5723876953125,
+        "y": 3466.849609375,
+        "width": 54.15277099609375,
+        "height": 24.481201171875,
+        "color": "rgba(46, 31, 22, 0.9)",
+        "background": "rgba(255, 253, 248, 0.95)",
+        "fontSize": "14.72px",
+        "fontWeight": "400"
+      },
+      ".menu-item-ingredients": {
+        "text": "Python â€¢ Flask â€¢ React â€¢ PostgreSQL â€¢ AWS",
+        "x": 307,
+        "y": 6314.296875,
+        "width": 387,
+        "height": 21.75,
+        "color": "rgb(92, 61, 36)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "13.6px",
+        "fontWeight": "600"
+      }
+    },
+    "sections": [
+      {
+        "id": "header",
+        "top": 0,
+        "height": 900,
+        "screensFromTop": 0
+      },
+      {
+        "id": "about",
+        "top": 901,
+        "height": 820,
+        "screensFromTop": 1
+      },
+      {
+        "id": "experience",
+        "top": 1721,
+        "height": 1416,
+        "screensFromTop": 1.91
+      },
+      {
+        "id": "skills",
+        "top": 3137,
+        "height": 1028,
+        "screensFromTop": 3.49
+      },
+      {
+        "id": "projects",
+        "top": 4166,
+        "height": 1745,
+        "screensFromTop": 4.63
+      },
+      {
+        "id": "other-works",
+        "top": 5910,
+        "height": 1686,
+        "screensFromTop": 6.57
+      },
+      {
+        "id": "quote",
+        "top": 7597,
+        "height": 438,
+        "screensFromTop": 8.44
+      }
+    ],
+    "heroActions": 0,
+    "headingLevels": [
+      {
+        "level": "H1",
+        "text": "Jason Guan."
+      },
+      {
+        "level": "H1",
+        "text": "About Me"
+      },
+      {
+        "level": "H1",
+        "text": "Education & Experiences"
+      },
+      {
+        "level": "H1",
+        "text": "Skills"
+      },
+      {
+        "level": "H1",
+        "text": "Featured Work"
+      },
+      {
+        "level": "H2",
+        "text": "DefTechLink"
+      },
+      {
+        "level": "H2",
+        "text": "TaskNook"
+      },
+      {
+        "level": "H2",
+        "text": "TwitterFeel"
+      },
+      {
+        "level": "H2",
+        "text": "Other Works"
+      }
+    ],
+    "navCurrent": null
+  },
+  "review-desktop-dark": {
+    "width": 1440,
+    "height": 900,
+    "theme": "dark",
+    "elements": {
+      ".header-text": {
+        "text": "Jason Guan.Full-Stack Developer\"Passion makes the impossible happen\"",
+        "x": 124.875,
+        "y": 315.390625,
+        "width": 595.125,
+        "height": 339.21875,
+        "color": "rgb(242, 229, 217)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "30px",
+        "fontWeight": "400"
+      },
+      "h1": {
+        "text": "Jason Guan.",
+        "x": 124.875,
+        "y": 315.390625,
+        "width": 595.125,
+        "height": 248.34375,
+        "color": "rgb(242, 229, 217)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "126.72px",
+        "fontWeight": "700"
+      },
+      ".hero-focus": {
+        "text": "Full-Stack Developer",
+        "x": 124.875,
+        "y": 583.734375,
+        "width": 441.8125,
+        "height": 31.28125,
+        "color": "rgb(221, 206, 195)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "18.4px",
+        "fontWeight": "500"
+      },
+      ".hero-quote": {
+        "text": "\"Passion makes the impossible happen\"",
+        "x": 124.875,
+        "y": 629.015625,
+        "width": 595.125,
+        "height": 25.59375,
+        "color": "rgb(201, 183, 170)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".hero-portrait": {
+        "text": "",
+        "x": 898.546875,
+        "y": 224.46875,
+        "width": 416.578125,
+        "height": 521.046875,
+        "color": "rgb(242, 229, 217)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".hero-coffee": {
+        "text": "",
+        "x": 836.53662109375,
+        "y": 538.5618896484375,
+        "width": 207.3330078125,
+        "height": 257.548095703125,
+        "color": "rgb(242, 229, 217)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".social-links": {
+        "text": "",
+        "x": 22,
+        "y": 356,
+        "width": 44,
+        "height": 188,
+        "color": "rgb(242, 229, 217)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".cafe-radio": {
+        "text": "",
+        "x": 1356,
+        "y": 818,
+        "width": 62,
+        "height": 62,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "13.3333px",
+        "fontWeight": "400"
+      },
+      ".project-tech": {
+        "text": "Python â€¢ Flask â€¢ SQLAlchemy â€¢ PostgreSQL â€¢ AWS Lambda â€¢ Auth0 â€¢ Stripe",
+        "x": 765.265625,
+        "y": 4560.140625,
+        "width": 530.71875,
+        "height": 47.09375,
+        "color": "rgb(207, 157, 123)",
+        "background": "rgb(22, 33, 39)",
+        "fontSize": "14.72px",
+        "fontWeight": "600"
+      },
+      ".project-eyebrow": {
+        "text": "Professional Work",
+        "x": 765.265625,
+        "y": 4465.4375,
+        "width": 530.71875,
+        "height": 20.46875,
+        "color": "rgb(207, 157, 123)",
+        "background": "rgb(22, 33, 39)",
+        "fontSize": "12.8px",
+        "fontWeight": "600"
+      },
+      ".project-description": {
+        "text": "DefTechLink helps technology companies discover government contracting opportunities. I built backend APIs, cloud infrastructure, and data pipelines for two production Sa",
+        "x": 765.265625,
+        "y": 4631.234375,
+        "width": 530.71875,
+        "height": 143.984375,
+        "color": "rgb(221, 206, 195)",
+        "background": "rgb(22, 33, 39)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".skill-name": {
+        "text": "Python",
+        "x": 167.5723876953125,
+        "y": 3466.849609375,
+        "width": 54.15277099609375,
+        "height": 24.481201171875,
+        "color": "rgb(221, 206, 195)",
+        "background": "rgba(58, 53, 52, 0.96)",
+        "fontSize": "14.72px",
+        "fontWeight": "400"
+      },
+      ".menu-item-ingredients": {
+        "text": "Python â€¢ Flask â€¢ React â€¢ PostgreSQL â€¢ AWS",
+        "x": 307,
+        "y": 6314.296875,
+        "width": 387,
+        "height": 21.75,
+        "color": "rgb(207, 157, 123)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "13.6px",
+        "fontWeight": "600"
+      }
+    },
+    "sections": [
+      {
+        "id": "header",
+        "top": 0,
+        "height": 900,
+        "screensFromTop": 0
+      },
+      {
+        "id": "about",
+        "top": 901,
+        "height": 820,
+        "screensFromTop": 1
+      },
+      {
+        "id": "experience",
+        "top": 1721,
+        "height": 1416,
+        "screensFromTop": 1.91
+      },
+      {
+        "id": "skills",
+        "top": 3137,
+        "height": 1028,
+        "screensFromTop": 3.49
+      },
+      {
+        "id": "projects",
+        "top": 4166,
+        "height": 1745,
+        "screensFromTop": 4.63
+      },
+      {
+        "id": "other-works",
+        "top": 5910,
+        "height": 1686,
+        "screensFromTop": 6.57
+      },
+      {
+        "id": "quote",
+        "top": 7597,
+        "height": 438,
+        "screensFromTop": 8.44
+      }
+    ],
+    "heroActions": 0,
+    "headingLevels": [
+      {
+        "level": "H1",
+        "text": "Jason Guan."
+      },
+      {
+        "level": "H1",
+        "text": "About Me"
+      },
+      {
+        "level": "H1",
+        "text": "Education & Experiences"
+      },
+      {
+        "level": "H1",
+        "text": "Skills"
+      },
+      {
+        "level": "H1",
+        "text": "Featured Work"
+      },
+      {
+        "level": "H2",
+        "text": "DefTechLink"
+      },
+      {
+        "level": "H2",
+        "text": "TaskNook"
+      },
+      {
+        "level": "H2",
+        "text": "TwitterFeel"
+      },
+      {
+        "level": "H2",
+        "text": "Other Works"
+      }
+    ],
+    "navCurrent": null
+  },
+  "review-landscape": {
+    "width": 844,
+    "height": 390,
+    "theme": "light",
+    "elements": {
+      ".header-text": {
+        "text": "Jason Guan.Full-Stack Developer\"Passion makes the impossible happen\"",
+        "x": 58.390625,
+        "y": 144.53125,
+        "width": 441.421875,
+        "height": 160.9375,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "30px",
+        "fontWeight": "400"
+      },
+      "h1": {
+        "text": "Jason Guan.",
+        "x": 58.390625,
+        "y": 144.53125,
+        "width": 441.421875,
+        "height": 95.9375,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "48.952px",
+        "fontWeight": "700"
+      },
+      ".hero-focus": {
+        "text": "Full-Stack Developer",
+        "x": 58.390625,
+        "y": 252.46875,
+        "width": 384.1875,
+        "height": 24,
+        "color": "rgba(46, 31, 22, 0.88)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "16px",
+        "fontWeight": "500"
+      },
+      ".hero-quote": {
+        "text": "\"Passion makes the impossible happen\"",
+        "x": 58.390625,
+        "y": 284.46875,
+        "width": 441.421875,
+        "height": 21,
+        "color": "rgba(46, 39, 33, 0.78)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "14px",
+        "fontWeight": "400"
+      },
+      ".hero-portrait": {
+        "text": "",
+        "x": 598.53125,
+        "y": 108,
+        "width": 187.078125,
+        "height": 234,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".hero-coffee": {
+        "text": "",
+        "x": 496.0391845703125,
+        "y": 208.61898803710938,
+        "width": 118.390380859375,
+        "height": 146.48077392578125,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".social-links": {
+        "text": "",
+        "x": 12,
+        "y": 322,
+        "width": 192,
+        "height": 54,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(255, 253, 248)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".cafe-radio": {
+        "text": "",
+        "x": 760,
+        "y": 308,
+        "width": 62,
+        "height": 62,
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "13.3333px",
+        "fontWeight": "400"
+      },
+      ".project-tech": {
+        "text": "Python â€¢ Flask â€¢ SQLAlchemy â€¢ PostgreSQL â€¢ AWS Lambda â€¢ Auth0 â€¢ Stripe",
+        "x": 50.625,
+        "y": 4716.046875,
+        "width": 742.75,
+        "height": 21,
+        "color": "rgb(92, 61, 36)",
+        "background": "rgb(245, 221, 168)",
+        "fontSize": "13.12px",
+        "fontWeight": "600"
+      },
+      ".project-eyebrow": {
+        "text": "Professional Work",
+        "x": 50.625,
+        "y": 4631.625,
+        "width": 742.75,
+        "height": 18.421875,
+        "color": "rgb(92, 61, 36)",
+        "background": "rgb(245, 221, 168)",
+        "fontSize": "11.52px",
+        "fontWeight": "600"
+      },
+      ".project-description": {
+        "text": "DefTechLink helps technology companies discover government contracting opportunities. I built backend APIs, cloud infrastructure, and data pipelines for two production Sa",
+        "x": 50.625,
+        "y": 4755.046875,
+        "width": 742.75,
+        "height": 72.84375,
+        "color": "rgba(46, 31, 22, 0.85)",
+        "background": "rgb(245, 221, 168)",
+        "fontSize": "14.72px",
+        "fontWeight": "400"
+      },
+      ".skill-name": {
+        "text": "Python",
+        "x": 105.96025085449219,
+        "y": 2939.485107421875,
+        "width": 54.15275573730469,
+        "height": 24.4814453125,
+        "color": "rgba(46, 31, 22, 0.9)",
+        "background": "rgba(255, 253, 248, 0.95)",
+        "fontSize": "14.72px",
+        "fontWeight": "400"
+      },
+      ".menu-item-ingredients": {
+        "text": "Python â€¢ Flask â€¢ React â€¢ PostgreSQL â€¢ AWS",
+        "x": 227.390625,
+        "y": 6666.0625,
+        "width": 487.21875,
+        "height": 21.75,
+        "color": "rgb(92, 61, 36)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "13.6px",
+        "fontWeight": "600"
+      }
+    },
+    "sections": [
+      {
+        "id": "header",
+        "top": 0,
+        "height": 390,
+        "screensFromTop": 0
+      },
+      {
+        "id": "about",
+        "top": 391,
+        "height": 770,
+        "screensFromTop": 1
+      },
+      {
+        "id": "experience",
+        "top": 1161,
+        "height": 1480,
+        "screensFromTop": 2.98
+      },
+      {
+        "id": "skills",
+        "top": 2641,
+        "height": 1359,
+        "screensFromTop": 6.77
+      },
+      {
+        "id": "projects",
+        "top": 3999,
+        "height": 2297,
+        "screensFromTop": 10.25
+      },
+      {
+        "id": "other-works",
+        "top": 6297,
+        "height": 1960,
+        "screensFromTop": 16.15
+      },
+      {
+        "id": "quote",
+        "top": 8258,
+        "height": 390,
+        "screensFromTop": 21.17
+      }
+    ],
+    "heroActions": 0,
+    "headingLevels": [
+      {
+        "level": "H1",
+        "text": "Jason Guan."
+      },
+      {
+        "level": "H1",
+        "text": "About Me"
+      },
+      {
+        "level": "H1",
+        "text": "Education & Experiences"
+      },
+      {
+        "level": "H1",
+        "text": "Skills"
+      },
+      {
+        "level": "H1",
+        "text": "Featured Work"
+      },
+      {
+        "level": "H2",
+        "text": "DefTechLink"
+      },
+      {
+        "level": "H2",
+        "text": "TaskNook"
+      },
+      {
+        "level": "H2",
+        "text": "TwitterFeel"
+      },
+      {
+        "level": "H2",
+        "text": "Other Works"
+      }
+    ],
+    "navCurrent": null
+  },
+  "review-phone": {
+    "width": 390,
+    "height": 844,
+    "theme": "light",
+    "elements": {
+      ".header-text": {
+        "text": "Jason Guan.Full-Stack Developer\"Passion makes the impossible happen\"",
+        "x": 47.171875,
+        "y": 120,
+        "width": 295.640625,
+        "height": 198.65625,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "20px",
+        "fontWeight": "400"
+      },
+      "h1": {
+        "text": "Jason Guan.",
+        "x": 47.171875,
+        "y": 120,
+        "width": 295.640625,
+        "height": 118.46875,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "60.45px",
+        "fontWeight": "700"
+      },
+      ".hero-focus": {
+        "text": "Full-Stack Developer",
+        "x": 47.171875,
+        "y": 254.46875,
+        "width": 295.640625,
+        "height": 27.1875,
+        "color": "rgba(46, 31, 22, 0.88)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "16px",
+        "fontWeight": "500"
+      },
+      ".hero-quote": {
+        "text": "\"Passion makes the impossible happen\"",
+        "x": 47.171875,
+        "y": 295.65625,
+        "width": 295.640625,
+        "height": 21,
+        "color": "rgba(46, 39, 33, 0.78)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "14px",
+        "fontWeight": "400"
+      },
+      ".hero-portrait": {
+        "text": "",
+        "x": 85,
+        "y": 360.65625,
+        "width": 220,
+        "height": 275.171875,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".hero-coffee": {
+        "text": "",
+        "x": 89.47955322265625,
+        "y": 514.957763671875,
+        "width": 113.0408935546875,
+        "height": 139.74072265625,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".social-links": {
+        "text": "",
+        "x": 12,
+        "y": 776,
+        "width": 192,
+        "height": 54,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(255, 253, 248)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".cafe-radio": {
+        "text": "",
+        "x": 318,
+        "y": 772,
+        "width": 58,
+        "height": 58,
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "13.3333px",
+        "fontWeight": "400"
+      },
+      ".project-tech": {
+        "text": "Python â€¢ Flask â€¢ SQLAlchemy â€¢ PostgreSQL â€¢ AWS Lambda â€¢ Auth0 â€¢ Stripe",
+        "x": 23.390625,
+        "y": 6336.9375,
+        "width": 343.21875,
+        "height": 36.46875,
+        "color": "rgb(92, 61, 36)",
+        "background": "rgb(245, 221, 168)",
+        "fontSize": "12.16px",
+        "fontWeight": "600"
+      },
+      ".project-eyebrow": {
+        "text": "Professional Work",
+        "x": 23.390625,
+        "y": 6253.671875,
+        "width": 343.21875,
+        "height": 17.265625,
+        "color": "rgb(92, 61, 36)",
+        "background": "rgb(245, 221, 168)",
+        "fontSize": "11.52px",
+        "fontWeight": "600"
+      },
+      ".project-description": {
+        "text": "DefTechLink helps technology companies discover government contracting opportunities. I built backend APIs, cloud infrastructure, and data pipelines for two production Sa",
+        "x": 23.390625,
+        "y": 6391.40625,
+        "width": 343.21875,
+        "height": 126.375,
+        "color": "rgba(46, 31, 22, 0.85)",
+        "background": "rgb(245, 221, 168)",
+        "fontSize": "13.6px",
+        "fontWeight": "400"
+      },
+      ".skill-name": {
+        "text": "Python",
+        "x": 41.11475372314453,
+        "y": 3881.7724609375,
+        "width": 52.96287536621094,
+        "height": 22.52392578125,
+        "color": "rgba(46, 31, 22, 0.9)",
+        "background": "rgba(255, 253, 248, 0.95)",
+        "fontSize": "14.4px",
+        "fontWeight": "400"
+      },
+      ".menu-item-ingredients": {
+        "text": "Python â€¢ Flask â€¢ React â€¢ PostgreSQL â€¢ AWS",
+        "x": 44.390625,
+        "y": 8267.109375,
+        "width": 301.21875,
+        "height": 19.1875,
+        "color": "rgb(92, 61, 36)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "12.8px",
+        "fontWeight": "600"
+      }
+    },
+    "sections": [
+      {
+        "id": "header",
+        "top": 0,
+        "height": 844,
+        "screensFromTop": 0
+      },
+      {
+        "id": "about",
+        "top": 845,
+        "height": 1107,
+        "screensFromTop": 1
+      },
+      {
+        "id": "experience",
+        "top": 1952,
+        "height": 1690,
+        "screensFromTop": 2.31
+      },
+      {
+        "id": "skills",
+        "top": 3642,
+        "height": 2162,
+        "screensFromTop": 4.32
+      },
+      {
+        "id": "projects",
+        "top": 5804,
+        "height": 2131,
+        "screensFromTop": 6.88
+      },
+      {
+        "id": "other-works",
+        "top": 7935,
+        "height": 2375,
+        "screensFromTop": 9.4
+      },
+      {
+        "id": "quote",
+        "top": 10310,
+        "height": 364,
+        "screensFromTop": 12.22
+      }
+    ],
+    "heroActions": 0,
+    "headingLevels": [
+      {
+        "level": "H1",
+        "text": "Jason Guan."
+      },
+      {
+        "level": "H1",
+        "text": "About Me"
+      },
+      {
+        "level": "H1",
+        "text": "Education & Experiences"
+      },
+      {
+        "level": "H1",
+        "text": "Skills"
+      },
+      {
+        "level": "H1",
+        "text": "Featured Work"
+      },
+      {
+        "level": "H2",
+        "text": "DefTechLink"
+      },
+      {
+        "level": "H2",
+        "text": "TaskNook"
+      },
+      {
+        "level": "H2",
+        "text": "TwitterFeel"
+      },
+      {
+        "level": "H2",
+        "text": "Other Works"
+      }
+    ],
+    "navCurrent": null
+  },
+  "review-phone-dark": {
+    "width": 390,
+    "height": 844,
+    "theme": "dark",
+    "elements": {
+      ".header-text": {
+        "text": "Jason Guan.Full-Stack Developer\"Passion makes the impossible happen\"",
+        "x": 47.171875,
+        "y": 120,
+        "width": 295.640625,
+        "height": 198.65625,
+        "color": "rgb(242, 229, 217)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "20px",
+        "fontWeight": "400"
+      },
+      "h1": {
+        "text": "Jason Guan.",
+        "x": 47.171875,
+        "y": 120,
+        "width": 295.640625,
+        "height": 118.46875,
+        "color": "rgb(242, 229, 217)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "60.45px",
+        "fontWeight": "700"
+      },
+      ".hero-focus": {
+        "text": "Full-Stack Developer",
+        "x": 47.171875,
+        "y": 254.46875,
+        "width": 295.640625,
+        "height": 27.1875,
+        "color": "rgb(221, 206, 195)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "16px",
+        "fontWeight": "500"
+      },
+      ".hero-quote": {
+        "text": "\"Passion makes the impossible happen\"",
+        "x": 47.171875,
+        "y": 295.65625,
+        "width": 295.640625,
+        "height": 21,
+        "color": "rgb(201, 183, 170)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "14px",
+        "fontWeight": "400"
+      },
+      ".hero-portrait": {
+        "text": "",
+        "x": 85,
+        "y": 360.65625,
+        "width": 220,
+        "height": 275.171875,
+        "color": "rgb(242, 229, 217)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".hero-coffee": {
+        "text": "",
+        "x": 89.47955322265625,
+        "y": 514.957763671875,
+        "width": 113.0408935546875,
+        "height": 139.74072265625,
+        "color": "rgb(242, 229, 217)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".social-links": {
+        "text": "",
+        "x": 12,
+        "y": 776,
+        "width": 192,
+        "height": 54,
+        "color": "rgb(242, 229, 217)",
+        "background": "rgb(58, 53, 52)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".cafe-radio": {
+        "text": "",
+        "x": 318,
+        "y": 772,
+        "width": 58,
+        "height": 58,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "13.3333px",
+        "fontWeight": "400"
+      },
+      ".project-tech": {
+        "text": "Python â€¢ Flask â€¢ SQLAlchemy â€¢ PostgreSQL â€¢ AWS Lambda â€¢ Auth0 â€¢ Stripe",
+        "x": 23.390625,
+        "y": 6336.9375,
+        "width": 343.21875,
+        "height": 36.46875,
+        "color": "rgb(207, 157, 123)",
+        "background": "rgb(22, 33, 39)",
+        "fontSize": "12.16px",
+        "fontWeight": "600"
+      },
+      ".project-eyebrow": {
+        "text": "Professional Work",
+        "x": 23.390625,
+        "y": 6253.671875,
+        "width": 343.21875,
+        "height": 17.265625,
+        "color": "rgb(207, 157, 123)",
+        "background": "rgb(22, 33, 39)",
+        "fontSize": "11.52px",
+        "fontWeight": "600"
+      },
+      ".project-description": {
+        "text": "DefTechLink helps technology companies discover government contracting opportunities. I built backend APIs, cloud infrastructure, and data pipelines for two production Sa",
+        "x": 23.390625,
+        "y": 6391.40625,
+        "width": 343.21875,
+        "height": 126.375,
+        "color": "rgb(221, 206, 195)",
+        "background": "rgb(22, 33, 39)",
+        "fontSize": "13.6px",
+        "fontWeight": "400"
+      },
+      ".skill-name": {
+        "text": "Python",
+        "x": 41.11475372314453,
+        "y": 3881.7724609375,
+        "width": 52.96287536621094,
+        "height": 22.52392578125,
+        "color": "rgb(221, 206, 195)",
+        "background": "rgba(58, 53, 52, 0.96)",
+        "fontSize": "14.4px",
+        "fontWeight": "400"
+      },
+      ".menu-item-ingredients": {
+        "text": "Python â€¢ Flask â€¢ React â€¢ PostgreSQL â€¢ AWS",
+        "x": 44.390625,
+        "y": 8267.109375,
+        "width": 301.21875,
+        "height": 19.1875,
+        "color": "rgb(207, 157, 123)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "12.8px",
+        "fontWeight": "600"
+      }
+    },
+    "sections": [
+      {
+        "id": "header",
+        "top": 0,
+        "height": 844,
+        "screensFromTop": 0
+      },
+      {
+        "id": "about",
+        "top": 845,
+        "height": 1107,
+        "screensFromTop": 1
+      },
+      {
+        "id": "experience",
+        "top": 1952,
+        "height": 1690,
+        "screensFromTop": 2.31
+      },
+      {
+        "id": "skills",
+        "top": 3642,
+        "height": 2162,
+        "screensFromTop": 4.32
+      },
+      {
+        "id": "projects",
+        "top": 5804,
+        "height": 2131,
+        "screensFromTop": 6.88
+      },
+      {
+        "id": "other-works",
+        "top": 7935,
+        "height": 2375,
+        "screensFromTop": 9.4
+      },
+      {
+        "id": "quote",
+        "top": 10310,
+        "height": 364,
+        "screensFromTop": 12.22
+      }
+    ],
+    "heroActions": 0,
+    "headingLevels": [
+      {
+        "level": "H1",
+        "text": "Jason Guan."
+      },
+      {
+        "level": "H1",
+        "text": "About Me"
+      },
+      {
+        "level": "H1",
+        "text": "Education & Experiences"
+      },
+      {
+        "level": "H1",
+        "text": "Skills"
+      },
+      {
+        "level": "H1",
+        "text": "Featured Work"
+      },
+      {
+        "level": "H2",
+        "text": "DefTechLink"
+      },
+      {
+        "level": "H2",
+        "text": "TaskNook"
+      },
+      {
+        "level": "H2",
+        "text": "TwitterFeel"
+      },
+      {
+        "level": "H2",
+        "text": "Other Works"
+      }
+    ],
+    "navCurrent": null
+  },
+  "review-small-phone": {
+    "width": 320,
+    "height": 720,
+    "theme": "light",
+    "elements": {
+      ".header-text": {
+        "text": "Jason Guan.Full-Stack Developer\"Passion makes the impossible happen\"",
+        "x": 23.1875,
+        "y": 120,
+        "width": 273.625,
+        "height": 218.78125,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "20px",
+        "fontWeight": "400"
+      },
+      "h1": {
+        "text": "Jason Guan.",
+        "x": 23.1875,
+        "y": 120,
+        "width": 273.625,
+        "height": 117.59375,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "60px",
+        "fontWeight": "700"
+      },
+      ".hero-focus": {
+        "text": "Full-Stack Developer",
+        "x": 23.1875,
+        "y": 253.59375,
+        "width": 273.625,
+        "height": 27.1875,
+        "color": "rgba(46, 31, 22, 0.88)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "16px",
+        "fontWeight": "500"
+      },
+      ".hero-quote": {
+        "text": "\"Passion makes the impossible happen\"",
+        "x": 23.1875,
+        "y": 294.78125,
+        "width": 273.625,
+        "height": 42,
+        "color": "rgba(46, 39, 33, 0.78)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "14px",
+        "fontWeight": "400"
+      },
+      ".hero-portrait": {
+        "text": "",
+        "x": 50,
+        "y": 380.78125,
+        "width": 220,
+        "height": 275.171875,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".hero-coffee": {
+        "text": "",
+        "x": 54.47955322265625,
+        "y": 535.082763671875,
+        "width": 113.0408935546875,
+        "height": 139.74072265625,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".social-links": {
+        "text": "",
+        "x": 12,
+        "y": 652,
+        "width": 192,
+        "height": 54,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(255, 253, 248)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".cafe-radio": {
+        "text": "",
+        "x": 248,
+        "y": 648,
+        "width": 58,
+        "height": 58,
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "13.3333px",
+        "fontWeight": "400"
+      },
+      ".project-tech": {
+        "text": "Python â€¢ Flask â€¢ SQLAlchemy â€¢ PostgreSQL â€¢ AWS Lambda â€¢ Auth0 â€¢ Stripe",
+        "x": 19.1875,
+        "y": 6672.28125,
+        "width": 281.625,
+        "height": 36.46875,
+        "color": "rgb(92, 61, 36)",
+        "background": "rgb(245, 221, 168)",
+        "fontSize": "12.16px",
+        "fontWeight": "600"
+      },
+      ".project-eyebrow": {
+        "text": "Professional Work",
+        "x": 19.1875,
+        "y": 6589.015625,
+        "width": 281.625,
+        "height": 17.265625,
+        "color": "rgb(92, 61, 36)",
+        "background": "rgb(245, 221, 168)",
+        "fontSize": "11.52px",
+        "fontWeight": "600"
+      },
+      ".project-description": {
+        "text": "DefTechLink helps technology companies discover government contracting opportunities. I built backend APIs, cloud infrastructure, and data pipelines for two production Sa",
+        "x": 19.1875,
+        "y": 6726.75,
+        "width": 281.625,
+        "height": 168.5,
+        "color": "rgba(46, 31, 22, 0.85)",
+        "background": "rgb(245, 221, 168)",
+        "fontSize": "13.6px",
+        "fontWeight": "400"
+      },
+      ".skill-name": {
+        "text": "Python",
+        "x": 36.90693664550781,
+        "y": 4255.06298828125,
+        "width": 52.96287536621094,
+        "height": 22.52392578125,
+        "color": "rgba(46, 31, 22, 0.9)",
+        "background": "rgba(255, 253, 248, 0.95)",
+        "fontSize": "14.4px",
+        "fontWeight": "400"
+      },
+      ".menu-item-ingredients": {
+        "text": "Python â€¢ Flask â€¢ React â€¢ PostgreSQL â€¢ AWS",
+        "x": 40.1875,
+        "y": 8692.859375,
+        "width": 239.625,
+        "height": 38.375,
+        "color": "rgb(92, 61, 36)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "12.8px",
+        "fontWeight": "600"
+      }
+    },
+    "sections": [
+      {
+        "id": "header",
+        "top": 0,
+        "height": 720,
+        "screensFromTop": 0
+      },
+      {
+        "id": "about",
+        "top": 721,
+        "height": 1156,
+        "screensFromTop": 1
+      },
+      {
+        "id": "experience",
+        "top": 1877,
+        "height": 2139,
+        "screensFromTop": 2.61
+      },
+      {
+        "id": "skills",
+        "top": 4016,
+        "height": 2162,
+        "screensFromTop": 5.58
+      },
+      {
+        "id": "projects",
+        "top": 6178,
+        "height": 2128,
+        "screensFromTop": 8.58
+      },
+      {
+        "id": "other-works",
+        "top": 8306,
+        "height": 2723,
+        "screensFromTop": 11.54
+      },
+      {
+        "id": "quote",
+        "top": 11030,
+        "height": 422,
+        "screensFromTop": 15.32
+      }
+    ],
+    "heroActions": 0,
+    "headingLevels": [
+      {
+        "level": "H1",
+        "text": "Jason Guan."
+      },
+      {
+        "level": "H1",
+        "text": "About Me"
+      },
+      {
+        "level": "H1",
+        "text": "Education & Experiences"
+      },
+      {
+        "level": "H1",
+        "text": "Skills"
+      },
+      {
+        "level": "H1",
+        "text": "Featured Work"
+      },
+      {
+        "level": "H2",
+        "text": "DefTechLink"
+      },
+      {
+        "level": "H2",
+        "text": "TaskNook"
+      },
+      {
+        "level": "H2",
+        "text": "TwitterFeel"
+      },
+      {
+        "level": "H2",
+        "text": "Other Works"
+      }
+    ],
+    "navCurrent": null
+  },
+  "review-small-phone-dark": {
+    "width": 320,
+    "height": 720,
+    "theme": "dark",
+    "elements": {
+      ".header-text": {
+        "text": "Jason Guan.Full-Stack Developer\"Passion makes the impossible happen\"",
+        "x": 23.1875,
+        "y": 120,
+        "width": 273.625,
+        "height": 218.78125,
+        "color": "rgb(242, 229, 217)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "20px",
+        "fontWeight": "400"
+      },
+      "h1": {
+        "text": "Jason Guan.",
+        "x": 23.1875,
+        "y": 120,
+        "width": 273.625,
+        "height": 117.59375,
+        "color": "rgb(242, 229, 217)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "60px",
+        "fontWeight": "700"
+      },
+      ".hero-focus": {
+        "text": "Full-Stack Developer",
+        "x": 23.1875,
+        "y": 253.59375,
+        "width": 273.625,
+        "height": 27.1875,
+        "color": "rgb(221, 206, 195)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "16px",
+        "fontWeight": "500"
+      },
+      ".hero-quote": {
+        "text": "\"Passion makes the impossible happen\"",
+        "x": 23.1875,
+        "y": 294.78125,
+        "width": 273.625,
+        "height": 42,
+        "color": "rgb(201, 183, 170)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "14px",
+        "fontWeight": "400"
+      },
+      ".hero-portrait": {
+        "text": "",
+        "x": 50,
+        "y": 380.78125,
+        "width": 220,
+        "height": 275.171875,
+        "color": "rgb(242, 229, 217)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".hero-coffee": {
+        "text": "",
+        "x": 54.47955322265625,
+        "y": 535.082763671875,
+        "width": 113.0408935546875,
+        "height": 139.74072265625,
+        "color": "rgb(242, 229, 217)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".social-links": {
+        "text": "",
+        "x": 12,
+        "y": 652,
+        "width": 192,
+        "height": 54,
+        "color": "rgb(242, 229, 217)",
+        "background": "rgb(58, 53, 52)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".cafe-radio": {
+        "text": "",
+        "x": 248,
+        "y": 648,
+        "width": 58,
+        "height": 58,
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "13.3333px",
+        "fontWeight": "400"
+      },
+      ".project-tech": {
+        "text": "Python â€¢ Flask â€¢ SQLAlchemy â€¢ PostgreSQL â€¢ AWS Lambda â€¢ Auth0 â€¢ Stripe",
+        "x": 19.1875,
+        "y": 6672.28125,
+        "width": 281.625,
+        "height": 36.46875,
+        "color": "rgb(207, 157, 123)",
+        "background": "rgb(22, 33, 39)",
+        "fontSize": "12.16px",
+        "fontWeight": "600"
+      },
+      ".project-eyebrow": {
+        "text": "Professional Work",
+        "x": 19.1875,
+        "y": 6589.015625,
+        "width": 281.625,
+        "height": 17.265625,
+        "color": "rgb(207, 157, 123)",
+        "background": "rgb(22, 33, 39)",
+        "fontSize": "11.52px",
+        "fontWeight": "600"
+      },
+      ".project-description": {
+        "text": "DefTechLink helps technology companies discover government contracting opportunities. I built backend APIs, cloud infrastructure, and data pipelines for two production Sa",
+        "x": 19.1875,
+        "y": 6726.75,
+        "width": 281.625,
+        "height": 168.5,
+        "color": "rgb(221, 206, 195)",
+        "background": "rgb(22, 33, 39)",
+        "fontSize": "13.6px",
+        "fontWeight": "400"
+      },
+      ".skill-name": {
+        "text": "Python",
+        "x": 36.90693664550781,
+        "y": 4255.06298828125,
+        "width": 52.96287536621094,
+        "height": 22.52392578125,
+        "color": "rgb(221, 206, 195)",
+        "background": "rgba(58, 53, 52, 0.96)",
+        "fontSize": "14.4px",
+        "fontWeight": "400"
+      },
+      ".menu-item-ingredients": {
+        "text": "Python â€¢ Flask â€¢ React â€¢ PostgreSQL â€¢ AWS",
+        "x": 40.1875,
+        "y": 8692.859375,
+        "width": 239.625,
+        "height": 38.375,
+        "color": "rgb(207, 157, 123)",
+        "background": "rgb(12, 21, 25)",
+        "fontSize": "12.8px",
+        "fontWeight": "600"
+      }
+    },
+    "sections": [
+      {
+        "id": "header",
+        "top": 0,
+        "height": 720,
+        "screensFromTop": 0
+      },
+      {
+        "id": "about",
+        "top": 721,
+        "height": 1156,
+        "screensFromTop": 1
+      },
+      {
+        "id": "experience",
+        "top": 1877,
+        "height": 2139,
+        "screensFromTop": 2.61
+      },
+      {
+        "id": "skills",
+        "top": 4016,
+        "height": 2162,
+        "screensFromTop": 5.58
+      },
+      {
+        "id": "projects",
+        "top": 6178,
+        "height": 2128,
+        "screensFromTop": 8.58
+      },
+      {
+        "id": "other-works",
+        "top": 8306,
+        "height": 2723,
+        "screensFromTop": 11.54
+      },
+      {
+        "id": "quote",
+        "top": 11030,
+        "height": 422,
+        "screensFromTop": 15.32
+      }
+    ],
+    "heroActions": 0,
+    "headingLevels": [
+      {
+        "level": "H1",
+        "text": "Jason Guan."
+      },
+      {
+        "level": "H1",
+        "text": "About Me"
+      },
+      {
+        "level": "H1",
+        "text": "Education & Experiences"
+      },
+      {
+        "level": "H1",
+        "text": "Skills"
+      },
+      {
+        "level": "H1",
+        "text": "Featured Work"
+      },
+      {
+        "level": "H2",
+        "text": "DefTechLink"
+      },
+      {
+        "level": "H2",
+        "text": "TaskNook"
+      },
+      {
+        "level": "H2",
+        "text": "TwitterFeel"
+      },
+      {
+        "level": "H2",
+        "text": "Other Works"
+      }
+    ],
+    "navCurrent": null
+  },
+  "review-tablet": {
+    "width": 820,
+    "height": 1180,
+    "theme": "light",
+    "elements": {
+      ".header-text": {
+        "text": "Jason Guan.Full-Stack Developer\"Passion makes the impossible happen\"",
+        "x": 57.1875,
+        "y": 303.84375,
+        "width": 391.375,
+        "height": 216.3125,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "30px",
+        "fontWeight": "400"
+      },
+      "h1": {
+        "text": "Jason Guan.",
+        "x": 57.1875,
+        "y": 303.84375,
+        "width": 391.375,
+        "height": 125.4375,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "64px",
+        "fontWeight": "700"
+      },
+      ".hero-focus": {
+        "text": "Full-Stack Developer",
+        "x": 57.1875,
+        "y": 449.28125,
+        "width": 391.375,
+        "height": 31.28125,
+        "color": "rgba(46, 31, 22, 0.88)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "18.4px",
+        "fontWeight": "500"
+      },
+      ".hero-quote": {
+        "text": "\"Passion makes the impossible happen\"",
+        "x": 57.1875,
+        "y": 494.5625,
+        "width": 391.375,
+        "height": 25.59375,
+        "color": "rgba(46, 39, 33, 0.78)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".hero-portrait": {
+        "text": "",
+        "x": 480.5625,
+        "y": 235.484375,
+        "width": 282.25,
+        "height": 353.03125,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".hero-coffee": {
+        "text": "",
+        "x": 438.6336364746094,
+        "y": 449.7939147949219,
+        "width": 140.32644653320312,
+        "height": 173.00588989257812,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".social-links": {
+        "text": "",
+        "x": 12,
+        "y": 1112,
+        "width": 192,
+        "height": 54,
+        "color": "rgb(46, 39, 33)",
+        "background": "rgb(255, 253, 248)",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      ".cafe-radio": {
+        "text": "",
+        "x": 736,
+        "y": 1098,
+        "width": 62,
+        "height": 62,
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "13.3333px",
+        "fontWeight": "400"
+      },
+      ".project-tech": {
+        "text": "Python â€¢ Flask â€¢ SQLAlchemy â€¢ PostgreSQL â€¢ AWS Lambda â€¢ Auth0 â€¢ Stripe",
+        "x": 49.1875,
+        "y": 5407.390625,
+        "width": 721.625,
+        "height": 21,
+        "color": "rgb(92, 61, 36)",
+        "background": "rgb(245, 221, 168)",
+        "fontSize": "13.12px",
+        "fontWeight": "600"
+      },
+      ".project-eyebrow": {
+        "text": "Professional Work",
+        "x": 49.1875,
+        "y": 5322.96875,
+        "width": 721.625,
+        "height": 18.421875,
+        "color": "rgb(92, 61, 36)",
+        "background": "rgb(245, 221, 168)",
+        "fontSize": "11.52px",
+        "fontWeight": "600"
+      },
+      ".project-description": {
+        "text": "DefTechLink helps technology companies discover government contracting opportunities. I built backend APIs, cloud infrastructure, and data pipelines for two production Sa",
+        "x": 49.1875,
+        "y": 5446.390625,
+        "width": 721.625,
+        "height": 72.84375,
+        "color": "rgba(46, 31, 22, 0.85)",
+        "background": "rgb(245, 221, 168)",
+        "fontSize": "14.72px",
+        "fontWeight": "400"
+      },
+      ".skill-name": {
+        "text": "Python",
+        "x": 103.56889343261719,
+        "y": 3630.7451171875,
+        "width": 54.15275573730469,
+        "height": 24.481201171875,
+        "color": "rgba(46, 31, 22, 0.9)",
+        "background": "rgba(255, 253, 248, 0.95)",
+        "fontSize": "14.72px",
+        "fontWeight": "400"
+      },
+      ".menu-item-ingredients": {
+        "text": "Python â€¢ Flask â€¢ React â€¢ PostgreSQL â€¢ AWS",
+        "x": 225,
+        "y": 7378.40625,
+        "width": 468,
+        "height": 21.75,
+        "color": "rgb(92, 61, 36)",
+        "background": "rgb(254, 236, 193)",
+        "fontSize": "13.6px",
+        "fontWeight": "600"
+      }
+    },
+    "sections": [
+      {
+        "id": "header",
+        "top": 0,
+        "height": 738,
+        "screensFromTop": 0
+      },
+      {
+        "id": "about",
+        "top": 739,
+        "height": 1113,
+        "screensFromTop": 0.63
+      },
+      {
+        "id": "experience",
+        "top": 1852,
+        "height": 1480,
+        "screensFromTop": 1.57
+      },
+      {
+        "id": "skills",
+        "top": 3332,
+        "height": 1359,
+        "screensFromTop": 2.82
+      },
+      {
+        "id": "projects",
+        "top": 4691,
+        "height": 2318,
+        "screensFromTop": 3.98
+      },
+      {
+        "id": "other-works",
+        "top": 7009,
+        "height": 1984,
+        "screensFromTop": 5.94
+      },
+      {
+        "id": "quote",
+        "top": 8994,
+        "height": 390,
+        "screensFromTop": 7.62
+      }
+    ],
+    "heroActions": 0,
+    "headingLevels": [
+      {
+        "level": "H1",
+        "text": "Jason Guan."
+      },
+      {
+        "level": "H1",
+        "text": "About Me"
+      },
+      {
+        "level": "H1",
+        "text": "Education & Experiences"
+      },
+      {
+        "level": "H1",
+        "text": "Skills"
+      },
+      {
+        "level": "H1",
+        "text": "Featured Work"
+      },
+      {
+        "level": "H2",
+        "text": "DefTechLink"
+      },
+      {
+        "level": "H2",
+        "text": "TaskNook"
+      },
+      {
+        "level": "H2",
+        "text": "TwitterFeel"
+      },
+      {
+        "level": "H2",
+        "text": "Other Works"
+      }
+    ],
+    "navCurrent": null
+  }
+}

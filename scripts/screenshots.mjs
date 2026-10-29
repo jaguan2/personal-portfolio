@@ -154,7 +154,7 @@ try {
     if (responsive) {
       const result = await evaluate(`(() => {
         const problems = [];
-        const selectors = ['.skill-row', '.skill-card-head', '.menu-item-head', '.experience-header', '.project-title-row', 'nav'];
+        const selectors = ['.header-text', '.skill-row', '.skill-card-head', '.menu-item-head', '.experience-header', '.project-title-row', 'nav'];
         for (const selector of selectors) {
           document.querySelectorAll(selector).forEach(el => {
             if (el.scrollWidth > el.clientWidth + 2) problems.push({selector, text:el.textContent.trim().slice(0,70), extra:el.scrollWidth-el.clientWidth});
@@ -163,6 +163,13 @@ try {
         const nav = document.querySelector('nav').getBoundingClientRect();
         const right = document.querySelector('.nav-right').getBoundingClientRect();
         if (right.right > nav.right + 1) problems.push({selector:'.nav-right',extra:right.right-nav.right});
+        const greeting = document.querySelector('.header-text').getBoundingClientRect();
+        const dock = document.querySelector('.social-links').getBoundingClientRect();
+        if (greeting.top >= nav.bottom && greeting.top < innerHeight &&
+            greeting.left < dock.right && greeting.right > dock.left &&
+            greeting.top < dock.bottom && greeting.bottom > dock.top) {
+          problems.push({selector:'.header-text',text:'Greeting overlaps the fixed contact dock'});
+        }
         const dot = document.querySelector('.depth-carousel-dot').getBoundingClientRect();
         const visualDot = getComputedStyle(document.querySelector('.depth-carousel-dot'), '::before');
         if (visualDot.content !== 'none' && visualDot.width !== visualDot.height) problems.push({selector:'.depth-carousel-dot::before',text:'Marker is not circular'});

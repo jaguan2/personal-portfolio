@@ -1,5 +1,9 @@
 # iPhone Duo viewport verification
 
+Rechecked October 29, 2026 with the larger opening name heading. All 28 capture
+checks and five live resize steps passed, including greeting/contact-dock
+separation. The representative opening screenshots reflect the new typography.
+
 Checked October 26, 2026 using Chrome touch/viewport emulation at 3x density.
 The website uses CSS viewport dimensions; native iOS SDK layout rules do not
 apply to this React site.

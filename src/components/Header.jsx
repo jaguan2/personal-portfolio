@@ -15,7 +15,6 @@ function Header() {
           <img className="float-icon branch-tl" src={coffeeBranch} alt="" aria-hidden="true" />
           <img className="float-icon branch-br" src={coffeeBranch} alt="" aria-hidden="true" />
           <img className="float-icon sprig-tr" src={coffeeSprig} alt="" aria-hidden="true" />
-          <img className="float-icon sprig-bl" src={coffeeSprig} alt="" aria-hidden="true" />
           <img className="float-icon leaf-1" src={leafLine} alt="" aria-hidden="true" />
           <img className="float-icon leaf-2" src={leafLine} alt="" aria-hidden="true" />
           <img className="float-icon leaf-3" src={leafLine} alt="" aria-hidden="true" />
@@ -27,12 +26,16 @@ function Header() {
         <div className="container">
           <div className="header-content">
             <div className="header-text">
-              <h1>Hi, I'm <em>Jason</em> <span className="wave">👋</span></h1>
+              <p className="hero-greeting">Hi, I’m</p>
+              <h1>
+                <span className="hero-name">Jason</span>{' '}
+                <span className="hero-name">Guan<span className="hero-name-dot">.</span></span>
+              </h1>
               <p className="hero-focus">Full-Stack Developer</p>
               <p className="hero-quote">"Passion makes the impossible happen"</p>
             </div>
             <div className="header-image">
-              <img src={heroImage} alt="Jason Guan" />
+              <img className="hero-portrait" src={heroImage} alt="Jason Guan" />
             </div>
           </div>
         </div>
