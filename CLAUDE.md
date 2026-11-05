@@ -4,6 +4,7 @@
 
 - React 19 single-page portfolio built with Vite 7 and plain CSS.
 - Preserve the warm café / botanical visual language: cream surfaces, espresso text, caramel accents, and sage details.
+- Dark mode uses muted walnut/charcoal surfaces, parchment text and restrained brass accents, informed by the supplied cafe palettes. Keep gradients subtle, borders quiet and Playfair Display headings upright at medium weight with Montserrat body text. Avoid glowing hotspots, shiny ornaments and bright outlines; keep the day theme's softer typography.
 - Components live in `src/components`; keep component-specific CSS beside each JSX file.
 - The live production site is https://jasonguan.vercel.app on Vercel.
 - The default Vite base remains `/personal-portfolio/` for GitHub Pages compatibility; root-domain builds use `npm run build -- --base=/`.

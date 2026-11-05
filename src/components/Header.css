@@ -7,9 +7,9 @@
   overflow: hidden;
 }
 
-/* Put the night glow across the full hero so the inset panel has no seam. */
+/* A restrained walnut wash keeps the night hero warm without a glowing hotspot. */
 [data-theme='dark'] #header {
-  background: radial-gradient(ellipse at 65% 35%, rgba(114, 75, 57, 0.3) 0%, var(--bg) 70%);
+  background: linear-gradient(160deg, #302720, var(--bg) 85%);
 }
 
 .hero-panel {

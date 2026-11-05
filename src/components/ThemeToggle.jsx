@@ -24,7 +24,7 @@ function ThemeToggle() {
         /* storage blocked ? theme still applies for this visit */
       }
       const meta = document.querySelector('meta[name="theme-color"]')
-      if (meta) meta.content = theme === 'dark' ? '#0C1519' : '#2E271F'
+      if (meta) meta.content = theme === 'dark' ? '#211B17' : '#2E271F'
     }
 
     window.clearTimeout(fadeTimerRef.current)
