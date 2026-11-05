@@ -74,9 +74,9 @@ Evidence: [project guide](../CLAUDE.md),
 [navigation](../src/components/Navbar.jsx).
 The live host is Vercel; the site's technology line still lists GitHub Pages.
 
-## Study with Soobin
+## Soob Corner
 
-Study with Soobin grew out of watching Soobin's vlogs and livestreams while studying for finals. I turned that routine into a React and TypeScript study app, combining the YouTube IFrame API with Pomodoro timers, task checklists, and locally saved study progress.
+Soob Corner grew out of watching Soobin's vlogs and livestreams while studying for finals. I turned that routine into a React and TypeScript study app, combining the YouTube IFrame API with Pomodoro timers, task checklists, and locally saved study progress.
 
 Evidence: [overview](../../studywithsoobin/README.md),
 [video integration](../../studywithsoobin/src/components/VideoBackground.tsx),

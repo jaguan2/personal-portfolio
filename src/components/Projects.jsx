@@ -33,12 +33,12 @@ const projects = [
     link: 'https://deftechlink.com',
     linkType: 'external',
     media: [
-      { type: 'image', src: deftechlinkCover, alt: 'DefTechLink landing page with the headline "Find and Win Defense Contracts Worldwide"', title: "Discover contracting opportunities", caption: "The DefTechLink landing page introduces its tools for finding government contracting opportunities." },
+      { type: 'image', src: deftechlinkCover, alt: 'DefTechLink landing page with the headline "Find and Win Defense Contracts Worldwide"', title: 'Landing page', caption: 'Explore what DefTechLink is.' },
       { type: 'image', src: dtlDashboardImage, alt: 'DefTechLink dashboard with due opportunities, upcoming events and recommendations', title: "A dashboard for the day ahead", caption: "An overview of due opportunities, upcoming events and recommendations." },
       { type: 'image', src: dtlOpportunitiesImage, alt: 'DefTechLink opportunities board listing global defense solicitations and tenders', title: "Explore the opportunity board", caption: "Browse defense solicitations and tenders in a central opportunity directory." },
-      { type: 'image', src: deftechlearnImage, alt: 'DefTechLearn course and resource library', title: "Learn with DefTechLearn", caption: "A library of courses and resources for the defense technology community." },
-      { type: 'image', src: deftechpodImage, alt: 'DefTechPod podcast episode library', title: "Conversations on DefTechPod", caption: "A podcast library bringing community conversations together in one place." },
-      { type: 'image', src: dtlOrganizationsImage, alt: 'DefTechLink organizations directory of defense networks and programmes', title: "Connect with the ecosystem", caption: "A directory of defense organizations, networks and programs." }
+      { type: 'image', src: deftechlearnImage, alt: 'DefTechLearn course and resource library', title: "Learn with DefTechLearn", caption: "Curated library of courses and resources for defence industry. Regardless if you're new or wanting to learn more, there is something for you" },
+      { type: 'image', src: deftechpodImage, alt: 'DefTechPod podcast episode library', title: "Conversations on DefTechPod", caption: "Listen to DefTechLink CEO, Erica discuss defence related topics with guests. Weekly episodes!" },
+      { type: 'image', src: dtlOrganizationsImage, alt: 'DefTechLink organizations directory of defense networks and programmes', title: 'Organizations', caption: 'Large bank of defense organizations that users can explore and network with.' }
     ]
   },
   {
@@ -50,16 +50,16 @@ const projects = [
     link: 'https://github.com/jaguan2/TaskNook',
     linkType: 'github',
     media: [
-      { type: 'image', src: tasknookLoft, alt: "TaskNook loft at night with a desk, sofa, reading chair and bed", title: "A space to settle in", caption: "Choose a cozy room and adjust the atmosphere for your next work session." },
-      { type: 'image', src: tasknookTasks, alt: "TaskNook task panel open beside the nighttime loft", title: "Tasks alongside your workspace", caption: "Keep your task list beside your room, with priorities and progress in one place." },
-      { type: 'image', src: tasknookFocusTimer, alt: "TaskNook focus timer panel open beside the loft", title: "Time to focus", caption: "Set up a focus session without leaving your workspace." },
-      { type: 'image', src: tasknookCommonRoom, alt: "TaskNook Common Cottage with seated characters and the shared-room chat panel open", title: "Work in good company", caption: "A shared cottage brings seating and room chat together for a more social work session." },
-      { type: 'image', src: tasknookLibrary, alt: "TaskNook Grand Library with tall shelves, arched windows and shared tables", title: "The Grand Library", caption: "A shared study space with reading corners and tables to settle into." },
-      { type: 'image', src: tasknookCharacterOutfits, alt: "TaskNook profile panel showing saved outfits beside a cottage lounge", title: "A look for every mood", caption: "Save character outfits and switch between your favorite looks from your profile." },
-      { type: 'image', src: tasknookCharacterCustomization, alt: "TaskNook character closeup with ponytails, an orange top, green trousers and a backpack", title: "Make it your own", caption: "An example of the character styles available to personalize your presence in a room." },
-      { type: 'image', src: tasknookCharacterModels, alt: "Twelve TaskNook standing character presets with varied hairstyles and outfits", title: "Meet the characters", caption: "Twelve character presets offer different hairstyles, outfits and personalities." },
-      { type: 'image', src: tasknookCharacterSeated, alt: "Twelve TaskNook character presets in different seated poses", title: "Small details, more personality", caption: "The character lineup includes distinct seated poses for time spent in shared spaces." },
-      { type: 'image', src: tasknookHolidayHearth, alt: "TaskNook winter lounge with a fireplace, decorated tree and conversation seating", title: "The Holiday Hearth", caption: "A seasonal lounge arranged around a warm fireplace and conversation seating." }
+      { type: 'image', src: tasknookLoft, alt: "TaskNook loft at night with a desk, sofa, reading chair and bed" },
+      { type: 'image', src: tasknookTasks, alt: "TaskNook task panel open beside the nighttime loft" },
+      { type: 'image', src: tasknookFocusTimer, alt: "TaskNook focus timer panel open beside the loft" },
+      { type: 'image', src: tasknookCommonRoom, alt: "TaskNook Common Cottage with seated characters and the shared-room chat panel open" },
+      { type: 'image', src: tasknookLibrary, alt: "TaskNook Grand Library with tall shelves, arched windows and shared tables" },
+      { type: 'image', src: tasknookCharacterOutfits, alt: "TaskNook profile panel showing saved outfits beside a cottage lounge" },
+      { type: 'image', src: tasknookCharacterCustomization, alt: "TaskNook character closeup with ponytails, an orange top, green trousers and a backpack" },
+      { type: 'image', src: tasknookCharacterModels, alt: "Twelve TaskNook standing character presets with varied hairstyles and outfits" },
+      { type: 'image', src: tasknookCharacterSeated, alt: "Twelve TaskNook character presets in different seated poses" },
+      { type: 'image', src: tasknookHolidayHearth, alt: "TaskNook winter lounge with a fireplace, decorated tree and conversation seating" }
     ]
   },
   {
@@ -70,7 +70,7 @@ const projects = [
     description: 'TwitterFeel explores the relationship between social media and mental health through emotional patterns in a user\'s tweets. The project combines sentiment and emotion analysis with models that use a sequence of previous tweets to predict the emotion of the next post.',
     link: 'https://github.com/jaguan2/twitterFeel',
     linkType: 'github',
-    media: { type: 'image', src: twitterFeelImage, alt: 'TwitterFeel confusion matrices comparing model evaluation results', title: "Comparing emotion predictions", caption: "Confusion matrices summarize how model predictions compare with the labeled emotions in the evaluation data." }
+    media: { type: 'image', src: twitterFeelImage, alt: 'TwitterFeel confusion matrices comparing model evaluation results' }
   }
 ]
 
@@ -113,6 +113,8 @@ function Projects() {
   const lightboxRef = useRef(null)
   const closeRef = useRef(null)
   const lightboxOpen = lightbox !== null
+  const activeMedia = lightbox?.gallery[lightbox.index]
+  const hasCaption = Boolean(activeMedia?.title && activeMedia?.caption)
   const stepLightbox = (dir) =>
     setLightbox((lb) =>
       lb ? { ...lb, index: (lb.index + dir + lb.gallery.length) % lb.gallery.length } : lb
@@ -212,8 +214,9 @@ function Projects() {
           ref={lightboxRef}
           className="lightbox"
           aria-modal="true"
-          aria-labelledby="lightbox-title"
-          aria-describedby="lightbox-caption"
+          aria-label={hasCaption ? undefined : "Expanded project image"}
+          aria-labelledby={hasCaption ? "lightbox-title" : undefined}
+          aria-describedby={hasCaption ? "lightbox-caption" : undefined}
           onCancel={(event) => {
             event.preventDefault()
             setLightbox(null)
@@ -251,7 +254,7 @@ function Projects() {
           >
             &times;
           </button>
-          <figure className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+          <figure className={`lightbox-content${hasCaption ? '' : ' is-image-only'}`} onClick={(e) => e.stopPropagation()}>
             <div className="lightbox-media">
               {(() => {
                 const shot = lightbox.gallery[lightbox.index]
@@ -270,7 +273,7 @@ function Projects() {
                 </>
               )}
             </div>
-            <figcaption className="lightbox-caption" aria-live="polite" aria-atomic="true">
+            {hasCaption && <figcaption className="lightbox-caption" aria-live="polite" aria-atomic="true">
               <div>
                 <h2 id="lightbox-title">{lightbox.gallery[lightbox.index].title}</h2>
                 <p id="lightbox-caption">{lightbox.gallery[lightbox.index].caption}</p>
@@ -278,7 +281,10 @@ function Projects() {
               {lightbox.gallery.length > 1 && (
                 <span className="lightbox-count">{lightbox.index + 1} / {lightbox.gallery.length}</span>
               )}
-            </figcaption>
+            </figcaption>}
+            {!hasCaption && lightbox.gallery.length > 1 && (
+              <p className="lightbox-image-count" aria-live="polite">{lightbox.index + 1} / {lightbox.gallery.length}</p>
+            )}
           </figure>
         </dialog>
       )}

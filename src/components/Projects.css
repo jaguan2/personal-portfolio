@@ -352,13 +352,15 @@
   margin-top: 12px;
   padding: 18px 22px;
   border-radius: 12px;
-  background: var(--surface-solid);
+  background: var(--bg);
+  border: 1px solid var(--border-subtle);
   color: var(--text);
   text-align: left;
 }
 
 .lightbox-caption h2 {
   margin: 0 0 6px;
+  color: var(--accent-strong);
   font-size: 1.1rem;
   line-height: 1.4;
 }
@@ -457,6 +459,22 @@
   justify-content: center;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
   transition: background 0.25s ease, transform 0.25s ease, color 0.25s ease;
+}
+
+.lightbox-content.is-image-only {
+  display: block;
+}
+
+.lightbox-content.is-image-only img,
+.lightbox-content.is-image-only video {
+  max-height: calc(100dvh - 180px);
+}
+
+.lightbox-image-count {
+  margin: 14px 0 0;
+  color: #fffdf8;
+  font-size: 0.85rem;
+  text-align: center;
 }
 
 .lightbox-close:hover {

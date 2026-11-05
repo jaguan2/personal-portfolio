@@ -44,7 +44,7 @@ const menu = [
         drink: 'matcha'
       },
       {
-        title: 'Study with Soobin',
+        title: 'Soob Corner',
         ingredients: 'React • TypeScript • Vite • Tailwind CSS • YouTube IFrame API',
         description:
           'A study app featuring Soobin from TXT. Random project inspired from me watching his vlogs / livestreams while studying for finals.',
@@ -55,7 +55,7 @@ const menu = [
         title: 'PokéSQL',
         ingredients: 'React • TypeScript • SQLite • WebAssembly • Python • Electron',
         description:
-          'Whether you are learning SQL for the first time or brushing up before an interview, PokéSQL is an interactive site that lets you explore SQL using Pokémon traits. The latest update includes over one thousand Pokémon and variants, along with a variety of challenges to solve.',
+          'PokéSQL is an interactive site that lets you explore SQL using Pokémon traits. The latest update includes over one thousand Pokémon and variants, along with a variety of challenges to solve.',
         link: 'https://github.com/jaguan2/poke-sql',
         drink: 'latte'
       },
