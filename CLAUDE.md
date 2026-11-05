@@ -5,7 +5,8 @@
 - React 19 single-page portfolio built with Vite 7 and plain CSS.
 - Preserve the warm café / botanical visual language: cream surfaces, espresso text, caramel accents, and sage details.
 - Components live in `src/components`; keep component-specific CSS beside each JSX file.
-- The production target is GitHub Pages under the `/personal-portfolio/` base path.
+- The live production site is https://jasonguan.vercel.app on Vercel.
+- The default Vite base remains `/personal-portfolio/` for GitHub Pages compatibility; root-domain builds use `npm run build -- --base=/`.
 
 ## Component Library
 

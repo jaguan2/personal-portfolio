@@ -1,17 +1,17 @@
 # ☕ Personal Portfolio
 
 [![Deploy to GitHub Pages](https://github.com/jaguan2/personal-portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/jaguan2/personal-portfolio/actions/workflows/deploy.yml)
-[![Live Demo](https://img.shields.io/badge/live-demo-6F8A6C?style=flat)](https://jaguan2.github.io/personal-portfolio/)
+[![Live Demo](https://img.shields.io/badge/live-demo-6F8A6C?style=flat)](https://jasonguan.vercel.app)
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
 ![License: ISC](https://img.shields.io/badge/license-ISC-BA8F68)
 
 A warm, cafe-themed personal portfolio for **Jason Guan** — built from scratch with React and Vite, with a "cream cafe / botanical" aesthetic and a few playful touches (a coffee-brewing loader, a cafe-menu projects section, and a little lofi record player).
 
-🔗 **Live site:** [jaguan2.github.io/personal-portfolio](https://jaguan2.github.io/personal-portfolio/)
+🔗 **Live site:** [jasonguan.vercel.app](https://jasonguan.vercel.app)
 
 <p align="center">
-  <a href="https://jaguan2.github.io/personal-portfolio/">
+  <a href="https://jasonguan.vercel.app">
     <img src="docs/screenshots/desktop-home.png" alt="Jason Guan's cafe-themed portfolio homepage" width="100%">
   </a>
 </p>
@@ -24,7 +24,7 @@ More views: **[screenshot gallery](docs/screenshots/README.md)** — featured pr
 
 I'm **Jason Guan**, a Computer Science graduate from the University of South Florida and currently a Full Stack Developer Lead at [DefTechLink](https://deftechlink.com). I build backend systems, cloud infrastructure, and data pipelines — and I'm especially interested in where computer science meets cognitive science and social media mining.
 
-[Portfolio](https://jaguan2.github.io/personal-portfolio/) · [LinkedIn](https://www.linkedin.com/in/jaguan/) · [GitHub](https://github.com/jaguan2) · [Email](mailto:tpaguan@gmail.com) · [Résumé](src/assets/Jason_Resume.pdf)
+[Portfolio](https://jasonguan.vercel.app) · [LinkedIn](https://www.linkedin.com/in/jaguan/) · [GitHub](https://github.com/jaguan2) · [Email](mailto:tpaguan@gmail.com) · [Résumé](src/assets/Jason_Resume.pdf)
 
 ---
 
@@ -142,7 +142,10 @@ npm run dev
 
 ## 🌐 Deployment
 
-The site deploys to **GitHub Pages** two ways:
+The production site is hosted on **Vercel** at https://jasonguan.vercel.app.
+Use `npm run build -- --base=/` with `dist` as the output directory.
+
+GitHub Pages remains available through the existing workflow and deploy script:
 
 1. **Automatically** — pushing to `main` triggers the workflow in
    [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which builds and publishes to Pages.

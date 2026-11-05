@@ -63,17 +63,16 @@
   line-height: 1.1;
 }
 
-.about-copy .about-lead,
-.about-copy .about-background,
-.about-copy .about-personal {
+.about-copy > p {
   max-width: 56ch;
   color: var(--text-body);
   font-size: 0.99rem;
   line-height: 1.85;
 }
 
-.about-background,
-.about-personal { margin-top: 14px; }
+.about-copy > p + p {
+  margin-top: clamp(24px, 2.2vw, 32px);
+}
 
 .about-coffee-note {
   display: flex;
@@ -189,9 +188,7 @@
 @media (max-width: 1100px) {
   .about-journal { gap: 32px; }
   .about-photo-board { height: 570px; }
-  .about-copy .about-lead,
-  .about-copy .about-background,
-  .about-copy .about-personal { font-size: 0.94rem; }
+  .about-copy > p { font-size: 0.94rem; }
   .about-photo-portrait { top: 100px; }
   .about-photo-riverside { width: 48%; bottom: -10px; }
 }
@@ -201,9 +198,7 @@
   #about .container { padding: 0 8%; }
   .about-journal { grid-template-columns: minmax(0, 1fr); gap: 40px; }
   .about-copy { max-width: 620px; }
-  .about-copy .about-lead,
-  .about-copy .about-background,
-  .about-copy .about-personal { max-width: none; }
+  .about-copy > p { max-width: none; }
   .about-photo-board { width: min(100%, 500px); height: 600px; margin: 0 auto; }
   .about-photo-city { top: -20px; }
   .about-photo-portrait { top: 90px; }

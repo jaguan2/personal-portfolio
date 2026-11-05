@@ -116,18 +116,28 @@
   }
 }
 
-/* Oversized serif quotation mark floating behind the text */
-.quote-text::before {
-  content: '\201C';
+/* Paired serif quotation marks framing the text */
+.quote-text::before,
+.quote-text::after {
   position: absolute;
-  top: -0.55em;
-  left: 4%;
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 7rem;
   line-height: 1;
   color: var(--accent);
   opacity: 0.22;
   pointer-events: none;
+}
+
+.quote-text::before {
+  content: '\201C';
+  top: -0.55em;
+  left: 4%;
+}
+
+.quote-text::after {
+  content: '\201D';
+  bottom: -0.45em;
+  right: 4%;
 }
 
 .quote-text p {

@@ -9,7 +9,9 @@ import twitterFeelImage from '../assets/TwitterFeel.JPG'
 import tasknookLoft from '../assets/tasknook-loft.webp'
 import tasknookCommonRoom from '../assets/tasknook-common-room.webp'
 import tasknookLibrary from '../assets/tasknook-library.webp'
-import tasknookLibrarySeats from '../assets/tasknook-library-seats.webp'
+import tasknookTasks from '../assets/tasknook-tasks.webp'
+import tasknookFocusTimer from '../assets/tasknook-focus-timer.webp'
+import tasknookHolidayHearth from '../assets/tasknook-holiday-hearth.webp'
 import tasknookCharacterCustomization from '../assets/tasknook-character-customization.webp'
 import tasknookCharacterOutfits from '../assets/tasknook-character-outfits.webp'
 import tasknookCharacterModels from '../assets/tasknook-character-models.webp'
@@ -31,12 +33,12 @@ const projects = [
     link: 'https://deftechlink.com',
     linkType: 'external',
     media: [
-      { type: 'image', src: deftechlinkCover, alt: 'DefTechLink landing page with the headline "Find and Win Defense Contracts Worldwide"' },
-      { type: 'image', src: dtlDashboardImage, alt: 'DefTechLink dashboard with due opportunities, upcoming events and recommendations' },
-      { type: 'image', src: dtlOpportunitiesImage, alt: 'DefTechLink opportunities board listing global defense solicitations and tenders' },
-      { type: 'image', src: deftechlearnImage, alt: 'DefTechLearn course and resource library' },
-      { type: 'image', src: deftechpodImage, alt: 'DefTechPod podcast episode library' },
-      { type: 'image', src: dtlOrganizationsImage, alt: 'DefTechLink organizations directory of defense networks and programmes' }
+      { type: 'image', src: deftechlinkCover, alt: 'DefTechLink landing page with the headline "Find and Win Defense Contracts Worldwide"', title: "Discover contracting opportunities", caption: "The DefTechLink landing page introduces its tools for finding government contracting opportunities." },
+      { type: 'image', src: dtlDashboardImage, alt: 'DefTechLink dashboard with due opportunities, upcoming events and recommendations', title: "A dashboard for the day ahead", caption: "An overview of due opportunities, upcoming events and recommendations." },
+      { type: 'image', src: dtlOpportunitiesImage, alt: 'DefTechLink opportunities board listing global defense solicitations and tenders', title: "Explore the opportunity board", caption: "Browse defense solicitations and tenders in a central opportunity directory." },
+      { type: 'image', src: deftechlearnImage, alt: 'DefTechLearn course and resource library', title: "Learn with DefTechLearn", caption: "A library of courses and resources for the defense technology community." },
+      { type: 'image', src: deftechpodImage, alt: 'DefTechPod podcast episode library', title: "Conversations on DefTechPod", caption: "A podcast library bringing community conversations together in one place." },
+      { type: 'image', src: dtlOrganizationsImage, alt: 'DefTechLink organizations directory of defense networks and programmes', title: "Connect with the ecosystem", caption: "A directory of defense organizations, networks and programs." }
     ]
   },
   {
@@ -45,20 +47,19 @@ const projects = [
     title: 'TaskNook',
     technologies: 'React • Tailwind CSS • Framer Motion • Flask • SQLAlchemy • Alembic • SQLite • Web Audio API • PyInstaller',
     description: 'TaskNook is a cozy customizable task tracker that intends to provide every user with an ideal working condition. Customize your work environment, from a rainy window to sunny day. Connect with friends, share your activity and stay motivated together.',
-    highlights: [
-      { bold: 'Developed an interactive SVG room editor', rest: ' with drag-and-drop furniture placement, depth sorting, and customizable floor plans.' }
-    ],
     link: 'https://github.com/jaguan2/TaskNook',
     linkType: 'github',
     media: [
-      { type: 'image', src: tasknookLoft, alt: 'TaskNook loft at night with a workstation, aquarium, reading chair and bed' },
-      { type: 'image', src: tasknookCommonRoom, alt: 'TaskNook Common Cottage with shared desks, a raised reading nook and seated neighbours' },
-      { type: 'image', src: tasknookLibrary, alt: 'TaskNook Grand Library with tall bookshelves, arched windows, shared study tables and reading areas' },
-      { type: 'image', src: tasknookLibrarySeats, alt: 'TaskNook Grand Library with available seats highlighted and a seat-selection menu open' },
-      { type: 'image', src: tasknookCharacterCustomization, alt: 'TaskNook character editor with a model preview, style options, colour choices and body proportion controls' },
-      { type: 'image', src: tasknookCharacterOutfits, alt: 'TaskNook profile panel showing saved outfits and character previews beside the cozy lounge' },
-      { type: 'image', src: tasknookCharacterModels, alt: 'Ten TaskNook standing character models with varied hairstyles, clothing and accessories' },
-      { type: 'image', src: tasknookCharacterSeated, alt: 'Ten TaskNook character models in seated poses with varied outfits and resting postures' }
+      { type: 'image', src: tasknookLoft, alt: "TaskNook loft at night with a desk, sofa, reading chair and bed", title: "A space to settle in", caption: "Choose a cozy room and adjust the atmosphere for your next work session." },
+      { type: 'image', src: tasknookTasks, alt: "TaskNook task panel open beside the nighttime loft", title: "Tasks alongside your workspace", caption: "Keep your task list beside your room, with priorities and progress in one place." },
+      { type: 'image', src: tasknookFocusTimer, alt: "TaskNook focus timer panel open beside the loft", title: "Time to focus", caption: "Set up a focus session without leaving your workspace." },
+      { type: 'image', src: tasknookCommonRoom, alt: "TaskNook Common Cottage with seated characters and the shared-room chat panel open", title: "Work in good company", caption: "A shared cottage brings seating and room chat together for a more social work session." },
+      { type: 'image', src: tasknookLibrary, alt: "TaskNook Grand Library with tall shelves, arched windows and shared tables", title: "The Grand Library", caption: "A shared study space with reading corners and tables to settle into." },
+      { type: 'image', src: tasknookCharacterOutfits, alt: "TaskNook profile panel showing saved outfits beside a cottage lounge", title: "A look for every mood", caption: "Save character outfits and switch between your favorite looks from your profile." },
+      { type: 'image', src: tasknookCharacterCustomization, alt: "TaskNook character closeup with ponytails, an orange top, green trousers and a backpack", title: "Make it your own", caption: "An example of the character styles available to personalize your presence in a room." },
+      { type: 'image', src: tasknookCharacterModels, alt: "Twelve TaskNook standing character presets with varied hairstyles and outfits", title: "Meet the characters", caption: "Twelve character presets offer different hairstyles, outfits and personalities." },
+      { type: 'image', src: tasknookCharacterSeated, alt: "Twelve TaskNook character presets in different seated poses", title: "Small details, more personality", caption: "The character lineup includes distinct seated poses for time spent in shared spaces." },
+      { type: 'image', src: tasknookHolidayHearth, alt: "TaskNook winter lounge with a fireplace, decorated tree and conversation seating", title: "The Holiday Hearth", caption: "A seasonal lounge arranged around a warm fireplace and conversation seating." }
     ]
   },
   {
@@ -69,7 +70,7 @@ const projects = [
     description: 'TwitterFeel explores the relationship between social media and mental health through emotional patterns in a user\'s tweets. The project combines sentiment and emotion analysis with models that use a sequence of previous tweets to predict the emotion of the next post.',
     link: 'https://github.com/jaguan2/twitterFeel',
     linkType: 'github',
-    media: { type: 'image', src: twitterFeelImage, alt: 'TwitterFeel confusion matrices comparing model evaluation results' }
+    media: { type: 'image', src: twitterFeelImage, alt: 'TwitterFeel confusion matrices comparing model evaluation results', title: "Comparing emotion predictions", caption: "Confusion matrices summarize how model predictions compare with the labeled emotions in the evaluation data." }
   }
 ]
 
@@ -211,7 +212,8 @@ function Projects() {
           ref={lightboxRef}
           className="lightbox"
           aria-modal="true"
-          aria-label="Expanded project media"
+          aria-labelledby="lightbox-title"
+          aria-describedby="lightbox-caption"
           onCancel={(event) => {
             event.preventDefault()
             setLightbox(null)
@@ -249,42 +251,35 @@ function Projects() {
           >
             &times;
           </button>
-          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            {(() => {
-              const shot = lightbox.gallery[lightbox.index]
-              return shot.type === 'video' ? (
-                <video key={shot.src} autoPlay loop muted playsInline controls aria-label={shot.alt}>
-                  <source src={shot.src} type="video/mp4" />
-                </video>
-              ) : (
-                <img src={shot.src} alt={shot.alt} decoding="async" />
-              )
-            })()}
-
-            {lightbox.gallery.length > 1 && (
-              <>
-                <button
-                  type="button"
-                  className="lightbox-nav lightbox-nav-prev"
-                  onClick={() => stepLightbox(-1)}
-                  aria-label="Previous image"
-                >
-                  &#10094;
-                </button>
-                <button
-                  type="button"
-                  className="lightbox-nav lightbox-nav-next"
-                  onClick={() => stepLightbox(1)}
-                  aria-label="Next image"
-                >
-                  &#10095;
-                </button>
-                <span className="lightbox-count">
-                  {lightbox.index + 1} / {lightbox.gallery.length}
-                </span>
-              </>
-            )}
-          </div>
+          <figure className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <div className="lightbox-media">
+              {(() => {
+                const shot = lightbox.gallery[lightbox.index]
+                return shot.type === 'video' ? (
+                  <video key={shot.src} autoPlay loop muted playsInline controls aria-label={shot.alt}>
+                    <source src={shot.src} type="video/mp4" />
+                  </video>
+                ) : (
+                  <img src={shot.src} alt={shot.alt} decoding="async" />
+                )
+              })()}
+              {lightbox.gallery.length > 1 && (
+                <>
+                  <button type="button" className="lightbox-nav lightbox-nav-prev" onClick={() => stepLightbox(-1)} aria-label="Previous image">&#10094;</button>
+                  <button type="button" className="lightbox-nav lightbox-nav-next" onClick={() => stepLightbox(1)} aria-label="Next image">&#10095;</button>
+                </>
+              )}
+            </div>
+            <figcaption className="lightbox-caption" aria-live="polite" aria-atomic="true">
+              <div>
+                <h2 id="lightbox-title">{lightbox.gallery[lightbox.index].title}</h2>
+                <p id="lightbox-caption">{lightbox.gallery[lightbox.index].caption}</p>
+              </div>
+              {lightbox.gallery.length > 1 && (
+                <span className="lightbox-count">{lightbox.index + 1} / {lightbox.gallery.length}</span>
+              )}
+            </figcaption>
+          </figure>
         </dialog>
       )}
     </section>

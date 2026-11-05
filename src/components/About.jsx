@@ -26,7 +26,11 @@ function About() {
             <p className="about-background">
               My background is primarily in full-stack development and data analysis,
               working with tools such as React, Flask, PostgreSQL, and AWS.
-              {' '}As a software engineer, I want to affect people's lives in an innovative and
+              {' '}I've helped build two production B2B SaaS platforms, focusing on backend APIs,
+              databases, and AWS infrastructure.
+            </p>
+            <p className="about-intent">
+              As a software engineer, I want to affect people's lives in an innovative and
               meaningful way. Let's connect and explore exciting possibilities together.
             </p>
             <p className="about-personal">
