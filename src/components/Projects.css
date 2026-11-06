@@ -4,7 +4,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: var(--bg-warm);
+  background: linear-gradient(180deg, var(--bg-warm), var(--section-mid) 52%, var(--bg-warm));
 }
 
 /* Soft wave seams where the warm band meets the page background.
@@ -352,7 +352,7 @@
   margin-top: 12px;
   padding: 18px 22px;
   border-radius: 12px;
-  background: var(--bg);
+  background: linear-gradient(135deg, var(--caption-start), var(--bg));
   border: 1px solid var(--border-subtle);
   color: var(--text);
   text-align: left;

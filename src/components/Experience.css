@@ -3,7 +3,7 @@
   color: var(--text);
   position: relative;
   overflow: hidden;
-  background: var(--bg-warm);
+  background: linear-gradient(180deg, var(--bg-warm), var(--section-mid) 52%, var(--bg-warm));
 }
 
 /* Soft wave seams where the warm band meets the page background.
@@ -214,7 +214,7 @@
 }
 
 .experience-card {
-  background: var(--surface);
+  background: linear-gradient(145deg, var(--card-start), var(--card-end));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border);

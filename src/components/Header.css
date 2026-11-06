@@ -2,14 +2,9 @@
   width: 100%;
   min-height: 100vh;
   position: relative;
-  background: var(--bg);
+  background: linear-gradient(160deg, var(--hero-start), var(--bg) 85%);
   padding: 100px 28px 28px;
   overflow: hidden;
-}
-
-/* A restrained walnut wash keeps the night hero warm without a glowing hotspot. */
-[data-theme='dark'] #header {
-  background: linear-gradient(160deg, #302720, var(--bg) 85%);
 }
 
 .hero-panel {

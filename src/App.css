@@ -1,73 +1,66 @@
-/* Design tokens - airy cream cafe palette (white-forward, dark brown accents) */
+/* One shared blend keeps text, surfaces and gradient stops in sync. */
+@property --theme-progress {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+/* Shared cafe palette: latte at 0, espresso at 1. */
 :root {
+  --theme-progress: 0;
+
   /* Base colors */
-  --bg: #FEECC1;                      /* buttery cream page background */
-  --bg-warm: #F5DDA8;                 /* slightly deeper cream for section variation */
-  --surface: rgba(255, 253, 248, 0.95); /* near-white card, faint warm tint */
-  --surface-solid: #FFFDF8;           /* near-white solid */
-  --footer: #2E2721;                  /* deep espresso for the grounding cap */
-  --text: #2E2721;                    /* warm dark brown (body & headings) */
-  --text-body: rgba(46, 31, 22, 0.88); /* card/paragraph body copy */
-  --text-muted: rgba(46, 39, 33, 0.78);
-  --text-subtle: rgba(46, 39, 33, 0.60);
+  --bg: color-mix(in srgb, #FEECC1, #211B17 calc(var(--theme-progress) * 100%));
+  --bg-warm: color-mix(in srgb, #F5DDA8, #2A231E calc(var(--theme-progress) * 100%));
+  --surface: color-mix(in srgb, rgba(255, 253, 248, 0.95), rgba(53, 44, 38, 0.97) calc(var(--theme-progress) * 100%));
+  --surface-solid: color-mix(in srgb, #FFFDF8, #352C26 calc(var(--theme-progress) * 100%));
+  --footer: color-mix(in srgb, #2E2721, #1B1714 calc(var(--theme-progress) * 100%));
+  --text: color-mix(in srgb, #2E2721, #DFD3C3 calc(var(--theme-progress) * 100%));
+  --text-body: color-mix(in srgb, rgba(46, 31, 22, 0.88), #C9BDB0 calc(var(--theme-progress) * 100%));
+  --text-muted: color-mix(in srgb, rgba(46, 39, 33, 0.78), #B7AA9D calc(var(--theme-progress) * 100%));
+  --text-subtle: color-mix(in srgb, rgba(46, 39, 33, 0.60), #A99B8C calc(var(--theme-progress) * 100%));
 
   /* Warm brown ramp — primary action / CTA color */
-  --accent: #BA8F68;                  /* caramel mid */
-  --accent-soft: #D1AB7F;             /* light caramel */
-  --accent-strong: #5C3D24;           /* dark brown CTA fill (kept for punch) */
-  --accent-hover: #7C634A;            /* mid-brown hover */
-  --accent-strong-hover: #3F2A19;     /* deepest brown */
+  --accent: color-mix(in srgb, #BA8F68, #BFA286 calc(var(--theme-progress) * 100%));
+  --accent-soft: color-mix(in srgb, #D1AB7F, #6E5140 calc(var(--theme-progress) * 100%));
+  --accent-strong: color-mix(in srgb, #5C3D24, #BFA286 calc(var(--theme-progress) * 100%));
+  --accent-hover: color-mix(in srgb, #7C634A, #D0B89E calc(var(--theme-progress) * 100%));
+  --accent-strong-hover: color-mix(in srgb, #3F2A19, #D0B89E calc(var(--theme-progress) * 100%));
 
   /* Sage leaf ramp — secondary accent (underlines, borders, motifs) */
-  --leaf: #6F8A6C;                    /* warmer sage that sits on cream */
-  --leaf-strong: #4F6F52;             /* deeper sage for hover */
-  --leaf-hover: #5C7E60;
-  --leaf-soft: rgba(79, 111, 82, 0.14);
-  --leaf-border: rgba(79, 111, 82, 0.30);
+  --leaf: color-mix(in srgb, #6F8A6C, #BFA286 calc(var(--theme-progress) * 100%));
+  --leaf-strong: color-mix(in srgb, #4F6F52, #C7AF96 calc(var(--theme-progress) * 100%));
+  --leaf-hover: color-mix(in srgb, #5C7E60, #D0B89E calc(var(--theme-progress) * 100%));
+  --leaf-soft: color-mix(in srgb, rgba(79, 111, 82, 0.14), rgba(191, 162, 134, 0.08) calc(var(--theme-progress) * 100%));
+  --leaf-border: color-mix(in srgb, rgba(79, 111, 82, 0.30), rgba(191, 162, 134, 0.2) calc(var(--theme-progress) * 100%));
 
   /* Borders & shadows */
-  --border: rgba(92, 61, 36, 0.14);
-  --border-subtle: rgba(186, 143, 104, 0.25);
+  --border: color-mix(in srgb, rgba(92, 61, 36, 0.14), rgba(191, 162, 134, 0.15) calc(var(--theme-progress) * 100%));
+  --border-subtle: color-mix(in srgb, rgba(186, 143, 104, 0.25), rgba(191, 162, 134, 0.17) calc(var(--theme-progress) * 100%));
   --shadow: 0 10px 28px rgba(46, 39, 33, 0.08);
   --shadow-hover: 0 16px 40px rgba(46, 39, 33, 0.14);
 
   /* Chrome */
-  --nav-bg: rgba(255, 253, 248, 0.86);
-  --hero-band: #BA8F68;
+  --nav-bg: color-mix(in srgb, rgba(255, 253, 248, 0.86), rgba(33, 27, 23, 0.96) calc(var(--theme-progress) * 100%));
+  --hero-band: color-mix(in srgb, #BA8F68, #2A231E calc(var(--theme-progress) * 100%));
+
+  /* Matching gradient stops let both cafe palettes ease together. */
+  --hero-start: color-mix(in srgb, #FEECC1, #302720 calc(var(--theme-progress) * 100%));
+  --section-mid: color-mix(in srgb, #F5DDA8, #302720 calc(var(--theme-progress) * 100%));
+  --card-start: color-mix(in srgb, rgba(255, 253, 248, 0.95), #352C26 calc(var(--theme-progress) * 100%));
+  --card-end: color-mix(in srgb, rgba(255, 253, 248, 0.95), #302720 calc(var(--theme-progress) * 100%));
+  --menu-start: color-mix(in srgb, #FCEAD0, #352C26 calc(var(--theme-progress) * 100%));
+  --menu-end: color-mix(in srgb, #FBE6C9, #2A231E calc(var(--theme-progress) * 100%));
+  --caption-start: color-mix(in srgb, #FEECC1, #2A231E calc(var(--theme-progress) * 100%));
 
   color-scheme: light;
 }
 
 /* Muted night cafe: warm charcoal, walnut, parchment and restrained brass. */
 [data-theme='dark'] {
-  --bg: #211B17;
-  --bg-warm: #2A231E;
-  --surface: rgba(53, 44, 38, 0.97);
-  --surface-solid: #352C26;
-  --footer: #1B1714;
-  --text: #DFD3C3;
-  --text-body: #C9BDB0;
-  --text-muted: #B7AA9D;
-  --text-subtle: #A99B8C;
-
-  --accent: #BFA286;
-  --accent-soft: #6E5140;
-  --accent-strong: #BFA286;
-  --accent-hover: #D0B89E;
-  --accent-strong-hover: #D0B89E;
-
-  --leaf: #BFA286;
-  --leaf-strong: #C7AF96;
-  --leaf-hover: #D0B89E;
-  --leaf-soft: rgba(191, 162, 134, 0.08);
-  --leaf-border: rgba(191, 162, 134, 0.2);
-
-  --border: rgba(191, 162, 134, 0.15);
-  --border-subtle: rgba(191, 162, 134, 0.17);
+  --theme-progress: 1;
   --shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
   --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.23);
-  --nav-bg: rgba(33, 27, 23, 0.96);
-  --hero-band: #2A231E;
 
   color-scheme: dark;
 }
@@ -114,21 +107,6 @@ html[data-theme='dark'] #root :is(h1, h2) {
   background: rgba(27, 23, 20, 0.93);
 }
 
-/* Small tonal shifts suggest coffee and paper without luminous hotspots. */
-[data-theme='dark'] #experience,
-[data-theme='dark'] #projects {
-  background: linear-gradient(180deg, var(--bg-warm), #302720 52%, var(--bg-warm));
-}
-
-[data-theme='dark'] .experience-card,
-[data-theme='dark'] .skill-card {
-  background: linear-gradient(145deg, var(--surface-solid), #302720);
-}
-
-[data-theme='dark'] .lightbox-caption {
-  background: linear-gradient(135deg, var(--bg-warm), var(--bg));
-}
-
 [data-theme='dark'] .project-tech,
 [data-theme='dark'] .menu-item-ingredients {
   color: var(--text-muted);
@@ -146,10 +124,6 @@ html[data-theme='dark'] #root :is(h1, h2) {
 }
 
 /* Newer gallery and receipt components share the night palette. */
-[data-theme='dark'] .menu-card {
-  background: linear-gradient(145deg, var(--surface-solid), var(--bg-warm));
-}
-
 [data-theme='dark'] .menu-item-link {
   background: var(--bg-warm);
 }
@@ -230,40 +204,6 @@ html[data-theme='dark'] #root :is(h1, h2) {
   }
 }
 
-/* Keep photos and text crisp: only surfaces ease between theme colors. */
-html.theme-fade,
-html.theme-fade body,
-html.theme-fade #root,
-html.theme-fade #header,
-html.theme-fade #experience,
-html.theme-fade #projects,
-html.theme-fade #footer,
-html.theme-fade #footer::before,
-html.theme-fade nav,
-html.theme-fade .about-photo,
-html.theme-fade .about-photo::before,
-html.theme-fade .experience-card,
-html.theme-fade .timeline-node,
-html.theme-fade .skill-card {
-  transition: background-color 0.3s ease-out, border-color 0.3s ease-out !important;
-}
-
-/* Navigation hover rules must not fade text during a theme switch. */
-html.theme-fade nav .logo,
-html.theme-fade nav .logo-dot,
-html.theme-fade nav .nav-links a,
-html.theme-fade nav .menu-btn,
-html.theme-fade nav .theme-toggle,
-html.theme-fade nav .theme-toggle-label {
-  transition: background-color 0.3s ease-out, border-color 0.3s ease-out !important;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html.theme-fade,
-  html.theme-fade * {
-    transition: none !important;
-  }
-}
 
 * {
   margin: 0;
@@ -280,6 +220,14 @@ html, body, #root {
 
 html {
   scroll-behavior: smooth;
+}
+
+html.theme-shifting {
+  transition: --theme-progress 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.theme-shifting { transition: none; }
 }
 
 body {

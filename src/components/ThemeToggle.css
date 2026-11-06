@@ -58,6 +58,35 @@
   border-color: var(--leaf);
 }
 
+.theme-wave-overlay {
+  --wave-width: clamp(180px, 38vw, 560px);
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+
+.theme-wave-overlay.is-latte {
+  transform: scaleX(-1);
+}
+
+.theme-wave-liquid {
+  position: absolute;
+  inset: auto auto 0 0;
+  height: clamp(160px, 36vh, 330px);
+  width: calc(100% + var(--wave-width) * 2);
+  transform: translateX(-100%);
+  will-change: transform;
+}
+
+.theme-wave-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 @media (max-width: 768px) {
   .theme-toggle {
     width: 90px;
@@ -66,6 +95,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .theme-wave-overlay { display: none; }
   .theme-toggle::before,
   .theme-toggle-label {
     transition: none;

@@ -45,7 +45,7 @@
   position: relative;
   padding: 56px 64px 60px;
   background:
-    linear-gradient(180deg, #FCEAD0 0%, #FBE6C9 100%);
+    linear-gradient(calc(180deg - var(--theme-progress) * 35deg), var(--menu-start), var(--menu-end));
   border: 1px solid var(--border-subtle);
   border-radius: 20px;
   box-shadow: var(--shadow);
